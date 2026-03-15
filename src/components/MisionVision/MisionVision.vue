@@ -26,7 +26,7 @@
       </section>
 
       <!-- Misión -->
-      <section class="sobrenosotros-section">
+      <section class="sobrenosotros-section sobrenosotros-mision">
         <div class="sobrenosotros-wrapper">
           <div class="section-header">
             <div class="header-icon">

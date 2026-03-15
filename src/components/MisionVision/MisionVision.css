@@ -94,8 +94,16 @@
   padding: 80px 20px;
 }
 
+.sobrenosotros-mision {
+  background:
+    linear-gradient(rgba(10, 22, 36, 0.62), rgba(10, 22, 36, 0.62)),
+    url('../../../public/Mision.png') center/cover no-repeat;
+}
+
 .sobrenosotros-vision {
-  background: white;
+  background:
+    linear-gradient(rgba(14, 30, 48, 0.62), rgba(14, 30, 48, 0.62)),
+    url('../../../public/Vision.jpg') center/cover no-repeat;
 }
 
 .sobrenosotros-wrapper {
@@ -137,6 +145,16 @@
   margin: 0;
 }
 
+.sobrenosotros-mision .section-header .section-title,
+.sobrenosotros-vision .section-header .section-title {
+  color: #ffffff;
+}
+
+.sobrenosotros-mision .section-subtitle,
+.sobrenosotros-vision .section-subtitle {
+  color: rgba(255, 255, 255, 0.92);
+}
+
 /* Tarjeta de contenido */
 .content-card {
   background: white;
@@ -145,6 +163,14 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   max-width: 900px;
   margin: 0 auto;
+}
+
+.sobrenosotros-mision .content-card,
+.sobrenosotros-vision .content-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(2px);
 }
 
 .card-body-mision {
@@ -161,12 +187,23 @@
   text-align: justify;
 }
 
+.sobrenosotros-mision .mission-vision-text,
+.sobrenosotros-vision .mission-vision-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 /* Sección de valores */
 .valores-section {
   background: #f8f9fa;
   padding: 30px;
   border-radius: 8px;
   border-left: 4px solid #00A8E8;
+}
+
+.sobrenosotros-mision .valores-section,
+.sobrenosotros-vision .valores-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-left-color: rgba(0, 168, 232, 0.9);
 }
 
 .valores-title {
@@ -176,6 +213,11 @@
   margin: 0 0 20px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.sobrenosotros-mision .valores-title,
+.sobrenosotros-vision .valores-title {
+  color: #ffffff;
 }
 
 .valores-list {
@@ -193,6 +235,11 @@
   padding-left: 28px;
   position: relative;
   line-height: 1.6;
+}
+
+.sobrenosotros-mision .valores-list li,
+.sobrenosotros-vision .valores-list li {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .valores-list li::before {
