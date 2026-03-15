@@ -1,0 +1,7 @@
+/* Garantias.css - Estilos específicos del componente */
+/* Los estilos principales vienen de globals.css */
+
+/* Ajustes específicos si son necesarios */
+.section-card strong {
+  color: #FF6000;
+}

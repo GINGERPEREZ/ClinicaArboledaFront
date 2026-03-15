@@ -1,0 +1,167 @@
+/* Sección de Instalaciones */
+.instalaciones-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+.instalaciones-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.instalaciones-subtitle {
+  color: var(--color-primary, #0066cc);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.instalaciones-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.instalaciones-description {
+  font-size: 18px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+/* Grid de instalaciones */
+.instalaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.instalacion-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background: white;
+}
+
+.instalacion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.instalacion-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.instalacion-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.instalacion-card:hover .instalacion-image {
+  transform: scale(1.1);
+}
+
+.instalacion-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  padding: 30px 20px 20px;
+  transition: all 0.4s ease;
+}
+
+.instalacion-card:hover .instalacion-overlay {
+  background: linear-gradient(to top, rgba(0, 102, 204, 0.9) 0%, rgba(0, 102, 204, 0.6) 50%, transparent 100%);
+}
+
+.instalacion-nombre {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .instalaciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .instalaciones-section {
+    padding: 60px 15px;
+  }
+
+  .instalaciones-title {
+    font-size: 32px;
+  }
+
+  .instalaciones-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .instalaciones-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .instalacion-image-wrapper {
+    height: 280px;
+  }
+
+  .instalacion-nombre {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instalaciones-title {
+    font-size: 28px;
+  }
+
+  .instalacion-image-wrapper {
+    height: 240px;
+  }
+}
+
+/* Modo oscuro */
+.dark-mode .instalaciones-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-mode .instalaciones-title {
+  color: #ffffff;
+}
+
+.dark-mode .instalaciones-description {
+  color: #c0c0c0;
+}
+
+.dark-mode .instalacion-card {
+  background: #2d2d2d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .instalacion-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}

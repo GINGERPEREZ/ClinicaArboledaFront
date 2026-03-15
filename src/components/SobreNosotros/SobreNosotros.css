@@ -1,0 +1,258 @@
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1B365D 0%, #0066B3 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  color: white;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* About Grid Section - Similar a la imagen */
+.about-grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.about-grid-section.reverse {
+  direction: ltr;
+}
+
+.about-grid-section.reverse .photo-grid {
+  order: 1;
+}
+
+.about-grid-section.reverse .text-content {
+  order: 2;
+}
+
+/* Text Content */
+.text-content {
+  padding: 20px;
+}
+
+.about-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.about-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Photo Grid - Similar al diseño de la imagen */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  height: 500px;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Foto grande que ocupa dos filas */
+.photo-large {
+  grid-row: span 2;
+}
+
+/* Facilities Section */
+.facilities-section {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1B365D;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.facility-card {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.facility-card:hover img {
+  transform: scale(1.1);
+}
+
+.facility-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  padding: 30px 20px 20px;
+  color: white;
+}
+
+.facility-overlay h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5),
+    1px 1px 0 rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-grid-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-grid-section.reverse .photo-grid,
+  .about-grid-section.reverse .text-content {
+    order: unset;
+  }
+
+  .photo-grid {
+    height: 400px;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content-container {
+    padding: 50px 20px;
+  }
+
+  .about-grid-section {
+    margin-bottom: 60px;
+  }
+
+  .about-title {
+    font-size: 1.4rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+
+  .photo-grid {
+    height: 350px;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    padding: 40px 15px;
+  }
+
+  .photo-grid {
+    height: 300px;
+  }
+
+  .facility-card {
+    height: 220px;
+  }
+}

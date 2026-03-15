@@ -1,0 +1,348 @@
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1B365D 0%, #0066B3 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  color: white;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Tabs Section */
+.tabs-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: white;
+  color: #495057;
+  border: 2px solid #dee2e6;
+  padding: 18px 35px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tab-btn:hover {
+  background: #f8f9fa;
+  border-color: #0066B3;
+  color: #0066B3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #0066B3 0%, #1B365D 100%);
+  color: white;
+  border-color: #0066B3;
+  box-shadow: 0 6px 20px rgba(0, 102, 179, 0.4);
+}
+
+.tab-icon {
+  font-size: 1.8rem;
+}
+
+.tab-text {
+  font-size: 1.1rem;
+}
+
+/* Tab Content */
+.tab-content {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intro Section */
+.intro-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1B365D;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  color: #495057;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Servicios Grid */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.servicio-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border-color: #0066B3;
+}
+
+.servicio-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.servicio-nombre {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.badge-destacado {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
+/* Especialidades Grid */
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.especialidad-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.especialidad-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  border-color: #0066B3;
+}
+
+.especialidad-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.especialidad-nombre {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1B365D;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1B365D 0%, #0066B3 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 60px;
+  box-shadow: 0 10px 30px rgba(0, 102, 179, 0.3);
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background: white;
+  color: #0066B3;
+  border: none;
+  padding: 16px 45px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+  background: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .servicios-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .especialidades-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .tabs-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 25px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .servicios-grid,
+  .especialidades-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .servicio-card,
+  .especialidad-card {
+    padding: 20px 15px;
+  }
+
+  .servicio-icon,
+  .especialidad-icon {
+    font-size: 2.5rem;
+  }
+
+  .servicio-nombre,
+  .especialidad-nombre {
+    font-size: 0.95rem;
+  }
+
+  .cta-section {
+    padding: 40px 25px;
+  }
+
+  .cta-title {
+    font-size: 1.6rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 14px 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    padding: 40px 15px;
+  }
+
+  .servicios-grid,
+  .especialidades-grid {
+    grid-template-columns: 1fr;
+  }
+}

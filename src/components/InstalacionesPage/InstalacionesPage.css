@@ -1,0 +1,144 @@
+.instalaciones-hero {
+  background: linear-gradient(160deg, #123152 0%, #245b87 100%);
+  color: #ffffff;
+  padding: 64px 20px 54px;
+}
+
+.instalaciones-hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  margin: 0 0 10px;
+  display: inline-block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  margin: 14px 0 0;
+  max-width: 780px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.instalaciones-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 70px;
+}
+
+.intro-card {
+  background: #ffffff;
+  border: 1px solid #dce4ef;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(18, 49, 82, 0.08);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.intro-card h2 {
+  margin: 0 0 10px;
+  color: #123152;
+  font-size: 1.6rem;
+}
+
+.intro-card p {
+  margin: 0;
+  color: #42566a;
+  line-height: 1.75;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.area-card {
+  background: #ffffff;
+  border: 1px solid #dce4ef;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(18, 49, 82, 0.08);
+}
+
+.area-media {
+  height: 210px;
+  overflow: hidden;
+  border-bottom: 1px solid #d3deea;
+}
+
+.area-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.area-card:hover .area-img {
+  transform: scale(1.05);
+}
+
+.area-card-body {
+  padding: 18px 18px 20px;
+}
+
+.area-card-body h3 {
+  margin: 0 0 8px;
+  color: #123152;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.area-card-body p {
+  margin: 0 0 14px;
+  color: #4b5f74;
+  line-height: 1.6;
+  min-height: 76px;
+}
+
+.area-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta-item {
+  border: 1px solid #cfdbe9;
+  background: #f3f7fb;
+  color: #1d4e7b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .area-card-body p {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,521 @@
+/* Header general (estilo clínica) - Sólido por defecto */
+.header {
+  font-family: "Roboto", sans-serif;
+  color: #1B365D;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  }
+
+  /* Header transparente solo en página de inicio sin scroll */
+  .header.is-home:not(.scrolled) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  /* Header cuando se hace scroll - Sólido */
+  .header.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Estilo para la sección principal */
+  .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 32px;
+  min-height: 70px; /* Mantener altura fija del header */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+  }
+
+  .logo-icon {
+    background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .logo-text {
+    font-size: 12px;
+    color: #0066B3;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.3),
+      1px -1px 0 rgba(0, 0, 0, 0.3),
+      -1px 1px 0 rgba(0, 0, 0, 0.3),
+      1px 1px 0 rgba(0, 0, 0, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Logo texto blanco cuando header transparente (solo en home) */
+  .header.is-home:not(.scrolled) .logo-text {
+    color: #ffffff;
+    text-shadow: 
+      -1.5px -1.5px 0 rgba(0, 0, 0, 0.5),
+      1.5px -1.5px 0 rgba(0, 0, 0, 0.5),
+      -1.5px 1.5px 0 rgba(0, 0, 0, 0.5),
+      1.5px 1.5px 0 rgba(0, 0, 0, 0.5),
+      0 3px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  .logo-text strong {
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: inherit;
+  }
+  
+  /* Imagen del logo - Aumentado 200% */
+  .logo-image {
+    height: 100px; /* 50px * 2 = 100px (200% más grande) */
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Logo más pequeño cuando se hace scroll */
+  .header.scrolled .logo-image {
+    height: 70px; /* Reducir un poco al hacer scroll */
+  }
+  
+  .logo img {
+    width: 81px;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  /* Acciones del usuario */
+  .user-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  /* --- ESTILO UNIFICADO PARA BOTONES DE CABECERA --- */
+  .carrito-button,
+  .admin-button,
+  .pedidos-button,
+  .tecnicos-button,
+  .perfil-button,
+  .action-button {
+    /* Tamaño */
+    height: 32px; 
+    min-width: auto;
+    padding: 0 12px;
+    
+    /* Alineación y Tipografía */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    
+    /* ESTILO TRANSPARENTE CON TEXTO AZUL */
+    background: transparent !important;
+    color: #0066B3 !important;
+    border: 1.5px solid #0066B3 !important;
+    transition: all 0.2s ease;
+    text-shadow: 
+      -0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
+      0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
+      -0.5px 0.5px 0 rgba(0, 0, 0, 0.2),
+      0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Botones con texto blanco cuando header transparente (solo en home) */
+  .header.is-home:not(.scrolled) .action-button {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.5),
+      1px -1px 0 rgba(0, 0, 0, 0.5),
+      -1px 1px 0 rgba(0, 0, 0, 0.5),
+      1px 1px 0 rgba(0, 0, 0, 0.5),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Botón Pacientes - estilo especial naranja */
+  .btn-pacientes {
+    background: #E67E22 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 0 16px !important;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.4),
+      1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 1px 0 rgba(0, 0, 0, 0.4),
+      1px 1px 0 rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-pacientes:hover {
+    background: #D35400 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.5),
+      1px -1px 0 rgba(0, 0, 0, 0.5),
+      -1px 1px 0 rgba(0, 0, 0, 0.5),
+      1px 1px 0 rgba(0, 0, 0, 0.5),
+      0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Botón Médicos - estilo especial con borde azul */
+  .btn-medicos {
+    background: transparent !important;
+    color: #0066B3 !important;
+    border: 2px solid #0066B3 !important;
+    border-radius: 20px !important;
+    padding: 0 16px !important;
+    transition: all 0.3s ease;
+    text-shadow: 
+      -0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
+      0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
+      -0.5px 0.5px 0 rgba(0, 0, 0, 0.2),
+      0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Botón Médicos con borde blanco cuando header transparente (solo en home) */
+  .header.is-home:not(.scrolled) .btn-medicos {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.5),
+      1px -1px 0 rgba(0, 0, 0, 0.5),
+      -1px 1px 0 rgba(0, 0, 0, 0.5),
+      1px 1px 0 rgba(0, 0, 0, 0.5),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-medicos:hover {
+    background: #0066B3 !important;
+    color: white !important;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.4),
+      1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 1px 0 rgba(0, 0, 0, 0.4),
+      1px 1px 0 rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carrito-button {
+    min-width: 40px;
+    padding: 0 10px;
+  }
+
+  .carrito-button .carrito-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #0066B3;
+    transition: all 0.2s ease;
+  }
+  
+  .carrito-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: linear-gradient(135deg, #0066B3, #00A8E8);
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 102, 179, 0.3);
+  }
+
+  /* Efecto hover uniforme para todos los botones */
+  .carrito-button:hover,
+  .admin-button:hover,
+  .pedidos-button:hover,
+  .tecnicos-button:hover,
+  .perfil-button:hover,
+  .action-button:hover {
+    background: #0066B3 !important;
+    color: white !important;
+    border-color: #0066B3 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.4),
+      1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 1px 0 rgba(0, 0, 0, 0.4),
+      1px 1px 0 rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .carrito-button:hover .carrito-icon {
+    stroke: white;
+  }
+  
+  /* Menú de navegación principal */
+  .main-menu {
+	background-color: #1B365D;
+	border-top: 1px solid rgba(0, 0, 0, 0.04);
+	border-bottom: none;
+	padding: 12px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Menú transparente cuando header es transparente (solo en home) */
+  .header.is-home:not(.scrolled) .main-menu {
+    background-color: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .main-menu ul {
+  display: flex;
+  justify-content: center;
+  /* CAMBIO: Aumentamos el espacio entre elementos de 32px a 45px */
+  gap: 45px; 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+  
+  .main-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-shadow: 
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5),
+    1px 1px 0 rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Estado Hover y Activo con el color resaltado */
+  .main-menu a:hover {
+  color: #00A8E8;
+  border-bottom: 3px solid #00A8E8;
+  transform: translateY(-2.5px);
+  text-shadow: 
+    -1px -1px 0 rgba(0, 0, 0, 0.6),
+    1px -1px 0 rgba(0, 0, 0, 0.6),
+    -1px 1px 0 rgba(0, 0, 0, 0.6),
+    1px 1px 0 rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(0, 168, 232, 0.5);
+  }
+
+  /* Si tienes una clase para el enlace de la página actual */
+  .main-menu a.router-link-active {
+  color: #00A8E8;
+  border-bottom: 3px solid #00A8E8;
+  text-shadow: 
+    -1px -1px 0 rgba(0, 0, 0, 0.6),
+    1px -1px 0 rgba(0, 0, 0, 0.6),
+    -1px 1px 0 rgba(0, 0, 0, 0.6),
+    1px 1px 0 rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(0, 168, 232, 0.5);
+  }
+  
+  /* Animaciones */
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ============================================
+     DROPDOWN MENU - ESTILOS SIMPLIFICADOS
+     ============================================ */
+  
+  .dropdown-menu {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Enlace principal del dropdown - sin flecha */
+  .dropdown-menu > a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* Contenedor wrapper del dropdown */
+  .dropdown-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding-top: 8px; /* Espacio para evitar cierre al mover mouse */
+  }
+
+  /* ⚠️ CONFLICTO IDENTIFICADO:
+     .dropdown-content hereda estilos de .main-menu ul
+     Necesitamos resetear esos estilos explícitamente */
+  
+  .dropdown-content {
+    /* Reset de estilos heredados de .main-menu ul */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    
+    /* Estilos propios del dropdown - Transparente estilo glassmorphism */
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    min-width: 180px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Scrollbar del dropdown */
+  .dropdown-content::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dropdown-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  .dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #FF8000;
+  }
+  
+  /* Items del dropdown */
+  .dropdown-content li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* ⚠️ CONFLICTO IDENTIFICADO:
+     .dropdown-content a hereda estilos de .main-menu a
+     (padding, border-bottom, transform en hover, etc.)
+     Necesitamos resetear explícitamente */
+  
+  .dropdown-content a {
+    /* Reset de estilos heredados de .main-menu a */
+    display: block !important;
+    border-bottom: none !important;
+    transform: none !important;
+    letter-spacing: normal !important;
+    
+    /* Estilos propios */
+    padding: 10px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-radius: 6px;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.4),
+      1px -1px 0 rgba(0, 0, 0, 0.4),
+      -1px 1px 0 rgba(0, 0, 0, 0.4),
+      1px 1px 0 rgba(0, 0, 0, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    /* Reset del transform heredado */
+    transform: none !important;
+    border-bottom: none !important;
+    text-shadow: 
+      -1px -1px 0 rgba(0, 0, 0, 0.5),
+      1px -1px 0 rgba(0, 0, 0, 0.5),
+      -1px 1px 0 rgba(0, 0, 0, 0.5),
+      1px 1px 0 rgba(0, 0, 0, 0.5),
+      0 0 8px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Transiciones del dropdown */
+  .dropdown-fade-enter-active,
+  .dropdown-fade-leave-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .dropdown-fade-enter-from,
+  .dropdown-fade-leave-to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-6px);
+  }
+
+  .dropdown-fade-enter-to,
+  .dropdown-fade-leave-from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  /* Transiciones generales */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
