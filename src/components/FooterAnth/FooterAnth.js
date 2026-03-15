@@ -34,7 +34,8 @@ export default {
           email: '',
           telefono: '',
           asunto: 'cita',
-          mensaje: ''
+          mensaje: '',
+          aceptaTratamientoDatos: false
         }
       };
     },
@@ -51,6 +52,11 @@ export default {
         this.$router.push('/proteccion-datos');
       },
       async enviarContacto() {
+        if (!this.formularioContacto.aceptaTratamientoDatos) {
+          alert('Debes aceptar el tratamiento de datos personales para continuar.');
+          return;
+        }
+
         this.enviandoContacto = true;
         try {
           // Aquí puedes enviar los datos al backend
@@ -63,7 +69,8 @@ export default {
             email: '',
             telefono: '',
             asunto: 'cita',
-            mensaje: ''
+            mensaje: '',
+            aceptaTratamientoDatos: false
           };
         } catch (error) {
           console.error('Error al enviar contacto:', error);

@@ -122,6 +122,20 @@
               Al enviar este formulario, aceptas que tus datos personales sean procesados conforme a la Ley Orgánica de Protección de Datos Personales vigente. Tus datos serán utilizados únicamente para gestionar tu consulta y no serán compartidos con terceros.
             </p>
 
+            <div class="consentimiento-group">
+              <label class="consentimiento-label" for="consentimiento-datos">
+                <input
+                  type="checkbox"
+                  id="consentimiento-datos"
+                  v-model="formularioContacto.aceptaTratamientoDatos"
+                  required
+                />
+                <span>
+                  Autorizo el tratamiento de mis datos personales conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador para la gestión de mi solicitud.
+                </span>
+              </label>
+            </div>
+
             <button type="submit" class="btn-submit" :disabled="enviandoContacto">
               {{ enviandoContacto ? 'Enviando...' : 'Enviar solicitud' }}
             </button>

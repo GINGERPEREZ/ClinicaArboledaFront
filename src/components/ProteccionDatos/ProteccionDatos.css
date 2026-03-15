@@ -1,0 +1,339 @@
+/* Contenedor principal */
+.proteccion-datos-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding-top: 130px;
+}
+
+.proteccion-datos-content {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Hero */
+.proteccion-datos-hero {
+  position: relative;
+  height: 350px;
+  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.proteccion-datos-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 980px;
+}
+
+.hero-title {
+  font-size: 44px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 19px;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Bloque introductorio */
+.proteccion-datos-info {
+  background: #ffffff;
+  padding: 60px 20px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.info-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.proteccion-datos-info .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0 0 20px 0;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Secciones */
+.proteccion-datos-section {
+  padding: 80px 20px;
+}
+
+.proteccion-datos-disposiciones {
+  background:
+    linear-gradient(rgba(10, 22, 36, 0.68), rgba(10, 22, 36, 0.68)),
+    url('../../../public/Mision.png') center/cover no-repeat;
+}
+
+.proteccion-datos-aclaracion {
+  background:
+    linear-gradient(rgba(14, 30, 48, 0.7), rgba(14, 30, 48, 0.7)),
+    url('../../../public/Vision.jpg') center/cover no-repeat;
+}
+
+.proteccion-datos-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+
+.header-icon svg {
+  stroke: #ffffff;
+}
+
+.section-header .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  padding: 38px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(2px);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.disposiciones-list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.disposiciones-list li {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 17px;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.aclaracion-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0 0 18px 0;
+  text-align: justify;
+}
+
+.aclaracion-text:last-child {
+  margin-bottom: 0;
+}
+
+/* CTA */
+.proteccion-datos-cta {
+  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.cta-description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 168, 232, 0.4);
+  background: linear-gradient(135deg, #0066B3 0%, #004d87 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .proteccion-datos-content {
+    margin-top: 120px;
+  }
+
+  .proteccion-datos-hero {
+    height: 260px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .proteccion-datos-info {
+    padding: 40px 20px;
+  }
+
+  .proteccion-datos-info .section-title {
+    font-size: 28px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+
+  .proteccion-datos-section {
+    padding: 50px 20px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .header-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section-header .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .content-card {
+    padding: 24px;
+  }
+
+  .disposiciones-list li,
+  .aclaracion-text {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .proteccion-datos-cta {
+    padding: 50px 20px;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
+
+  .cta-description {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    padding: 14px 32px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .proteccion-datos-info .section-title,
+  .section-header .section-title {
+    font-size: 24px;
+  }
+
+  .section-description,
+  .disposiciones-list li,
+  .aclaracion-text {
+    font-size: 14px;
+  }
+
+  .cta-title {
+    font-size: 24px;
+  }
+
+  .cta-description {
+    font-size: 14px;
+  }
+}

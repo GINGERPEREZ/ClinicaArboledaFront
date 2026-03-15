@@ -331,6 +331,28 @@
   margin: 4px 0;
 }
 
+.consentimiento-group {
+  margin-top: -4px;
+}
+
+.consentimiento-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: #444;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.consentimiento-label input[type='checkbox'] {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  accent-color: #0066B3;
+  flex-shrink: 0;
+}
+
 .btn-submit {
   background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
   color: white;
@@ -387,6 +409,10 @@
   .disclaimer-text {
     font-size: 10px;
     padding: 8px 10px;
+  }
+
+  .consentimiento-label {
+    font-size: 11px;
   }
 }
   

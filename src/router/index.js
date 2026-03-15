@@ -19,6 +19,7 @@ import HistoriaClinica from '../components/HistoriaClinica/HistoriaClinica.vue';
 import EquipoMedico from '../components/EquipoMedico/EquipoMedico.vue';
 import ServiciosEspecialidades from '../components/ServiciosEspecialidades/ServiciosEspecialidades.vue';
 import SobreNosotros from '../components/SobreNosotros/SobreNosotros.vue';
+import ProteccionDatos from '../components/ProteccionDatos/ProteccionDatos.vue';
 
 
 const routes = [
@@ -127,6 +128,11 @@ const routes = [
     path: "/sobre-nosotros",
     name: "SobreNosotros",
     component: SobreNosotros,
+  },
+  {
+    path: '/proteccion-datos',
+    name: 'ProteccionDatos',
+    component: ProteccionDatos,
   },
   {
     path: '/perfil',
