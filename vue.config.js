@@ -22,6 +22,9 @@ module.exports = defineConfig({
   },
   // Variables globales para acceder a la URL del API desde el código
   chainWebpack: config => {
+    // Evita incompatibilidades del plugin de progreso en ciertos entornos de Node/npm.
+    config.plugins.delete('progress')
+
     config.plugin('define').tap(definitions => {
       definitions[0] = Object.assign(definitions[0], {
         __API_URL__: JSON.stringify(
