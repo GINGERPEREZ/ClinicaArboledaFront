@@ -1,7 +1,7 @@
 /* Header general (estilo clínica) - Sólido por defecto */
 .header {
   font-family: "Roboto", sans-serif;
-  color: #1B365D;
+  color: #1f5f5b;
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -30,7 +30,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 32px;
-  min-height: 70px; /* Mantener altura fija del header */
+  min-height: 105px;
   }
   
   .logo {
@@ -48,7 +48,7 @@
   }
 
   .logo-icon {
-    background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+    background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -62,7 +62,7 @@
 
   .logo-text {
     font-size: 12px;
-    color: #0066B3;
+    color: #239089;
     line-height: 1.2;
     transition: color 0.3s ease;
     text-shadow: 
@@ -90,9 +90,9 @@
     text-shadow: inherit;
   }
   
-  /* Imagen del logo - Aumentado 200% */
+  /* Imagen del logo */
   .logo-image {
-    height: 100px; /* 50px * 2 = 100px (200% más grande) */
+    height: 140px;
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
@@ -101,7 +101,7 @@
 
   /* Logo más pequeño cuando se hace scroll */
   .header.scrolled .logo-image {
-    height: 70px; /* Reducir un poco al hacer scroll */
+    height: 95px;
   }
   
   .logo img {
@@ -143,8 +143,8 @@
     
     /* ESTILO TRANSPARENTE CON TEXTO AZUL */
     background: transparent !important;
-    color: #0066B3 !important;
-    border: 1.5px solid #0066B3 !important;
+    color: #239089 !important;
+    border: 1.5px solid #239089 !important;
     transition: all 0.2s ease;
     text-shadow: 
       -0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
@@ -195,8 +195,8 @@
   /* Botón Médicos - estilo especial con borde azul */
   .btn-medicos {
     background: transparent !important;
-    color: #0066B3 !important;
-    border: 2px solid #0066B3 !important;
+    color: #239089 !important;
+    border: 2px solid #239089 !important;
     border-radius: 20px !important;
     padding: 0 16px !important;
     transition: all 0.3s ease;
@@ -220,7 +220,7 @@
   }
 
   .btn-medicos:hover {
-    background: #0066B3 !important;
+    background: #239089 !important;
     color: white !important;
     text-shadow: 
       -1px -1px 0 rgba(0, 0, 0, 0.4),
@@ -243,7 +243,7 @@
   .carrito-button .carrito-icon {
     width: 18px;
     height: 18px;
-    stroke: #0066B3;
+    stroke: #239089;
     transition: all 0.2s ease;
   }
   
@@ -251,7 +251,7 @@
     position: absolute;
     top: -6px;
     right: -6px;
-    background: linear-gradient(135deg, #0066B3, #00A8E8);
+    background: linear-gradient(135deg, #239089, #57bbb4);
     color: white;
     border-radius: 50%;
     width: 16px;
@@ -271,9 +271,9 @@
   .tecnicos-button:hover,
   .perfil-button:hover,
   .action-button:hover {
-    background: #0066B3 !important;
+    background: #239089 !important;
     color: white !important;
-    border-color: #0066B3 !important;
+    border-color: #239089 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
     text-shadow: 
@@ -290,7 +290,7 @@
   
   /* Menú de navegación principal */
   .main-menu {
-	background-color: #1B365D;
+  background-color: #1f5f5b;
 	border-top: 1px solid rgba(0, 0, 0, 0.04);
 	border-bottom: none;
 	padding: 12px 0;
@@ -305,6 +305,7 @@
   
   .main-menu ul {
   display: flex;
+  align-items: center;
   justify-content: center;
   /* CAMBIO: Aumentamos el espacio entre elementos de 32px a 45px */
   gap: 45px; 
@@ -313,12 +314,22 @@
   list-style: none;
   }
   
+  .main-menu li {
+    display: flex;
+    align-items: center;
+  }
+
   .main-menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
-  padding: 5px 8px;
+  min-height: 34px;
+  padding: 6px 10px;
+  line-height: 1;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
   letter-spacing: 0.5px;
@@ -332,8 +343,8 @@
 
   /* Estado Hover y Activo con el color resaltado */
   .main-menu a:hover {
-  color: #00A8E8;
-  border-bottom: 3px solid #00A8E8;
+  color: #57bbb4;
+  border-bottom: 3px solid #57bbb4;
   transform: translateY(-2.5px);
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
@@ -345,8 +356,8 @@
 
   /* Si tienes una clase para el enlace de la página actual */
   .main-menu a.router-link-active {
-  color: #00A8E8;
-  border-bottom: 3px solid #00A8E8;
+  color: #57bbb4;
+  border-bottom: 3px solid #57bbb4;
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
     1px -1px 0 rgba(0, 0, 0, 0.6),

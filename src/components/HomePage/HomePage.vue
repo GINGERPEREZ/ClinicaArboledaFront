@@ -16,24 +16,24 @@
       </div>
     </section>
 
+    <!-- Nuestro Equipo Medico (full width, fuera del container) -->
+    <section class="equipo-medico-cta-section">
+      <div class="equipo-medico-cta-box">
+        <div class="equipo-medico-cta-content">
+          <p class="equipo-medico-cta-kicker">Atencion con especialistas de confianza</p>
+          <h2>Conoce Nuestro <strong>Equipo Medico</strong></h2>
+          <p>
+            Descubre el perfil de nuestros profesionales y encuentra la especialidad ideal para ti.
+          </p>
+        </div>
+        <button class="btn-equipo-medico" @click="$router.push('/equipo-medico')">
+          Ir a Equipo Medico
+        </button>
+      </div>
+    </section>
+
     <!-- Contenido principal -->
     <div class="home-container">
-
-      <!-- Nuestro Equipo Medico -->
-      <section class="equipo-medico-cta-section">
-        <div class="equipo-medico-cta-box">
-          <div class="equipo-medico-cta-content">
-            <p class="equipo-medico-cta-kicker">Atencion con especialistas de confianza</p>
-            <h2>Conoce Nuestro <strong>Equipo Medico</strong></h2>
-            <p>
-              Descubre el perfil de nuestros profesionales y encuentra la especialidad ideal para ti.
-            </p>
-          </div>
-          <button class="btn-equipo-medico" @click="$router.push('/equipo-medico')">
-            Ir a Equipo Medico
-          </button>
-        </div>
-      </section>
 
       <!-- Especialidades médicas -->
       <section class="categorias-section">

@@ -13,6 +13,7 @@ export default {
         {
           id: 1,
           nombre: 'Seguros Equinoccial',
+          logo: '/Logos/Convenios/Equinoccial.png',
           descripcion: 'Cobertura integral con una de las aseguradoras más reconocidas del país.',
           coberturas: [
             'Consultas médicas generales y especializadas',
@@ -24,6 +25,7 @@ export default {
         {
           id: 2,
           nombre: 'Latina Seguros',
+          logo: '/Logos/Convenios/Latina.jpg',
           descripcion: 'Amplia red de cobertura con planes flexibles para toda la familia.',
           coberturas: [
             'Atención ambulatoria',
@@ -35,6 +37,7 @@ export default {
         {
           id: 3,
           nombre: 'Seguros Sucre',
+          logo: '/Logos/Convenios/SegurosSucre.avif',
           descripcion: 'Soluciones de salud personalizadas con excelente servicio al cliente.',
           coberturas: [
             'Consultas con especialistas',
@@ -46,6 +49,7 @@ export default {
         {
           id: 4,
           nombre: 'BMI Seguros',
+          logo: '/Logos/Convenios/BMI.png',
           descripcion: 'Planes corporativos e individuales con amplia cobertura médica.',
           coberturas: [
             'Medicina general',
@@ -57,6 +61,7 @@ export default {
         {
           id: 5,
           nombre: 'AIG Metropolitana',
+          logo: '/Logos/Convenios/AIG.jpg',
           descripcion: 'Líder en seguros de salud con cobertura nacional e internacional.',
           coberturas: [
             'Consultas médicas',
@@ -68,6 +73,7 @@ export default {
         {
           id: 6,
           nombre: 'Confiamed',
+          logo: '/Logos/Convenios/Confiamed.jpg',
           descripcion: 'Enfoque en medicina preventiva y atención integral familiar.',
           coberturas: [
             'Chequeos preventivos',
@@ -81,6 +87,7 @@ export default {
         {
           id: 1,
           nombre: 'IESS - Instituto Ecuatoriano de Seguridad Social',
+          logo: '/Logos/Convenios/IESS.png',
           descripcion: 'Atención médica para afiliados y beneficiarios del seguro social.',
           servicios: [
             'Consulta externa',
@@ -93,6 +100,7 @@ export default {
         {
           id: 2,
           nombre: 'ISSFA - Seguro Social de las Fuerzas Armadas',
+          logo: '/Logos/Convenios/ISSFA.jpg',
           descripcion: 'Cobertura integral para miembros activos y en retiro de las FF.AA.',
           servicios: [
             'Atención médica general',
@@ -105,6 +113,7 @@ export default {
         {
           id: 3,
           nombre: 'ISSPOL - Instituto de Seguridad Social de la Policía',
+          logo: '/Logos/Convenios/ISSPOL.png',
           descripcion: 'Servicios médicos para personal policial y sus familias.',
           servicios: [
             'Consultas especializadas',
@@ -117,6 +126,7 @@ export default {
         {
           id: 4,
           nombre: 'Ministerio de Salud Pública',
+          logo: '/Logos/Convenios/MSP.png',
           descripcion: 'Convenio para derivación de pacientes y atención especializada.',
           servicios: [
             'Atención de casos especiales',

@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f8f9fa;
+  background-color: #e0f5f3;
   /* Compensar header fijo */
   padding-top: 130px;
 }
@@ -17,7 +17,7 @@
 .sobrenosotros-hero {
   position: relative;
   height: 350px;
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #239089 0%, #1d6f6a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,13 +77,13 @@
 .sobrenosotros-info .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1f5f5b;
   margin: 0 0 20px 0;
 }
 
 .section-description {
   font-size: 18px;
-  color: #666;
+  color: #4f6b68;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
@@ -96,13 +96,13 @@
 
 .sobrenosotros-mision {
   background:
-    linear-gradient(rgba(10, 22, 36, 0.62), rgba(10, 22, 36, 0.62)),
+    linear-gradient(rgba(16, 70, 66, 0.64), rgba(16, 70, 66, 0.64)),
     url('../../../public/Mision.png') center/cover no-repeat;
 }
 
 .sobrenosotros-vision {
   background:
-    linear-gradient(rgba(14, 30, 48, 0.62), rgba(14, 30, 48, 0.62)),
+    linear-gradient(rgba(20, 84, 79, 0.62), rgba(20, 84, 79, 0.62)),
     url('../../../public/Vision.jpg') center/cover no-repeat;
 }
 
@@ -123,7 +123,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #239089 0%, #57bbb4 100%);
   border-radius: 50%;
   margin-bottom: 24px;
 }
@@ -135,13 +135,13 @@
 .section-header .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1f5f5b;
   margin: 0 0 12px 0;
 }
 
 .section-subtitle {
   font-size: 18px;
-  color: #666;
+  color: #4f6b68;
   margin: 0;
 }
 
@@ -197,19 +197,19 @@
   background: #f8f9fa;
   padding: 30px;
   border-radius: 8px;
-  border-left: 4px solid #00A8E8;
+  border-left: 4px solid #239089;
 }
 
 .sobrenosotros-mision .valores-section,
 .sobrenosotros-vision .valores-section {
   background: rgba(255, 255, 255, 0.08);
-  border-left-color: rgba(0, 168, 232, 0.9);
+  border-left-color: rgba(35, 144, 137, 0.9);
 }
 
 .valores-title {
   font-size: 20px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1f5f5b;
   margin: 0 0 20px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -246,14 +246,14 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #00A8E8;
+  color: #57bbb4;
   font-weight: bold;
   font-size: 18px;
 }
 
 /* Call to Action */
 .sobrenosotros-cta {
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #239089 0%, #1d6f6a 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -278,7 +278,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   color: white;
   border: none;
   padding: 16px 40px;
@@ -287,13 +287,13 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.3);
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.35);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 168, 232, 0.4);
-  background: linear-gradient(135deg, #0066B3 0%, #004d87 100%);
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.45);
+  background: linear-gradient(135deg, #239089 0%, #1b7670 100%);
 }
 
 /* Responsive */

@@ -48,7 +48,10 @@
               class="convenio-card"
             >
               <div class="card-header">
-                <div class="card-icon">
+                <div v-if="sistema.logo" class="card-logo-wrapper">
+                  <img :src="sistema.logo" :alt="`Logo de ${sistema.nombre}`" class="card-logo" />
+                </div>
+                <div v-else class="card-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -92,7 +95,10 @@
               class="convenio-card"
             >
               <div class="card-header">
-                <div class="card-icon">
+                <div v-if="seguro.logo" class="card-logo-wrapper">
+                  <img :src="seguro.logo" :alt="`Logo de ${seguro.nombre}`" class="card-logo" />
+                </div>
+                <div v-else class="card-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
