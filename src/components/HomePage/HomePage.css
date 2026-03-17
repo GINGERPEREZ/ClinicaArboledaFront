@@ -1195,23 +1195,23 @@ body {
      ======================================== */
   .indicadores-section {
     margin: 48px 0;
-    padding: 40px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 24px 0 6px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .section-title-nps {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #1B365D;
+    color: #239089;
     margin: 0 0 8px 0;
     text-align: center;
   }
 
   .nps-subtitle {
     font-size: 1.1rem;
-    color: #007BC0;
+    color: #57bbb4;
     margin: 0 0 32px 0;
     text-align: center;
     font-weight: 600;
@@ -1220,79 +1220,85 @@ body {
   .indicadores-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0;
+    gap: 18px;
     margin-bottom: 32px;
   }
 
   .indicador-card {
-    padding: 40px 20px;
+    padding: 22px 18px 20px;
     text-align: center;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #ffffff;
+    border: 1px solid #edf2f4;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(22, 35, 52, 0.05);
   }
 
   .indicador-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: rgba(0, 0, 0, 0.1);
+    display: none;
   }
 
   .indicador-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 14px 24px rgba(22, 35, 52, 0.1);
   }
 
   .indicador-satisfaccion {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: white;
+    color: #101828;
   }
 
   .indicador-recomendacion {
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    color: #1B365D;
+    color: #101828;
   }
 
   .indicador-detractores {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    color: white;
+    color: #101828;
   }
 
   .indicador-icon {
-    margin-bottom: 20px;
+    margin: 0 auto 14px;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4f6ee;
   }
 
   .indicador-icon svg {
-    width: 64px;
-    height: 64px;
+    width: 26px;
+    height: 26px;
     stroke-width: 2;
+    stroke: #2fbe85;
   }
 
   .indicador-satisfaccion .indicador-icon svg {
-    stroke: white;
+    stroke: #2fbe85;
   }
 
   .indicador-recomendacion .indicador-icon svg {
-    stroke: #1B365D;
+    stroke: #2fbe85;
   }
 
   .indicador-detractores .indicador-icon svg {
-    stroke: white;
+    stroke: #2fbe85;
   }
 
   .indicador-porcentaje {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     line-height: 1;
+    color: #121826;
   }
 
   .indicador-label {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
     font-weight: 600;
-    opacity: 0.95;
+    opacity: 1;
+    color: #34ba82;
   }
 
   .nps-footer {
@@ -1302,8 +1308,8 @@ body {
   .btn-conoce-mas {
     padding: 12px 32px;
     background: white;
-    color: #007BC0;
-    border: 2px solid #007BC0;
+    color: #239089;
+    border: 2px solid #239089;
     border-radius: 999px;
     font-size: 0.95rem;
     font-weight: 600;
@@ -1312,10 +1318,10 @@ body {
   }
 
   .btn-conoce-mas:hover {
-    background: #007BC0;
+    background: #239089;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 192, 0.3);
+    box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
   }
 
   /* Responsive para médicos destacados e indicadores */
@@ -1337,7 +1343,7 @@ body {
     }
 
     .indicador-porcentaje {
-      font-size: 2.5rem;
+      font-size: 2.35rem;
     }
 
     .section-title-nps {
@@ -1345,6 +1351,10 @@ body {
     }
 
     .indicadores-section {
-      padding: 24px 16px;
+      padding: 20px 0 0;
+    }
+
+    .indicador-label {
+      font-size: 1.2rem;
     }
   }

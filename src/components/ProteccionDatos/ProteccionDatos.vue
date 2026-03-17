@@ -6,9 +6,9 @@
     <div class="proteccion-datos-content">
       <section class="proteccion-datos-hero">
         <div class="hero-overlay">
-          <h1 class="hero-title">Proteccion de Datos Personales</h1>
+          <h1 class="hero-title">Protección de Datos Personales</h1>
           <p class="hero-subtitle">
-            Compromiso institucional con la confidencialidad, el uso responsable y la seguridad de la informacion de nuestros pacientes.
+            Compromiso institucional con la confidencialidad, el uso responsable y la seguridad de la información de nuestros pacientes.
           </p>
         </div>
       </section>
