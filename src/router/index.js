@@ -20,6 +20,7 @@ import EquipoMedico from '../components/EquipoMedico/EquipoMedico.vue';
 import ServiciosEspecialidades from '../components/ServiciosEspecialidades/ServiciosEspecialidades.vue';
 import SobreNosotros from '../components/SobreNosotros/SobreNosotros.vue';
 import ProteccionDatos from '../components/ProteccionDatos/ProteccionDatos.vue';
+import ContactoPage from '../components/Contacto/Contacto.vue';
 
 
 const routes = [
@@ -133,6 +134,11 @@ const routes = [
     path: '/proteccion-datos',
     name: 'ProteccionDatos',
     component: ProteccionDatos,
+  },
+  {
+    path: '/contacto',
+    name: 'ContactoPage',
+    component: ContactoPage,
   },
   {
     path: '/perfil',

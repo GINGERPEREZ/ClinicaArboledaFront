@@ -93,6 +93,30 @@
           </button>
         </div>
       </section>
+
+      <section class="descarga-politica-section">
+        <div class="descarga-politica-box">
+          <h3>Descargar Politica de Proteccion de Datos Personales.</h3>
+          <p>
+            Para descargar las politicas de cookies,
+            <a href="#cookies">de clic aqui</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="legal-links-section">
+        <span id="terminos" class="legal-anchor"></span>
+        <span id="panel-cookies" class="legal-anchor"></span>
+        <div class="legal-links-row">
+          <a href="#terminos">Terminos y Condiciones de Uso</a>
+          <span>|</span>
+          <a id="cookies" href="#cookies">Politica de Cookies</a>
+          <span>|</span>
+          <a href="/proteccion-datos">Ley de Proteccion de Datos Personales</a>
+          <span>|</span>
+          <a href="#panel-cookies">Panel Cookies</a>
+        </div>
+      </section>
     </div>
 
     <FooterAnth />

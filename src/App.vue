@@ -1,18 +1,21 @@
 <template>
   <div id="app" :class="{ 'dark-mode': isDarkMode }">
     <router-view /> <!-- Muestra el componente basado en la ruta actual -->
+    <CookieConsent />
     <WhatsAppWidget /> <!-- Widget flotante de WhatsApp -->
   </div>
 </template>
 
 <script>
 import WhatsAppWidget from './components/WhatsAppWidget/WhatsAppWidget.vue';
+import CookieConsent from './components/CookieConsent/CookieConsent.vue';
 import inactivityService from './services/inactivityService';
 import apiClient from './services/api';
 
 export default {
   name: 'App',
   components: {
+    CookieConsent,
     WhatsAppWidget
   },
   data() {

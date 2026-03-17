@@ -3,6 +3,7 @@ import { getImageUrl } from '@/config/api';
 import HeaderAnth from "../HeaderAnth/HeaderAnth.vue";
 import FooterAnth from "../FooterAnth/FooterAnth.vue";
 import InstalacionesSection from "../InstalacionesSection/InstalacionesSection.vue";
+import HomeBannerCarousel from "./HomeBannerCarousel.vue";
 
 export default {
   name: "HomePage",
@@ -10,12 +11,10 @@ export default {
     HeaderAnth,
     FooterAnth,
     InstalacionesSection,
+    HomeBannerCarousel,
   },
   data() {
     return {
-      // Imagen de fondo del hero - PERSONALIZA ESTA RUTA
-      heroBackgroundImage: '/Banners/Banner1.jpg',
-      
       productos: [],
       productosMostrados: [],
       searchQuery: "",

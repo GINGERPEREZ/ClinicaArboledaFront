@@ -6,15 +6,8 @@
       @cerrar-sesion="cerrarSesion"
     />
 
-    <!-- Hero Section con Imagen de Fondo -->
-    <section class="hero-main" :style="{ backgroundImage: `url(${heroBackgroundImage})` }">
-      <div class="hero-overlay">
-        <div class="hero-content-main">
-          <h1 class="hero-main-title">Amor desde<br>el <span class="highlight">primer latido.</span></h1>
-          <p class="hero-main-subtitle">Cuidamos de tu salud y la de tu familia con los mejores especialistas</p>
-        </div>
-      </div>
-    </section>
+    <!-- Hero Section con Carrusel -->
+    <HomeBannerCarousel />
 
     <!-- Nuestro Equipo Medico (full width, fuera del container) -->
     <section class="equipo-medico-cta-section">

@@ -141,24 +141,7 @@ export default {
   },
   methods: {
     contactar() {
-      // Scroll al footer donde está el formulario de contacto
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-      });
-      
-      // Esperar a que llegue al footer y abrir el modal
-      setTimeout(() => {
-        const footerAnth = this.$parent.$refs?.footerAnth || 
-                         document.querySelector('footer');
-        if (footerAnth) {
-          // Buscar y hacer click en el botón de contacto del footer
-          const contactBtn = document.querySelector('[href="#"][onclick*="contacto"], a[href="#"]:contains("Contacto")');
-          if (contactBtn) {
-            contactBtn.click();
-          }
-        }
-      }, 1000);
+      this.$router.push('/contacto');
     }
   },
   mounted() {
