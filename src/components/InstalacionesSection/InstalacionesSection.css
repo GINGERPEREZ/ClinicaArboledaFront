@@ -4,6 +4,11 @@
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 }
 
+.instalaciones-section.embedded {
+  padding: 26px 0 0;
+  background: transparent;
+}
+
 .instalaciones-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -33,6 +38,32 @@
   max-width: 800px;
   margin: 0 auto 50px;
   line-height: 1.6;
+}
+
+.instalaciones-section.embedded .instalaciones-subtitle {
+  color: #239089;
+  margin-bottom: 6px;
+}
+
+.instalaciones-section.embedded .instalaciones-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #1B365D;
+}
+
+.instalaciones-section.embedded .instalaciones-description {
+  font-size: 16px;
+  margin: 0 auto 24px;
+  max-width: 760px;
+}
+
+.instalaciones-section.embedded .instalaciones-grid {
+  margin-top: 14px;
+  gap: 18px;
+}
+
+.instalaciones-section.embedded .instalacion-image-wrapper {
+  height: 280px;
 }
 
 /* Grid de instalaciones */
@@ -131,6 +162,22 @@
 
   .instalacion-nombre {
     font-size: 18px;
+  }
+
+  .instalaciones-section.embedded {
+    padding: 18px 0 0;
+  }
+
+  .instalaciones-section.embedded .instalaciones-title {
+    font-size: 27px;
+  }
+
+  .instalaciones-section.embedded .instalaciones-description {
+    margin-bottom: 16px;
+  }
+
+  .instalaciones-section.embedded .instalacion-image-wrapper {
+    height: 240px;
   }
 }
 

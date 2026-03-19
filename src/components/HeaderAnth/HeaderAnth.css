@@ -365,6 +365,19 @@
     1px 1px 0 rgba(0, 0, 0, 0.6),
     0 2px 6px rgba(0, 168, 232, 0.5);
   }
+
+  /* Cuando el header esta en scroll (fondo claro), usar teal para mejor contraste */
+  .header.scrolled .main-menu a {
+    color: #57bbb4;
+    text-shadow: none;
+  }
+
+  .header.scrolled .main-menu a:hover,
+  .header.scrolled .main-menu a.router-link-active {
+    color: #57bbb4;
+    border-bottom: 3px solid #57bbb4;
+    text-shadow: none;
+  }
   
   /* Animaciones */
   .fade-in {
@@ -434,6 +447,13 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
+
+  .header.scrolled .dropdown-content {
+    background-color: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(87, 187, 180, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
+                0 0 0 1px rgba(87, 187, 180, 0.12) inset;
+  }
   
   /* Scrollbar del dropdown */
   .dropdown-content::-webkit-scrollbar {
@@ -490,6 +510,12 @@
       0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
+  .header.scrolled .dropdown-content a {
+    color: #57bbb4;
+    text-shadow: none;
+    font-weight: 600;
+  }
+
   .dropdown-content a:hover {
     background: rgba(255, 255, 255, 0.25);
     color: #ffffff;
@@ -502,6 +528,12 @@
       -1px 1px 0 rgba(0, 0, 0, 0.5),
       1px 1px 0 rgba(0, 0, 0, 0.5),
       0 0 8px rgba(255, 255, 255, 0.5);
+  }
+
+  .header.scrolled .dropdown-content a:hover {
+    background: rgba(87, 187, 180, 0.14);
+    color: #239089;
+    text-shadow: none;
   }
   
   /* Transiciones del dropdown */

@@ -1,5 +1,5 @@
 <template>
-  <section class="instalaciones-section">
+  <section class="instalaciones-section" :class="{ embedded }">
     <div class="instalaciones-container">
       <p class="instalaciones-subtitle">Nuestras</p>
       <h2 class="instalaciones-title">Instalaciones</h2>

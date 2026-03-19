@@ -1,5 +1,11 @@
 export default {
   name: 'InstalacionesSection',
+  props: {
+    embedded: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       instalaciones: [

@@ -87,7 +87,7 @@
                 </div>
               </transition>
             </li>
-            <li><a href="/redes-sociales">Noticias</a></li>
+            <li><a href="/noticias">Noticias</a></li>
           </ul>
         </nav>
 

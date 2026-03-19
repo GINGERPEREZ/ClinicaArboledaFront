@@ -82,7 +82,7 @@
                   required
                 />
                 <span>
-                  Autorizo el tratamiento de mis datos personales conforme a la Ley Organica de Proteccion de Datos Personales del Ecuador para la gestion de mi solicitud.
+                 Autorizo el tratamiento de mis datos personales conforme a la Politica  de Proteccion de Datos Personales de la Clinica para la gestion de mi solicitud.
                 </span>
               </label>
             </div>

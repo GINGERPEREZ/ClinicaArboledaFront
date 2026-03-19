@@ -13,7 +13,7 @@
 
 .contacto-hero {
   background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
-  padding: 56px 20px;
+  padding: 38px 16px;
   text-align: center;
 }
 
@@ -37,7 +37,10 @@
 }
 
 .contacto-form-section {
-  padding: 46px 20px 68px;
+  background:
+    linear-gradient(rgba(20, 84, 79, 0.58), rgba(20, 84, 79, 0.58)),
+    url('../../../public/Vision.jpg') center/cover no-repeat;
+  padding: 30px 16px 38px;
 }
 
 .contacto-form-card {
@@ -47,7 +50,7 @@
   border-radius: 16px;
   box-shadow: 0 12px 32px rgba(20, 45, 56, 0.12);
   border: 1px solid rgba(63, 165, 158, 0.15);
-  padding: 34px;
+  padding: 24px;
 }
 
 .contacto-form-title {
@@ -57,7 +60,7 @@
 }
 
 .contacto-form-subtitle {
-  margin: 8px 0 24px;
+  margin: 6px 0 14px;
   color: #5f6d75;
   font-size: 15px;
 }
@@ -65,13 +68,13 @@
 .contacto-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .form-group label {
@@ -83,12 +86,19 @@
 .form-group input,
 .form-group select,
 .form-group textarea {
-  padding: 10px 12px;
+  padding: 8px 10px;
   border: 1px solid #d9e3e5;
   border-radius: 8px;
   font-size: 14px;
+  color: #24323d;
+  background: #ffffff;
   font-family: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group select option {
+  color: #24323d;
+  background: #ffffff;
 }
 
 .form-group input:focus,
@@ -108,7 +118,7 @@
   font-size: 12px;
   color: #5f6d75;
   line-height: 1.5;
-  padding: 12px;
+  padding: 10px;
   background: #f4f9f9;
   border-left: 3px solid #57bbb4;
   border-radius: 6px;
@@ -139,7 +149,7 @@
   color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 12px 18px;
+  padding: 10px 16px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -162,7 +172,7 @@
   }
 
   .contacto-hero {
-    padding: 40px 16px;
+    padding: 28px 14px;
   }
 
   .contacto-hero h1 {
@@ -174,11 +184,11 @@
   }
 
   .contacto-form-section {
-    padding: 28px 14px 44px;
+    padding: 20px 12px 26px;
   }
 
   .contacto-form-card {
-    padding: 22px;
+    padding: 16px;
     border-radius: 12px;
   }
 

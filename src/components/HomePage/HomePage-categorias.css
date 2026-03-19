@@ -1,6 +1,6 @@
 /* Estilos para Categorías Más Visitadas */
 .categorias-section {
-  margin: 12px 0;
+  margin: 6px 0;
   padding: 12px 14px;
   background: #e0f5f3;
   border-radius: 10px;
@@ -311,6 +311,6 @@
 
   .categorias-section {
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 }

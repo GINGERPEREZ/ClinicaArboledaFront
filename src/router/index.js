@@ -6,7 +6,7 @@ import CarouselBanner from '../components/CarouselBanner/CarouselBanner.vue';
 // Dashboard, AdminPanel y NotificationsPanel usan lazy loading para optimizar carga inicial
 // PanelVendedores usa lazy loading para optimizar carga inicial
 
-import RedesSociales from '../components/RedesSociales/RedesSociales.vue';
+import NoticiasPage from '../components/Noticias/Noticias.vue';
 import CarritoCompras from '../components/CarritoCompras/CarritoCompras.vue';
 import PerfilUsuario from '../components/PerfilUsuario/PerfilUsuario.vue';
 import OlvidePassword from '../components/OlvidePassword.vue';
@@ -81,9 +81,13 @@ const routes = [
     name: 'HomePage' // Se añade el nombre a la ruta
   },
   {
+    path: '/noticias',
+    component: NoticiasPage,
+    name: 'NoticiasPage'
+  },
+  {
     path: '/redes-sociales',
-    component: RedesSociales,
-    name: 'RedesSociales'
+    redirect: '/noticias'
   },
   {
     path: '/carousel-banner',

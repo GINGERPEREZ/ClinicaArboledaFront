@@ -237,15 +237,16 @@
 
 .descarga-politica-box h3 {
   margin: 0;
-  font-size: 37px;
-  font-weight: 300;
-  color: #5c7393;
+  color: #a5afb9;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .descarga-politica-box p {
   margin: 12px 0 0;
-  color: #a5afb9;
-  font-size: 16px;
+  font-size: 37px;
+  font-weight: 300;
+  color: #5c7393;
 }
 
 .descarga-politica-box a {
@@ -375,11 +376,11 @@
     max-width: 320px;
   }
 
-  .descarga-politica-box h3 {
+  .descarga-politica-box p {
     font-size: 27px;
   }
 
-  .descarga-politica-box p {
+  .descarga-politica-box h3 {
     font-size: 15px;
   }
 
@@ -398,7 +399,7 @@
     font-size: 14px;
   }
 
-  .descarga-politica-box h3 {
+  .descarga-politica-box p {
     font-size: 22px;
     line-height: 1.2;
   }

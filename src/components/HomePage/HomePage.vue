@@ -48,13 +48,13 @@
       <!-- Tarjeta de Convenios -->
       <section class="convenios-section">
         <div class="convenios-card" @click="$router.push('/convenios')">
-          <div class="convenios-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+          <div class="convenios-logos">
+            <div class="convenio-logo-item">
+              <img src="/Logos/Convenios/ISSFA.jpg" alt="Logo ISSFA" class="convenio-logo" />
+            </div>
+            <div class="convenio-logo-item">
+              <img src="/Logos/Convenios/ISSPOL.png" alt="Logo ISSPOL" class="convenio-logo" />
+            </div>
           </div>
           <h2 class="convenios-title">Convenios y Alianzas</h2>
           <p class="convenios-description">
@@ -130,11 +130,10 @@
             <p>{{ servicio.descripcion }}</p>
           </div>
         </div>
+
+        <InstalacionesSection :embedded="true" />
       </section>
     </div>
-
-    <!-- Instalaciones -->
-    <InstalacionesSection />
 
     <!-- Indicadores NPS -->
     <div class="content-container">
