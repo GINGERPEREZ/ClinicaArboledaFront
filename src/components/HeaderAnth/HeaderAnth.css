@@ -165,9 +165,9 @@
       0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  /* Botón Pacientes - estilo especial naranja */
+  /* Botón Pacientes - estilo especial en paleta teal */
   .btn-pacientes {
-    background: #E67E22 !important;
+    background: #2d8f89 !important;
     color: white !important;
     border: none !important;
     border-radius: 20px !important;
@@ -181,9 +181,9 @@
   }
 
   .btn-pacientes:hover {
-    background: #D35400 !important;
+    background: #216f6a !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    box-shadow: 0 4px 12px rgba(33, 111, 106, 0.35);
     text-shadow: 
       -1px -1px 0 rgba(0, 0, 0, 0.5),
       1px -1px 0 rgba(0, 0, 0, 0.5),

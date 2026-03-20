@@ -204,7 +204,24 @@
 .especialidad-icon {
   font-size: 2.8rem;
   margin-bottom: 12px;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #57bbb4 0%, #2f918b 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(47, 145, 139, 0.28);
+  /* Neutraliza tonos naranjas de emojis y acerca el resultado a teal */
+  filter: grayscale(1) sepia(1) hue-rotate(128deg) saturate(1.5) brightness(1.08);
+  transition: all 0.3s ease;
+}
+
+.especialidad-card:hover .especialidad-icon {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(35, 144, 137, 0.34);
+  background: linear-gradient(135deg, #3fa59e 0%, #1f7c76 100%);
 }
 
 .especialidad-nombre {

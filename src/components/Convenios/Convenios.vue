@@ -76,7 +76,7 @@
       </section>
       
       <!-- Seguros Privados -->
-      <section class="convenios-section">
+      <section class="convenios-section convenios-privados-section">
         <div class="convenios-wrapper">
           <div class="section-header">
             <div class="header-icon">
@@ -87,34 +87,43 @@
             <h2 class="section-title">Seguros Privados</h2>
             <p class="section-subtitle">Cobertura con las principales aseguradoras del país</p>
           </div>
-          
-          <div class="convenios-grid">
-            <div 
-              v-for="seguro in segurosPrivados" 
-              :key="seguro.id"
-              class="convenio-card"
-            >
-              <div class="card-header">
-                <div v-if="seguro.logo" class="card-logo-wrapper">
-                  <img :src="seguro.logo" :alt="`Logo de ${seguro.nombre}`" class="card-logo" />
+          <div
+            ref="segurosSlider"
+            class="seguros-slider"
+            aria-label="Carrusel de seguros privados"
+            @mouseenter="pausarAutoSlide"
+            @mouseleave="reanudarAutoSlide"
+            @touchstart="pausarAutoSlide"
+            @touchend="reanudarAutoSlide"
+          >
+            <div class="convenios-grid convenios-grid-slider">
+              <div 
+                v-for="seguro in segurosPrivadosCarrusel" 
+                :key="seguro.id"
+                :class="['convenio-card', { 'convenio-card-placeholder': seguro.placeholder }]"
+              >
+                <div class="card-header">
+                  <div v-if="seguro.logo" class="card-logo-wrapper">
+                    <img :src="seguro.logo" :alt="`Logo de ${seguro.nombre}`" class="card-logo" />
+                  </div>
+                  <div v-else class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <h3 class="card-title">{{ seguro.nombre }}</h3>
                 </div>
-                <div v-else class="card-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
-                </div>
-                <h3 class="card-title">{{ seguro.nombre }}</h3>
-              </div>
-              <div class="card-body">
-                <p class="card-description">{{ seguro.descripcion }}</p>
-                <div class="card-coberturas">
-                  <p class="coberturas-title">Coberturas:</p>
-                  <ul class="coberturas-list">
-                    <li v-for="(cobertura, index) in seguro.coberturas" :key="index">
-                      {{ cobertura }}
-                    </li>
-                  </ul>
+                <div class="card-body">
+                  <p class="card-description">{{ seguro.descripcion }}</p>
+                  <div class="card-coberturas">
+                    <p class="coberturas-title">Coberturas:</p>
+                    <ul class="coberturas-list">
+                      <li v-for="(cobertura, index) in seguro.coberturas" :key="index">
+                        {{ cobertura }}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

@@ -78,12 +78,12 @@
 .categoria-icon svg {
   width: 3.2rem;
   height: 3.2rem;
-  stroke: #e67e22;
+  stroke: #2f918b;
   transition: stroke 0.3s ease, transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon svg {
-  stroke: #d35400;
+  stroke: #1f7c76;
   transform: scale(1.1);
 }
 

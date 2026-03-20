@@ -7,8 +7,28 @@ export default {
     HeaderAnth,
     FooterAnth
   },
+  computed: {
+    segurosPrivadosCarrusel() {
+      const placeholders = Array.from({ length: 9 }, (_, index) => ({
+        id: `placeholder-${index + 1}`,
+        nombre: `Aseguradora aliada ${index + 1}`,
+        logo: null,
+        placeholder: true,
+        descripcion: 'Convenio en proceso de confirmacion. Pronto anunciaremos esta cobertura.',
+        coberturas: [
+          'Red medica en actualizacion',
+          'Beneficios por confirmar',
+          'Cobertura sujeta a disponibilidad',
+          'Mas informacion proximamente'
+        ]
+      }));
+
+      return [...this.segurosPrivados, ...placeholders];
+    }
+  },
   data() {
     return {
+      autoSlideInterval: null,
       segurosPrivados: [
         {
           id: 1,
@@ -142,10 +162,42 @@ export default {
   methods: {
     contactar() {
       this.$router.push('/contacto');
+    },
+    iniciarAutoSlide() {
+      const slider = this.$refs.segurosSlider;
+      if (!slider || this.autoSlideInterval) {
+        return;
+      }
+
+      this.autoSlideInterval = window.setInterval(() => {
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        if (maxScroll <= 0) {
+          return;
+        }
+
+        const siguiente = slider.scrollLeft + 1;
+        slider.scrollLeft = siguiente >= maxScroll ? 0 : siguiente;
+      }, 22);
+    },
+    pausarAutoSlide() {
+      if (this.autoSlideInterval) {
+        window.clearInterval(this.autoSlideInterval);
+        this.autoSlideInterval = null;
+      }
+    },
+    reanudarAutoSlide() {
+      this.iniciarAutoSlide();
     }
   },
   mounted() {
     // Scroll al inicio cuando se carga el componente
     window.scrollTo(0, 0);
+
+    this.$nextTick(() => {
+      this.iniciarAutoSlide();
+    });
+  },
+  beforeUnmount() {
+    this.pausarAutoSlide();
   }
 };
