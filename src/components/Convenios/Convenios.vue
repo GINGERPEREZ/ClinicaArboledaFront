@@ -59,17 +59,6 @@
                 </div>
                 <h3 class="card-title">{{ sistema.nombre }}</h3>
               </div>
-              <div class="card-body">
-                <p class="card-description">{{ sistema.descripcion }}</p>
-                <div class="card-coberturas">
-                  <p class="coberturas-title">Servicios disponibles:</p>
-                  <ul class="coberturas-list">
-                    <li v-for="(servicio, index) in sistema.servicios" :key="index">
-                      {{ servicio }}
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -113,17 +102,6 @@
                     </svg>
                   </div>
                   <h3 class="card-title">{{ seguro.nombre }}</h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-description">{{ seguro.descripcion }}</p>
-                  <div class="card-coberturas">
-                    <p class="coberturas-title">Coberturas:</p>
-                    <ul class="coberturas-list">
-                      <li v-for="(cobertura, index) in seguro.coberturas" :key="index">
-                        {{ cobertura }}
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>

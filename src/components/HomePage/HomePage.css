@@ -841,7 +841,7 @@ body {
   /* Servicios Destacados */
   .servicios-destacados {
     margin: 30px 0;
-    padding: 40px 0;
+    padding: 40px 0 24px;
     background: #b9e4df;
     margin-left: -18px;
     margin-right: -18px;
@@ -986,11 +986,139 @@ body {
     }
   }
 
+  /* Noticias Preview Section (reemplaza convenios en home) */
+  .noticias-preview-section {
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  .noticias-preview-kicker {
+    color: #239089;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 8px 0;
+  }
+
+  .noticias-preview-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1B365D;
+    margin: 0 0 12px 0;
+  }
+
+  .noticias-preview-description {
+    color: #555;
+    font-size: 1rem;
+    margin: 0 auto 28px auto;
+    max-width: 580px;
+  }
+
+  .noticias-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+  }
+
+  .noticia-preview-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .noticia-preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  }
+
+  .noticia-preview-image-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+
+  .noticia-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .noticia-preview-card:hover .noticia-preview-image {
+    transform: scale(1.05);
+  }
+
+  .noticia-preview-body {
+    padding: 18px 20px 20px;
+  }
+
+  .noticia-preview-meta {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0 0 6px 0;
+  }
+
+  .noticia-preview-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1B365D;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+
+  .noticia-preview-card-text {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .btn-ver-noticias {
+    background: #239089;
+    color: #fff;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-ver-noticias:hover {
+    background: #1a706a;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .noticias-preview-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .noticias-preview-title {
+      font-size: 1.5rem;
+    }
+  }
+
   .section-subtitle {
     color: #239089;
     font-size: 1rem;
     margin: 0 0 4px 0;
     font-weight: 500;
+  }
+
+  .servicios-destacados .section-subtitle {
+    color: #1B365D;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    margin: 0 0 8px 0;
   }
 
   .servicios-destacados .section-title {
@@ -1200,137 +1328,63 @@ body {
   }
 
   /* ========================================
-     INDICADORES NPS
+     INDICADORES
      ======================================== */
   .indicadores-section {
-    margin: 24px 0;
-    padding: 24px 0 6px;
-    background: transparent;
+    margin: 0;
+    padding: 28px 20px;
+    background: #1f4f6b;
     border-radius: 0;
     box-shadow: none;
   }
 
-  .section-title-nps {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #239089;
-    margin: 0 0 8px 0;
-    text-align: center;
-  }
-
-  .nps-subtitle {
-    font-size: 1.1rem;
-    color: #57bbb4;
-    margin: 0 0 32px 0;
-    text-align: center;
-    font-weight: 600;
-  }
-
   .indicadores-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 18px;
-    margin-bottom: 32px;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    gap: 0;
+    margin-bottom: 0;
   }
 
   .indicador-card {
-    padding: 22px 18px 20px;
+    padding: 10px 14px;
     text-align: center;
     position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    background: #ffffff;
-    border: 1px solid #edf2f4;
-    border-radius: 12px;
-    box-shadow: 0 8px 18px rgba(22, 35, 52, 0.05);
+    transition: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .indicador-card:not(:last-child)::after {
-    display: none;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 1px;
+    height: 80%;
+    border-right: 2px dashed rgba(255, 255, 255, 0.28);
+    display: block;
   }
 
   .indicador-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 24px rgba(22, 35, 52, 0.1);
-  }
-
-  .indicador-satisfaccion {
-    color: #101828;
-  }
-
-  .indicador-recomendacion {
-    color: #101828;
-  }
-
-  .indicador-detractores {
-    color: #101828;
-  }
-
-  .indicador-icon {
-    margin: 0 auto 14px;
-    width: 56px;
-    height: 56px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #e4f6ee;
-  }
-
-  .indicador-icon svg {
-    width: 26px;
-    height: 26px;
-    stroke-width: 2;
-    stroke: #2fbe85;
-  }
-
-  .indicador-satisfaccion .indicador-icon svg {
-    stroke: #2fbe85;
-  }
-
-  .indicador-recomendacion .indicador-icon svg {
-    stroke: #2fbe85;
-  }
-
-  .indicador-detractores .indicador-icon svg {
-    stroke: #2fbe85;
+    transform: none;
+    box-shadow: none;
   }
 
   .indicador-porcentaje {
-    font-size: 2.7rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     line-height: 1;
-    color: #121826;
+    color: #ffffff;
   }
 
   .indicador-label {
-    font-size: 1.35rem;
+    font-size: 2rem;
     font-weight: 600;
     opacity: 1;
-    color: #34ba82;
-  }
-
-  .nps-footer {
-    text-align: center;
-  }
-
-  .btn-conoce-mas {
-    padding: 12px 32px;
-    background: white;
-    color: #239089;
-    border: 2px solid #239089;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .btn-conoce-mas:hover {
-    background: #239089;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
+    color: rgba(255, 255, 255, 0.95);
   }
 
   /* Responsive para médicos destacados e indicadores */
@@ -1340,7 +1394,8 @@ body {
     }
 
     .indicadores-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      row-gap: 12px;
     }
 
     .indicador-card:not(:last-child)::after {
@@ -1352,18 +1407,14 @@ body {
     }
 
     .indicador-porcentaje {
-      font-size: 2.35rem;
-    }
-
-    .section-title-nps {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
     }
 
     .indicadores-section {
-      padding: 20px 0 0;
+      padding: 20px 12px;
     }
 
     .indicador-label {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }

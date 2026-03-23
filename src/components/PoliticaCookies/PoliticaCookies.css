@@ -1,0 +1,300 @@
+/* Contenedor principal */
+.cookies-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding-top: 130px;
+}
+
+.cookies-content {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Encabezado */
+.cookies-intro {
+  background: #ffffff;
+  padding: 36px 20px 8px;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #239089;
+  margin: 0 0 12px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.page-description {
+  font-size: 1.1rem;
+  color: #495057;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Bloque intro */
+.cookies-info {
+  background: #ffffff;
+  padding: 20px 20px 36px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.info-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cookies-info .section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0 0 12px 0;
+}
+
+.section-description {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.75;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Secciones */
+.cookies-section {
+  padding: 56px 20px;
+}
+
+.cookies-tipos {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(231, 247, 245, 0.7) 100%);
+}
+
+.cookies-control {
+  background:
+    linear-gradient(rgba(10, 22, 36, 0.68), rgba(10, 22, 36, 0.68)),
+    url('../../../public/Mision.png') center/cover no-repeat;
+}
+
+.cookies-vigencia {
+  background:
+    linear-gradient(rgba(14, 30, 48, 0.7), rgba(14, 30, 48, 0.7)),
+    url('../../../public/Vision.jpg') center/cover no-repeat;
+}
+
+.cookies-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header de sección */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  border-radius: 50%;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(63, 165, 158, 0.3);
+  transition: all 0.3s ease;
+}
+
+.header-icon:hover {
+  transform: scale(1.05);
+}
+
+.cookies-tipos .header-icon {
+  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+}
+
+.cookies-control .header-icon,
+.cookies-vigencia .header-icon {
+  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+}
+
+.header-icon svg {
+  stroke: white;
+}
+
+.cookies-tipos .section-header .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #124a47;
+  margin: 0 0 8px 0;
+}
+
+.cookies-tipos .section-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+.cookies-control .section-header .section-title,
+.cookies-vigencia .section-header .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.cookies-control .section-subtitle,
+.cookies-vigencia .section-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Grid de tarjetas */
+.cookies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cookie-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.1);
+  border: 1px solid rgba(35, 144, 137, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cookie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(35, 144, 137, 0.18);
+}
+
+.cookie-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #e8f7f6 0%, #d0efed 100%);
+  border-radius: 50%;
+}
+
+.cookie-card-icon svg {
+  stroke: #239089;
+}
+
+.cookie-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #124a47;
+  margin: 0;
+}
+
+.cookie-card-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.cookie-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.badge-necessary {
+  background: rgba(35, 144, 137, 0.12);
+  color: #1a6d69;
+}
+
+.badge-optional {
+  background: rgba(0, 102, 179, 0.1);
+  color: #0066B3;
+}
+
+/* Tarjeta de contenido (dark) */
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  padding: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(2px);
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.93);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+}
+
+.cookies-list {
+  margin: 16px 0 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cookies-list li {
+  color: rgba(255, 255, 255, 0.93);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.inline-link {
+  color: #7dd9d5;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.inline-link:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .cookies-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookies-section {
+    padding: 36px 16px;
+  }
+}

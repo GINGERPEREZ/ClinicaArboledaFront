@@ -66,12 +66,12 @@
                     <li><a href="/mision-vision">Sobre Nosotros</a></li>
                     <li><a href="/historia">Historia</a></li>
                     <li><a href="/instalaciones">Instalaciones</a></li>
-                    <li><a href="/convenios">Convenios</a></li>
                   </ul>
                 </div>
               </transition>
             </li>
             <li><a href="/equipo-medico">Nuestro Equipo Médico</a></li>
+            <li><a href="/convenios">Convenios</a></li>
             <li 
               class="dropdown-menu"
               @mouseenter="showServiciosMenu = true"

@@ -34,7 +34,8 @@
   background: #ffffff;
   border-radius: 7px;
   padding: 8px 4px;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   transition: all 0.2s ease-out;
   position: relative;
   overflow: hidden;

@@ -22,6 +22,34 @@ export default {
       limiteProductos: 10,
       selectedPriceRange: "",
       totalMedicos: 418,
+
+      // Noticias recientes para preview en home
+      noticiasPreview: [
+        {
+          id: 1,
+          autor: 'Admin',
+          fecha: '01 / 03 / 2026',
+          titulo: 'Prevencion y bienestar familiar',
+          resumen: 'Recomendaciones para fortalecer habitos de salud y prevencion en toda la familia.',
+          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/1.jpg'
+        },
+        {
+          id: 2,
+          autor: 'Admin',
+          fecha: '05 / 03 / 2026',
+          titulo: 'Nuevas areas de atencion',
+          resumen: 'Conoce los espacios renovados para consultas y procedimientos con mayor comodidad.',
+          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/Ginecologia.jpg'
+        },
+        {
+          id: 3,
+          autor: 'Admin',
+          fecha: '10 / 03 / 2026',
+          titulo: 'Avances en tecnologia medica',
+          resumen: 'Equipamiento y tecnologia de apoyo para diagnosticos mas precisos y oportunos.',
+          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/Equipos.jpg'
+        }
+      ],
       
       // Especialidades médicas - Sincronizadas con EquipoMedico
       especialidadesMedicas: [
@@ -39,7 +67,7 @@ export default {
         },
         { 
           id: 3, 
-          nombre: 'Neumonología', 
+          nombre: 'Neumología', 
           icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11c0-3.5-3-6-6-6v16c3 0 6-2.5 6-6zm0 0c1.5-1 3.5-1 6 0m0 0c0 3.5 3 6 6 6V5c-3 0-6 2.5-6 6z"></path></svg>', 
           medicos: 1 
         },
@@ -189,22 +217,13 @@ export default {
         }
       ],
 
-      // Indicadores NPS (Net Promoter Score)
-      indicadoresNPS: {
-        fecha: 'Diciembre 2025',
-        satisfaccion: {
-          porcentaje: 87.80,
-          label: 'Índice Satisfacción'
-        },
-        recomendacion: {
-          porcentaje: 90.60,
-          label: 'Índice Recomendación'
-        },
-        detractores: {
-          porcentaje: 2.20,
-          label: 'Detractores'
-        }
-      },
+      // Indicadores destacados
+      indicadoresResumen: [
+        { valor: '22', label: 'Especialistas' },
+        { valor: '8200+', label: 'Clientes Felices' },
+        { valor: '12', label: 'Camas' },
+        { valor: '100%', label: 'Satisfacción' }
+      ],
       
       // Mapeo de especialidades (para compatibilidad)
       categoriaMapping: {

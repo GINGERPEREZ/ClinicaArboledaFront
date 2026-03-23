@@ -1,0 +1,263 @@
+/* Contenedor principal */
+.encuentranos-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(67, 161, 154, 0.2), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(141, 216, 209, 0.25), transparent 35%),
+    linear-gradient(180deg, #f4fbfa 0%, #ecf7f6 46%, #f7fcfb 100%);
+  padding-top: 130px;
+}
+
+.encuentranos-content {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Hero Section */
+.encuentranos-hero {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.encuentranos-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,101.3C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Secciones */
+.encuentranos-section {
+  padding: 56px 20px;
+}
+
+.encuentranos-info-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(231, 247, 245, 0.7) 100%);
+}
+
+.encuentranos-mapa-section {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(141, 216, 209, 0.28), transparent 34%),
+    linear-gradient(135deg, rgba(17, 91, 86, 0.08) 0%, rgba(255, 255, 255, 0.88) 60%);
+}
+
+.encuentranos-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header de sección */
+.section-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(63, 165, 158, 0.3);
+  transition: all 0.3s ease;
+}
+
+.header-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(63, 165, 158, 0.4);
+}
+
+.header-icon svg {
+  stroke: white;
+}
+
+.encuentranos-wrapper .section-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #124a47;
+  margin: 0 0 10px 0;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: #666;
+  margin: 0;
+}
+
+/* Cards de información */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.1);
+  border: 1px solid rgba(35, 144, 137, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(35, 144, 137, 0.18);
+}
+
+.info-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #e8f7f6 0%, #d0efed 100%);
+  border-radius: 50%;
+  margin-bottom: 18px;
+}
+
+.info-card-icon svg {
+  stroke: #239089;
+}
+
+.info-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #124a47;
+  margin: 0 0 10px 0;
+}
+
+.info-card-text {
+  font-size: 16px;
+  color: #444;
+  margin: 0 0 6px 0;
+  line-height: 1.5;
+}
+
+.info-card-link {
+  display: block;
+  font-size: 16px;
+  color: #239089;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+}
+
+.info-card-link:hover {
+  color: #1f5f5b;
+  text-decoration: underline;
+}
+
+.info-card-sub {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* Mapa */
+.mapa-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(35, 144, 137, 0.15);
+  border: 2px solid rgba(35, 144, 137, 0.15);
+}
+
+.mapa-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.mapa-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(35, 144, 137, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mapa-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.45);
+}
+
+.mapa-cta svg {
+  stroke: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .encuentranos-hero {
+    height: 240px;
+  }
+
+  .encuentranos-section {
+    padding: 36px 16px;
+  }
+}

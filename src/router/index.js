@@ -21,6 +21,8 @@ import ServiciosEspecialidades from '../components/ServiciosEspecialidades/Servi
 import SobreNosotros from '../components/SobreNosotros/SobreNosotros.vue';
 import ProteccionDatos from '../components/ProteccionDatos/ProteccionDatos.vue';
 import ContactoPage from '../components/Contacto/Contacto.vue';
+import EncuentranosPage from '../components/EncuentranosPage/EncuentranosPage.vue';
+import PoliticaCookies from '../components/PoliticaCookies/PoliticaCookies.vue';
 
 
 const routes = [
@@ -143,6 +145,16 @@ const routes = [
     path: '/contacto',
     name: 'ContactoPage',
     component: ContactoPage,
+  },
+  {
+    path: '/encuentranos',
+    name: 'EncuentranosPage',
+    component: EncuentranosPage,
+  },
+  {
+    path: '/politica-cookies',
+    name: 'PoliticaCookies',
+    component: PoliticaCookies,
   },
   {
     path: '/perfil',

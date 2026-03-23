@@ -9,21 +9,7 @@ export default {
   },
   computed: {
     segurosPrivadosCarrusel() {
-      const placeholders = Array.from({ length: 9 }, (_, index) => ({
-        id: `placeholder-${index + 1}`,
-        nombre: `Aseguradora aliada ${index + 1}`,
-        logo: null,
-        placeholder: true,
-        descripcion: 'Convenio en proceso de confirmacion. Pronto anunciaremos esta cobertura.',
-        coberturas: [
-          'Red medica en actualizacion',
-          'Beneficios por confirmar',
-          'Cobertura sujeta a disponibilidad',
-          'Mas informacion proximamente'
-        ]
-      }));
-
-      return [...this.segurosPrivados, ...placeholders];
+      return [...this.segurosPrivados, ...this.segurosPrivadosExtra];
     }
   },
   data() {
@@ -154,6 +140,128 @@ export default {
             'Diagnóstico especializado',
             'Tratamientos oncológicos',
             'Cuidados intensivos'
+          ]
+        }
+      ],
+      segurosPrivadosExtra: [
+        {
+          id: 7,
+          nombre: 'Aseguradora del Sur',
+          logo: '/Logos/Convenios/aseguradoradelsur.jpg',
+          descripcion: 'Amplia red de atención con cobertura en todo el territorio nacional.',
+          coberturas: [
+            'Consultas médicas generales',
+            'Atención de emergencias',
+            'Hospitalización',
+            'Medicamentos básicos'
+          ]
+        },
+        {
+          id: 8,
+          nombre: 'Asisken',
+          logo: '/Logos/Convenios/asisken.jpg',
+          descripcion: 'Soluciones de salud personalizadas para empresas y personas naturales.',
+          coberturas: [
+            'Medicina preventiva',
+            'Consultas especializadas',
+            'Exámenes de laboratorio',
+            'Asistencia domiciliaria'
+          ]
+        },
+        {
+          id: 9,
+          nombre: 'Chubb Seguros',
+          logo: '/Logos/Convenios/chubb.png',
+          descripcion: 'Cobertura internacional con estándares de calidad reconocidos globalmente.',
+          coberturas: [
+            'Hospitalización y cirugía',
+            'Urgencias médicas',
+            'Reembolsos médicos',
+            'Segunda opinión médica'
+          ]
+        },
+        {
+          id: 10,
+          nombre: 'Ecuasanitas',
+          logo: '/Logos/Convenios/ecuasanitas.png',
+          descripcion: 'Atención médica integral con enfoque en calidad y bienestar familiar.',
+          coberturas: [
+            'Consultas con especialistas',
+            'Maternidad y neonatología',
+            'Odontología básica',
+            'Chequeos preventivos'
+          ]
+        },
+        {
+          id: 11,
+          nombre: 'Equivida',
+          logo: '/Logos/Convenios/equivida.png',
+          descripcion: 'Planes de salud y vida con cobertura flexible para cada necesidad.',
+          coberturas: [
+            'Atención ambulatoria',
+            'Procedimientos quirúrgicos',
+            'Diagnóstico por imagen',
+            'Rehabilitación'
+          ]
+        },
+        {
+          id: 12,
+          nombre: 'Liberty Seguros',
+          logo: '/Logos/Convenios/liberty.png',
+          descripcion: 'Respaldo de una aseguradora global con presencia local y cercana.',
+          coberturas: [
+            'Emergencias 24/7',
+            'Hospitalización',
+            'Cirugías programadas',
+            'Medicina general'
+          ]
+        },
+        {
+          id: 13,
+          nombre: 'Mapfre',
+          logo: '/Logos/Convenios/mapfre.svg',
+          descripcion: 'Grupo asegurador internacional con sólida presencia en Ecuador.',
+          coberturas: [
+            'Consultas médicas',
+            'Tratamientos oncológicos',
+            'Cuidados intensivos',
+            'Cobertura internacional'
+          ]
+        },
+        {
+          id: 14,
+          nombre: 'Oriente Seguros',
+          logo: '/Logos/Convenios/oriente.png',
+          descripcion: 'Soluciones de salud accesibles con cobertura regional y nacional.',
+          coberturas: [
+            'Medicina preventiva',
+            'Hospitalización básica',
+            'Urgencias médicas',
+            'Exámenes de rutina'
+          ]
+        },
+        {
+          id: 15,
+          nombre: 'Saludsa',
+          logo: '/Logos/Convenios/saludsa.png',
+          descripcion: 'Planes de medicina prepagada con acceso a la mejor red médica del país.',
+          coberturas: [
+            'Atención médica integral',
+            'Especialidades pediátricas',
+            'Maternidad',
+            'Cirugías electivas'
+          ]
+        },
+        {
+          id: 16,
+          nombre: 'Zurich Seguros',
+          logo: '/Logos/Convenios/zurich.png',
+          descripcion: 'Cobertura de salud con respaldo internacional y atención personalizada.',
+          coberturas: [
+            'Hospitalización y cirugía',
+            'Emergencias médicas',
+            'Medicamentos especializados',
+            'Atención ambulatoria'
           ]
         }
       ]

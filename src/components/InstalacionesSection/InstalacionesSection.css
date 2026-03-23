@@ -5,7 +5,7 @@
 }
 
 .instalaciones-section.embedded {
-  padding: 26px 0 0;
+  padding: 12px 0 0;
   background: transparent;
 }
 
@@ -41,8 +41,12 @@
 }
 
 .instalaciones-section.embedded .instalaciones-subtitle {
-  color: #239089;
-  margin-bottom: 6px;
+  color: #1B365D;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-bottom: 8px;
 }
 
 .instalaciones-section.embedded .instalaciones-title {

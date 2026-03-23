@@ -14,7 +14,7 @@
       <div class="page-header">
         <h1 class="page-title">NUESTRO STAFF MÉDICO</h1>
         <p class="page-description">
-          Le proporcionamos una búsqueda integral de nuestros staff de médicos.
+          Conoce a nuestro equipo de especialistas comprometidos con tu salud y bienestar.
         </p>
       </div>
 
@@ -57,20 +57,27 @@
       </div>
 
       <!-- Grid de Médicos -->
-      <div v-if="medicosFiltrados.length > 0" class="medicos-grid">
+      <div v-if="medicosFiltrados.length > 0" class="medicos-grid" key="medicos-grid">
         <div 
           v-for="medico in medicosFiltrados" 
           :key="medico.id"
           class="medico-card"
         >
-          <div class="medico-icon">👨‍⚕️</div>
-          <h3 class="medico-nombre">{{ medico.nombre }}</h3>
-          <p class="medico-especialidad">{{ medico.especialidad }}</p>
+          <div class="medico-card-header">
+            <div class="medico-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="avatar-icon">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3 class="medico-nombre">{{ medico.nombre }}</h3>
+          </div>
+          <div class="medico-especialidad-badge">{{ medico.especialidad }}</div>
         </div>
       </div>
 
       <!-- Mensaje cuando no hay resultados -->
-      <div v-if="mostrarResultados && medicosFiltrados.length === 0" class="no-results">
+      <div v-if="medicosFiltrados.length === 0" class="no-results">
         <p>No se encontraron médicos con los criterios de búsqueda especificados.</p>
       </div>
     </div>
@@ -96,7 +103,6 @@ export default {
       isAuthenticated: false,
       especialidadSeleccionada: '',
       nombreBusqueda: '',
-      mostrarResultados: false,
       medicos: [
         { id: 1, nombre: 'VICTOR MANUEL ARIAS LOOR', especialidad: 'Medicina Crítica' },
         { id: 2, nombre: 'LUIS ALFREDO MOREIRA FRANCO', especialidad: 'Medicina Crítica' },
@@ -138,18 +144,12 @@ export default {
       return especialidadesUnicas.sort();
     },
     medicosFiltrados() {
-      if (!this.mostrarResultados) {
-        return [];
-      }
-      
       let resultados = this.medicos;
       
-      // Filtrar por especialidad
       if (this.especialidadSeleccionada && this.especialidadSeleccionada !== 'todos') {
         resultados = resultados.filter(m => m.especialidad === this.especialidadSeleccionada);
       }
       
-      // Filtrar por nombre
       if (this.nombreBusqueda.trim()) {
         const busqueda = this.nombreBusqueda.toLowerCase();
         resultados = resultados.filter(m => 
@@ -175,7 +175,9 @@ export default {
       this.$router.push('/login');
     },
     buscarMedico() {
-      this.mostrarResultados = true;
+      // El filtrado es reactivo, este método puede disparar un scroll hacia los resultados
+      const grid = document.querySelector('.medicos-grid');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
     },
   },
 };

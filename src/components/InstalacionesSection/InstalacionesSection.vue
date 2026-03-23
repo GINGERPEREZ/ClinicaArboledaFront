@@ -1,8 +1,8 @@
 <template>
   <section class="instalaciones-section" :class="{ embedded }">
     <div class="instalaciones-container">
-      <p class="instalaciones-subtitle">Nuestras</p>
-      <h2 class="instalaciones-title">Instalaciones</h2>
+      <p class="instalaciones-subtitle">Conoce nuestras</p>
+      <h2 class="instalaciones-title">Instalaciones Modernas</h2>
       <p class="instalaciones-description">
         Contamos con instalaciones modernas y equipadas con tecnología de vanguardia 
         para brindarte la mejor atención médica en un ambiente cómodo y seguro.

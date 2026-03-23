@@ -36,7 +36,6 @@
             v-for="especialidad in especialidadesMedicas"
             :key="especialidad.id"
             class="categoria-card"
-            @click="filtrarPorEspecialidad(especialidad.nombre)"
           >
             <div class="categoria-icon" v-html="especialidad.icon"></div>
             <h3>{{ especialidad.nombre }}</h3>
@@ -45,24 +44,26 @@
         </div>
       </section>
 
-      <!-- Tarjeta de Convenios -->
-      <section class="convenios-section">
-        <div class="convenios-card" @click="$router.push('/convenios')">
-          <div class="convenios-logos">
-            <div class="convenio-logo-item">
-              <img src="/Logos/Convenios/ISSFA.jpg" alt="Logo ISSFA" class="convenio-logo" />
+      <!-- Noticias Recientes (preview) -->
+      <section class="noticias-preview-section">
+        <p class="noticias-preview-kicker">Noticias</p>
+        <h2 class="noticias-preview-title">Nuestras Últimas Novedades</h2>
+        <p class="noticias-preview-description">
+          Infórmate sobre avances, servicios y novedades de Clínica Arboleda.
+        </p>
+        <div class="noticias-preview-grid">
+          <article v-for="item in noticiasPreview" :key="item.id" class="noticia-preview-card">
+            <div class="noticia-preview-image-wrapper">
+              <img :src="item.imagen" :alt="item.titulo" class="noticia-preview-image" />
             </div>
-            <div class="convenio-logo-item">
-              <img src="/Logos/Convenios/ISSPOL.png" alt="Logo ISSPOL" class="convenio-logo" />
+            <div class="noticia-preview-body">
+              <p class="noticia-preview-meta">{{ item.autor }} | {{ item.fecha }}</p>
+              <h3 class="noticia-preview-card-title">{{ item.titulo }}</h3>
+              <p class="noticia-preview-card-text">{{ item.resumen }}</p>
             </div>
-          </div>
-          <h2 class="convenios-title">Convenios y Alianzas</h2>
-          <p class="convenios-description">
-            Mantenemos acuerdos con las principales compañías de seguros privados y sistemas públicos de salud, 
-            facilitando el acceso a nuestros servicios médicos de calidad.
-          </p>
-          <button class="btn-convenios">Ver más →</button>
+          </article>
         </div>
+        <button class="btn-ver-noticias" @click="$router.push('/noticias')">Ver todas las noticias →</button>
       </section>
 
     <!-- Lista de Médicos/Doctores -->
@@ -120,7 +121,7 @@
       <!-- Servicios Destacados -->
       <section class="servicios-destacados">
         <p class="section-subtitle">Conoce nuestros</p>
-        <h2 class="section-title">Servicios destacados</h2>
+        <h2 class="section-title">Servicios Médicos Destacados</h2>
         <div class="servicios-grid">
           <div class="servicio-card" v-for="servicio in serviciosDestacados" :key="servicio.id">
             <div class="servicio-imagen">
@@ -135,56 +136,14 @@
       </section>
     </div>
 
-    <!-- Indicadores NPS -->
+    <!-- Indicadores -->
     <div class="content-container">
       <section class="indicadores-section">
-        <h2 class="section-title-nps">Indicadores</h2>
-        <p class="nps-subtitle">NPS {{ indicadoresNPS.fecha }}</p>
         <div class="indicadores-grid">
-          <!-- Indicador Satisfacción -->
-          <div class="indicador-card indicador-satisfaccion">
-            <div class="indicador-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-              </svg>
-            </div>
-            <div class="indicador-porcentaje">{{ indicadoresNPS.satisfaccion.porcentaje }}%</div>
-            <div class="indicador-label">{{ indicadoresNPS.satisfaccion.label }}</div>
+          <div v-for="item in indicadoresResumen" :key="item.label" class="indicador-card">
+            <div class="indicador-porcentaje">{{ item.valor }}</div>
+            <div class="indicador-label">{{ item.label }}</div>
           </div>
-          
-          <!-- Indicador Recomendación -->
-          <div class="indicador-card indicador-recomendacion">
-            <div class="indicador-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M8 15h8"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-              </svg>
-            </div>
-            <div class="indicador-porcentaje">{{ indicadoresNPS.recomendacion.porcentaje }}%</div>
-            <div class="indicador-label">{{ indicadoresNPS.recomendacion.label }}</div>
-          </div>
-          
-          <!-- Indicador Detractores -->
-          <div class="indicador-card indicador-detractores">
-            <div class="indicador-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
-                <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                <line x1="15" y1="9" x2="15.01" y2="9"></line>
-              </svg>
-            </div>
-            <div class="indicador-porcentaje">{{ indicadoresNPS.detractores.porcentaje }}%</div>
-            <div class="indicador-label">{{ indicadoresNPS.detractores.label }}</div>
-          </div>
-        </div>
-        <div class="nps-footer">
-          <button class="btn-conoce-mas">Conoce más indicadores</button>
         </div>
       </section>
     </div>
