@@ -65,10 +65,12 @@
         >
           <div class="medico-card-header">
             <div class="medico-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="avatar-icon">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
+              <img
+                :src="getSpecialtyIcon(medico.especialidad)"
+                :alt="medico.especialidad"
+                class="specialty-icon"
+                @error="handleIconError"
+              />
             </div>
             <h3 class="medico-nombre">{{ medico.nombre }}</h3>
           </div>
@@ -175,9 +177,34 @@ export default {
       this.$router.push('/login');
     },
     buscarMedico() {
-      // El filtrado es reactivo, este método puede disparar un scroll hacia los resultados
       const grid = document.querySelector('.medicos-grid');
       if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    getSpecialtyIcon(especialidad) {
+      const iconMap = {
+        'Medicina Crítica':              'https://cdn-icons-png.flaticon.com/128/4331/4331766.png',
+        'Ortopedia y Traumatología':     'https://cdn-icons-png.flaticon.com/128/3103/3103961.png',
+        'Neumología':                    'https://cdn-icons-png.flaticon.com/128/4811/4811081.png',
+        'Neumonología':                  'https://cdn-icons-png.flaticon.com/128/4811/4811081.png',
+        'Gastroenterología':             'https://cdn-icons-png.flaticon.com/128/387/387626.png',
+        'Cirugía General':               'https://cdn-icons-png.flaticon.com/128/139/139269.png',
+        'Pediatría':                     'https://cdn-icons-png.flaticon.com/128/6558/6558482.png',
+        'Cirugía Pediátrica':            'https://cdn-icons-png.flaticon.com/128/2885/2885141.png',
+        'Anestesiología y Reanimación':  'https://cdn-icons-png.flaticon.com/128/1021/1021562.png',
+        'Ginecología y Obstetricia':     'https://cdn-icons-png.flaticon.com/128/941/941497.png',
+        'Medicina Interna':              'https://cdn-icons-png.flaticon.com/128/12436/12436264.png',
+        'Psiquiatría':                   'https://cdn-icons-png.flaticon.com/128/2013/2013188.png',
+        'Imagenología':                  'https://cdn-icons-png.flaticon.com/128/2044/2044715.png',
+        'Cardiología':                   'https://cdn-icons-png.flaticon.com/128/8358/8358611.png',
+        'Angiología y Cirugía Vascular': 'https://cdn-icons-png.flaticon.com/128/1364/1364702.png',
+        'Cirugía Oncológica':            'https://cdn-icons-png.flaticon.com/128/8684/8684535.png',
+        'Neurología':                    'https://cdn-icons-png.flaticon.com/128/1753/1753205.png',
+        'Nefrología':                    'https://cdn-icons-png.flaticon.com/128/2204/2204369.png',
+      };
+      return iconMap[especialidad] || 'https://cdn-icons-png.flaticon.com/128/4807/4807695.png';
+    },
+    handleIconError(e) {
+      e.target.src = 'https://cdn-icons-png.flaticon.com/128/4807/4807695.png';
     },
   },
 };

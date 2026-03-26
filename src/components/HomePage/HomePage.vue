@@ -37,7 +37,9 @@
             :key="especialidad.id"
             class="categoria-card"
           >
-            <div class="categoria-icon" v-html="especialidad.icon"></div>
+            <div class="categoria-icon">
+              <img :src="especialidad.icon" :alt="especialidad.nombre" class="categoria-icon-img" />
+            </div>
             <h3>{{ especialidad.nombre }}</h3>
             <p class="categoria-stats">{{ especialidad.medicos }} médicos</p>
           </div>

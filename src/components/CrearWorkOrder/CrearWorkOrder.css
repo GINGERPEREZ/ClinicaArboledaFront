@@ -1,4 +1,4 @@
-.crear-work-order {
+﻿.crear-work-order {
   max-width: 1000px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -30,7 +30,7 @@
 .btn-volver {
   background: transparent;
   border: none;
-  color: #FF8000;
+  color: #239089;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -42,7 +42,7 @@
 }
 
 .btn-volver:hover {
-  color: #FF6600;
+  color: #239089;
   transform: translateX(-3px);
 }
 
@@ -198,8 +198,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #FF8000;
-  box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.1);
+  border-color: #239089;
+  box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.1);
 }
 
 .form-group input:disabled,
@@ -256,14 +256,14 @@
 }
 
 .btn-crear {
-  background: #FF8000;
+  background: #239089;
   color: white;
 }
 
 .btn-crear:hover:not(:disabled) {
-  background: #FF6600;
+  background: #239089;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 128, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
 }
 
 .btn-cancelar:disabled,

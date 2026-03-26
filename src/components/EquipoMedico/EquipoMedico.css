@@ -171,10 +171,16 @@
   box-shadow: 0 4px 12px rgba(63, 165, 158, 0.3);
 }
 
-.avatar-icon {
-  width: 24px;
-  height: 24px;
-  stroke: white;
+.specialty-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.medico-card:hover .specialty-icon {
+  transform: scale(1.15);
 }
 
 .medico-nombre {

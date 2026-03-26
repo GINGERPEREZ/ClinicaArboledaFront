@@ -1,4 +1,4 @@
-/* Contenedor principal */
+﻿/* Contenedor principal */
 .proteccion-datos-container {
   min-height: 100vh;
   display: flex;
@@ -63,7 +63,7 @@
 .proteccion-datos-info .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0 0 12px 0;
 }
 
@@ -108,7 +108,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   border-radius: 50%;
   margin-bottom: 16px;
 }
@@ -170,7 +170,7 @@
 
 /* CTA */
 .proteccion-datos-cta {
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #0d3b38 100%);
   padding: 56px 20px;
   text-align: center;
 }
@@ -195,7 +195,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   color: #ffffff;
   border: none;
   padding: 16px 40px;
@@ -204,20 +204,20 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.3);
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.3);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 168, 232, 0.4);
-  background: linear-gradient(135deg, #0066B3 0%, #004d87 100%);
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.4);
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
 }
 
 .descarga-politica-section {
   position: relative;
   overflow: hidden;
   padding: 52px 20px 18px;
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #0d3b38 100%);
 }
 
 .descarga-politica-section::before {
@@ -256,7 +256,7 @@
 }
 
 .legal-links-section {
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #0d3b38 100%);
   border-top: 1px solid rgba(217, 232, 247, 0.3);
   border-bottom: none;
   padding: 14px 20px 26px;

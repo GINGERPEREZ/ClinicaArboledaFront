@@ -1,4 +1,4 @@
-/* Contenedor principal */
+﻿/* Contenedor principal */
 .cookies-container {
   min-height: 100vh;
   display: flex;
@@ -63,7 +63,7 @@
 .cookies-info .section-title {
   font-size: 28px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0 0 12px 0;
 }
 
@@ -130,7 +130,7 @@
 
 .cookies-control .header-icon,
 .cookies-vigencia .header-icon {
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
 }
 
 .header-icon svg {
@@ -233,8 +233,8 @@
 }
 
 .badge-optional {
-  background: rgba(0, 102, 179, 0.1);
-  color: #0066B3;
+  background: rgba(35, 144, 137, 0.1);
+  color: #239089;
 }
 
 /* Tarjeta de contenido (dark) */

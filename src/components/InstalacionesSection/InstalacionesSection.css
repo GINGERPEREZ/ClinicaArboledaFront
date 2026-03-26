@@ -1,4 +1,4 @@
-/* Sección de Instalaciones */
+﻿/* Sección de Instalaciones */
 .instalaciones-section {
   padding: 80px 20px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
@@ -41,7 +41,7 @@
 }
 
 .instalaciones-section.embedded .instalaciones-subtitle {
-  color: #1B365D;
+  color: #1d6f6a;
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -52,7 +52,7 @@
 .instalaciones-section.embedded .instalaciones-title {
   font-size: 32px;
   margin-bottom: 12px;
-  color: #1B365D;
+  color: #1d6f6a;
 }
 
 .instalaciones-section.embedded .instalaciones-description {

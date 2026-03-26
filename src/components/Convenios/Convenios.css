@@ -388,6 +388,38 @@
   font-size: 16px;
 }
 
+/* WhatsApp CTA - Seguros Privados */
+.seguros-privados-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.btn-whatsapp-seguros {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp-seguros:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.btn-whatsapp-seguros:active {
+  transform: translateY(0);
+}
+
 /* Call to Action */
 .convenios-cta {
   background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);

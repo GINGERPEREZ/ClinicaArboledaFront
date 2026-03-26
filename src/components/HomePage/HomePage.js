@@ -53,108 +53,23 @@ export default {
       
       // Especialidades médicas - Sincronizadas con EquipoMedico
       especialidadesMedicas: [
-        { 
-          id: 1, 
-          nombre: 'Medicina Crítica', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"></path><path d="M12 8v8M8 12h8"></path></svg>', 
-          medicos: 5 
-        },
-        { 
-          id: 2, 
-          nombre: 'Ortopedia y Traumatología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 4a3 3 0 0 0-3 3v4H9V7a3 3 0 0 0-6 0v13h6v-6h6v6h6V7a3 3 0 0 0-3-3z"></path></svg>', 
-          medicos: 3 
-        },
-        { 
-          id: 3, 
-          nombre: 'Neumología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11c0-3.5-3-6-6-6v16c3 0 6-2.5 6-6zm0 0c1.5-1 3.5-1 6 0m0 0c0 3.5 3 6 6 6V5c-3 0-6 2.5-6 6z"></path></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 4, 
-          nombre: 'Gastroenterología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2h8v7a4 4 0 0 1-8 0V2z"></path><path d="M12 9v13"></path></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 5, 
-          nombre: 'Cirugía General', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>', 
-          medicos: 2 
-        },
-        { 
-          id: 6, 
-          nombre: 'Pediatría', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg>', 
-          medicos: 3 
-        },
-        { 
-          id: 7, 
-          nombre: 'Cirugía Pediátrica', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 8, 
-          nombre: 'Anestesiología y Reanimación', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path></svg>', 
-          medicos: 4 
-        },
-        { 
-          id: 9, 
-          nombre: 'Ginecología y Obstetricia', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>', 
-          medicos: 2 
-        },
-        { 
-          id: 10, 
-          nombre: 'Medicina Interna', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 11, 
-          nombre: 'Psiquiatría', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M8 10h.01M16 10h.01M9 16s1 2 3 2 3-2 3-2"></path></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 12, 
-          nombre: 'Imagenología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 13, 
-          nombre: 'Cardiología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', 
-          medicos: 2 
-        },
-        { 
-          id: 14, 
-          nombre: 'Angiología y Cirugía Vascular', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 15, 
-          nombre: 'Cirugía Oncológica', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 16, 
-          nombre: 'Neurología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>', 
-          medicos: 1 
-        },
-        { 
-          id: 17, 
-          nombre: 'Nefrología', 
-          icon: '<svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>', 
-          medicos: 1 
-        },
+        { id: 1,  nombre: 'Medicina Crítica',              icon: 'https://cdn-icons-png.flaticon.com/128/4331/4331766.png', medicos: 5 },
+        { id: 2,  nombre: 'Ortopedia y Traumatología',     icon: 'https://cdn-icons-png.flaticon.com/128/3103/3103961.png', medicos: 3 },
+        { id: 3,  nombre: 'Neumología',                    icon: 'https://cdn-icons-png.flaticon.com/128/4811/4811081.png', medicos: 1 },
+        { id: 4,  nombre: 'Gastroenterología',             icon: 'https://cdn-icons-png.flaticon.com/128/387/387626.png',  medicos: 1 },
+        { id: 5,  nombre: 'Cirugía General',               icon: 'https://cdn-icons-png.flaticon.com/128/139/139269.png',  medicos: 2 },
+        { id: 6,  nombre: 'Pediatría',                     icon: 'https://cdn-icons-png.flaticon.com/128/6558/6558482.png', medicos: 3 },
+        { id: 7,  nombre: 'Cirugía Pediátrica',            icon: 'https://cdn-icons-png.flaticon.com/128/2885/2885141.png', medicos: 1 },
+        { id: 8,  nombre: 'Anestesiología y Reanimación',  icon: 'https://cdn-icons-png.flaticon.com/128/1021/1021562.png', medicos: 4 },
+        { id: 9,  nombre: 'Ginecología y Obstetricia',     icon: 'https://cdn-icons-png.flaticon.com/128/941/941497.png',  medicos: 2 },
+        { id: 10, nombre: 'Medicina Interna',              icon: 'https://cdn-icons-png.flaticon.com/128/12436/12436264.png', medicos: 1 },
+        { id: 11, nombre: 'Psiquiatría',                   icon: 'https://cdn-icons-png.flaticon.com/128/2013/2013188.png', medicos: 1 },
+        { id: 12, nombre: 'Imagenología',                  icon: 'https://cdn-icons-png.flaticon.com/128/2044/2044715.png', medicos: 1 },
+        { id: 13, nombre: 'Cardiología',                   icon: 'https://cdn-icons-png.flaticon.com/128/8358/8358611.png', medicos: 2 },
+        { id: 14, nombre: 'Angiología y Cirugía Vascular', icon: 'https://cdn-icons-png.flaticon.com/128/1364/1364702.png', medicos: 1 },
+        { id: 15, nombre: 'Cirugía Oncológica',            icon: 'https://cdn-icons-png.flaticon.com/128/8684/8684535.png', medicos: 1 },
+        { id: 16, nombre: 'Neurología',                    icon: 'https://cdn-icons-png.flaticon.com/128/1753/1753205.png', medicos: 1 },
+        { id: 17, nombre: 'Nefrología',                    icon: 'https://cdn-icons-png.flaticon.com/128/2204/2204369.png', medicos: 1 },
       ],
 
       // Servicios destacados

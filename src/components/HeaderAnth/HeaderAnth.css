@@ -1,4 +1,4 @@
-/* Header general (estilo clínica) - Sólido por defecto */
+﻿/* Header general (estilo clínica) - Sólido por defecto */
 .header {
   font-family: "Roboto", sans-serif;
   color: #1f5f5b;
@@ -470,7 +470,7 @@
   }
 
   .dropdown-content::-webkit-scrollbar-thumb:hover {
-    background: #FF8000;
+    background: #239089;
   }
   
   /* Items del dropdown */

@@ -1,4 +1,4 @@
-/* Contenedor principal */
+﻿/* Contenedor principal */
 .servicios-virtuales-container {
   min-height: 100vh;
   display: flex;
@@ -18,7 +18,7 @@
 .servicios-hero {
   position: relative;
   min-height: 400px;
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@
 .intro-title {
   font-size: 38px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0 0 20px 0;
 }
 
@@ -125,7 +125,7 @@
 .section-title {
   font-size: 38px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   text-align: center;
   margin: 0 0 60px 0;
 }
@@ -154,7 +154,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(90deg, #57bbb4 0%, #239089 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -193,12 +193,12 @@
 .card-icon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 168, 232, 0.3);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -223,7 +223,7 @@
 .card-title {
   font-size: 26px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0 0 16px 0;
 }
 
@@ -253,7 +253,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #00A8E8;
+  color: #57bbb4;
   font-weight: bold;
   font-size: 18px;
 }
@@ -277,14 +277,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   color: white;
-  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.3);
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 168, 232, 0.4);
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.4);
 }
 
 .btn-secondary {
@@ -337,13 +337,13 @@
 .beneficio-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.25);
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.25);
 }
 
 .beneficio-icon svg {
@@ -353,7 +353,7 @@
 .beneficio-item h4 {
   font-size: 20px;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0 0 10px 0;
 }
 
@@ -366,7 +366,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #1B365D 0%, #0f2338 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #0d3b38 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -391,7 +391,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
   color: white;
   border: none;
   padding: 18px 48px;
@@ -400,12 +400,12 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.4);
+  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.4);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 168, 232, 0.5);
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.5);
 }
 
 /* Responsive */

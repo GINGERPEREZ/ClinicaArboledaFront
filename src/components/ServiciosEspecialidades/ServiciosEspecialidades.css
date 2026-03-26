@@ -1,6 +1,6 @@
-/* Hero Section */
+﻿/* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #1B365D 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #239089 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -64,17 +64,17 @@
 
 .tab-btn:hover {
   background: #f8f9fa;
-  border-color: #0066B3;
-  color: #0066B3;
+  border-color: #239089;
+  color: #239089;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .tab-btn.active {
-  background: linear-gradient(135deg, #0066B3 0%, #1B365D 100%);
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
   color: white;
-  border-color: #0066B3;
-  box-shadow: 0 6px 20px rgba(0, 102, 179, 0.4);
+  border-color: #239089;
+  box-shadow: 0 6px 20px rgba(35, 144, 137, 0.4);
 }
 
 .tab-icon {
@@ -110,7 +110,7 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1B365D;
+  color: #1d6f6a;
   margin-bottom: 20px;
 }
 
@@ -145,7 +145,7 @@
 .servicio-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-  border-color: #0066B3;
+  border-color: #239089;
 }
 
 .servicio-icon {
@@ -157,7 +157,7 @@
 .servicio-nombre {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0;
   line-height: 1.4;
 }
@@ -198,7 +198,7 @@
 .especialidad-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-  border-color: #0066B3;
+  border-color: #239089;
 }
 
 .especialidad-icon {
@@ -227,20 +227,20 @@
 .especialidad-nombre {
   font-size: 1rem;
   font-weight: 600;
-  color: #1B365D;
+  color: #1d6f6a;
   margin: 0;
   line-height: 1.3;
 }
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #1B365D 0%, #0066B3 100%);
+  background: linear-gradient(135deg, #1f5f5b 0%, #239089 100%);
   color: white;
   padding: 60px 40px;
   border-radius: 16px;
   text-align: center;
   margin-top: 60px;
-  box-shadow: 0 10px 30px rgba(0, 102, 179, 0.3);
+  box-shadow: 0 10px 30px rgba(35, 144, 137, 0.3);
 }
 
 .cta-title {
@@ -258,7 +258,7 @@
 
 .cta-button {
   background: white;
-  color: #0066B3;
+  color: #239089;
   border: none;
   padding: 16px 45px;
   border-radius: 50px;

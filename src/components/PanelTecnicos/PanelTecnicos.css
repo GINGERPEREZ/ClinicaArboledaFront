@@ -1,4 +1,4 @@
-/* Contenedor Principal - Consistencia con Vendedores */
+﻿/* Contenedor Principal - Consistencia con Vendedores */
 .panel-tecnicos {
   background-color: #f8fafc; /* Gris azulado muy claro */
   min-height: 100vh;
@@ -79,7 +79,7 @@
 }
 
 .btn-crear-orden {
-  background-color: #FF8000;
+  background-color: #239089;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -93,9 +93,9 @@
 }
 
 .btn-crear-orden:hover {
-  background-color: #FF6600;
+  background-color: #239089;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 128, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
 }
 
 /* Grid de Órdenes */
