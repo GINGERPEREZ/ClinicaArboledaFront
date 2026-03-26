@@ -62,6 +62,10 @@
     </div>
     <div class="footer-bottom-right"></div>
     </div>
+
+    <div class="footer-attribution">
+      Icons by <a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer">Flaticon</a>
+    </div>
   </footer>
   </template>
 
