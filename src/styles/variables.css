@@ -1,30 +1,30 @@
 /* ============================================
-   VARIABLES CSS GLOBALES - CLÍNICA METROPOLITANA
+   VARIABLES CSS GLOBALES - CLÍNICA ARBOLEDA
    Sistema de diseño centralizado
    ============================================ */
 
 :root {
   /* ========== COLORES PRINCIPALES ========== */
-  --color-primary: #0066B3;
-  --color-primary-dark: #004A87;
-  --color-primary-light: #3399CC;
-  --color-primary-alpha-10: rgba(0, 102, 179, 0.1);
-  --color-primary-alpha-20: rgba(0, 102, 179, 0.2);
-  --color-primary-alpha-30: rgba(0, 102, 179, 0.3);
+  --color-primary: #239089;
+  --color-primary-dark: #1f5f5b;
+  --color-primary-light: #57bbb4;
+  --color-primary-alpha-10: rgba(35, 144, 137, 0.1);
+  --color-primary-alpha-20: rgba(35, 144, 137, 0.2);
+  --color-primary-alpha-30: rgba(35, 144, 137, 0.3);
   
-  --color-secondary: #1B365D;
-  --color-secondary-light: #2A4A7A;
-  --color-secondary-dark: #0F2240;
+  --color-secondary: #1f5f5b;
+  --color-secondary-light: #2d8f89;
+  --color-secondary-dark: #164240;
   
   /* ========== COLORES DE ESTADO ========== */
   --color-success: #2ecc71;
   --color-success-dark: #27ae60;
-  --color-warning: #ffa726;
-  --color-warning-dark: #fb8c00;
+  --color-warning: #f9a825;
+  --color-warning-dark: #f57f17;
   --color-error: #e74c3c;
   --color-error-dark: #c0392b;
-  --color-info: #3498db;
-  --color-info-dark: #2980b9;
+  --color-info: #57bbb4;
+  --color-info-dark: #2d8f89;
   
   /* ========== COLORES DE TEXTO ========== */
   --color-text-primary: #2c3e50;
@@ -40,8 +40,8 @@
   --bg-gray: #e9ecef;
   --bg-dark: #343a40;
   --bg-gradient-primary: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-  --bg-gradient-accent: linear-gradient(135deg, #00A8E8 0%, #0066B3 100%);
-  --bg-gradient-blue: linear-gradient(135deg, #0066B3 0%, #004A87 100%);
+  --bg-gradient-accent: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
+  --bg-gradient-teal-dark: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
   --bg-gradient-green: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
   --bg-gradient-teal: linear-gradient(135deg, #00A8A8 0%, #007A7A 100%);
   

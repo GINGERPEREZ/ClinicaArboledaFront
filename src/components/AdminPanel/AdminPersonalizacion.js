@@ -5,9 +5,9 @@ export default {
   data() {
     return {
       colores: {
-        primary: '#ffa726',
-        primaryDark: '#fb8c00',
-        primaryLight: '#ffb74d',
+        primary: '#239089',
+        primaryDark: '#1f5f5b',
+        primaryLight: '#57bbb4',
         success: '#4caf50',
         error: '#f44336',
       },
@@ -17,10 +17,10 @@ export default {
       tipoMensaje: 'success',
       paletasPredefinidas: [
         {
-          nombre: 'Naranja (Default)',
-          primary: '#ffa726',
-          primaryDark: '#fb8c00',
-          primaryLight: '#ffb74d',
+          nombre: 'Teal Clínica (Default)',
+          primary: '#239089',
+          primaryDark: '#1f5f5b',
+          primaryLight: '#57bbb4',
           success: '#4caf50',
           error: '#f44336',
         },
@@ -167,9 +167,9 @@ export default {
         
         // Restaurar colores por defecto
         this.colores = {
-          primary: '#ffa726',
-          primaryDark: '#fb8c00',
-          primaryLight: '#ffb74d',
+          primary: '#239089',
+          primaryDark: '#1f5f5b',
+          primaryLight: '#57bbb4',
           success: '#4caf50',
           error: '#f44336',
         };

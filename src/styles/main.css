@@ -7,9 +7,9 @@
 }
 
 :root {
-  --color-primary: #ffa726;
-  --color-primary-dark: #fb8c00;
-  --color-primary-light: #ffb74d;
+  --color-primary: #239089;
+  --color-primary-dark: #1f5f5b;
+  --color-primary-light: #57bbb4;
   --color-black: #000000;
   --color-dark-gray: #1a1a1a;
   --color-gray: #333333;
@@ -189,7 +189,7 @@ body {
 
 .main-nav a:hover,
 .main-nav a.active {
-  background-color: rgba(255, 167, 38, 0.1);
+  background-color: rgba(35, 144, 137, 0.1);
 }
 
 .main-nav a.active::after {
@@ -297,7 +297,7 @@ body {
   right: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 167, 38, 0.1));
+  background: linear-gradient(90deg, transparent, rgba(35, 144, 137, 0.1));
   pointer-events: none;
 }
 
@@ -371,7 +371,7 @@ body {
 .hero-image img {
   max-width: 100%;
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(255, 167, 38, 0.3));
+  filter: drop-shadow(0 20px 40px rgba(35, 144, 137, 0.3));
   animation: float 6s ease-in-out infinite;
 }
 

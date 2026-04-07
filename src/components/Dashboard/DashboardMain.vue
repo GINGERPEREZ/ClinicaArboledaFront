@@ -20,7 +20,7 @@
       <!-- KPIs principales -->
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-icon" style="background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);">
+          <div class="kpi-icon" style="background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);">
             💰
           </div>
           <div class="kpi-content">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="kpi-card">
-          <div class="kpi-icon" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+          <div class="kpi-icon" style="background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);">
             🛒
           </div>
           <div class="kpi-content">

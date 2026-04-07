@@ -1,0 +1,734 @@
+/* ================================================
+   AGENDAMIENTO DE CITAS MÉDICAS
+   Clínica Arboleda - Paleta Teal
+   ================================================ */
+
+/* Contenedor principal */
+.agendamiento-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(67, 161, 154, 0.12), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(141, 216, 209, 0.15), transparent 35%),
+    linear-gradient(180deg, #f4fbfa 0%, #ecf7f6 46%, #f7fcfb 100%);
+  padding-top: 130px;
+}
+
+.agendamiento-content {
+  flex: 1;
+}
+
+/* Hero */
+.agendamiento-hero {
+  position: relative;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.agendamiento-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.04" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,165.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-icon svg {
+  stroke: white;
+}
+
+.agendamiento-hero .hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.agendamiento-hero .hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* Stepper */
+.agendamiento-stepper-section {
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: -30px;
+}
+
+.stepper-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.12);
+  border: 1px solid rgba(63, 165, 158, 0.12);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.step::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 18px);
+  width: calc(100% - 36px);
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 0;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.step.completed::after {
+  background: #239089;
+}
+
+.step.active::after {
+  background: linear-gradient(90deg, #239089 0%, #e0e0e0 100%);
+}
+
+.step-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  background: #f0f0f0;
+  color: #999;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.step.active .step-circle {
+  background: #239089;
+  color: white;
+  border-color: #239089;
+  box-shadow: 0 0 0 4px rgba(35, 144, 137, 0.2);
+}
+
+.step.completed .step-circle {
+  background: #239089;
+  color: white;
+  border-color: #239089;
+}
+
+.step.completed .step-circle svg {
+  stroke: white;
+}
+
+.step-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.step.active .step-label {
+  color: #239089;
+}
+
+.step.completed .step-label {
+  color: #1f5f5b;
+}
+
+/* Form Section */
+.agendamiento-form-section {
+  padding: 40px 20px 80px;
+}
+
+.form-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-step {
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-step-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1f5f5b;
+  margin: 0 0 8px;
+}
+
+.form-step-desc {
+  font-size: 1rem;
+  color: #6b8a88;
+  margin: 0 0 32px;
+}
+
+/* Especialidades Grid */
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 14px;
+}
+
+.especialidad-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 16px;
+  background: white;
+  border: 2px solid rgba(63, 165, 158, 0.12);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.especialidad-card:hover {
+  border-color: #57bbb4;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.12);
+}
+
+.especialidad-card.selected {
+  border-color: #239089;
+  background: linear-gradient(180deg, #f0faf9 0%, #e4f5f3 100%);
+  box-shadow: 0 4px 16px rgba(35, 144, 137, 0.2);
+}
+
+.especialidad-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.especialidad-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f5f5b;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Médicos Grid */
+.medicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.medico-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border: 2px solid rgba(63, 165, 158, 0.12);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.medico-card:hover {
+  border-color: #57bbb4;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.12);
+}
+
+.medico-card.selected {
+  border-color: #239089;
+  background: linear-gradient(180deg, #f0faf9 0%, #e4f5f3 100%);
+  box-shadow: 0 4px 16px rgba(35, 144, 137, 0.2);
+}
+
+.medico-avatar {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.medico-info {
+  min-width: 0;
+}
+
+.medico-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f5f5b;
+  margin: 0 0 4px;
+}
+
+.medico-especialidad {
+  font-size: 13px;
+  color: #239089;
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.medico-horario {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #7a9694;
+}
+
+.medico-horario svg {
+  stroke: #7a9694;
+  flex-shrink: 0;
+}
+
+/* Date/Time */
+.datetime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f5f5b;
+  margin-bottom: 10px;
+}
+
+.date-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid rgba(63, 165, 158, 0.2);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  background: white;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: #239089;
+  box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.12);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 12px 8px;
+  border: 2px solid rgba(63, 165, 158, 0.15);
+  border-radius: 10px;
+  background: white;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f5f5b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.time-slot:hover {
+  border-color: #57bbb4;
+  background: #f4fbfa;
+}
+
+.time-slot.selected {
+  background: #239089;
+  color: white;
+  border-color: #239089;
+  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
+}
+
+/* Patient Form */
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid rgba(63, 165, 158, 0.2);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  background: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #239089;
+  box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.12);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #a0b8b6;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Confirmation Card */
+.confirmation-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(35, 144, 137, 0.1);
+  border: 1px solid rgba(63, 165, 158, 0.12);
+}
+
+.confirmation-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f0faf9 0%, #e4f5f3 100%);
+  border-bottom: 1px solid rgba(63, 165, 158, 0.12);
+}
+
+.confirmation-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-icon svg {
+  stroke: white;
+}
+
+.confirmation-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f5f5b;
+  margin: 0;
+}
+
+.confirmation-details {
+  padding: 24px 28px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row-full {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.detail-label {
+  font-size: 14px;
+  color: #7a9694;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f5f5b;
+}
+
+/* Success */
+.success-step {
+  display: flex;
+  justify-content: center;
+}
+
+.success-card {
+  text-align: center;
+  padding: 60px 40px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(35, 144, 137, 0.12);
+  max-width: 500px;
+  width: 100%;
+}
+
+.success-icon-wrapper {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, #e4f5f3 0%, #c8ebe7 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon-wrapper svg {
+  stroke: #239089;
+}
+
+.success-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f5f5b;
+  margin: 0 0 12px;
+}
+
+.success-desc {
+  font-size: 1rem;
+  color: #6b8a88;
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+/* Navigation Buttons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(63, 165, 158, 0.12);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-confirm {
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(35, 144, 137, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.35);
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #e4e4e4;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, #239089 0%, #1a6b66 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(35, 144, 137, 0.35);
+  padding: 14px 40px;
+}
+
+.btn-confirm:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(35, 144, 137, 0.4);
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .agendamiento-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .agendamiento-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .stepper {
+    gap: 2px;
+  }
+
+  .step::after {
+    display: none;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .step-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .especialidades-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .especialidad-card {
+    padding: 18px 12px;
+  }
+
+  .medicos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .datetime-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-navigation {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-confirm {
+    width: 100%;
+    text-align: center;
+  }
+
+  .confirmation-header,
+  .confirmation-details {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .agendamiento-container {
+    padding-top: 100px;
+  }
+
+  .agendamiento-hero {
+    padding: 40px 16px;
+  }
+
+  .agendamiento-hero .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hero-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stepper-wrapper {
+    padding: 14px 12px;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -23,6 +23,7 @@ import ProteccionDatos from '../components/ProteccionDatos/ProteccionDatos.vue';
 import ContactoPage from '../components/Contacto/Contacto.vue';
 import EncuentranosPage from '../components/EncuentranosPage/EncuentranosPage.vue';
 import PoliticaCookies from '../components/PoliticaCookies/PoliticaCookies.vue';
+import AgendamientoCitas from '../components/AgendamientoCitas/AgendamientoCitas.vue';
 
 
 const routes = [
@@ -155,6 +156,11 @@ const routes = [
     path: '/politica-cookies',
     name: 'PoliticaCookies',
     component: PoliticaCookies,
+  },
+  {
+    path: '/agendamiento-citas',
+    name: 'AgendamientoCitas',
+    component: AgendamientoCitas,
   },
   {
     path: '/perfil',

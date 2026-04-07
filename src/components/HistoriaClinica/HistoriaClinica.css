@@ -13,14 +13,14 @@
   text-align: center;
   margin-bottom: 60px;
   padding: 42px 20px 28px;
-  border-bottom: 1px solid #d9e1ea;
+  border-bottom: 1px solid #c8e6e4;
 }
 
 .page-title {
   font-size: 3rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #123152;
+  color: #1f5f5b;
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
@@ -38,27 +38,27 @@
 .section-card {
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid #dbe3ec;
+  border: 1px solid #c8e6e4;
   padding: 40px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 22px rgba(18, 49, 82, 0.06);
+  box-shadow: 0 8px 22px rgba(35, 144, 137, 0.06);
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .section-card:hover {
-  border-color: #c8d4e2;
-  box-shadow: 0 12px 28px rgba(18, 49, 82, 0.1);
+  border-color: #a3d5d1;
+  box-shadow: 0 12px 28px rgba(35, 144, 137, 0.1);
 }
 
 .card-highlight {
-  background: linear-gradient(180deg, #fafcfe 0%, #f2f6fa 100%);
-  border-left: 4px solid #2b5f8f;
+  background: linear-gradient(180deg, #f4fbfa 0%, #ecf7f6 100%);
+  border-left: 4px solid #239089;
 }
 
 .section-title {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #123152;
+  color: #1f5f5b;
   margin-bottom: 20px;
   letter-spacing: 0.01em;
 }
@@ -74,7 +74,7 @@
 }
 
 .section-content strong {
-  color: #1f4f7c;
+  color: #239089;
   font-weight: 600;
 }
 
@@ -92,13 +92,13 @@
 }
 
 .date-badge {
-  background: linear-gradient(135deg, #1f4f7c 0%, #123152 100%);
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
   color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   min-width: 120px;
-  box-shadow: 0 8px 18px rgba(18, 49, 82, 0.25);
+  box-shadow: 0 8px 18px rgba(35, 144, 137, 0.25);
 }
 
 .date-day {
@@ -134,17 +134,17 @@
 
 .stat-card {
   background: #ffffff;
-  border: 1px solid #dbe3ec;
+  border: 1px solid #c8e6e4;
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0 6px 18px rgba(18, 49, 82, 0.06);
+  box-shadow: 0 6px 18px rgba(35, 144, 137, 0.06);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .stat-card:hover {
-  border-color: #c3d0de;
-  box-shadow: 0 10px 24px rgba(18, 49, 82, 0.12);
+  border-color: #a3d5d1;
+  box-shadow: 0 10px 24px rgba(35, 144, 137, 0.12);
 }
 
 .stat-icon {
@@ -152,9 +152,9 @@
   height: 56px;
   margin: 0 auto 15px;
   border-radius: 50%;
-  border: 1px solid #bfd0e2;
-  background: #f4f8fc;
-  color: #1f4f7c;
+  border: 1px solid #a3d5d1;
+  background: #ecf7f6;
+  color: #239089;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -166,7 +166,7 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #1f4f7c;
+  color: #239089;
   margin-bottom: 10px;
   line-height: 1;
 }
@@ -174,7 +174,7 @@
 .stat-label {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #123152;
+  color: #1f5f5b;
   margin-bottom: 10px;
 }
 
@@ -194,28 +194,28 @@
 }
 
 .convenio-badge {
-  background: #1f4f7c;
+  background: #239089;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 1px;
-  box-shadow: 0 3px 10px rgba(18, 49, 82, 0.2);
+  box-shadow: 0 3px 10px rgba(35, 144, 137, 0.2);
   transition: background-color 0.25s ease;
 }
 
 .convenio-badge:hover {
-  background: #123152;
+  background: #1f5f5b;
 }
 
 /* Commitment Section */
 .commitment-section {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
-  color: #123152;
-  border: 1px solid #d1ddeb;
+  background: linear-gradient(180deg, #ffffff 0%, #ecf7f6 100%);
+  color: #1f5f5b;
+  border: 1px solid #c8e6e4;
   border-radius: 12px;
-  box-shadow: 0 12px 26px rgba(17, 43, 71, 0.12);
+  box-shadow: 0 12px 26px rgba(35, 144, 137, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -228,12 +228,12 @@
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(43, 95, 143, 0.18) 0%, rgba(43, 95, 143, 0) 72%);
+  background: radial-gradient(circle, rgba(35, 144, 137, 0.18) 0%, rgba(35, 144, 137, 0) 72%);
   pointer-events: none;
 }
 
 .commitment-section .section-title {
-  color: #123152;
+  color: #1f5f5b;
   margin-bottom: 14px;
 }
 
@@ -253,8 +253,8 @@
   justify-content: center;
   margin: 0 0 12px;
   padding: 6px 14px;
-  border: 1px solid #b8cde2;
-  background: #eaf2fb;
+  border: 1px solid #a3d5d1;
+  background: #ecf7f6;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;

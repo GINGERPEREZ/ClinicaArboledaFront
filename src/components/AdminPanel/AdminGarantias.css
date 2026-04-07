@@ -149,12 +149,12 @@
 }
 
 .btn-editar {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: #e0f2f1;
+  color: #239089;
 }
 
 .btn-editar:hover {
-  background: #1976d2;
+  background: #239089;
   color: white;
   transform: scale(1.1);
 }

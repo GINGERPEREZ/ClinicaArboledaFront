@@ -2,10 +2,10 @@
 :root {
   --amazon-dark: #232f3e;
   --amazon-light: #f5f5f5;
-  --amazon-orange: #ffa724;
-  --amazon-orange-hover: #ff9500;
-  --amazon-blue: #0066c0;
-  --amazon-blue-hover: #c45911;
+  --amazon-orange: #239089;
+  --amazon-orange-hover: #1f5f5b;
+  --amazon-blue: #239089;
+  --amazon-blue-hover: #1f5f5b;
   --text-primary: #111111;
   --text-secondary: #555;
   --border-color: #ddd;

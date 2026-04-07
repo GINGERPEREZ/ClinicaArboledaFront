@@ -4,17 +4,17 @@
   --foreground: #1a1a1a;
   --card: #ffffff;
   --card-foreground: #1a1a1a;
-  --primary: #ffa726;
+  --primary: #239089;
   --primary-foreground: #ffffff;
   --secondary: #f5f5f5;
   --secondary-foreground: #1a1a1a;
   --muted: #f5f5f5;
   --muted-foreground: #666666;
-  --accent: #ff9800;
+  --accent: #57bbb4;
   --accent-foreground: #ffffff;
   --border: #e0e0e0;
   --input: #e0e0e0;
-  --ring: #ffa726;
+  --ring: #239089;
   --radius: 0.5rem;
 }
 
@@ -23,17 +23,17 @@
   --foreground: #f5f5f5;
   --card: #2d2d2d;
   --card-foreground: #f5f5f5;
-  --primary: #ffa726;
+  --primary: #239089;
   --primary-foreground: #1a1a1a;
   --secondary: #333333;
   --secondary-foreground: #f5f5f5;
   --muted: #404040;
   --muted-foreground: #a0a0a0;
-  --accent: #ff9800;
+  --accent: #57bbb4;
   --accent-foreground: #f5f5f5;
   --border: #404040;
   --input: #404040;
-  --ring: #ffa726;
+  --ring: #239089;
 }
 
 /* Reset básico */
@@ -139,7 +139,7 @@ html {
 
 /* === HERO SECTION UNIFICADA === */
 .hero-section {
-  background: linear-gradient(135deg, #FF6000 0%, #ff8000 100%);
+  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
   color: white;
   padding: 38px 16px;
   text-align: center;
@@ -223,7 +223,7 @@ option {
 }
 
 .section-card.card-accent {
-  border-left: 4px solid #FF6000;
+  border-left: 4px solid #239089;
 }
 
 .section-card.card-flat {
@@ -244,7 +244,7 @@ option {
 }
 
 .section-title.title-accent {
-  color: #FF6000;
+  color: #239089;
 }
 
 .section-content {
@@ -282,7 +282,7 @@ option {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, #FF6000, #ff8000);
+  background: linear-gradient(135deg, #239089, #1f5f5b);
   color: white;
   text-decoration: none;
   padding: 14px 28px;
@@ -295,9 +295,9 @@ option {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #e65500, #ff7000);
+  background: linear-gradient(135deg, #1f5f5b, #1a5450);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 96, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
 }
 
 .btn-secondary {
@@ -306,19 +306,19 @@ option {
   justify-content: center;
   gap: 8px;
   background: white;
-  color: #FF6000;
+  color: #239089;
   text-decoration: none;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
-  border: 2px solid #FF6000;
+  border: 2px solid #239089;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #FF6000;
+  background: #239089;
   color: white;
 }
 
@@ -349,11 +349,11 @@ option {
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid #FF6000;
+  border-left: 4px solid #239089;
 }
 
 .info-card .card-title {
-  color: #FF6000;
+  color: #239089;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -415,8 +415,8 @@ option {
 }
 
 .message-box.warning {
-  background: #fff3e0;
-  color: #ef6c00;
+  background: #fff8e1;
+  color: #f57f17;
 }
 
 .message-box.error {
