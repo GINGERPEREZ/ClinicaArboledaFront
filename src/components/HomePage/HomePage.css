@@ -1418,3 +1418,224 @@ body {
       font-size: 1.4rem;
     }
   }
+
+/* ============================================
+   REFRESH INSTITUCIONAL AZUL / BLANCO
+   Inspirado en clínicas modernas, sin copiar marca.
+   ============================================ */
+body {
+  background: #f4f8fb;
+  color: #12263a;
+}
+
+.home-container {
+  max-width: 1180px;
+  margin: 0 auto 26px;
+  padding: 0 22px;
+}
+
+.equipo-medico-cta-section {
+  background: linear-gradient(135deg, #0b3954 0%, #006b95 58%, #36a9d6 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.equipo-medico-cta-box {
+  padding: 48px 32px;
+}
+
+.equipo-medico-cta-kicker {
+  color: #d8f1fb;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.equipo-medico-cta-content h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.equipo-medico-cta-content p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.btn-equipo-medico {
+  color: #006b95;
+  border-radius: 8px;
+  padding: 14px 28px;
+  box-shadow: 0 12px 24px rgba(11, 57, 84, 0.18);
+}
+
+.btn-equipo-medico:hover {
+  background: #f2f9fd;
+  box-shadow: 0 16px 30px rgba(11, 57, 84, 0.24);
+}
+
+.categorias-section {
+  max-width: 1040px;
+  margin: 22px auto 34px;
+  padding: 24px 24px 28px;
+  background: #ffffff;
+  border: 1px solid #dce8f0;
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(11, 57, 84, 0.08);
+}
+
+.section-title,
+.featured-title,
+.noticias-preview-title {
+  color: #0b3954;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.categorias-grid {
+  gap: 10px;
+}
+
+.categoria-card {
+  min-height: 94px;
+  border: 1px solid #e1edf4;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+  box-shadow: none;
+}
+
+.categoria-card::before {
+  height: 3px;
+  background: linear-gradient(90deg, #006b95 0%, #36a9d6 100%);
+}
+
+.categoria-card:hover {
+  border-color: #a9d7e9;
+  box-shadow: 0 12px 24px rgba(0, 107, 149, 0.12);
+}
+
+.categoria-icon-img {
+  filter: invert(32%) sepia(87%) saturate(1139%) hue-rotate(165deg) brightness(88%) contrast(93%);
+}
+
+.categoria-card:hover .categoria-icon-img {
+  filter: invert(22%) sepia(64%) saturate(1244%) hue-rotate(168deg) brightness(86%) contrast(94%);
+}
+
+.categoria-card h3 {
+  color: #12263a;
+  font-weight: 600;
+}
+
+.categoria-stats,
+.categoria-productos,
+.featured-subtitle,
+.noticias-preview-description {
+  color: #526d82;
+}
+
+.product-grid {
+  gap: 22px;
+}
+
+.product-card,
+.medico-card,
+.servicio-card,
+.noticia-preview-card,
+.indicador-card {
+  border-radius: 8px;
+}
+
+.product-card,
+.medico-card,
+.servicio-card,
+.noticia-preview-card {
+  border: 1px solid #dce8f0;
+  box-shadow: 0 10px 28px rgba(11, 57, 84, 0.08);
+}
+
+.product-card:hover,
+.medico-card:hover,
+.servicio-card:hover,
+.noticia-preview-card:hover {
+  border-color: #b8dbe9;
+  box-shadow: 0 18px 36px rgba(11, 57, 84, 0.12);
+}
+
+.medico-image-wrapper,
+.product-image-wrapper {
+  background: #eef6fb;
+}
+
+.medico-nombre,
+.servicio-card h3,
+.noticia-preview-card-title {
+  color: #0b3954;
+}
+
+.medico-especialidad,
+.servicio-card p,
+.noticia-preview-card-text {
+  color: #526d82;
+}
+
+.btn-agendar,
+.btn-add-cart,
+.cargar-mas,
+.btn-ver-noticias {
+  background: linear-gradient(135deg, #006b95 0%, #0b3954 100%);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 107, 149, 0.18);
+  letter-spacing: 0;
+}
+
+.btn-agendar:hover,
+.btn-add-cart:hover:not(:disabled),
+.cargar-mas:hover,
+.btn-ver-noticias:hover {
+  background: linear-gradient(135deg, #0b3954 0%, #004e73 100%);
+  box-shadow: 0 14px 30px rgba(11, 57, 84, 0.24);
+}
+
+.noticias-preview-section,
+.servicios-destacados {
+  background: transparent;
+}
+
+.noticias-preview-kicker,
+.section-subtitle {
+  color: #006b95;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.indicadores-section {
+  background: linear-gradient(135deg, #0b3954 0%, #006b95 100%);
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(11, 57, 84, 0.16);
+}
+
+.indicador-porcentaje,
+.contador-numero {
+  color: #d8f1fb;
+}
+
+.indicador-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 14px;
+  }
+
+  .equipo-medico-cta-box {
+    padding: 34px 18px;
+    align-items: flex-start;
+  }
+
+  .equipo-medico-cta-content h2 {
+    font-size: 1.55rem;
+  }
+
+  .categorias-section {
+    padding: 18px 12px;
+  }
+}

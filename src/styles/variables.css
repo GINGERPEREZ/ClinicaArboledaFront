@@ -5,16 +5,16 @@
 
 :root {
   /* ========== COLORES PRINCIPALES ========== */
-  --color-primary: #239089;
-  --color-primary-dark: #1f5f5b;
-  --color-primary-light: #57bbb4;
-  --color-primary-alpha-10: rgba(35, 144, 137, 0.1);
-  --color-primary-alpha-20: rgba(35, 144, 137, 0.2);
-  --color-primary-alpha-30: rgba(35, 144, 137, 0.3);
+  --color-primary: #006b95;
+  --color-primary-dark: #004e73;
+  --color-primary-light: #36a9d6;
+  --color-primary-alpha-10: rgba(0, 107, 149, 0.1);
+  --color-primary-alpha-20: rgba(0, 107, 149, 0.2);
+  --color-primary-alpha-30: rgba(0, 107, 149, 0.3);
   
-  --color-secondary: #1f5f5b;
-  --color-secondary-light: #2d8f89;
-  --color-secondary-dark: #164240;
+  --color-secondary: #0b3954;
+  --color-secondary-light: #0f6f95;
+  --color-secondary-dark: #06263a;
   
   /* ========== COLORES DE ESTADO ========== */
   --color-success: #2ecc71;
@@ -23,25 +23,25 @@
   --color-warning-dark: #f57f17;
   --color-error: #e74c3c;
   --color-error-dark: #c0392b;
-  --color-info: #57bbb4;
-  --color-info-dark: #2d8f89;
+  --color-info: #36a9d6;
+  --color-info-dark: #006b95;
   
   /* ========== COLORES DE TEXTO ========== */
-  --color-text-primary: #2c3e50;
-  --color-text-secondary: #444;
-  --color-text-light: #555;
-  --color-text-muted: #6c757d;
+  --color-text-primary: #12263a;
+  --color-text-secondary: #334e68;
+  --color-text-light: #526d82;
+  --color-text-muted: #6b7c8f;
   --color-text-white: #ffffff;
   
   /* ========== COLORES DE FONDO ========== */
   --bg-white: #ffffff;
-  --bg-light: #f5f7fa;
-  --bg-lighter: #fafbfc;
-  --bg-gray: #e9ecef;
+  --bg-light: #f4f8fb;
+  --bg-lighter: #fafcfe;
+  --bg-gray: #e6edf3;
   --bg-dark: #343a40;
-  --bg-gradient-primary: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-  --bg-gradient-accent: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
-  --bg-gradient-teal-dark: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  --bg-gradient-primary: linear-gradient(135deg, #ffffff 0%, #eef6fb 100%);
+  --bg-gradient-accent: linear-gradient(135deg, #36a9d6 0%, #006b95 100%);
+  --bg-gradient-teal-dark: linear-gradient(135deg, #006b95 0%, #0b3954 100%);
   --bg-gradient-green: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
   --bg-gradient-teal: linear-gradient(135deg, #00A8A8 0%, #007A7A 100%);
   

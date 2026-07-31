@@ -562,3 +562,166 @@
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }
+
+/* ============================================
+   REFRESH INSTITUCIONAL AZUL / BLANCO
+   ============================================ */
+.header {
+  color: #0b3954;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px rgba(11, 57, 84, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.header.is-home:not(.scrolled) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 100%);
+  box-shadow: none;
+}
+
+.main-header {
+  max-width: 1230px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 8px 30px 4px;
+}
+
+.logo-image,
+.header.scrolled .logo-image {
+  height: 72px;
+  filter: drop-shadow(0 8px 18px rgba(11, 57, 84, 0.12));
+}
+
+.user-actions {
+  gap: 10px;
+}
+
+.action-button,
+.btn-medicos,
+.btn-pacientes {
+  height: 38px !important;
+  border-radius: 999px !important;
+  padding: 0 18px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+.btn-pacientes {
+  background: #006b95 !important;
+  border: 1px solid #006b95 !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 107, 149, 0.18);
+}
+
+.btn-medicos,
+.action-button {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 107, 149, 0.28) !important;
+  color: #006b95 !important;
+}
+
+.header.is-home:not(.scrolled) .btn-medicos,
+.header.is-home:not(.scrolled) .action-button {
+  color: #006b95 !important;
+  border-color: rgba(0, 107, 149, 0.28) !important;
+  text-shadow: none !important;
+}
+
+.action-button:hover,
+.btn-medicos:hover,
+.btn-pacientes:hover {
+  background: #0b3954 !important;
+  border-color: #0b3954 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 57, 84, 0.2);
+  text-shadow: none !important;
+}
+
+.main-menu {
+  max-width: 1160px;
+  margin: 0 auto 14px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 107, 149, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(11, 57, 84, 0.1);
+}
+
+.header.is-home:not(.scrolled) .main-menu {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 107, 149, 0.1);
+}
+
+.main-menu ul {
+  gap: 18px;
+  min-height: 52px;
+}
+
+.main-menu a,
+.header.scrolled .main-menu a {
+  color: #005f88;
+  min-height: 38px;
+  padding: 9px 12px;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-shadow: none;
+}
+
+.main-menu a:hover,
+.main-menu a.router-link-active,
+.header.scrolled .main-menu a:hover,
+.header.scrolled .main-menu a.router-link-active {
+  color: #0b3954;
+  background: #e8f4fa;
+  border-bottom-color: #006b95;
+  border-radius: 6px;
+  transform: none;
+  text-shadow: none;
+}
+
+.dropdown-content,
+.header.scrolled .dropdown-content {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 107, 149, 0.12);
+  box-shadow: 0 18px 36px rgba(11, 57, 84, 0.16);
+}
+
+.dropdown-content a,
+.header.scrolled .dropdown-content a {
+  color: #005f88;
+  text-shadow: none;
+}
+
+.dropdown-content a:hover,
+.header.scrolled .dropdown-content a:hover {
+  background: #e8f4fa;
+  color: #0b3954;
+  text-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .main-header {
+    min-height: 68px;
+    padding: 8px 18px 4px;
+  }
+
+  .logo-image,
+  .header.scrolled .logo-image {
+    height: 58px;
+  }
+
+  .main-menu {
+    margin: 0 12px 10px;
+    overflow-x: auto;
+  }
+
+  .main-menu ul {
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 12px;
+  }
+}
