@@ -9,7 +9,13 @@ import {
   LIMITES,
 } from './pacienteSchema';
 
-/** Índice del paso donde se capturan los datos del paciente. */
+/**
+ * Índices del asistente. Deben coincidir con el orden del array `steps`.
+ * Se nombran para que ningún salto quede como número suelto en el código.
+ */
+const PASO_ESPECIALIDAD = 0;
+const PASO_MEDICO = 1;
+const PASO_FECHA_HORA = 2;
 const PASO_DATOS = 3;
 const PASO_CONFIRMACION = 4;
 
@@ -29,7 +35,7 @@ export default {
   },
   data() {
     return {
-      currentStep: 0,
+      currentStep: PASO_ESPECIALIDAD,
       citaConfirmada: false,
       steps: ['Especialidad', 'Médico', 'Fecha y Hora', 'Datos', 'Confirmar'],
       selectedEspecialidad: null,
@@ -124,9 +130,9 @@ export default {
     },
     canProceed() {
       switch (this.currentStep) {
-        case 0: return !!this.selectedEspecialidad;
-        case 1: return !!this.selectedMedico;
-        case 2: return !!this.selectedDate && !!this.selectedTime;
+        case PASO_ESPECIALIDAD: return !!this.selectedEspecialidad;
+        case PASO_MEDICO: return !!this.selectedMedico;
+        case PASO_FECHA_HORA: return !!this.selectedDate && !!this.selectedTime;
         case PASO_DATOS: return this.datosPacienteValidos;
         case PASO_CONFIRMACION: return this.datosPacienteValidos;
         default: return false;
@@ -139,39 +145,51 @@ export default {
   },
   methods: {
 
+    /**
+     * Preselecciona especialidad y médico a partir de la query string
+     * (`/agendamiento-citas?especialidad=X&medico=Y`), como al llegar desde la
+     * tarjeta de un médico.
+     *
+     * Solo preselecciona: el asistente siempre arranca en el primer paso para
+     * que el paciente vea qué quedó elegido y pueda cambiarlo. Un parámetro que
+     * no exista en el catálogo se ignora y ese paso queda sin responder, en vez
+     * de arrastrar una selección a medias.
+     */
     aplicarSeleccionDesdeRuta() {
-      const especialidadParam = this.$route.query.especialidad;
-      const medicoParam = this.$route.query.medico;
+      const { especialidad: especialidadParam, medico: medicoParam } = this.$route.query;
+
+      const medico = medicoParam
+        ? this.medicos.find((m) => m.nombre === medicoParam)
+        : null;
+
+      // El médico manda sobre el parámetro de especialidad: su `especialidadId`
+      // es la fuente de verdad y evita una combinación incoherente si ambos
+      // parámetros se contradicen.
+      if (medico) {
+        this.selectedMedico = medico;
+        this.selectedEspecialidad =
+          this.especialidades.find((e) => e.id === medico.especialidadId) || null;
+        return;
+      }
 
       if (especialidadParam) {
-        const especialidad = this.especialidades.find(e => e.nombre === especialidadParam);
-        if (especialidad) {
-          this.selectedEspecialidad = especialidad;
-        }
-      }
-
-      if (medicoParam) {
-        const medico = this.medicos.find(m => m.nombre === medicoParam);
-        if (medico) {
-          this.selectedMedico = medico;
-          this.selectedEspecialidad = this.especialidades.find(e => e.id === medico.especialidadId) || this.selectedEspecialidad;
-          this.currentStep = 2;
-          this.generateTimeSlots();
-          return;
-        }
-      }
-
-      if (this.selectedEspecialidad) {
-        this.currentStep = 1;
+        this.selectedEspecialidad =
+          this.especialidades.find((e) => e.nombre === especialidadParam) || null;
       }
     },
     selectEspecialidad(esp) {
+      // Volver a pulsar la especialidad ya elegida no debe descartar el médico
+      // preseleccionado desde la tarjeta: solo un cambio real limpia lo de abajo.
+      if (this.selectedEspecialidad?.id === esp.id) return;
+
       this.selectedEspecialidad = esp;
       this.selectedMedico = null;
       this.selectedDate = '';
       this.selectedTime = '';
     },
     selectMedico(med) {
+      if (this.selectedMedico?.id === med.id) return;
+
       this.selectedMedico = med;
       this.selectedDate = '';
       this.selectedTime = '';
@@ -251,7 +269,7 @@ export default {
       }
     },
     prevStep() {
-      if (this.currentStep > 0) {
+      if (this.currentStep > PASO_ESPECIALIDAD) {
         this.currentStep--;
       }
     },
@@ -302,7 +320,7 @@ export default {
       ].filter(Boolean).join('\n');
     },
     nuevaCita() {
-      this.currentStep = 0;
+      this.currentStep = PASO_ESPECIALIDAD;
       this.citaConfirmada = false;
       this.selectedEspecialidad = null;
       this.selectedMedico = null;
