@@ -21,7 +21,7 @@
       </section>
 
       <!-- Stepper -->
-      <section class="agendamiento-stepper-section">
+      <section v-if="!citaConfirmada" class="agendamiento-stepper-section">
         <div class="stepper-wrapper">
           <div class="stepper">
             <div
@@ -43,7 +43,7 @@
       </section>
 
       <!-- Form Area -->
-      <section class="agendamiento-form-section">
+      <section :class="['agendamiento-form-section', { 'success-section': citaConfirmada }]">
         <div class="form-wrapper">
 
           <!-- Paso 1: Especialidad -->
@@ -157,7 +157,7 @@
           </div>
 
           <!-- Paso 5: Confirmación -->
-          <div v-if="currentStep === 4" class="form-step" key="step-4">
+          <div v-if="currentStep === 4 && !citaConfirmada" class="form-step" key="step-4">
             <h2 class="form-step-title">Confirma tu Cita</h2>
             <p class="form-step-desc">Revisa los datos antes de confirmar</p>
 
@@ -216,7 +216,7 @@
                 </svg>
               </div>
               <h2 class="success-title">¡Cita Agendada!</h2>
-              <p class="success-desc">Tu cita ha sido registrada exitosamente. Recibirás una confirmación pronto.</p>
+              <p class="success-desc">Tu cita ha sido registrada exitosamente. Revisa tu WhatsApp, te enviamos la confirmación con los detalles de tu cita.</p>
               <button class="btn-primary" @click="nuevaCita">Agendar otra cita</button>
             </div>
           </div>

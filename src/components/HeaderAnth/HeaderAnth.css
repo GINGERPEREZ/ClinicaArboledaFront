@@ -1,4 +1,4 @@
-/* Header general (estilo clínica) - Sólido por defecto */
+/* Header general (estilo clï¿½nica) - Sï¿½lido por defecto */
 .header {
   font-family: "Roboto", sans-serif;
   color: #0b4f6b;
@@ -12,19 +12,19 @@
   transition: all 0.3s ease;
   }
 
-  /* Header transparente solo en página de inicio sin scroll */
+  /* Header transparente solo en pï¿½gina de inicio sin scroll */
   .header.is-home:not(.scrolled) {
     background-color: transparent;
     box-shadow: none;
   }
 
-  /* Header cuando se hace scroll - Sólido */
+  /* Header cuando se hace scroll - Sï¿½lido */
   .header.scrolled {
     background-color: #ffffff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
   
-  /* Estilo para la sección principal */
+  /* Estilo para la secciï¿½n principal */
   .main-header {
   display: flex;
   justify-content: space-between;
@@ -99,7 +99,7 @@
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
   }
 
-  /* Logo más pequeño cuando se hace scroll */
+  /* Logo mï¿½s pequeï¿½o cuando se hace scroll */
   .header.scrolled .logo-image {
     height: 95px;
   }
@@ -124,12 +124,12 @@
   .tecnicos-button,
   .perfil-button,
   .action-button {
-    /* Tamaño */
+    /* Tamaï¿½o */
     height: 32px; 
     min-width: auto;
     padding: 0 12px;
     
-    /* Alineación y Tipografía */
+    /* Alineaciï¿½n y Tipografï¿½a */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -165,7 +165,7 @@
       0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  /* Botón Pacientes - estilo especial en paleta teal */
+  /* Botï¿½n Pacientes - estilo especial en paleta teal */
   .btn-pacientes {
     background: #2d8f89 !important;
     color: white !important;
@@ -192,7 +192,7 @@
       0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  /* Botón Médicos - estilo especial con borde azul */
+  /* Botï¿½n Mï¿½dicos - estilo especial con borde azul */
   .btn-medicos {
     background: transparent !important;
     color: #159bd0 !important;
@@ -207,7 +207,7 @@
       0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   }
 
-  /* Botón Médicos con borde blanco cuando header transparente (solo en home) */
+  /* Botï¿½n Mï¿½dicos con borde blanco cuando header transparente (solo en home) */
   .header.is-home:not(.scrolled) .btn-medicos {
     color: #ffffff !important;
     border-color: #ffffff !important;
@@ -288,7 +288,7 @@
     stroke: white;
   }
   
-  /* Menú de navegación principal */
+  /* Menï¿½ de navegaciï¿½n principal */
   .main-menu {
   background-color: #0b4f6b;
 	border-top: 1px solid rgba(0, 0, 0, 0.04);
@@ -297,7 +297,7 @@
     transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
-  /* Menú transparente cuando header es transparente (solo en home) */
+  /* Menï¿½ transparente cuando header es transparente (solo en home) */
   .header.is-home:not(.scrolled) .main-menu {
     background-color: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -354,7 +354,7 @@
     0 2px 6px rgba(0, 168, 232, 0.5);
   }
 
-  /* Si tienes una clase para el enlace de la página actual */
+  /* Si tienes una clase para el enlace de la pï¿½gina actual */
   .main-menu a.router-link-active {
   color: #69c6ee;
   border-bottom: 3px solid #69c6ee;
@@ -423,7 +423,7 @@
 
   /* ?? CONFLICTO IDENTIFICADO:
      .dropdown-content hereda estilos de .main-menu ul
-     Necesitamos resetear esos estilos explícitamente */
+     Necesitamos resetear esos estilos explï¿½citamente */
   
   .dropdown-content {
     /* Reset de estilos heredados de .main-menu ul */
@@ -483,7 +483,7 @@
   /* ?? CONFLICTO IDENTIFICADO:
      .dropdown-content a hereda estilos de .main-menu a
      (padding, border-bottom, transform en hover, etc.)
-     Necesitamos resetear explícitamente */
+     Necesitamos resetear explï¿½citamente */
   
   .dropdown-content a {
     /* Reset de estilos heredados de .main-menu a */
@@ -493,7 +493,8 @@
     letter-spacing: normal !important;
     
     /* Estilos propios */
-    padding: 10px 16px;
+    padding: 8px 14px;
+    margin: 0;
     color: #ffffff;
     text-decoration: none;
     font-size: 13px;
@@ -530,8 +531,12 @@
       0 0 8px rgba(255, 255, 255, 0.5);
   }
 
+  .dropdown-content li + li a {
+    margin-top: -10px !important;
+  }
+
   .header.scrolled .dropdown-content a:hover {
-    background: rgba(87, 187, 180, 0.14);
+    background: rgba(94, 137, 30, 0.14);
     color: #159bd0;
     text-shadow: none;
   }
@@ -918,12 +923,13 @@
 .header.is-home:not(.scrolled),
 .header.scrolled {
   height: 104px !important;
-  background: #ffffff !important;
+  background: #f7f1f1 !important;
   box-shadow: 0 8px 26px rgba(11, 79, 107, 0.08) !important;
   backdrop-filter: none !important;
 }
 
 .header .main-header {
+  position: relative;
   min-height: 0 !important;
   height: 0 !important;
   padding: 0 !important;
@@ -931,25 +937,25 @@
 
 .header .logo {
   position: absolute;
-  left: 7.5vw;
-  top: 14px;
+  left: 30px;
+  top: -15px;
   z-index: 3;
 }
 
 .header .logo-image,
 .header.scrolled .logo-image {
-  height: 72px !important;
+  height: 140px !important;
   width: auto !important;
   filter: none !important;
 }
 
 .header .user-actions {
   position: absolute;
-  right: 7.5vw;
-  top: 18px;
+  right: -34px;
+  top: 37px;
   z-index: 4;
   display: flex;
-  gap: 10px !important;
+  gap: 12px !important;
   align-items: center;
 }
 
@@ -960,7 +966,7 @@
   top: 28px;
   transform: translateX(-50%);
   width: auto;
-  max-width: calc(100vw - 520px);
+  max-width: calc(120vw - 50px);
   background: transparent !important;
   border: 0 !important;
   padding: 0 !important;
@@ -971,7 +977,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px !important;
+  gap: 16.3px !important;
   margin: 0;
   padding: 0 !important;
   list-style: none;
@@ -979,8 +985,8 @@
 
 .header .main-menu a,
 .header.is-home:not(.scrolled) .main-menu a {
-  min-height: 34px !important;
-  padding: 8px 14px !important;
+  min-height: 38px !important;
+  padding: 9px 10px !important;
   color: #0b4f6b !important;
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -1005,9 +1011,9 @@
 .header .btn-medicos,
 .header.is-home:not(.scrolled) .btn-pacientes,
 .header.is-home:not(.scrolled) .btn-medicos {
-  height: 34px !important;
-  min-width: 100px !important;
-  padding: 0 18px !important;
+  height: 36px !important;
+  min-width: 135px !important;
+  padding: 0 20px !important;
   border-radius: 999px !important;
   background: #ffffff !important;
   color: #0b83b0 !important;
@@ -1015,7 +1021,7 @@
   box-shadow: 0 8px 18px rgba(11, 79, 107, 0.1) !important;
   text-shadow: none !important;
   font-size: 13px !important;
-  font-weight: 800 !important;
+  font-weight: 750 !important;
 }
 
 .header .btn-medicos,
@@ -1036,22 +1042,22 @@
   .header,
   .header.is-home:not(.scrolled),
   .header.scrolled {
-    height: 138px !important;
+    height: 130px !important;
   }
 
   .header .logo {
-    left: 20px;
-    top: 12px;
+    left: 29px;
+    top: -35px;
   }
 
   .header .user-actions {
-    right: 20px;
-    top: 18px;
+    right: 10px;
+    top: 20px;
   }
 
   .header .main-menu,
   .header.is-home:not(.scrolled) .main-menu {
-    top: 86px;
+    top: 60px;
     max-width: calc(100vw - 32px);
     width: calc(100vw - 32px);
     overflow-x: auto;
@@ -1059,5 +1065,7 @@
 
   .header .main-menu ul {
     justify-content: flex-start;
+    gap: 20px !important;
+    padding: 0 26px !important;
   }
 }

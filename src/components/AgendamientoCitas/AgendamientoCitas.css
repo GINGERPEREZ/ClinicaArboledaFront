@@ -188,6 +188,14 @@
   padding: 40px 20px 80px;
 }
 
+.agendamiento-form-section.success-section {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 80px;
+}
+
 .form-wrapper {
   max-width: 900px;
   margin: 0 auto;
@@ -527,8 +535,18 @@
 }
 
 /* Success */
-.success-step {
+.success-section {
+  min-height: calc(100vh - 130px);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 80px;
+}
+
+.success-step {
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -540,6 +558,7 @@
   box-shadow: 0 12px 40px rgba(35, 144, 137, 0.12);
   max-width: 500px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .success-icon-wrapper {

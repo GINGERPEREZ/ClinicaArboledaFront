@@ -181,8 +181,38 @@ export default {
       }
     },
     confirmarCita() {
+      const numeroWhatsApp = this.normalizarNumeroWhatsApp(this.patientData.telefono);
+      if (numeroWhatsApp) {
+        const mensaje = this.construirMensajeConfirmacion();
+        window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
+      }
       this.citaConfirmada = true;
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    normalizarNumeroWhatsApp(telefono) {
+      let numero = (telefono || '').replace(/\D/g, '');
+      if (numero.length === 10 && numero.startsWith('0')) {
+        numero = '593' + numero.slice(1);
+      }
+      return numero.length >= 10 ? numero : '';
+    },
+    construirMensajeConfirmacion() {
+      const linea = (label, value) => `• ${label}: ${value || '-'}`;
+      return [
+        `Hola ${this.patientData.nombre || 'paciente'},`,
+        'Tu cita ha sido confirmada en Clínica Arboleda. Aquí están los detalles:',
+        '',
+        linea('Especialidad', this.selectedEspecialidad?.nombre),
+        linea('Médico', this.selectedMedico?.nombre),
+        linea('Fecha', this.formatDate(this.selectedDate)),
+        linea('Hora', this.selectedTime),
+        linea('Paciente', this.patientData.nombre),
+        linea('Cédula', this.patientData.cedula),
+        linea('Teléfono', this.patientData.telefono),
+        this.patientData.motivo ? linea('Motivo', this.patientData.motivo) : '',
+        '',
+        '¡Te esperamos!',
+      ].filter(Boolean).join('\n');
     },
     nuevaCita() {
       this.currentStep = 0;
