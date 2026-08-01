@@ -215,7 +215,7 @@
 }
 
 .carousel-arrow:hover {
-  background: #0b3954;
+  background: #073b52;
 }
 
 .carousel-indicators {
@@ -231,11 +231,11 @@
   width: 10px;
   height: 10px;
   background-color: transparent;
-  border: 2px solid #006b95;
+  border: 2px solid #0b83b0;
 }
 
 .carousel-indicators .active {
-  background-color: #006b95;
+  background-color: #0b83b0;
 }
 
 .click-indicator {
@@ -255,3 +255,4 @@
   }
 }
   
+

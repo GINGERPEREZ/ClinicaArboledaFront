@@ -20,7 +20,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #1f5f5b;
+  color: #0b4f6b;
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
@@ -47,18 +47,18 @@
 
 .section-card:hover {
   border-color: #a3d5d1;
-  box-shadow: 0 12px 28px rgba(35, 144, 137, 0.1);
+  box-shadow: 0 12px 28px rgba(21, 155, 208, 0.1);
 }
 
 .card-highlight {
   background: linear-gradient(180deg, #f4fbfa 0%, #ecf7f6 100%);
-  border-left: 4px solid #239089;
+  border-left: 4px solid #159bd0;
 }
 
 .section-title {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #1f5f5b;
+  color: #0b4f6b;
   margin-bottom: 20px;
   letter-spacing: 0.01em;
 }
@@ -74,7 +74,7 @@
 }
 
 .section-content strong {
-  color: #239089;
+  color: #159bd0;
   font-weight: 600;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .date-badge {
-  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -154,7 +154,7 @@
   border-radius: 50%;
   border: 1px solid #a3d5d1;
   background: #ecf7f6;
-  color: #239089;
+  color: #159bd0;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -166,7 +166,7 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #239089;
+  color: #159bd0;
   margin-bottom: 10px;
   line-height: 1;
 }
@@ -174,7 +174,7 @@
 .stat-label {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1f5f5b;
+  color: #0b4f6b;
   margin-bottom: 10px;
 }
 
@@ -194,7 +194,7 @@
 }
 
 .convenio-badge {
-  background: #239089;
+  background: #159bd0;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -206,13 +206,13 @@
 }
 
 .convenio-badge:hover {
-  background: #1f5f5b;
+  background: #0b4f6b;
 }
 
 /* Commitment Section */
 .commitment-section {
   background: linear-gradient(180deg, #ffffff 0%, #ecf7f6 100%);
-  color: #1f5f5b;
+  color: #0b4f6b;
   border: 1px solid #c8e6e4;
   border-radius: 12px;
   box-shadow: 0 12px 26px rgba(35, 144, 137, 0.12);
@@ -233,7 +233,7 @@
 }
 
 .commitment-section .section-title {
-  color: #1f5f5b;
+  color: #0b4f6b;
   margin-bottom: 14px;
 }
 
@@ -316,3 +316,4 @@
     line-height: 1.75;
   }
 }
+

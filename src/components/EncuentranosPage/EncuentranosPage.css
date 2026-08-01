@@ -19,7 +19,7 @@
 .encuentranos-hero {
   position: relative;
   height: 300px;
-  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +93,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  background: linear-gradient(135deg, #69c6ee 0%, #29abe2 100%);
   border-radius: 50%;
   margin-bottom: 20px;
   box-shadow: 0 8px 24px rgba(63, 165, 158, 0.3);
@@ -134,8 +134,8 @@
   border-radius: 16px;
   padding: 36px 28px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.1);
-  border: 1px solid rgba(35, 144, 137, 0.1);
+  box-shadow: 0 4px 20px rgba(21, 155, 208, 0.1);
+  border: 1px solid rgba(21, 155, 208, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .info-card-icon svg {
-  stroke: #239089;
+  stroke: #159bd0;
 }
 
 .info-card-title {
@@ -176,7 +176,7 @@
 .info-card-link {
   display: block;
   font-size: 16px;
-  color: #239089;
+  color: #159bd0;
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 6px;
@@ -184,7 +184,7 @@
 }
 
 .info-card-link:hover {
-  color: #1f5f5b;
+  color: #0b4f6b;
   text-decoration: underline;
 }
 
@@ -212,7 +212,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #239089 0%, #1f5f5b 100%);
+  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
   color: white;
   font-size: 15px;
   font-weight: 600;
@@ -261,3 +261,4 @@
     padding: 36px 16px;
   }
 }
+

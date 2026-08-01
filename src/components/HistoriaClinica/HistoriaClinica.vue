@@ -174,3 +174,4 @@ export default {
 </script>
 
 <style src="./HistoriaClinica.css"></style>
+

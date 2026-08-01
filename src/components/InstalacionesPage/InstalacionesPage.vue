@@ -48,3 +48,4 @@
 
 <script src="./InstalacionesPage.js"></script>
 <style src="./InstalacionesPage.css"></style>
+

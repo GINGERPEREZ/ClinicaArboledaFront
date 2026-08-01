@@ -1,4 +1,4 @@
-ï»¿/* Contenedor Principal - Consistencia con Vendedores */
+/* Contenedor Principal - Consistencia con Vendedores */
 .panel-tecnicos {
   background-color: #f8fafc; /* Gris azulado muy claro */
   min-height: 100vh;
@@ -15,11 +15,11 @@
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 2rem;
-  border-left: 5px solid #239089;
+  border-left: 5px solid #159bd0;
   padding-left: 15px;
 }
 
-/* Tarjetas de EstadÃ­sticas (Fila Superior) */
+/* Tarjetas de Estadísticas (Fila Superior) */
 .header-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -46,12 +46,12 @@
 .stat-value {
   font-size: 2rem;
   font-weight: 700;
-  color: #239089;
+  color: #159bd0;
   display: block;
   margin-top: 0.5rem;
 }
 
-/* Filtros y NavegaciÃ³n */
+/* Filtros y Navegación */
 .filtros {
   display: flex;
   justify-content: space-between;
@@ -79,7 +79,7 @@
 }
 
 .btn-crear-orden {
-  background-color: #239089;
+  background-color: #159bd0;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -93,12 +93,12 @@
 }
 
 .btn-crear-orden:hover {
-  background-color: #239089;
+  background-color: #159bd0;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
+  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
 }
 
-/* Grid de Ã“rdenes */
+/* Grid de Órdenes */
 .ordenes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -138,7 +138,7 @@
   font-size: 1.1rem;
 }
 
-/* SecciÃ³n de InformaciÃ³n del Equipo */
+/* Sección de Información del Equipo */
 .info-equipo {
   background: #f8fafc;
   padding: 1rem;
@@ -161,7 +161,7 @@
   margin-top: 5px;
 }
 
-/* Botones de AcciÃ³n */
+/* Botones de Acción */
 .estado-acciones {
   display: grid;
   grid-template-columns: 1fr 1fr;

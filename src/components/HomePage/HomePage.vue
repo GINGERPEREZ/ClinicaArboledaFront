@@ -9,39 +9,65 @@
     <!-- Hero Section con Carrusel -->
     <HomeBannerCarousel />
 
-    <!-- Nuestro Equipo Medico (full width, fuera del container) -->
-    <section class="equipo-medico-cta-section">
-      <div class="equipo-medico-cta-box">
-        <div class="equipo-medico-cta-content">
-          <p class="equipo-medico-cta-kicker">Atencion con especialistas de confianza</p>
-          <h2>Conoce Nuestro <strong>Equipo Medico</strong></h2>
-          <p>
-            Descubre el perfil de nuestros profesionales y encuentra la especialidad ideal para ti.
-          </p>
-        </div>
-        <button class="btn-equipo-medico" @click="$router.push('/equipo-medico')">
-          Ir a Equipo Medico
-        </button>
-      </div>
-    </section>
 
     <!-- Contenido principal -->
     <div class="home-container">
 
+
+      <section class="home-stats-section" aria-label="Indicadores de confianza">
+        <div class="home-stat-item">
+          <strong>22</strong>
+          <span>Especialistas</span>
+        </div>
+        <div class="home-stat-item">
+          <strong>8200+</strong>
+          <span>Clientes Felices</span>
+        </div>
+        <div class="home-stat-item">
+          <strong>100%</strong>
+          <span>Satisfacción</span>
+        </div>
+      </section>
+
       <!-- Especialidades médicas -->
-      <section class="categorias-section">
-        <h2 class="section-title">Especialidades Médicas</h2>
-        <div class="categorias-grid">
-          <div
-            v-for="especialidad in especialidadesMedicas"
+      <section class="especialidades-section">
+        <div class="especialidades-shell">
+          <div class="especialidades-header">
+            <button
+              class="especialidades-arrow"
+              type="button"
+              aria-label="Ver especialidades anteriores"
+              @click="$refs.especialidadesCarrusel.scrollBy({ left: -$refs.especialidadesCarrusel.clientWidth, behavior: 'smooth' })"
+            >
+              ‹
+            </button>
+
+            <h2 class="section-title">Especialidades Médicas</h2>
+
+            <button
+              class="especialidades-arrow"
+              type="button"
+              aria-label="Ver más especialidades"
+              @click="$refs.especialidadesCarrusel.scrollBy({ left: $refs.especialidadesCarrusel.clientWidth, behavior: 'smooth' })"
+            >
+              ›
+            </button>
+          </div>
+
+          <div ref="especialidadesCarrusel" class="especialidades-carousel">
+          <router-link
+            v-for="(especialidad, index) in especialidadesMedicas"
             :key="especialidad.id"
-            class="categoria-card"
+            class="categoria-card especialidad-card-animated"
+            :style="{ '--card-index': index }"
+            :to="{ path: '/equipo-medico', query: { especialidad: especialidad.nombre } }"
           >
             <div class="categoria-icon">
               <img :src="especialidad.icon" :alt="especialidad.nombre" class="categoria-icon-img" />
             </div>
             <h3>{{ especialidad.nombre }}</h3>
             <p class="categoria-stats">{{ especialidad.medicos }} médicos</p>
+          </router-link>
           </div>
         </div>
       </section>

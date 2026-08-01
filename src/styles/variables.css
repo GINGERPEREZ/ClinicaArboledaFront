@@ -5,14 +5,14 @@
 
 :root {
   /* ========== COLORES PRINCIPALES ========== */
-  --color-primary: #006b95;
+  --color-primary: #0b83b0;
   --color-primary-dark: #004e73;
-  --color-primary-light: #36a9d6;
+  --color-primary-light: #45b9e9;
   --color-primary-alpha-10: rgba(0, 107, 149, 0.1);
   --color-primary-alpha-20: rgba(0, 107, 149, 0.2);
   --color-primary-alpha-30: rgba(0, 107, 149, 0.3);
   
-  --color-secondary: #0b3954;
+  --color-secondary: #073b52;
   --color-secondary-light: #0f6f95;
   --color-secondary-dark: #06263a;
   
@@ -23,8 +23,8 @@
   --color-warning-dark: #f57f17;
   --color-error: #e74c3c;
   --color-error-dark: #c0392b;
-  --color-info: #36a9d6;
-  --color-info-dark: #006b95;
+  --color-info: #45b9e9;
+  --color-info-dark: #0b83b0;
   
   /* ========== COLORES DE TEXTO ========== */
   --color-text-primary: #12263a;
@@ -40,10 +40,10 @@
   --bg-gray: #e6edf3;
   --bg-dark: #343a40;
   --bg-gradient-primary: linear-gradient(135deg, #ffffff 0%, #eef6fb 100%);
-  --bg-gradient-accent: linear-gradient(135deg, #36a9d6 0%, #006b95 100%);
-  --bg-gradient-teal-dark: linear-gradient(135deg, #006b95 0%, #0b3954 100%);
+  --bg-gradient-accent: linear-gradient(135deg, #45b9e9 0%, #0b83b0 100%);
+  --bg-gradient-teal-dark: linear-gradient(135deg, #0b83b0 0%, #073b52 100%);
   --bg-gradient-green: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-  --bg-gradient-teal: linear-gradient(135deg, #00A8A8 0%, #007A7A 100%);
+  --bg-gradient-teal: linear-gradient(135deg, #29abe2 0%, #0b83b0 100%);
   
   /* ========== ESPACIADOS ========== */
   --spacing-xs: 4px;
@@ -174,3 +174,4 @@
     --transition-all: none;
   }
 }
+

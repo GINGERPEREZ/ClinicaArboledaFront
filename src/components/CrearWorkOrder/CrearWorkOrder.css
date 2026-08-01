@@ -1,4 +1,4 @@
-﻿.crear-work-order {
+.crear-work-order {
   max-width: 1000px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -30,7 +30,7 @@
 .btn-volver {
   background: transparent;
   border: none;
-  color: #239089;
+  color: #159bd0;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -42,7 +42,7 @@
 }
 
 .btn-volver:hover {
-  color: #239089;
+  color: #159bd0;
   transform: translateX(-3px);
 }
 
@@ -198,8 +198,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #239089;
-  box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.1);
+  border-color: #159bd0;
+  box-shadow: 0 0 0 3px rgba(21, 155, 208, 0.1);
 }
 
 .form-group input:disabled,
@@ -221,7 +221,7 @@
   display: block;
 }
 
-/* Botones de acción */
+/* Botones de acci�n */
 .botones-accion {
   display: flex;
   justify-content: flex-end;
@@ -256,14 +256,14 @@
 }
 
 .btn-crear {
-  background: #239089;
+  background: #159bd0;
   color: white;
 }
 
 .btn-crear:hover:not(:disabled) {
-  background: #239089;
+  background: #159bd0;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
+  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
 }
 
 .btn-cancelar:disabled,
@@ -328,3 +328,4 @@
     justify-content: center;
   }
 }
+

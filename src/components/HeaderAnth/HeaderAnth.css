@@ -1,7 +1,7 @@
-Ôªø/* Header general (estilo cl√≠nica) - S√≥lido por defecto */
+/* Header general (estilo clÌnica) - SÛlido por defecto */
 .header {
   font-family: "Roboto", sans-serif;
-  color: #1f5f5b;
+  color: #0b4f6b;
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -12,19 +12,19 @@
   transition: all 0.3s ease;
   }
 
-  /* Header transparente solo en p√°gina de inicio sin scroll */
+  /* Header transparente solo en p·gina de inicio sin scroll */
   .header.is-home:not(.scrolled) {
     background-color: transparent;
     box-shadow: none;
   }
 
-  /* Header cuando se hace scroll - S√≥lido */
+  /* Header cuando se hace scroll - SÛlido */
   .header.scrolled {
     background-color: #ffffff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
   
-  /* Estilo para la secci√≥n principal */
+  /* Estilo para la secciÛn principal */
   .main-header {
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@
   }
 
   .logo-icon {
-    background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
+    background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -62,7 +62,7 @@
 
   .logo-text {
     font-size: 12px;
-    color: #239089;
+    color: #159bd0;
     line-height: 1.2;
     transition: color 0.3s ease;
     text-shadow: 
@@ -99,7 +99,7 @@
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
   }
 
-  /* Logo m√°s peque√±o cuando se hace scroll */
+  /* Logo m·s pequeÒo cuando se hace scroll */
   .header.scrolled .logo-image {
     height: 95px;
   }
@@ -124,12 +124,12 @@
   .tecnicos-button,
   .perfil-button,
   .action-button {
-    /* Tama√±o */
+    /* TamaÒo */
     height: 32px; 
     min-width: auto;
     padding: 0 12px;
     
-    /* Alineaci√≥n y Tipograf√≠a */
+    /* AlineaciÛn y TipografÌa */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +143,8 @@
     
     /* ESTILO TRANSPARENTE CON TEXTO AZUL */
     background: transparent !important;
-    color: #239089 !important;
-    border: 1.5px solid #239089 !important;
+    color: #159bd0 !important;
+    border: 1.5px solid #159bd0 !important;
     transition: all 0.2s ease;
     text-shadow: 
       -0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
@@ -165,7 +165,7 @@
       0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  /* Bot√≥n Pacientes - estilo especial en paleta teal */
+  /* BotÛn Pacientes - estilo especial en paleta teal */
   .btn-pacientes {
     background: #2d8f89 !important;
     color: white !important;
@@ -192,11 +192,11 @@
       0 2px 6px rgba(0, 0, 0, 0.4);
   }
 
-  /* Bot√≥n M√©dicos - estilo especial con borde azul */
+  /* BotÛn MÈdicos - estilo especial con borde azul */
   .btn-medicos {
     background: transparent !important;
-    color: #239089 !important;
-    border: 2px solid #239089 !important;
+    color: #159bd0 !important;
+    border: 2px solid #159bd0 !important;
     border-radius: 20px !important;
     padding: 0 16px !important;
     transition: all 0.3s ease;
@@ -207,7 +207,7 @@
       0.5px 0.5px 0 rgba(0, 0, 0, 0.2);
   }
 
-  /* Bot√≥n M√©dicos con borde blanco cuando header transparente (solo en home) */
+  /* BotÛn MÈdicos con borde blanco cuando header transparente (solo en home) */
   .header.is-home:not(.scrolled) .btn-medicos {
     color: #ffffff !important;
     border-color: #ffffff !important;
@@ -220,7 +220,7 @@
   }
 
   .btn-medicos:hover {
-    background: #239089 !important;
+    background: #159bd0 !important;
     color: white !important;
     text-shadow: 
       -1px -1px 0 rgba(0, 0, 0, 0.4),
@@ -243,7 +243,7 @@
   .carrito-button .carrito-icon {
     width: 18px;
     height: 18px;
-    stroke: #239089;
+    stroke: #159bd0;
     transition: all 0.2s ease;
   }
   
@@ -251,7 +251,7 @@
     position: absolute;
     top: -6px;
     right: -6px;
-    background: linear-gradient(135deg, #239089, #57bbb4);
+    background: linear-gradient(135deg, #159bd0, #69c6ee);
     color: white;
     border-radius: 50%;
     width: 16px;
@@ -271,9 +271,9 @@
   .tecnicos-button:hover,
   .perfil-button:hover,
   .action-button:hover {
-    background: #239089 !important;
+    background: #159bd0 !important;
     color: white !important;
-    border-color: #239089 !important;
+    border-color: #159bd0 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
     text-shadow: 
@@ -288,16 +288,16 @@
     stroke: white;
   }
   
-  /* Men√∫ de navegaci√≥n principal */
+  /* Men˙ de navegaciÛn principal */
   .main-menu {
-  background-color: #1f5f5b;
+  background-color: #0b4f6b;
 	border-top: 1px solid rgba(0, 0, 0, 0.04);
 	border-bottom: none;
 	padding: 12px 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
-  /* Men√∫ transparente cuando header es transparente (solo en home) */
+  /* Men˙ transparente cuando header es transparente (solo en home) */
   .header.is-home:not(.scrolled) .main-menu {
     background-color: transparent;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -343,8 +343,8 @@
 
   /* Estado Hover y Activo con el color resaltado */
   .main-menu a:hover {
-  color: #57bbb4;
-  border-bottom: 3px solid #57bbb4;
+  color: #69c6ee;
+  border-bottom: 3px solid #69c6ee;
   transform: translateY(-2.5px);
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
@@ -354,10 +354,10 @@
     0 2px 6px rgba(0, 168, 232, 0.5);
   }
 
-  /* Si tienes una clase para el enlace de la p√°gina actual */
+  /* Si tienes una clase para el enlace de la p·gina actual */
   .main-menu a.router-link-active {
-  color: #57bbb4;
-  border-bottom: 3px solid #57bbb4;
+  color: #69c6ee;
+  border-bottom: 3px solid #69c6ee;
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
     1px -1px 0 rgba(0, 0, 0, 0.6),
@@ -368,14 +368,14 @@
 
   /* Cuando el header esta en scroll (fondo claro), usar teal para mejor contraste */
   .header.scrolled .main-menu a {
-    color: #57bbb4;
+    color: #69c6ee;
     text-shadow: none;
   }
 
   .header.scrolled .main-menu a:hover,
   .header.scrolled .main-menu a.router-link-active {
-    color: #57bbb4;
-    border-bottom: 3px solid #57bbb4;
+    color: #69c6ee;
+    border-bottom: 3px solid #69c6ee;
     text-shadow: none;
   }
   
@@ -421,9 +421,9 @@
     padding-top: 8px; /* Espacio para evitar cierre al mover mouse */
   }
 
-  /* ‚ö†Ô∏è CONFLICTO IDENTIFICADO:
+  /* ?? CONFLICTO IDENTIFICADO:
      .dropdown-content hereda estilos de .main-menu ul
-     Necesitamos resetear esos estilos expl√≠citamente */
+     Necesitamos resetear esos estilos explÌcitamente */
   
   .dropdown-content {
     /* Reset de estilos heredados de .main-menu ul */
@@ -470,7 +470,7 @@
   }
 
   .dropdown-content::-webkit-scrollbar-thumb:hover {
-    background: #239089;
+    background: #159bd0;
   }
   
   /* Items del dropdown */
@@ -480,10 +480,10 @@
     list-style: none;
   }
   
-  /* ‚ö†Ô∏è CONFLICTO IDENTIFICADO:
+  /* ?? CONFLICTO IDENTIFICADO:
      .dropdown-content a hereda estilos de .main-menu a
      (padding, border-bottom, transform en hover, etc.)
-     Necesitamos resetear expl√≠citamente */
+     Necesitamos resetear explÌcitamente */
   
   .dropdown-content a {
     /* Reset de estilos heredados de .main-menu a */
@@ -511,7 +511,7 @@
   }
 
   .header.scrolled .dropdown-content a {
-    color: #57bbb4;
+    color: #69c6ee;
     text-shadow: none;
     font-weight: 600;
   }
@@ -532,7 +532,7 @@
 
   .header.scrolled .dropdown-content a:hover {
     background: rgba(87, 187, 180, 0.14);
-    color: #239089;
+    color: #159bd0;
     text-shadow: none;
   }
   
@@ -567,7 +567,7 @@
    REFRESH INSTITUCIONAL AZUL / BLANCO
    ============================================ */
 .header {
-  color: #0b3954;
+  color: #073b52;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 10px 30px rgba(11, 57, 84, 0.08);
   backdrop-filter: blur(16px);
@@ -608,8 +608,8 @@
 }
 
 .btn-pacientes {
-  background: #006b95 !important;
-  border: 1px solid #006b95 !important;
+  background: #0b83b0 !important;
+  border: 1px solid #0b83b0 !important;
   color: #ffffff !important;
   box-shadow: 0 8px 20px rgba(0, 107, 149, 0.18);
 }
@@ -618,12 +618,12 @@
 .action-button {
   background: #ffffff !important;
   border: 1px solid rgba(0, 107, 149, 0.28) !important;
-  color: #006b95 !important;
+  color: #0b83b0 !important;
 }
 
 .header.is-home:not(.scrolled) .btn-medicos,
 .header.is-home:not(.scrolled) .action-button {
-  color: #006b95 !important;
+  color: #0b83b0 !important;
   border-color: rgba(0, 107, 149, 0.28) !important;
   text-shadow: none !important;
 }
@@ -631,8 +631,8 @@
 .action-button:hover,
 .btn-medicos:hover,
 .btn-pacientes:hover {
-  background: #0b3954 !important;
-  border-color: #0b3954 !important;
+  background: #073b52 !important;
+  border-color: #073b52 !important;
   color: #ffffff !important;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(11, 57, 84, 0.2);
@@ -675,9 +675,9 @@
 .main-menu a.router-link-active,
 .header.scrolled .main-menu a:hover,
 .header.scrolled .main-menu a.router-link-active {
-  color: #0b3954;
+  color: #073b52;
   background: #e8f4fa;
-  border-bottom-color: #006b95;
+  border-bottom-color: #0b83b0;
   border-radius: 6px;
   transform: none;
   text-shadow: none;
@@ -699,7 +699,7 @@
 .dropdown-content a:hover,
 .header.scrolled .dropdown-content a:hover {
   background: #e8f4fa;
-  color: #0b3954;
+  color: #073b52;
   text-shadow: none;
 }
 
@@ -723,5 +723,341 @@
     justify-content: flex-start;
     gap: 8px;
     padding: 0 12px;
+  }
+}
+
+
+
+/* Ajuste superior azul: barra y botones redondeados blancos */
+.header,
+.header.is-home:not(.scrolled),
+.header.scrolled {
+  background: #ffffff !important;
+  box-shadow: 0 6px 24px rgba(11, 79, 107, 0.08) !important;
+}
+
+.header .main-header {
+  min-height: 88px;
+  padding: 8px 72px 6px;
+}
+
+.header .logo-image {
+  height: 82px;
+  filter: none;
+}
+
+.header.scrolled .logo-image {
+  height: 72px;
+}
+
+.header .main-menu,
+.header.is-home:not(.scrolled) .main-menu {
+  background: linear-gradient(90deg, #0b83b0 0%, #159bd0 48%, #29abe2 100%) !important;
+  border: 0 !important;
+  padding: 10px 0;
+}
+
+.header .main-menu ul {
+  gap: 38px;
+}
+
+.header .main-menu a,
+.header.is-home:not(.scrolled) .main-menu a {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+
+.header .main-menu a:hover,
+.header .main-menu a.router-link-active {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.header .action-button,
+.header.is-home:not(.scrolled) .action-button,
+.header .btn-pacientes,
+.header .btn-medicos,
+.header.is-home:not(.scrolled) .btn-pacientes,
+.header.is-home:not(.scrolled) .btn-medicos {
+  height: 36px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #0b83b0 !important;
+  border: 1.5px solid #95d5f1 !important;
+  box-shadow: 0 8px 20px rgba(11, 79, 107, 0.1) !important;
+  text-shadow: none !important;
+}
+
+.header .action-button:hover,
+.header .btn-pacientes:hover,
+.header .btn-medicos:hover {
+  background: #e8fbfc !important;
+  color: #073b52 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(11, 79, 107, 0.16) !important;
+}
+
+@media (max-width: 768px) {
+  .header .main-header {
+    padding: 8px 18px 6px;
+  }
+
+  .header .logo-image {
+    height: 68px;
+  }
+
+  .header .main-menu ul {
+    gap: 18px;
+  }
+}
+
+
+/* Correccion header home segun referencia */
+.header,
+.header.is-home:not(.scrolled),
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 1px 14px rgba(11, 79, 107, 0.08) !important;
+  backdrop-filter: blur(10px);
+}
+
+.header .main-header {
+  min-height: 58px !important;
+  padding: 8px 11.5vw 0 !important;
+}
+
+.header .logo-image,
+.header.scrolled .logo-image {
+  height: 42px !important;
+  width: auto !important;
+  filter: none !important;
+}
+
+.header .main-menu,
+.header.is-home:not(.scrolled) .main-menu {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 0 9px !important;
+}
+
+.header .main-menu ul {
+  gap: 34px !important;
+}
+
+.header .main-menu a,
+.header.is-home:not(.scrolled) .main-menu a {
+  min-height: 28px !important;
+  padding: 4px 2px !important;
+  color: #0b4f6b !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  border-bottom: 2px solid transparent;
+  border-radius: 0 !important;
+}
+
+.header .main-menu a:hover,
+.header .main-menu a.router-link-active {
+  color: #0b83b0 !important;
+  background: transparent !important;
+  border-bottom-color: #0b83b0;
+}
+
+.header .user-actions {
+  gap: 8px !important;
+}
+
+.header .action-button,
+.header.is-home:not(.scrolled) .action-button,
+.header .btn-pacientes,
+.header .btn-medicos,
+.header.is-home:not(.scrolled) .btn-pacientes,
+.header.is-home:not(.scrolled) .btn-medicos {
+  height: 34px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #0b83b0 !important;
+  border: 1.5px solid #95d5f1 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.header .btn-medicos,
+.header.is-home:not(.scrolled) .btn-medicos {
+  background: #0b83b0 !important;
+  border-color: #0b83b0 !important;
+  color: #ffffff !important;
+}
+
+.header .action-button:hover,
+.header .btn-pacientes:hover,
+.header .btn-medicos:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(11, 79, 107, 0.12) !important;
+}
+
+@media (max-width: 768px) {
+  .header .main-header {
+    padding: 8px 18px 0 !important;
+  }
+
+  .header .main-menu ul {
+    gap: 18px !important;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 18px !important;
+  }
+}
+
+
+/* Header final: una sola barra blanca */
+.header,
+.header.is-home:not(.scrolled),
+.header.scrolled {
+  height: 104px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 26px rgba(11, 79, 107, 0.08) !important;
+  backdrop-filter: none !important;
+}
+
+.header .main-header {
+  min-height: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+}
+
+.header .logo {
+  position: absolute;
+  left: 7.5vw;
+  top: 14px;
+  z-index: 3;
+}
+
+.header .logo-image,
+.header.scrolled .logo-image {
+  height: 72px !important;
+  width: auto !important;
+  filter: none !important;
+}
+
+.header .user-actions {
+  position: absolute;
+  right: 7.5vw;
+  top: 18px;
+  z-index: 4;
+  display: flex;
+  gap: 10px !important;
+  align-items: center;
+}
+
+.header .main-menu,
+.header.is-home:not(.scrolled) .main-menu {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: calc(100vw - 520px);
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  z-index: 2;
+}
+
+.header .main-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px !important;
+  margin: 0;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.header .main-menu a,
+.header.is-home:not(.scrolled) .main-menu a {
+  min-height: 34px !important;
+  padding: 8px 14px !important;
+  color: #0b4f6b !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.header .main-menu a:hover,
+.header .main-menu a.router-link-active,
+.header .main-menu a[href="/home"] {
+  color: #ffffff !important;
+  background: #0b83b0 !important;
+  border-color: #0b83b0 !important;
+}
+
+.header .action-button,
+.header.is-home:not(.scrolled) .action-button,
+.header .btn-pacientes,
+.header .btn-medicos,
+.header.is-home:not(.scrolled) .btn-pacientes,
+.header.is-home:not(.scrolled) .btn-medicos {
+  height: 34px !important;
+  min-width: 100px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  color: #0b83b0 !important;
+  border: 1.5px solid #95d5f1 !important;
+  box-shadow: 0 8px 18px rgba(11, 79, 107, 0.1) !important;
+  text-shadow: none !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+.header .btn-medicos,
+.header.is-home:not(.scrolled) .btn-medicos {
+  background: #0b83b0 !important;
+  border-color: #0b83b0 !important;
+  color: #ffffff !important;
+}
+
+.header .action-button:hover,
+.header .btn-pacientes:hover,
+.header .btn-medicos:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(11, 79, 107, 0.16) !important;
+}
+
+@media (max-width: 1100px) {
+  .header,
+  .header.is-home:not(.scrolled),
+  .header.scrolled {
+    height: 138px !important;
+  }
+
+  .header .logo {
+    left: 20px;
+    top: 12px;
+  }
+
+  .header .user-actions {
+    right: 20px;
+    top: 18px;
+  }
+
+  .header .main-menu,
+  .header.is-home:not(.scrolled) .main-menu {
+    top: 86px;
+    max-width: calc(100vw - 32px);
+    width: calc(100vw - 32px);
+    overflow-x: auto;
+  }
+
+  .header .main-menu ul {
+    justify-content: flex-start;
   }
 }

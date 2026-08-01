@@ -54,7 +54,7 @@ export default {
   justify-content: space-between;
   gap: 14px;
   padding: 14px 20px;
-  background: linear-gradient(90deg, #0e4f4a 0%, #1f5f5b 55%, #2e7f78 100%);
+  background: linear-gradient(90deg, #0e4f4a 0%, #0b4f6b 55%, #2e7f78 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 -6px 22px rgba(12, 55, 52, 0.25);
 }
@@ -148,3 +148,4 @@ export default {
   }
 }
 </style>
+

@@ -154,3 +154,4 @@ export default {
 </script>
 
 <style src="./SobreNosotros.css"></style>
+

@@ -1,4 +1,4 @@
-﻿/* Sección de Instalaciones */
+/* Secci�n de Instalaciones */
 .instalaciones-section {
   padding: 80px 20px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
@@ -41,7 +41,7 @@
 }
 
 .instalaciones-section.embedded .instalaciones-subtitle {
-  color: #1d6f6a;
+  color: #0b83b0;
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -52,7 +52,7 @@
 .instalaciones-section.embedded .instalaciones-title {
   font-size: 32px;
   margin-bottom: 12px;
-  color: #1d6f6a;
+  color: #0b83b0;
 }
 
 .instalaciones-section.embedded .instalaciones-description {
@@ -216,3 +216,4 @@
 .dark-mode .instalacion-card:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
+

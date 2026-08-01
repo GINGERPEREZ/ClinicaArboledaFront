@@ -1,4 +1,4 @@
-﻿/* Contenedor principal */
+/* Contenedor principal */
 .cookies-container {
   min-height: 100vh;
   display: flex;
@@ -30,7 +30,7 @@
 .page-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #239089;
+  color: #159bd0;
   margin: 0 0 12px;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -63,7 +63,7 @@
 .cookies-info .section-title {
   font-size: 28px;
   font-weight: 700;
-  color: #1d6f6a;
+  color: #0b83b0;
   margin: 0 0 12px 0;
 }
 
@@ -101,7 +101,7 @@
   margin: 0 auto;
 }
 
-/* Header de sección */
+/* Header de secci�n */
 .section-header {
   text-align: center;
   margin-bottom: 40px;
@@ -113,7 +113,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  background: linear-gradient(135deg, #69c6ee 0%, #29abe2 100%);
   border-radius: 50%;
   margin-bottom: 18px;
   box-shadow: 0 8px 24px rgba(63, 165, 158, 0.3);
@@ -125,12 +125,12 @@
 }
 
 .cookies-tipos .header-icon {
-  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  background: linear-gradient(135deg, #69c6ee 0%, #29abe2 100%);
 }
 
 .cookies-control .header-icon,
 .cookies-vigencia .header-icon {
-  background: linear-gradient(135deg, #57bbb4 0%, #239089 100%);
+  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
 }
 
 .header-icon svg {
@@ -176,7 +176,7 @@
   background: white;
   border-radius: 16px;
   padding: 32px 24px;
-  box-shadow: 0 4px 20px rgba(35, 144, 137, 0.1);
+  box-shadow: 0 4px 20px rgba(21, 155, 208, 0.1);
   border: 1px solid rgba(35, 144, 137, 0.12);
   display: flex;
   flex-direction: column;
@@ -200,7 +200,7 @@
 }
 
 .cookie-card-icon svg {
-  stroke: #239089;
+  stroke: #159bd0;
 }
 
 .cookie-card-title {
@@ -233,8 +233,8 @@
 }
 
 .badge-optional {
-  background: rgba(35, 144, 137, 0.1);
-  color: #239089;
+  background: rgba(21, 155, 208, 0.1);
+  color: #159bd0;
 }
 
 /* Tarjeta de contenido (dark) */
@@ -298,3 +298,4 @@
     padding: 36px 16px;
   }
 }
+

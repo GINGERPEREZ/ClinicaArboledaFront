@@ -64,3 +64,4 @@
 
 <script src="./NotificationsPanel.js"></script>
 <style src="./NotificationsPanel.css"></style>
+

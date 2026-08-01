@@ -208,6 +208,12 @@ export default {
     },
   },
   methods: {
+    irAEquipoMedico(especialidad) {
+      this.$router.push({
+        path: '/equipo-medico',
+        query: { especialidad: especialidad.nombre },
+      });
+    },
     aplicarFiltros() {
       const query = this.searchQuery.trim().toLowerCase();
 

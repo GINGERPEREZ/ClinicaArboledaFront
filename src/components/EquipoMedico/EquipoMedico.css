@@ -16,7 +16,7 @@
 .page-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #239089;
+  color: #159bd0;
   margin: 0 0 20px 0;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -70,7 +70,7 @@
 .search-select:focus,
 .search-input:focus {
   outline: none;
-  border-color: #3fa59e;
+  border-color: #29abe2;
   box-shadow: 0 0 0 3px rgba(63, 165, 158, 0.1);
 }
 
@@ -93,7 +93,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: #239089;
+  background: #159bd0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -102,9 +102,9 @@
 }
 
 .search-button:hover {
-  background: #3fa59e;
+  background: #29abe2;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(35, 144, 137, 0.3);
+  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
 }
 
 .search-button:active {
@@ -139,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #3fa59e 0%, #72cdc5 100%);
+  background: linear-gradient(90deg, #29abe2 0%, #72cdc5 100%);
 }
 
 .medico-card:hover {
@@ -163,7 +163,7 @@
   flex-shrink: 0;
   width: 46px;
   height: 46px;
-  background: linear-gradient(135deg, #57bbb4 0%, #3fa59e 100%);
+  background: linear-gradient(135deg, #69c6ee 0%, #29abe2 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -197,11 +197,11 @@
   display: inline-block;
   padding: 5px 12px;
   background: linear-gradient(145deg, #ebf9f7 0%, #d8efec 100%);
-  color: #239089;
+  color: #159bd0;
   font-size: 0.78rem;
   font-weight: 600;
   border-radius: 20px;
-  border-left: 3px solid #3fa59e;
+  border-left: 3px solid #29abe2;
   letter-spacing: 0.2px;
   transition: all 0.3s ease;
   max-width: 100%;
@@ -210,9 +210,9 @@
 }
 
 .medico-card:hover .medico-especialidad-badge {
-  background: linear-gradient(135deg, #239089, #3fa59e);
+  background: linear-gradient(135deg, #159bd0, #29abe2);
   color: white;
-  border-left-color: #1a6b66;
+  border-left-color: #0b83b0;
 }
 
 /* No Results */
@@ -293,5 +293,210 @@
 
   .medico-especialidad-badge {
     font-size: 0.75rem;
+  }
+}
+
+
+
+/* Horario y agendamiento en tarjetas medicas */
+.medico-horario-atencion {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f6fdff;
+  border: 1px solid #d8f0fa;
+  color: #0b4f6b;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.medico-horario-atencion .horario-label {
+  display: block;
+  color: #0b83b0;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.medico-agendar-btn {
+  width: 100%;
+  margin-top: 12px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 8px;
+  background: #159bd0;
+  color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.medico-agendar-btn:hover {
+  background: #0b83b0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(11, 131, 176, 0.22);
+}
+
+
+/* Correccion tarjetas medicas por secciones */
+.medicos-grid {
+  grid-template-columns: repeat(2, minmax(360px, 1fr)) !important;
+  gap: 22px !important;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.medico-card {
+  min-height: 0 !important;
+  padding: 22px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: visible !important;
+}
+
+.medico-card-header {
+  display: grid !important;
+  grid-template-columns: 54px 1fr;
+  align-items: center;
+  gap: 14px !important;
+  margin: 0 !important;
+  padding-bottom: 14px !important;
+}
+
+.medico-icon {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.medico-nombre {
+  display: block !important;
+  writing-mode: horizontal-tb !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
+  font-size: 1rem !important;
+  line-height: 1.25 !important;
+  color: #0b4f6b !important;
+}
+
+.medico-especialidad-badge {
+  display: inline-flex !important;
+  align-self: flex-start;
+  max-width: 100% !important;
+  writing-mode: horizontal-tb !important;
+  word-break: normal !important;
+  white-space: normal !important;
+  border-left: 0 !important;
+  border: 1px solid #bfe6f7 !important;
+  background: #e8fbfc !important;
+  color: #0b83b0 !important;
+}
+
+.medico-horario-atencion {
+  width: 100%;
+  margin-top: 0 !important;
+  padding: 14px 16px !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.medico-horario-atencion span {
+  writing-mode: horizontal-tb !important;
+  white-space: normal !important;
+}
+
+.medico-agendar-btn {
+  width: 100% !important;
+  align-self: stretch;
+  margin-top: 0 !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .medicos-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 560px;
+  }
+}
+
+
+/* Vista filtrada desde home: sin pedir seleccionar de nuevo y cards 4 columnas */
+.especialidad-activa-section {
+  max-width: 980px;
+  margin: 0 auto 30px;
+  padding: 18px 22px;
+  border: 1px solid #bfe6f7;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(11, 79, 107, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.especialidad-activa-section span {
+  color: #4f7f96;
+  font-weight: 700;
+}
+
+.especialidad-activa-section strong {
+  color: #0b83b0;
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.especialidad-activa-section button {
+  border: 1px solid #95d5f1;
+  background: #e8fbfc;
+  color: #0b83b0;
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.medicos-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  max-width: 1280px !important;
+}
+
+.medico-card {
+  padding: 18px !important;
+}
+
+.medico-card-header {
+  grid-template-columns: 46px 1fr;
+  gap: 12px !important;
+}
+
+.medico-nombre {
+  font-size: 0.9rem !important;
+}
+
+.medico-horario-atencion {
+  padding: 10px 12px !important;
+  font-size: 0.76rem !important;
+}
+
+.medico-agendar-btn {
+  min-height: 36px;
+}
+
+@media (max-width: 1200px) {
+  .medicos-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .medicos-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .especialidad-activa-section {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,5 +1,5 @@
 .instalaciones-hero {
-  background: linear-gradient(160deg, #1f5f5b 0%, #239089 100%);
+  background: linear-gradient(160deg, #0b4f6b 0%, #159bd0 100%);
   color: #ffffff;
   padding: 64px 20px 54px;
 }
@@ -142,3 +142,4 @@
     min-height: auto;
   }
 }
+

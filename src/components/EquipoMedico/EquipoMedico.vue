@@ -19,7 +19,7 @@
       </div>
 
       <!-- Sección de Búsqueda -->
-      <div class="search-section">
+      <div v-if="!especialidadDesdeHome" class="search-section">
         <div class="search-controls">
           <div class="search-field">
             <select 
@@ -56,6 +56,12 @@
         </div>
       </div>
 
+      <div v-if="especialidadDesdeHome" class="especialidad-activa-section">
+        <span>Especialidad seleccionada</span>
+        <strong>{{ especialidadSeleccionada }}</strong>
+        <button type="button" @click="limpiarEspecialidadDesdeHome">Ver todas las especialidades</button>
+      </div>
+
       <!-- Grid de Médicos -->
       <div v-if="medicosFiltrados.length > 0" class="medicos-grid" key="medicos-grid">
         <div 
@@ -75,6 +81,13 @@
             <h3 class="medico-nombre">{{ medico.nombre }}</h3>
           </div>
           <div class="medico-especialidad-badge">{{ medico.especialidad }}</div>
+          <div class="medico-horario-atencion">
+            <span class="horario-label">Horario de atención</span>
+            <span>{{ getHorarioAtencion(medico) }}</span>
+          </div>
+          <button class="medico-agendar-btn" type="button" @click="agendarCita(medico)">
+            Agendar cita
+          </button>
         </div>
       </div>
 
@@ -104,6 +117,7 @@ export default {
       searchQuery: '',
       isAuthenticated: false,
       especialidadSeleccionada: '',
+      especialidadDesdeHome: false,
       nombreBusqueda: '',
       medicos: [
         { id: 1, nombre: 'VICTOR MANUEL ARIAS LOOR', especialidad: 'Medicina Crítica' },
@@ -164,6 +178,12 @@ export default {
   },
   mounted() {
     this.isAuthenticated = !!localStorage.getItem('access_token');
+    this.aplicarEspecialidadDesdeRuta();
+  },
+  watch: {
+    '$route.query.especialidad'() {
+      this.aplicarEspecialidadDesdeRuta();
+    },
   },
   methods: {
     buscarMedicos(query) {
@@ -203,6 +223,45 @@ export default {
       };
       return iconMap[especialidad] || 'https://cdn-icons-png.flaticon.com/128/4807/4807695.png';
     },
+
+    aplicarEspecialidadDesdeRuta() {
+      const especialidad = this.$route.query.especialidad;
+      if (especialidad && this.especialidades.includes(especialidad)) {
+        this.especialidadSeleccionada = especialidad;
+        this.especialidadDesdeHome = true;
+        this.nombreBusqueda = '';
+      } else {
+        this.especialidadDesdeHome = false;
+      }
+    },
+    limpiarEspecialidadDesdeHome() {
+      this.especialidadDesdeHome = false;
+      this.especialidadSeleccionada = 'todos';
+      this.$router.replace({ path: '/equipo-medico' });
+    },
+    getHorarioAtencion(medico) {
+      const horarios = {
+        'Medicina Crítica': 'Lunes a viernes, 08:00 - 16:00',
+        'Ortopedia y Traumatología': 'Lunes, miércoles y viernes, 09:00 - 13:00',
+        'Neumonología': 'Martes y jueves, 10:00 - 14:00',
+        'Gastroenterología': 'Lunes a jueves, 08:30 - 12:30',
+        'Cirugía General': 'Lunes a viernes, 15:00 - 18:00',
+        'Pediatría': 'Lunes a sábado, 08:00 - 13:00',
+        'Cirugía Pediátrica': 'Martes y jueves, 14:00 - 17:00',
+        'Anestesiología y Reanimación': 'Lunes a viernes, previa cita',
+        'Ginecología y Obstetricia': 'Lunes a viernes, 09:00 - 17:00',
+      };
+      return horarios[medico.especialidad] || 'Lunes a viernes, previa cita';
+    },
+    agendarCita(medico) {
+      this.$router.push({
+        path: '/agendamiento-citas',
+        query: {
+          especialidad: medico.especialidad,
+          medico: medico.nombre,
+        },
+      });
+    },
     handleIconError(e) {
       e.target.src = 'https://cdn-icons-png.flaticon.com/128/4807/4807695.png';
     },
@@ -211,3 +270,4 @@ export default {
 </script>
 
 <style src="./EquipoMedico.css"></style>
+
