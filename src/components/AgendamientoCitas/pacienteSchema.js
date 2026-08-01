@@ -13,6 +13,7 @@ import {
   soloLetras,
   soloDigitos,
   contienePalabras,
+  esPronunciable,
   sinCaracteresDeControl,
   esCedulaEcuatoriana,
   esDocumentoIdentidad,
@@ -47,6 +48,12 @@ export const ESQUEMA_PACIENTE = {
     {
       validar: (valor) => contienePalabras(valor, 2),
       mensaje: 'Ingresa al menos un nombre y un apellido.',
+    },
+    {
+      // Ultima regla: es la mas heuristica, asi que solo se aplica cuando todo
+      // lo demas ya paso. Ver esPronunciable() sobre sus limites.
+      validar: esPronunciable,
+      mensaje: 'El nombre no parece válido. Revisa que esté bien escrito.',
     },
   ],
 

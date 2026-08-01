@@ -52,6 +52,20 @@ describe('ESQUEMA_PACIENTE', () => {
       expect(validar({ nombre: 'Ana' }).errores.nombre).toBe('Ingresa al menos un nombre y un apellido.');
     });
 
+    it('rechaza tecleo al azar aunque sean solo letras', () => {
+      // Caso reportado: pasaba todas las reglas de formato por ser
+      // letras + dos palabras, pero es impronunciable.
+      expect(validar({ nombre: 'jnrvwiuu ifwniufnizuf' }).errores.nombre).toBe(
+        'El nombre no parece válido. Revisa que esté bien escrito.'
+      );
+    });
+
+    it('sigue aceptando nombres reales', () => {
+      expect(validar({ nombre: 'María Pérez Loor' }).esValido).toBe(true);
+      expect(validar({ nombre: 'Schmidt Zambrano' }).esValido).toBe(true);
+      expect(validar({ nombre: 'Ana Muñoz' }).esValido).toBe(true);
+    });
+
     it('respeta el límite de longitud', () => {
       expect(validar({ nombre: 'ab' }).errores.nombre).toMatch(/entre 3 y/);
       expect(validar({ nombre: 'A'.repeat(LIMITES.nombre + 1) }).errores.nombre).toMatch(/entre 3 y/);

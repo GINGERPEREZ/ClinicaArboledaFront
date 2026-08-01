@@ -45,6 +45,45 @@ export const sinCaracteresDeControl = (valor) => !RE_CARACTERES_CONTROL.test(Str
 export const contienePalabras = (valor, minimo) =>
   String(valor ?? '').trim().split(/\s+/).filter((palabra) => palabra.length >= 2).length >= minimo;
 
+// La 'y' cuenta como vocal: evita marcar Bryan, Krystel o Guaywas.
+const VOCALES = new Set('AEIOUYÁÉÍÓÚÜ');
+// Los nombres reales del Ecuador no pasan de 3 consonantes seguidas; se deja
+// margen hasta 4 para respetar apellidos extranjeros (Schmidt, Strzelecki).
+const MAX_CONSONANTES_SEGUIDAS = 4;
+
+/**
+ * Heurística contra el tecleo al azar ("jnrvwiuu ifwniufnizuf").
+ *
+ * NO comprueba que el nombre exista —eso es imposible en el frontend y todo
+ * intento termina rechazando nombres legítimos—; solo descarta cadenas
+ * impronunciables. La identidad real la ancla la cédula, que sí tiene checksum.
+ *
+ * Rechaza: palabras de 3+ letras sin ninguna vocal, y rachas de más de
+ * MAX_CONSONANTES_SEGUIDAS consonantes.
+ */
+export function esPronunciable(valor) {
+  const palabras = String(valor ?? '')
+    .toUpperCase()
+    .split(/[^A-ZÑÁÉÍÓÚÜ]+/)
+    .filter(Boolean);
+
+  if (palabras.length === 0) return false;
+
+  return palabras.every((palabra) => {
+    // 'Ng' y otras abreviaturas cortas quedan fuera de la regla de vocales.
+    if (palabra.length >= 3 && ![...palabra].some((letra) => VOCALES.has(letra))) {
+      return false;
+    }
+
+    let racha = 0;
+    for (const letra of palabra) {
+      racha = VOCALES.has(letra) ? 0 : racha + 1;
+      if (racha > MAX_CONSONANTES_SEGUIDAS) return false;
+    }
+    return true;
+  });
+}
+
 /* ------------------------------------------------------------------ *
  * Normalizadores
  * ------------------------------------------------------------------ */

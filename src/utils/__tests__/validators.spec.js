@@ -7,6 +7,7 @@ import {
   soloDigitos,
   sinCaracteresDeControl,
   contienePalabras,
+  esPronunciable,
   normalizarEspacios,
   normalizarTelefonoEc,
   esCedulaEcuatoriana,
@@ -76,6 +77,56 @@ describe('helpers de tipo', () => {
     expect(contienePalabras('svhzdhv', 2)).toBe(false);
     expect(contienePalabras('Ana P', 2)).toBe(false);
     expect(contienePalabras('  Ana   Pérez  ', 2)).toBe(true);
+  });
+});
+
+describe('esPronunciable', () => {
+  // Los 31 medicos reales del proyecto: red de seguridad contra falsos
+  // positivos. Si un cambio en la heuristica rechaza a alguno, este test falla.
+  const NOMBRES_REALES = [
+    'VICTOR MANUEL ARIAS LOOR', 'LUIS ALFREDO MOREIRA FRANCO', 'SILVIA MARIA ROSERO PACHAY',
+    'LAURA ALEXANDRA CEDEÑO SANCHEZ', 'CRISTINA ANNABEL MONTESDEOCA MONTESDEOCA',
+    'JOSELIO SANTOS ANDRADE', 'JUAN FRANCISCO TAMAYO PROAÑO', 'MARLON ANTONIO MUENTES AYALA',
+    'KARLA MARIA JOZA AGUAYO', 'CINDY MICHELLE CEDEÑO CALERO', 'ALEXANDER RODRIGUEZ HERNANDEZ',
+    'MARIA FERNANDA SANTOS COBEÑA', 'MARIANGEL DOLORES CEDEÑO VIVAS', 'TERESA MARIBEL RIZO DELGADO',
+    'HUMBERTO EDISON CORRAL VERA', 'LUIS GUILLERMO MENDOZA', 'GAUDENCIO RAMOS SALAS',
+    'SUSANA ISABEL GARCIA SILVA', 'MAYLIE DIAZ SANCHEZ', 'EDISON ANDRES BORJA BASTIDAS',
+    'MARIA FERNANDA ZAMBRANO LOOR', 'GABRIEL FERNANDO LOPEZ ESPINOZA', 'RICHARD ZAMBRANO',
+    'DIANA VANESSA QUIJIJE VALENCIA', 'MARIUXI ARACELY ZAMBRANO NAVIA',
+    'JOSE ANDRES CEDEÑO VALDIVIEZO', 'DARWIN KELVIN LEON FRANCO', 'SEGUNDO STALIN MORAN MERCHAN',
+    'MARIA DE LOS ANGELES MONTOYA GALEA', 'CARLOS LEONIDAS MORALES NARANJO',
+    'JAMES JOHANN MUÑOZ ZAMBRANO',
+  ];
+
+  it('acepta los 31 nombres reales del proyecto', () => {
+    const rechazados = NOMBRES_REALES.filter((nombre) => !esPronunciable(nombre));
+    expect(rechazados).toEqual([]);
+  });
+
+  it('acepta apellidos extranjeros con grupos consonanticos', () => {
+    expect(esPronunciable('Schmidt Zambrano')).toBe(true);
+    expect(esPronunciable('Anna Strzelecki')).toBe(true);
+    expect(esPronunciable('Ng Chen')).toBe(true);
+    expect(esPronunciable("Maria D'Angelo")).toBe(true);
+    expect(esPronunciable('Bryan Krystel')).toBe(true);
+    expect(esPronunciable('Pérez-Loor Muñoz')).toBe(true);
+  });
+
+  it('rechaza tecleo al azar', () => {
+    expect(esPronunciable('jnrvwiuu ifwniufnizuf')).toBe(false);
+    expect(esPronunciable('asdfgh qwerty')).toBe(false);
+    expect(esPronunciable('zxcvbnm')).toBe(false);
+  });
+
+  it('rechaza palabras de 3+ letras sin vocales', () => {
+    expect(esPronunciable('Ana bcd')).toBe(false);
+    expect(esPronunciable('zvzcv bcdfg')).toBe(false);
+  });
+
+  it('rechaza valores vacios', () => {
+    expect(esPronunciable('')).toBe(false);
+    expect(esPronunciable('   ')).toBe(false);
+    expect(esPronunciable(null)).toBe(false);
   });
 });
 
