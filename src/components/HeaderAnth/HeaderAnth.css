@@ -1069,3 +1069,271 @@
     padding: 0 26px !important;
   }
 }
+
+
+/* ==========================================================================
+   CAPA MÓVIL  (añadida al final a propósito)
+
+   El CSS anterior coloca logo, acciones y menú con `position: absolute` y
+   offsets en píxeles, reforzados con !important. Elementos fuera del flujo no
+   pueden esquivarse entre sí, y por eso en pantallas estrechas el logo y los
+   botones se superponen.
+
+   Este bloque devuelve la cabecera al flujo normal por debajo de 900px. Va al
+   final y usa !important porque es la única forma de ganar la cascada sin
+   reescribir las 1000 líneas anteriores.
+
+   Deuda conocida: lo correcto a medio plazo es rehacer este archivo con
+   flexbox y sin !important.
+   ========================================================================== */
+
+/* Botón hamburguesa: existe siempre en el DOM, solo se muestra en móvil */
+.header .menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;   /* objetivo táctil mínimo recomendado */
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header .menu-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: #0b4f6b;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* Las tres barras se convierten en una X al abrir */
+.header .menu-toggle.is-open .menu-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header .menu-toggle.is-open .menu-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.header .menu-toggle.is-open .menu-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  /* La altura deja de estar fijada: la marca el contenido */
+  .header,
+  .header.is-home:not(.scrolled),
+  .header.scrolled {
+    height: auto !important;
+  }
+
+  /* De posicionamiento absoluto a flujo normal */
+  .header .main-header {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 8px 16px !important;
+  }
+
+  .header .logo {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    flex: 0 1 auto;
+    min-width: 0;   /* permite que el logo se encoja en vez de desbordar */
+  }
+
+  .header .logo-image,
+  .header.scrolled .logo-image {
+    height: 46px !important;
+    width: auto !important;
+    max-width: 100%;
+  }
+
+  /* Ambos se sustituyen por el drawer */
+  .header .user-actions,
+  .header .main-menu,
+  .header.is-home:not(.scrolled) .main-menu {
+    display: none !important;
+  }
+
+  .header .menu-toggle {
+    display: flex;
+    flex: 0 0 auto;
+  }
+}
+
+/* Red de seguridad: en escritorio el drawer no debe aparecer nunca, aunque
+   el estado quedara abierto al redimensionar. */
+@media (min-width: 901px) {
+  .header .drawer-overlay,
+  .header .mobile-drawer {
+    display: none !important;
+  }
+}
+
+/* ----- Overlay ----- */
+.header .drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 59, 82, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 10000;   /* por encima del widget de WhatsApp (9999) */
+}
+
+/* ----- Panel ----- */
+.header .mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  width: min(320px, 85vw);
+  height: 100vh;
+  height: 100dvh;   /* evita el corte por la barra del navegador móvil */
+  overflow-y: auto;
+  overscroll-behavior: contain;   /* el scroll no se propaga a la página */
+  background: #ffffff;
+  box-shadow: -8px 0 30px rgba(11, 79, 107, 0.18);
+}
+
+.header .mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(11, 79, 107, 0.1);
+}
+
+.header .mobile-drawer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b4f6b;
+  letter-spacing: 0.02em;
+}
+
+.header .mobile-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(21, 155, 208, 0.08);
+  color: #0b4f6b;
+  cursor: pointer;
+}
+
+/* ----- Enlaces ----- */
+.header .mobile-drawer-list {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.header .mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;   /* objetivo táctil cómodo */
+  padding: 8px 20px;
+  color: #0b4f6b;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header .mobile-drawer-link:active {
+  background: rgba(21, 155, 208, 0.08);
+}
+
+/* Cabecera de un grupo desplegable: en móvil se listan siempre abiertos, para
+   no obligar a un toque extra en un menú que ya es corto. */
+.header .mobile-drawer-group {
+  display: block;
+  padding: 16px 20px 6px;
+  color: #6f8f9e;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.header .mobile-drawer-sublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header .mobile-drawer-sublink {
+  padding-left: 32px;
+  font-weight: 500;
+}
+
+/* ----- Acciones de usuario ----- */
+.header .mobile-drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 24px;
+  border-top: 1px solid rgba(11, 79, 107, 0.1);
+}
+
+.header .mobile-drawer-btn {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1.5px solid #95d5f1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0b83b0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header .mobile-drawer-btn.is-primary {
+  border-color: #0b83b0;
+  background: #0b83b0;
+  color: #ffffff;
+}
+
+/* ----- Transiciones ----- */
+.drawer-fade-enter-active,
+.drawer-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.drawer-fade-enter-from,
+.drawer-fade-leave-to {
+  opacity: 0;
+}
+
+.drawer-slide-enter-active,
+.drawer-slide-leave-active {
+  transition: transform 0.28s ease;
+}
+.drawer-slide-enter-from,
+.drawer-slide-leave-to {
+  transform: translateX(100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .menu-toggle-bar,
+  .drawer-fade-enter-active,
+  .drawer-fade-leave-active,
+  .drawer-slide-enter-active,
+  .drawer-slide-leave-active {
+    transition: none !important;
+  }
+}

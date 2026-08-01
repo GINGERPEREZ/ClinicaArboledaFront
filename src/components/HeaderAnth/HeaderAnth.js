@@ -17,6 +17,30 @@ export default {
         isAdmin: false,
         isVendedor: false,
         currentLogo: '/Logos/Logo1.png', // Logo actual según color de énfasis
+        isMenuOpen: false, // Drawer de navegación en móvil
+        // Origen único de los enlaces del drawer. El menú de escritorio
+        // conserva su propio markup para no alterar sus estilos actuales.
+        enlacesNavegacion: [
+          { texto: 'Inicio', ruta: '/home' },
+          {
+            texto: 'Hospital',
+            hijos: [
+              { texto: 'Sobre Nosotros', ruta: '/mision-vision' },
+              { texto: 'Historia', ruta: '/historia' },
+              { texto: 'Instalaciones', ruta: '/instalaciones' },
+            ],
+          },
+          { texto: 'Nuestro Equipo Médico', ruta: '/equipo-medico' },
+          { texto: 'Convenios', ruta: '/convenios' },
+          {
+            texto: 'Servicios Virtuales',
+            hijos: [
+              { texto: 'Agendamiento de Citas', ruta: '/agendamiento-citas' },
+              { texto: 'Chatbot', ruta: '/chatbot' },
+            ],
+          },
+          { texto: 'Noticias', ruta: '/noticias' },
+        ],
       };
     },
     computed: {
@@ -29,6 +53,9 @@ export default {
       '$route'() {
         // Actualizar el estado del scroll cuando cambia la ruta
         this.handleScroll();
+        // Navegar siempre debe cerrar el drawer, o quedaria abierto sobre la
+        // pagina nueva.
+        this.cerrarMenu();
       }
     },
     mounted() {
@@ -49,12 +76,23 @@ export default {
       // Escuchar cambios en los colores de énfasis
       window.addEventListener('storage', this.handleStorageChange);
       window.addEventListener('colors-updated', this.handleColorsUpdated);
+      // Escape cierra el drawer, como en cualquier modal
+      window.addEventListener('keydown', this.onTeclaGlobal);
+      // Si el usuario gira el movil o agranda la ventana hasta escritorio, el
+      // drawer deja de tener sentido y debe cerrarse solo.
+      this.consultaEscritorio = window.matchMedia('(min-width: 901px)');
+      this.consultaEscritorio.addEventListener('change', this.onCambioViewport);
     },
     beforeUnmount() {
       // Limpiar listener de scroll
       window.removeEventListener('scroll', this.handleScroll);
       window.removeEventListener('storage', this.handleStorageChange);
       window.removeEventListener('colors-updated', this.handleColorsUpdated);
+      window.removeEventListener('keydown', this.onTeclaGlobal);
+      this.consultaEscritorio?.removeEventListener('change', this.onCambioViewport);
+      // Nunca dejar el scroll del body bloqueado si el componente se destruye
+      // con el drawer abierto.
+      this.bloquearScrollDeFondo(false);
     },
     //metodos llamados para navegacion y busqueda
   methods: {
@@ -68,6 +106,44 @@ export default {
           this.isScrolled = true;
         }
       },
+      /* ---------------------------------------------------------------- *
+       * Drawer de navegación (solo móvil)
+       * ---------------------------------------------------------------- */
+
+      alternarMenu() {
+        if (this.isMenuOpen) this.cerrarMenu();
+        else this.abrirMenu();
+      },
+      abrirMenu() {
+        this.isMenuOpen = true;
+        this.bloquearScrollDeFondo(true);
+      },
+      cerrarMenu() {
+        if (!this.isMenuOpen) return;
+        this.isMenuOpen = false;
+        this.bloquearScrollDeFondo(false);
+      },
+      /** Evita que la página de detrás se desplace mientras el drawer está abierto. */
+      bloquearScrollDeFondo(bloquear) {
+        document.body.style.overflow = bloquear ? 'hidden' : '';
+      },
+      onTeclaGlobal(evento) {
+        if (evento.key === 'Escape') this.cerrarMenu();
+      },
+      onCambioViewport(evento) {
+        // evento.matches === true significa que ya estamos en escritorio
+        if (evento.matches) this.cerrarMenu();
+      },
+      /** Navega desde el drawer y lo cierra en el mismo gesto. */
+      irDesdeMenu(ruta) {
+        this.cerrarMenu();
+        if (this.$route.path !== ruta) this.$router.push(ruta);
+      },
+      cerrarSesionDesdeMenu() {
+        this.cerrarMenu();
+        this.cerrarSesion();
+      },
+
       cerrarSesion() {
         this.$emit("cerrar-sesion");
       },
