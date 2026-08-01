@@ -1,5 +1,25 @@
 import HeaderAnth from '../HeaderAnth/HeaderAnth.vue';
 import FooterAnth from '../FooterAnth/FooterAnth.vue';
+import { validarFormulario, sanitizarFormulario } from '@/utils/formValidation';
+import { aFormatoInternacionalEc, esCelularEcuador } from '@/utils/validators';
+import {
+  ESQUEMA_PACIENTE,
+  SANITIZADORES_PACIENTE,
+  NORMALIZADORES_PACIENTE,
+  LIMITES,
+} from './pacienteSchema';
+
+/** Índice del paso donde se capturan los datos del paciente. */
+const PASO_DATOS = 3;
+const PASO_CONFIRMACION = 4;
+
+const crearDatosPaciente = () => ({
+  nombre: '',
+  cedula: '',
+  telefono: '',
+  email: '',
+  motivo: '',
+});
 
 export default {
   name: 'AgendamientoCitas',
@@ -16,13 +36,11 @@ export default {
       selectedMedico: null,
       selectedDate: '',
       selectedTime: '',
-      patientData: {
-        nombre: '',
-        cedula: '',
-        telefono: '',
-        email: '',
-        motivo: '',
-      },
+      patientData: crearDatosPaciente(),
+      // Un campo solo muestra su error después de que el usuario lo tocó o
+      // intentó avanzar: evita marcar en rojo un formulario recién abierto.
+      camposTocados: {},
+      limites: LIMITES,
       especialidades: [
         { id: 1, nombre: 'Medicina Crítica', icon: '💓' },
         { id: 2, nombre: 'Ortopedia y Traumatología', icon: '🧍' },
@@ -93,13 +111,24 @@ export default {
       max.setDate(max.getDate() + 60);
       return max.toISOString().split('T')[0];
     },
+    /**
+     * Errores derivados del estado actual del formulario.
+     * Es la única fuente de verdad: no se guarda una copia mutable en `data`,
+     * así nunca queda desincronizada con `patientData`.
+     */
+    erroresPaciente() {
+      return validarFormulario(this.patientData, ESQUEMA_PACIENTE).errores;
+    },
+    datosPacienteValidos() {
+      return Object.keys(this.erroresPaciente).length === 0;
+    },
     canProceed() {
       switch (this.currentStep) {
         case 0: return !!this.selectedEspecialidad;
         case 1: return !!this.selectedMedico;
         case 2: return !!this.selectedDate && !!this.selectedTime;
-        case 3: return this.patientData.nombre.trim() !== '' && this.patientData.cedula.trim() !== '' && this.patientData.telefono.trim() !== '';
-        case 4: return true;
+        case PASO_DATOS: return this.datosPacienteValidos;
+        case PASO_CONFIRMACION: return this.datosPacienteValidos;
         default: return false;
       }
     },
@@ -164,8 +193,59 @@ export default {
       }
       this.timeSlots = slots;
     },
+    /* -------------------------------------------------------------- *
+     * Validación de los datos del paciente
+     * -------------------------------------------------------------- */
+
+    /**
+     * Limpia el valor mientras el usuario escribe, descartando lo que nunca
+     * podría ser válido (dígitos en el nombre, letras en el teléfono).
+     */
+    onCampoInput(campo) {
+      const sanitizar = SANITIZADORES_PACIENTE[campo];
+      if (sanitizar) {
+        this.patientData[campo] = sanitizar(this.patientData[campo]);
+      }
+    },
+
+    /** Al salir del campo se habilita la muestra de su error, si lo tiene. */
+    onCampoBlur(campo) {
+      this.camposTocados[campo] = true;
+    },
+
+    /** Mensaje a renderizar para un campo: vacío mientras no se haya tocado. */
+    errorDe(campo) {
+      return this.camposTocados[campo] ? this.erroresPaciente[campo] || '' : '';
+    },
+
+    /** Fuerza la visibilidad de todos los errores (al intentar avanzar). */
+    revelarErrores() {
+      this.camposTocados = Object.keys(ESQUEMA_PACIENTE).reduce(
+        (tocados, campo) => ({ ...tocados, [campo]: true }),
+        {}
+      );
+    },
+
+    /** Lleva el foco al primer campo inválido para que el usuario no lo busque. */
+    enfocarPrimerCampoInvalido() {
+      this.$nextTick(() => {
+        const campo = this.$el?.querySelector('.input-error');
+        campo?.focus();
+      });
+    },
+
+    /* -------------------------------------------------------------- *
+     * Navegación
+     * -------------------------------------------------------------- */
+
     nextStep() {
-      if (this.canProceed && this.currentStep < 4) {
+      if (this.currentStep === PASO_DATOS && !this.datosPacienteValidos) {
+        this.revelarErrores();
+        this.enfocarPrimerCampoInvalido();
+        return;
+      }
+
+      if (this.canProceed && this.currentStep < PASO_CONFIRMACION) {
         this.currentStep++;
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -181,20 +261,27 @@ export default {
       }
     },
     confirmarCita() {
-      const numeroWhatsApp = this.normalizarNumeroWhatsApp(this.patientData.telefono);
-      if (numeroWhatsApp) {
+      // Normalización final (trim, espacios colapsados, prefijo +593 resuelto).
+      this.patientData = sanitizarFormulario(this.patientData, NORMALIZADORES_PACIENTE);
+
+      // Revalidar antes de actuar: el usuario pudo llegar aquí y luego retroceder
+      // a editar los datos, o pegar contenido que esquive el sanitizado.
+      if (!this.datosPacienteValidos) {
+        this.revelarErrores();
+        this.currentStep = PASO_DATOS;
+        this.enfocarPrimerCampoInvalido();
+        return;
+      }
+
+      // WhatsApp solo tiene sentido sobre un celular; un fijo no recibe el mensaje.
+      if (esCelularEcuador(this.patientData.telefono)) {
+        const numeroWhatsApp = aFormatoInternacionalEc(this.patientData.telefono);
         const mensaje = this.construirMensajeConfirmacion();
         window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
       }
+
       this.citaConfirmada = true;
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    },
-    normalizarNumeroWhatsApp(telefono) {
-      let numero = (telefono || '').replace(/\D/g, '');
-      if (numero.length === 10 && numero.startsWith('0')) {
-        numero = '593' + numero.slice(1);
-      }
-      return numero.length >= 10 ? numero : '';
     },
     construirMensajeConfirmacion() {
       const linea = (label, value) => `• ${label}: ${value || '-'}`;
@@ -221,7 +308,8 @@ export default {
       this.selectedMedico = null;
       this.selectedDate = '';
       this.selectedTime = '';
-      this.patientData = { nombre: '', cedula: '', telefono: '', email: '', motivo: '' };
+      this.patientData = crearDatosPaciente();
+      this.camposTocados = {};
     },
     formatDate(dateStr) {
       if (!dateStr) return '';

@@ -96,8 +96,9 @@
 
             <div class="datetime-grid">
               <div class="date-picker-section">
-                <label class="field-label">Fecha de la cita</label>
+                <label class="field-label" for="cita-fecha">Fecha de la cita</label>
                 <input
+                  id="cita-fecha"
                   type="date"
                   v-model="selectedDate"
                   :min="minDate"
@@ -108,8 +109,8 @@
               </div>
 
               <div class="time-picker-section" v-if="selectedDate">
-                <label class="field-label">Horario disponible</label>
-                <div class="time-slots">
+                <span id="cita-horario-label" class="field-label">Horario disponible</span>
+                <div class="time-slots" role="group" aria-labelledby="cita-horario-label">
                   <button
                     v-for="slot in timeSlots"
                     :key="slot"
@@ -128,32 +129,107 @@
             <h2 class="form-step-title">Datos del Paciente</h2>
             <p class="form-step-desc">Completa tu información para confirmar la cita</p>
 
-            <div class="patient-form">
+            <form class="patient-form" novalidate @submit.prevent="nextStep">
               <div class="form-row">
                 <div class="form-group">
-                  <label class="field-label">Nombre completo *</label>
-                  <input type="text" v-model="patientData.nombre" class="form-input" placeholder="Ingresa tu nombre completo" />
+                  <label class="field-label" for="paciente-nombre">Nombre completo *</label>
+                  <input
+                    id="paciente-nombre"
+                    type="text"
+                    v-model="patientData.nombre"
+                    :class="['form-input', { 'input-error': errorDe('nombre') }]"
+                    :maxlength="limites.nombre"
+                    :aria-invalid="!!errorDe('nombre')"
+                    :aria-describedby="errorDe('nombre') ? 'error-nombre' : null"
+                    autocomplete="name"
+                    placeholder="Ej: María Pérez Loor"
+                    @input="onCampoInput('nombre')"
+                    @blur="onCampoBlur('nombre')"
+                  />
+                  <span v-if="errorDe('nombre')" id="error-nombre" class="field-error" role="alert">{{ errorDe('nombre') }}</span>
                 </div>
+
                 <div class="form-group">
-                  <label class="field-label">Cédula / Pasaporte *</label>
-                  <input type="text" v-model="patientData.cedula" class="form-input" placeholder="Ej: 1312345678" />
+                  <label class="field-label" for="paciente-cedula">Cédula / Pasaporte *</label>
+                  <input
+                    id="paciente-cedula"
+                    type="text"
+                    v-model="patientData.cedula"
+                    :class="['form-input', { 'input-error': errorDe('cedula') }]"
+                    :maxlength="limites.cedula"
+                    :aria-invalid="!!errorDe('cedula')"
+                    :aria-describedby="errorDe('cedula') ? 'error-cedula' : null"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    placeholder="Ej: 1312345678"
+                    @input="onCampoInput('cedula')"
+                    @blur="onCampoBlur('cedula')"
+                  />
+                  <span v-if="errorDe('cedula')" id="error-cedula" class="field-error" role="alert">{{ errorDe('cedula') }}</span>
                 </div>
               </div>
+
               <div class="form-row">
                 <div class="form-group">
-                  <label class="field-label">Teléfono *</label>
-                  <input type="tel" v-model="patientData.telefono" class="form-input" placeholder="Ej: 0991234567" />
+                  <label class="field-label" for="paciente-telefono">Teléfono *</label>
+                  <input
+                    id="paciente-telefono"
+                    type="tel"
+                    v-model="patientData.telefono"
+                    :class="['form-input', { 'input-error': errorDe('telefono') }]"
+                    :maxlength="limites.telefono"
+                    :aria-invalid="!!errorDe('telefono')"
+                    :aria-describedby="errorDe('telefono') ? 'error-telefono' : null"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    placeholder="Ej: 0991234567"
+                    @input="onCampoInput('telefono')"
+                    @blur="onCampoBlur('telefono')"
+                  />
+                  <span v-if="errorDe('telefono')" id="error-telefono" class="field-error" role="alert">{{ errorDe('telefono') }}</span>
+                  <span v-else class="field-hint">Usaremos este número para enviarte la confirmación por WhatsApp.</span>
                 </div>
+
                 <div class="form-group">
-                  <label class="field-label">Correo electrónico</label>
-                  <input type="email" v-model="patientData.email" class="form-input" placeholder="tucorreo@ejemplo.com" />
+                  <label class="field-label" for="paciente-email">Correo electrónico <span class="field-optional">(opcional)</span></label>
+                  <input
+                    id="paciente-email"
+                    type="email"
+                    v-model="patientData.email"
+                    :class="['form-input', { 'input-error': errorDe('email') }]"
+                    :maxlength="limites.email"
+                    :aria-invalid="!!errorDe('email')"
+                    :aria-describedby="errorDe('email') ? 'error-email' : null"
+                    inputmode="email"
+                    autocomplete="email"
+                    placeholder="tucorreo@ejemplo.com"
+                    @input="onCampoInput('email')"
+                    @blur="onCampoBlur('email')"
+                  />
+                  <span v-if="errorDe('email')" id="error-email" class="field-error" role="alert">{{ errorDe('email') }}</span>
                 </div>
               </div>
+
               <div class="form-group">
-                <label class="field-label">Motivo de la consulta</label>
-                <textarea v-model="patientData.motivo" class="form-textarea" rows="3" placeholder="Describe brevemente el motivo de tu consulta..."></textarea>
+                <label class="field-label" for="paciente-motivo">Motivo de la consulta <span class="field-optional">(opcional)</span></label>
+                <textarea
+                  id="paciente-motivo"
+                  v-model="patientData.motivo"
+                  :class="['form-textarea', { 'input-error': errorDe('motivo') }]"
+                  :maxlength="limites.motivo"
+                  :aria-invalid="!!errorDe('motivo')"
+                  :aria-describedby="errorDe('motivo') ? 'error-motivo' : null"
+                  rows="3"
+                  placeholder="Describe brevemente el motivo de tu consulta..."
+                  @input="onCampoInput('motivo')"
+                  @blur="onCampoBlur('motivo')"
+                ></textarea>
+                <div class="field-footer">
+                  <span v-if="errorDe('motivo')" id="error-motivo" class="field-error" role="alert">{{ errorDe('motivo') }}</span>
+                  <span class="field-counter">{{ patientData.motivo.length }} / {{ limites.motivo }}</span>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
 
           <!-- Paso 5: Confirmación -->

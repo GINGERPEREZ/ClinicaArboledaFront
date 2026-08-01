@@ -461,6 +461,56 @@
   min-height: 80px;
 }
 
+/* Estados de validación */
+.form-input.input-error,
+.form-textarea.input-error {
+  border-color: #d64545;
+  background: #fff8f8;
+}
+
+.form-input.input-error:focus,
+.form-textarea.input-error:focus {
+  border-color: #d64545;
+  box-shadow: 0 0 0 3px rgba(214, 69, 69, 0.14);
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #d64545;
+  line-height: 1.4;
+}
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: #6f8f9e;
+  line-height: 1.4;
+}
+
+.field-optional {
+  font-weight: 500;
+  color: #6f8f9e;
+}
+
+.field-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.field-counter {
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: #6f8f9e;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
 /* Confirmation Card */
 .confirmation-card {
   background: white;

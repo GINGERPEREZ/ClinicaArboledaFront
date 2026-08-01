@@ -29,6 +29,26 @@ npm run build
 npm run lint
 ```
 
+## 🧪 Pruebas unitarias
+
+Ejecutadas con [Vitest](https://vitest.dev), independiente del build de webpack.
+
+```bash
+npm test            # una corrida
+npm run test:watch  # modo watch durante el desarrollo
+npm run test:coverage
+```
+
+Los specs viven junto al código que prueban, en carpetas `__tests__/`:
+
+| Suite | Cubre |
+|---|---|
+| `src/utils/__tests__/validators.spec.js` | Primitivas: cédula ecuatoriana (módulo 10), teléfono, email, nombres |
+| `src/utils/__tests__/formValidation.spec.js` | Motor genérico de validación declarativa |
+| `src/components/AgendamientoCitas/__tests__/pacienteSchema.spec.js` | Esquema del formulario de agendamiento |
+
+La configuración (alias `@` y patrón de archivos) está en [vitest.config.mjs](./vitest.config.mjs).
+
 ## 🐳 Docker
 
 ### Construcción de la imagen
