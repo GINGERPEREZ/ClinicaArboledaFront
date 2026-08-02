@@ -74,66 +74,49 @@
 
       <!-- Noticias y Servicios Destacados -->
       <section class="home-editorial-section">
-        <article v-if="noticiasPreview.length" class="home-featured-news">
-          <div class="home-section-label">
-            <span class="home-section-icon">▣</span>
-            <span>Últimas novedades</span>
-          </div>
+        <div v-if="noticiasPreview.length" class="editorial-news-layout">
+          <article class="editorial-news-copy">
+            <p class="editorial-kicker">Últimas novedades</p>
+            <h2>{{ noticiasPreview[noticiaActivaIndex].titulo }}</h2>
+            <p>{{ noticiasPreview[noticiaActivaIndex].resumen }}</p>
+            <div class="editorial-actions">
+              <button class="btn-ver-noticias primary" @click="$router.push('/noticias')">Ver todas las noticias →</button>
+            </div>
+          </article>
 
-          <div class="featured-news-card">
+          <div class="editorial-news-visual">
+            <img
+              class="editorial-news-image"
+              :src="noticiasPreview[noticiaActivaIndex].imagen"
+              :alt="noticiasPreview[noticiaActivaIndex].titulo"
+            />
             <button class="news-carousel-arrow prev" type="button" aria-label="Novedad anterior" @click="prevNoticia">‹</button>
-            <article
-              v-for="(item, index) in noticiasPreview"
-              :key="item.id"
-              :class="['featured-news-slide', { active: index === noticiaActivaIndex }]"
-            >
-              <div class="featured-news-image">
-                <img :src="item.imagen" :alt="item.titulo" />
-              </div>
-              <div class="featured-news-body">
-                <p class="featured-news-meta">{{ item.autor }} | {{ item.fecha }}</p>
-                <h2>{{ item.titulo }}</h2>
-                <p>{{ item.resumen }}</p>
-                <button class="btn-ver-noticias" @click="$router.push('/noticias')">Ver novedades →</button>
-              </div>
-            </article>
             <button class="news-carousel-arrow next" type="button" aria-label="Siguiente novedad" @click="nextNoticia">›</button>
           </div>
+        </div>
 
-          <div class="news-carousel-dots" aria-label="Novedades disponibles">
-            <button
-              v-for="(item, index) in noticiasPreview"
-              :key="item.id"
-              type="button"
-              :class="['news-carousel-dot', { active: index === noticiaActivaIndex }]"
-              :aria-label="'Ver novedad ' + (index + 1)"
-              @click="seleccionarNoticia(index)"
-            ></button>
+        <div class="editorial-services-header">
+          <div>
+            <h2>Servicios destacados</h2>
+            <p>Conoce algunos de los servicios médicos que Clínica Arboleda pone a tu disposición.</p>
           </div>
-        </article>
+        </div>
 
-        <aside class="home-featured-services">
-          <div class="home-section-label">
-            <span class="home-section-icon">✚</span>
-            <span>Servicios destacados</span>
-          </div>
-
-          <div class="featured-services-list">
-            <article
-              v-for="servicio in serviciosDestacados"
-              :key="servicio.id"
-              class="featured-service-item"
-            >
-              <div class="featured-service-image">
-                <img :src="servicio.imagen" :alt="servicio.nombre" />
-              </div>
-              <div class="featured-service-copy">
-                <h3>{{ servicio.nombre }}</h3>
-                <p>{{ servicio.descripcion }}</p>
-              </div>
-            </article>
-          </div>
-        </aside>
+        <div class="editorial-services-grid">
+          <article
+            v-for="servicio in serviciosDestacados"
+            :key="servicio.id"
+            class="editorial-service-card"
+          >
+            <div class="editorial-service-image">
+              <img :src="servicio.imagen" :alt="servicio.nombre" />
+            </div>
+            <div class="editorial-service-body">
+              <h3>{{ servicio.nombre }}</h3>
+              <p>{{ servicio.descripcion }}</p>
+            </div>
+          </article>
+        </div>
       </section>
 
     <!-- Lista de Médicos/Doctores -->

@@ -108,11 +108,12 @@
           </div>
 
           <!-- Paso 4: Datos del paciente -->
-          <div v-if="currentStep === 3" class="form-step" key="step-3">
+          <div v-if="currentStep === 3" class="form-step patient-sheet-step" key="step-3">
             <h2 class="form-step-title">Datos del Paciente</h2>
             <p class="form-step-desc">Completa tu información para confirmar la cita</p>
 
-            <form class="patient-form" novalidate @submit.prevent="nextStep">
+            <div class="patient-sheet">
+              <form class="patient-form" novalidate @submit.prevent="nextStep">
               <div class="form-row">
                 <div class="form-group">
                   <label class="field-label" for="paciente-nombre">Nombre completo *</label>
@@ -213,6 +214,7 @@
                 </div>
               </div>
             </form>
+            </div>
           </div>
 
           <!-- Paso 5: Confirmación -->
