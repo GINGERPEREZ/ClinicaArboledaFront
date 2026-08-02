@@ -25,3 +25,5 @@ app.config.errorHandler = (err, vm, info) => {
 app.use(router)
    .use(store)
    .mount('#app');
+
+

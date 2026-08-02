@@ -94,3 +94,4 @@ export default {
     this.isAuthenticated = !!localStorage.getItem("access_token");
   },
 };
+

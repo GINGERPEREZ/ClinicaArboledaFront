@@ -5,9 +5,9 @@ export default {
   data() {
     return {
       colores: {
-        primary: '#239089',
-        primaryDark: '#1f5f5b',
-        primaryLight: '#57bbb4',
+        primary: '#42a8a1',
+        primaryDark: '#123f3c',
+        primaryLight: '#5dc1b9',
         success: '#4caf50',
         error: '#f44336',
       },
@@ -18,9 +18,9 @@ export default {
       paletasPredefinidas: [
         {
           nombre: 'Teal Clínica (Default)',
-          primary: '#239089',
-          primaryDark: '#1f5f5b',
-          primaryLight: '#57bbb4',
+          primary: '#42a8a1',
+          primaryDark: '#123f3c',
+          primaryLight: '#5dc1b9',
           success: '#4caf50',
           error: '#f44336',
         },
@@ -167,9 +167,9 @@ export default {
         
         // Restaurar colores por defecto
         this.colores = {
-          primary: '#239089',
-          primaryDark: '#1f5f5b',
-          primaryLight: '#57bbb4',
+          primary: '#42a8a1',
+          primaryDark: '#123f3c',
+          primaryLight: '#5dc1b9',
           success: '#4caf50',
           error: '#f44336',
         };
@@ -211,3 +211,5 @@ export default {
     },
   },
 };
+
+

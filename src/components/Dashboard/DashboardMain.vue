@@ -20,7 +20,7 @@
       <!-- KPIs principales -->
       <div class="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-icon" style="background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);">
+          <div class="kpi-icon" style="background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);">
             💰
           </div>
           <div class="kpi-content">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="kpi-card">
-          <div class="kpi-icon" style="background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);">
+          <div class="kpi-icon" style="background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);">
             🛒
           </div>
           <div class="kpi-content">
@@ -113,3 +113,5 @@
 <script src="./DashboardMain.js"></script>
 
 <style src="./DashboardMain.css" scoped></style>
+
+

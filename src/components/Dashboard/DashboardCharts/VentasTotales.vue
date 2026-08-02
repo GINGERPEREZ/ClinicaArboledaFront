@@ -57,13 +57,13 @@ export default {
           {
             label: 'Ventas ($)',
             data: [],
-            borderColor: '#159bd0',
-            backgroundColor: 'rgba(21, 155, 208, 0.1)',
+            borderColor: '#42a8a1',
+            backgroundColor: 'rgba(66, 168, 161, 0.1)',
             fill: true,
             tension: 0.4,
             borderWidth: 3,
             pointRadius: 5,
-            pointBackgroundColor: '#159bd0',
+            pointBackgroundColor: '#42a8a1',
             pointBorderColor: '#fff',
             pointBorderWidth: 2,
             pointHoverRadius: 7
@@ -88,7 +88,7 @@ export default {
             titleColor: '#fff',
             bodyColor: '#fff',
             padding: 12,
-            borderColor: '#159bd0',
+            borderColor: '#42a8a1',
             borderWidth: 1,
             displayColors: false,
             callbacks: {
@@ -184,7 +184,7 @@ export default {
 
 .chart-filters select:hover,
 .chart-filters select:focus {
-  border-color: #159bd0;
+  border-color: #42a8a1;
   background-color: #fff;
 }
 
@@ -225,4 +225,6 @@ export default {
   }
 }
 </style>
+
+
 

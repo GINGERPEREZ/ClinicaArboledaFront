@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #0b4f6b 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #123f3c 0%, #42a8a1 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -121,7 +121,7 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #0b83b0;
+  color: #42a8a1;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -256,4 +256,6 @@
     height: 220px;
   }
 }
+
+
 

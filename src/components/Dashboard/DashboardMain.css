@@ -155,9 +155,9 @@
 }
 
 .btn-view-all:hover {
-  background-color: #159bd0;
+  background-color: #42a8a1;
   color: white;
-  border-color: #159bd0;
+  border-color: #42a8a1;
 }
 
 .table-container {
@@ -214,7 +214,7 @@ tbody tr:hover {
 
 .status-badge.shipped {
   background-color: rgba(52, 152, 219, 0.15);
-  color: #0b4f6b;
+  color: #123f3c;
 }
 
 .status-badge.cancelled {
@@ -254,3 +254,5 @@ tbody tr:hover {
     min-width: 600px;
   }
 }
+
+

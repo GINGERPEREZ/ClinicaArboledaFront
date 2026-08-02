@@ -25,7 +25,7 @@
               v-model="colores.primary"
               @input="previewColor"
               class="hex-input"
-              placeholder="#159bd0"
+              placeholder="#42a8a1"
             />
           </div>
         </div>
@@ -45,7 +45,7 @@
               v-model="colores.primaryDark"
               @input="previewColor"
               class="hex-input"
-              placeholder="#0b4f6b"
+              placeholder="#123f3c"
             />
           </div>
         </div>
@@ -65,7 +65,7 @@
               v-model="colores.primaryLight"
               @input="previewColor"
               class="hex-input"
-              placeholder="#69c6ee"
+              placeholder="#5dc1b9"
             />
           </div>
         </div>
@@ -186,4 +186,6 @@
 
 <script src="./AdminPersonalizacion.js"></script>
 <style src="./AdminPersonalizacion.css"></style>
+
+
 

@@ -241,7 +241,7 @@ export default {
 /* Ajuste superior tipo referencia: imagen clara y paleta azul */
 .hero-carousel {
   min-height: 560px;
-  background: #e8fbfc;
+  background: #ffffff;
 }
 
 .hero-slide {
@@ -263,7 +263,7 @@ export default {
 }
 
 .hero-main-title {
-  color: #073b52;
+  color: #123f3c;
   font-size: clamp(2.4rem, 4.4vw, 4.05rem);
   font-weight: 800;
   letter-spacing: 0;
@@ -271,11 +271,11 @@ export default {
 }
 
 .highlight {
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .hero-main-subtitle {
-  color: #0b4f6b;
+  color: #123f3c;
   max-width: 520px;
   font-size: 1.08rem;
   font-weight: 500;
@@ -283,22 +283,22 @@ export default {
 
 .hero-arrow {
   background: rgba(255, 255, 255, 0.92);
-  color: #0b83b0;
-  border: 1px solid #bfe6f7;
-  box-shadow: 0 10px 24px rgba(11, 79, 107, 0.18);
+  color: #42a8a1;
+  border: 1px solid #e6f5f4;
+  box-shadow: 0 10px 24px rgba(66, 168, 161, 0.18);
 }
 
 .hero-arrow:hover {
-  background: #159bd0;
+  background: #42a8a1;
   color: #ffffff;
 }
 
 .hero-dot {
-  background: rgba(11, 79, 107, 0.28);
+  background: rgba(66, 168, 161, 0.28);
 }
 
 .hero-dot.active {
-  background: #159bd0;
+  background: #42a8a1;
 }
 
 @media (max-width: 768px) {
@@ -347,14 +347,14 @@ export default {
   margin: 0 0 16px;
   padding: 7px 14px;
   border-radius: 999px;
-  background: #bfe6f7;
-  color: #0b83b0;
+  background: #e6f5f4;
+  color: #42a8a1;
   font-size: 0.82rem;
   font-weight: 800;
 }
 
 .hero-main-title {
-  color: #073b52;
+  color: #123f3c;
   font-size: clamp(2.4rem, 4.6vw, 4rem);
   line-height: 1.05;
   font-weight: 800;
@@ -363,11 +363,11 @@ export default {
 }
 
 .highlight {
-  color: #0b83b0;
+  color: #42a8a1;
 }
 
 .hero-main-subtitle {
-  color: #0b4f6b;
+  color: #123f3c;
   max-width: 500px;
   margin-top: 18px;
   font-size: 1rem;
@@ -394,46 +394,46 @@ export default {
 
 .hero-cta-primary {
   border: 0;
-  background: #0b83b0;
+  background: #42a8a1;
   color: #ffffff;
   box-shadow: 0 10px 24px rgba(11, 131, 176, 0.25);
 }
 
 .hero-cta-primary:hover {
-  background: #073b52;
+  background: #123f3c;
   transform: translateY(-2px);
 }
 
 .hero-cta-secondary {
-  border: 1px solid #bfe6f7;
+  border: 1px solid #e6f5f4;
   background: #ffffff;
-  color: #0b4f6b;
-  box-shadow: 0 10px 22px rgba(11, 79, 107, 0.1);
+  color: #123f3c;
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.1);
 }
 
 .hero-cta-secondary:hover {
-  background: #e8fbfc;
+  background: #ffffff;
   transform: translateY(-2px);
 }
 
 .hero-arrow {
   background: rgba(255, 255, 255, 0.86);
-  color: #0b83b0;
-  border: 1px solid #bfe6f7;
-  box-shadow: 0 10px 24px rgba(11, 79, 107, 0.12);
+  color: #42a8a1;
+  border: 1px solid #e6f5f4;
+  box-shadow: 0 10px 24px rgba(66, 168, 161, 0.12);
 }
 
 .hero-arrow:hover {
-  background: #0b83b0;
+  background: #42a8a1;
   color: #ffffff;
 }
 
 .hero-dot {
-  background: rgba(11, 79, 107, 0.26);
+  background: rgba(66, 168, 161, 0.26);
 }
 
 .hero-dot.active {
-  background: #0b83b0;
+  background: #42a8a1;
 }
 
 @media (max-width: 768px) {
@@ -484,7 +484,7 @@ export default {
 /* Mostrar imagen completa del hero */
 .hero-carousel {
   min-height: 520px;
-  background: linear-gradient(90deg, #ffffff 0%, #e8fbfc 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 }
 
 .hero-overlay {
@@ -525,7 +525,7 @@ export default {
 /* Foto del hero tipo ejemplo: cubierta completa con overlay azul */
 .hero-carousel {
   min-height: 640px;
-  background: #073b52;
+  background: #123f3c;
 }
 
 .hero-overlay {
@@ -541,8 +541,8 @@ export default {
 
 .hero-slide::after {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(11, 131, 176, 0.42) 52%, rgba(7, 59, 82, 0.68) 100%),
-    linear-gradient(90deg, rgba(7, 59, 82, 0.72) 0%, rgba(11, 131, 176, 0.42) 42%, rgba(232, 251, 252, 0.18) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(11, 131, 176, 0.42) 52%, rgba(18, 63, 60, 0.68) 100%),
+    linear-gradient(90deg, rgba(18, 63, 60, 0.72) 0%, rgba(11, 131, 176, 0.42) 42%, rgba(232, 251, 252, 0.18) 100%);
 }
 
 .hero-main-title,
@@ -553,7 +553,7 @@ export default {
 
 .hero-kicker {
   background: rgba(232, 251, 252, 0.88);
-  color: #0b83b0;
+  color: #42a8a1;
 }
 
 .hero-dot {
@@ -641,7 +641,7 @@ export default {
 
 /* Fondo para banners verticales que usan contain */
 .hero-slide {
-  background-color: #073b52;
+  background-color: #123f3c;
 }
 
 
@@ -671,4 +671,6 @@ export default {
 }
 
 </style>
+
+
 

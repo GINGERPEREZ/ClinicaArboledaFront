@@ -5,45 +5,45 @@
 
 :root {
   /* ========== COLORES PRINCIPALES ========== */
-  --color-primary: #0b83b0;
-  --color-primary-dark: #004e73;
-  --color-primary-light: #45b9e9;
-  --color-primary-alpha-10: rgba(0, 107, 149, 0.1);
-  --color-primary-alpha-20: rgba(0, 107, 149, 0.2);
-  --color-primary-alpha-30: rgba(0, 107, 149, 0.3);
+  --color-primary: #42a8a1;
+  --color-primary-dark: #42a8a1;
+  --color-primary-light: #5dc1b9;
+  --color-primary-alpha-10: rgba(66, 168, 161, 0.1);
+  --color-primary-alpha-20: rgba(66, 168, 161, 0.2);
+  --color-primary-alpha-30: rgba(66, 168, 161, 0.3);
   
-  --color-secondary: #073b52;
-  --color-secondary-light: #0f6f95;
-  --color-secondary-dark: #06263a;
+  --color-secondary: #42a8a1;
+  --color-secondary-light: #5dc1b9;
+  --color-secondary-dark: #42a8a1;
   
   /* ========== COLORES DE ESTADO ========== */
-  --color-success: #2ecc71;
-  --color-success-dark: #27ae60;
-  --color-warning: #f9a825;
-  --color-warning-dark: #f57f17;
+  --color-success: #42a8a1;
+  --color-success-dark: #42a8a1;
+  --color-warning: #5dc1b9;
+  --color-warning-dark: #42a8a1;
   --color-error: #e74c3c;
   --color-error-dark: #c0392b;
-  --color-info: #45b9e9;
-  --color-info-dark: #0b83b0;
+  --color-info: #5dc1b9;
+  --color-info-dark: #42a8a1;
   
   /* ========== COLORES DE TEXTO ========== */
-  --color-text-primary: #12263a;
-  --color-text-secondary: #334e68;
-  --color-text-light: #526d82;
-  --color-text-muted: #6b7c8f;
+  --color-text-primary: #123f3c;
+  --color-text-secondary: #2f6661;
+  --color-text-light: #4f7f7a;
+  --color-text-muted: #6c8b88;
   --color-text-white: #ffffff;
   
   /* ========== COLORES DE FONDO ========== */
   --bg-white: #ffffff;
-  --bg-light: #f4f8fb;
-  --bg-lighter: #fafcfe;
-  --bg-gray: #e6edf3;
-  --bg-dark: #343a40;
-  --bg-gradient-primary: linear-gradient(135deg, #ffffff 0%, #eef6fb 100%);
-  --bg-gradient-accent: linear-gradient(135deg, #45b9e9 0%, #0b83b0 100%);
-  --bg-gradient-teal-dark: linear-gradient(135deg, #0b83b0 0%, #073b52 100%);
-  --bg-gradient-green: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-  --bg-gradient-teal: linear-gradient(135deg, #29abe2 0%, #0b83b0 100%);
+  --bg-light: #ffffff;
+  --bg-lighter: #ffffff;
+  --bg-gray: #f3fbfa;
+  --bg-dark: #123f3c;
+  --bg-gradient-primary: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  --bg-gradient-accent: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
+  --bg-gradient-teal-dark: linear-gradient(135deg, #42a8a1 0%, #5dc1b9 100%);
+  --bg-gradient-green: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
+  --bg-gradient-teal: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   
   /* ========== ESPACIADOS ========== */
   --spacing-xs: 4px;
@@ -62,16 +62,16 @@
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-monospace: 'Monaco', 'Courier New', monospace;
   
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
-  --font-size-md: 1.05rem;      /* 16.8px */
-  --font-size-lg: 1.2rem;       /* 19.2px */
-  --font-size-xl: 1.35rem;      /* 21.6px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 1.875rem;    /* 30px */
-  --font-size-4xl: 2.25rem;     /* 36px */
-  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.05rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.35rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
   
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -93,7 +93,7 @@
   --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.15);
   --shadow-2xl: 0 12px 32px rgba(0, 0, 0, 0.18);
   --shadow-primary: 0 4px 12px var(--color-primary-alpha-30);
-  --shadow-success: 0 4px 12px rgba(46, 204, 113, 0.3);
+  --shadow-success: 0 4px 12px rgba(66, 168, 161, 0.3);
   --shadow-error: 0 4px 12px rgba(231, 76, 60, 0.3);
   
   /* ========== BORDES ========== */
@@ -109,9 +109,9 @@
   --border-radius-xl: 20px;
   --border-radius-full: 9999px;
   
-  --border-color-light: #e0e0e0;
-  --border-color-medium: #d0d0d0;
-  --border-color-dark: #bbb;
+  --border-color-light: #e6f5f4;
+  --border-color-medium: #cfecea;
+  --border-color-dark: #9fd5d1;
   
   /* ========== TRANSICIONES ========== */
   --transition-fast: 0.15s ease;
@@ -144,7 +144,7 @@
   --navbar-height: 64px;
   --dashboard-padding: var(--spacing-xl);
   
-  /* ========== BREAKPOINTS (para referencia en JS) ========== */
+  /* ========== BREAKPOINTS ========== */
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -156,11 +156,11 @@
 /* ========== MODO OSCURO (opcional) ========== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text-primary: #f8f9fa;
-    --color-text-secondary: #e9ecef;
-    --bg-white: #1e1e1e;
-    --bg-light: #2d2d2d;
-    --bg-lighter: #3a3a3a;
+    --color-text-primary: #123f3c;
+    --color-text-secondary: #2f6661;
+    --bg-white: #ffffff;
+    --bg-light: #ffffff;
+    --bg-lighter: #ffffff;
   }
 }
 

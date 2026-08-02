@@ -318,3 +318,5 @@ export default {
     this.pausarAutoSlide();
   }
 };
+
+

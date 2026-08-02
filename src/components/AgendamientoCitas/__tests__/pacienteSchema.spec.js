@@ -193,3 +193,5 @@ describe('NORMALIZADORES_PACIENTE', () => {
     expect(validarFormulario(salida, ESQUEMA_PACIENTE).esValido).toBe(true);
   });
 });
+
+

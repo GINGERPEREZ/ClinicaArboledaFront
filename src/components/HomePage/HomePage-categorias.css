@@ -2,9 +2,9 @@
 .categorias-section {
   margin: 6px 0;
   padding: 12px 14px;
-  background: #e0f5f3;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(63, 165, 158, 0.1);
+  box-shadow: 0 1px 6px rgba(66, 168, 161, 0.1);
 }
 
 .productos-vendidos-section {
@@ -18,7 +18,7 @@
 .section-title {
   font-size: 28px;
   font-weight: 400;
-  color: #162c42;
+  color: #123f3c;
   margin-bottom: 6px;
   text-align: center;
 }
@@ -54,7 +54,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #159bd0 0%, #29abe2 100%);
+  background: linear-gradient(90deg, #42a8a1 0%, #5dc1b9 100%);
   transform: scaleX(0);
   transition: transform 0.2s ease;
 }
@@ -65,8 +65,8 @@
 
 .categoria-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(63, 165, 158, 0.25);
-  border-color: #29abe2;
+  box-shadow: 0 4px 10px rgba(66, 168, 161, 0.25);
+  border-color: #5dc1b9;
 }
 
 .categoria-icon {
@@ -80,31 +80,31 @@
   width: 3.2rem;
   height: 3.2rem;
   object-fit: contain;
-  filter: invert(42%) sepia(60%) saturate(400%) hue-rotate(140deg) brightness(85%) contrast(90%);
+  filter: invert(58%) sepia(20%) saturate(926%) hue-rotate(126deg) brightness(91%) contrast(89%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon-img {
-  filter: invert(35%) sepia(80%) saturate(500%) hue-rotate(145deg) brightness(75%) contrast(95%);
+  filter: invert(70%) sepia(29%) saturate(686%) hue-rotate(126deg) brightness(87%) contrast(88%);
   transform: scale(1.1);
 }
 
 .categoria-icon svg {
   width: 3.2rem;
   height: 3.2rem;
-  stroke: #2f918b;
+  stroke: #42a8a1;
   transition: stroke 0.3s ease, transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon svg {
-  stroke: #1f7c76;
+  stroke: #5dc1b9;
   transform: scale(1.1);
 }
 
 .categoria-card h3 {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #123f3c;
   margin: 2px 0 1px 0;
   line-height: 1.2;
 }
@@ -112,7 +112,7 @@
 .categoria-stats,
 .categoria-productos {
   font-size: 0.72rem;
-  color: #6c757d;
+  color: #6c8b88;
   margin: 1px 0 0 0;
 }
 
@@ -120,15 +120,15 @@
 .categoria-vendidos {
   margin: 18px 0;
   padding: 12px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   border-radius: 6px;
-  border-left: 2px solid #667eea;
+  border-left: 2px solid #42a8a1;
 }
 
 .categoria-vendidos-title {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #123f3c;
   margin-bottom: 9px;
   text-align: left;
 }
@@ -153,20 +153,20 @@
 
 .producto-vendido-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.2);
 }
 
 .vendido-badge {
   position: absolute;
   top: 7px;
   right: 7px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   padding: 3px 6px;
   border-radius: 10px;
   font-size: 0.52rem;
   font-weight: 600;
-  color: #333;
-  box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(66, 168, 161, 0.3);
   z-index: 1;
 }
 
@@ -198,7 +198,7 @@
 .producto-vendido-info h4 {
   font-size: 0.68rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #123f3c;
   margin: 5px 0;
   min-height: 24px;
   line-height: 1.2;
@@ -206,7 +206,7 @@
 
 .producto-marca {
   font-size: 0.56rem;
-  color: #667eea;
+  color: #42a8a1;
   font-weight: 500;
   margin: 2px 0;
 }
@@ -218,19 +218,19 @@
 .precio-actual {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #28a745;
+  color: #42a8a1;
 }
 
 .producto-ventas {
   font-size: 0.52rem;
-  color: #6c757d;
+  color: #6c8b88;
   margin-top: 5px;
   font-style: italic;
 }
 
 /* Botón agregar al carrito para productos vendidos */
 .btn-agregar-carrito-vendidos {
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #5dc1b9 100%);
   color: white;
   border: none;
   padding: 6px 10px;
@@ -251,8 +251,8 @@
 
 .btn-agregar-carrito-vendidos:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
-  background: linear-gradient(135deg, #229954 0%, #1e8449 100%);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.4);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
 }
 
 .btn-agregar-carrito-vendidos:active:not(:disabled) {
@@ -260,7 +260,7 @@
 }
 
 .btn-agregar-carrito-vendidos:disabled {
-  background: #95a5a6;
+  background: #cfecea;
   cursor: not-allowed;
   opacity: 0.6;
 }

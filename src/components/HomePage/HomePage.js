@@ -22,6 +22,8 @@ export default {
       limiteProductos: 10,
       selectedPriceRange: "",
       totalMedicos: 418,
+      noticiaActivaIndex: 0,
+      noticiaCarouselTimer: null,
 
       // Noticias recientes para preview en home
       noticiasPreview: [
@@ -196,6 +198,12 @@ export default {
       console.error("Error al cargar los datos:", error);
     }
   },
+  mounted() {
+    this.iniciarCarruselNoticias();
+  },
+  beforeUnmount() {
+    this.detenerCarruselNoticias();
+  },
   computed: {
     productosDestacados() {
       if (!this.productos || this.productos.length === 0) return [];
@@ -208,6 +216,33 @@ export default {
     },
   },
   methods: {
+    iniciarCarruselNoticias() {
+      this.detenerCarruselNoticias();
+      if (this.noticiasPreview.length <= 1) return;
+      this.noticiaCarouselTimer = window.setInterval(() => {
+        this.nextNoticia(false);
+      }, 5000);
+    },
+    detenerCarruselNoticias() {
+      if (this.noticiaCarouselTimer) {
+        window.clearInterval(this.noticiaCarouselTimer);
+        this.noticiaCarouselTimer = null;
+      }
+    },
+    seleccionarNoticia(index) {
+      this.noticiaActivaIndex = index;
+      this.iniciarCarruselNoticias();
+    },
+    nextNoticia(reiniciar = true) {
+      if (!this.noticiasPreview.length) return;
+      this.noticiaActivaIndex = (this.noticiaActivaIndex + 1) % this.noticiasPreview.length;
+      if (reiniciar) this.iniciarCarruselNoticias();
+    },
+    prevNoticia() {
+      if (!this.noticiasPreview.length) return;
+      this.noticiaActivaIndex = (this.noticiaActivaIndex - 1 + this.noticiasPreview.length) % this.noticiasPreview.length;
+      this.iniciarCarruselNoticias();
+    },
     irAEquipoMedico(especialidad) {
       this.$router.push({
         path: '/equipo-medico',
@@ -422,3 +457,5 @@ export default {
     },
   },
 };
+
+

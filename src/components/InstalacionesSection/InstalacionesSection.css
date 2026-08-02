@@ -1,4 +1,4 @@
-/* Sección de Instalaciones */
+/* Secciï¿½n de Instalaciones */
 .instalaciones-section {
   padding: 80px 20px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
@@ -13,15 +13,6 @@
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
-}
-
-.instalaciones-subtitle {
-  color: var(--color-primary, #0066cc);
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
 }
 
 .instalaciones-title {
@@ -40,19 +31,10 @@
   line-height: 1.6;
 }
 
-.instalaciones-section.embedded .instalaciones-subtitle {
-  color: #0b83b0;
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  margin-bottom: 8px;
-}
-
 .instalaciones-section.embedded .instalaciones-title {
   font-size: 32px;
   margin-bottom: 12px;
-  color: #0b83b0;
+  color: #42a8a1;
 }
 
 .instalaciones-section.embedded .instalaciones-description {
@@ -61,42 +43,60 @@
   max-width: 760px;
 }
 
-.instalaciones-section.embedded .instalaciones-grid {
-  margin-top: 14px;
-  gap: 18px;
-}
-
 .instalaciones-section.embedded .instalacion-image-wrapper {
   height: 280px;
 }
 
-/* Grid de instalaciones */
-.instalaciones-grid {
+/* Carrusel de instalaciones */
+.instalaciones-carousel-shell {
+  position: relative;
+  max-width: 1180px;
+  margin: 28px auto 0;
+  padding: 0 58px;
+}
+
+.instalaciones-pages {
+  position: relative;
+  min-height: 305px;
+}
+
+.instalaciones-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transform: translateX(18px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.instalaciones-page.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  transform: translateX(0);
 }
 
 .instalacion-card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(18, 63, 60, 0.13);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   background: white;
 }
 
 .instalacion-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(18, 63, 60, 0.18);
 }
 
 .instalacion-image-wrapper {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 285px;
   overflow: hidden;
 }
 
@@ -104,11 +104,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s ease;
 }
 
 .instalacion-card:hover .instalacion-image {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .instalacion-overlay {
@@ -116,29 +116,71 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
-  padding: 30px 20px 20px;
-  transition: all 0.4s ease;
-}
-
-.instalacion-card:hover .instalacion-overlay {
-  background: linear-gradient(to top, rgba(0, 102, 204, 0.9) 0%, rgba(0, 102, 204, 0.6) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.32) 56%, transparent 100%);
+  padding: 44px 16px 18px;
 }
 
 .instalacion-nombre {
   color: white;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 800;
   margin: 0;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  .instalaciones-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.instalaciones-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(18, 63, 60, 0.72);
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.instalaciones-carousel-arrow:hover {
+  background: #42a8a1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.instalaciones-carousel-arrow.prev {
+  left: 0;
+}
+
+.instalaciones-carousel-arrow.next {
+  right: 0;
+}
+
+.instalaciones-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.instalaciones-dot {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(18, 63, 60, 0.22);
+  cursor: pointer;
+}
+
+.instalaciones-dot.active {
+  width: 26px;
+  background: #42a8a1;
 }
 
 @media (max-width: 768px) {
@@ -147,7 +189,7 @@
   }
 
   .instalaciones-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .instalaciones-description {
@@ -155,17 +197,21 @@
     margin-bottom: 30px;
   }
 
-  .instalaciones-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .instalaciones-carousel-shell {
+    padding: 0 46px;
+  }
+
+  .instalaciones-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .instalacion-image-wrapper {
-    height: 280px;
+    height: 230px;
   }
 
   .instalacion-nombre {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .instalaciones-section.embedded {
@@ -173,25 +219,34 @@
   }
 
   .instalaciones-section.embedded .instalaciones-title {
-    font-size: 27px;
+    font-size: 26px;
   }
 
   .instalaciones-section.embedded .instalaciones-description {
     margin-bottom: 16px;
   }
 
-  .instalaciones-section.embedded .instalacion-image-wrapper {
-    height: 240px;
+  .instalaciones-carousel-arrow {
+    width: 38px;
+    height: 38px;
   }
 }
 
 @media (max-width: 480px) {
   .instalaciones-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .instalaciones-carousel-shell {
+    padding: 0 42px;
+  }
+
+  .instalaciones-page {
+    grid-template-columns: 1fr;
   }
 
   .instalacion-image-wrapper {
-    height: 240px;
+    height: 250px;
   }
 }
 
@@ -216,4 +271,6 @@
 .dark-mode .instalacion-card:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
+
+
 

@@ -146,3 +146,5 @@
 </template>
 <script src="./RegistroUsuario.js"></script>
 <style src="./RegistroUsuario.css"></style>  
+
+

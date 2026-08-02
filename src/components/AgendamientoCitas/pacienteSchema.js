@@ -134,3 +134,5 @@ export const NORMALIZADORES_PACIENTE = {
   email: (valor) => String(valor ?? '').trim().toLowerCase(),
   motivo: (valor) => String(valor ?? '').trim(),
 };
+
+

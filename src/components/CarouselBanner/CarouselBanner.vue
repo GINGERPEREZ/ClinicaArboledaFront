@@ -114,3 +114,5 @@ export default {
 </script>
 
 <style src="./CarouselBanner.css"></style>
+
+

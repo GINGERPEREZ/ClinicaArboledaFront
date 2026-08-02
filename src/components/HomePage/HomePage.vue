@@ -60,7 +60,7 @@
             :key="especialidad.id"
             class="categoria-card especialidad-card-animated"
             :style="{ '--card-index': index }"
-            :to="{ path: '/equipo-medico', query: { especialidad: especialidad.nombre } }"
+            :to="{ path: '/agendamiento-citas', query: { especialidad: especialidad.nombre } }"
           >
             <div class="categoria-icon">
               <img :src="especialidad.icon" :alt="especialidad.nombre" class="categoria-icon-img" />
@@ -72,26 +72,68 @@
         </div>
       </section>
 
-      <!-- Noticias Recientes (preview) -->
-      <section class="noticias-preview-section">
-        <p class="noticias-preview-kicker">Noticias</p>
-        <h2 class="noticias-preview-title">Nuestras Últimas Novedades</h2>
-        <p class="noticias-preview-description">
-          Infórmate sobre avances, servicios y novedades de Clínica Arboleda.
-        </p>
-        <div class="noticias-preview-grid">
-          <article v-for="item in noticiasPreview" :key="item.id" class="noticia-preview-card">
-            <div class="noticia-preview-image-wrapper">
-              <img :src="item.imagen" :alt="item.titulo" class="noticia-preview-image" />
-            </div>
-            <div class="noticia-preview-body">
-              <p class="noticia-preview-meta">{{ item.autor }} | {{ item.fecha }}</p>
-              <h3 class="noticia-preview-card-title">{{ item.titulo }}</h3>
-              <p class="noticia-preview-card-text">{{ item.resumen }}</p>
-            </div>
-          </article>
-        </div>
-        <button class="btn-ver-noticias" @click="$router.push('/noticias')">Ver todas las noticias →</button>
+      <!-- Noticias y Servicios Destacados -->
+      <section class="home-editorial-section">
+        <article v-if="noticiasPreview.length" class="home-featured-news">
+          <div class="home-section-label">
+            <span class="home-section-icon">▣</span>
+            <span>Últimas novedades</span>
+          </div>
+
+          <div class="featured-news-card">
+            <button class="news-carousel-arrow prev" type="button" aria-label="Novedad anterior" @click="prevNoticia">‹</button>
+            <article
+              v-for="(item, index) in noticiasPreview"
+              :key="item.id"
+              :class="['featured-news-slide', { active: index === noticiaActivaIndex }]"
+            >
+              <div class="featured-news-image">
+                <img :src="item.imagen" :alt="item.titulo" />
+              </div>
+              <div class="featured-news-body">
+                <p class="featured-news-meta">{{ item.autor }} | {{ item.fecha }}</p>
+                <h2>{{ item.titulo }}</h2>
+                <p>{{ item.resumen }}</p>
+                <button class="btn-ver-noticias" @click="$router.push('/noticias')">Ver novedades →</button>
+              </div>
+            </article>
+            <button class="news-carousel-arrow next" type="button" aria-label="Siguiente novedad" @click="nextNoticia">›</button>
+          </div>
+
+          <div class="news-carousel-dots" aria-label="Novedades disponibles">
+            <button
+              v-for="(item, index) in noticiasPreview"
+              :key="item.id"
+              type="button"
+              :class="['news-carousel-dot', { active: index === noticiaActivaIndex }]"
+              :aria-label="'Ver novedad ' + (index + 1)"
+              @click="seleccionarNoticia(index)"
+            ></button>
+          </div>
+        </article>
+
+        <aside class="home-featured-services">
+          <div class="home-section-label">
+            <span class="home-section-icon">✚</span>
+            <span>Servicios destacados</span>
+          </div>
+
+          <div class="featured-services-list">
+            <article
+              v-for="servicio in serviciosDestacados"
+              :key="servicio.id"
+              class="featured-service-item"
+            >
+              <div class="featured-service-image">
+                <img :src="servicio.imagen" :alt="servicio.nombre" />
+              </div>
+              <div class="featured-service-copy">
+                <h3>{{ servicio.nombre }}</h3>
+                <p>{{ servicio.descripcion }}</p>
+              </div>
+            </article>
+          </div>
+        </aside>
       </section>
 
     <!-- Lista de Médicos/Doctores -->
@@ -146,22 +188,8 @@
         <p>No se encontraron médicos que coincidan con "{{ searchQuery }}".</p>
       </div>
 
-      <!-- Servicios Destacados -->
-      <section class="servicios-destacados">
-        <p class="section-subtitle">Conoce nuestros</p>
-        <h2 class="section-title">Servicios Médicos Destacados</h2>
-        <div class="servicios-grid">
-          <div class="servicio-card" v-for="servicio in serviciosDestacados" :key="servicio.id">
-            <div class="servicio-imagen">
-              <img :src="servicio.imagen" :alt="servicio.nombre" />
-            </div>
-            <h3>{{ servicio.nombre }}</h3>
-            <p>{{ servicio.descripcion }}</p>
-          </div>
-        </div>
-
-        <InstalacionesSection :embedded="true" />
-      </section>
+      <!-- Instalaciones -->
+      <InstalacionesSection :embedded="true" />
     </div>
 
     <!-- Indicadores -->
@@ -184,3 +212,5 @@
 
 <script src="./HomePage.js"></script>
 <style src="./HomePage.css"></style>
+
+

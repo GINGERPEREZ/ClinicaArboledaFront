@@ -94,33 +94,16 @@
             <h2 class="form-step-title">Selecciona Fecha y Hora</h2>
             <p class="form-step-desc">Horarios disponibles con {{ selectedMedico?.nombre }}</p>
 
-            <div class="datetime-grid">
-              <div class="date-picker-section">
-                <label class="field-label" for="cita-fecha">Fecha de la cita</label>
-                <input
-                  id="cita-fecha"
-                  type="date"
-                  v-model="selectedDate"
-                  :min="minDate"
-                  :max="maxDate"
-                  class="date-input"
-                  @change="onDateChange"
-                />
-              </div>
-
-              <div class="time-picker-section" v-if="selectedDate">
-                <span id="cita-horario-label" class="field-label">Horario disponible</span>
-                <div class="time-slots" role="group" aria-labelledby="cita-horario-label">
-                  <button
-                    v-for="slot in timeSlots"
-                    :key="slot"
-                    :class="['time-slot', { selected: selectedTime === slot }]"
-                    @click="selectTime(slot)"
-                  >
-                    {{ slot }}
-                  </button>
-                </div>
-              </div>
+            <div class="turnos-grid" role="group" aria-label="Horarios disponibles">
+              <button
+                v-for="turno in turnosDisponibles"
+                :key="turno.id"
+                :class="['turno-card', { selected: selectedDate === turno.fecha && selectedTime === turno.hora }]"
+                @click="selectTurno(turno)"
+              >
+                <span class="turno-fecha">{{ formatDayLabel(turno.fecha) }}</span>
+                <span class="turno-hora">{{ turno.hora }}</span>
+              </button>
             </div>
           </div>
 
@@ -334,4 +317,6 @@
 
 <script src="./AgendamientoCitas.js"></script>
 <style src="./AgendamientoCitas.css"></style>
+
+
 

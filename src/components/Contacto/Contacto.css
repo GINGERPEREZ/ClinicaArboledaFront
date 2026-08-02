@@ -12,7 +12,7 @@
 }
 
 .contacto-hero {
-  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
   padding: 38px 16px;
   text-align: center;
 }
@@ -55,7 +55,7 @@
 
 .contacto-form-title {
   margin: 0;
-  color: #0b4f6b;
+  color: #123f3c;
   font-size: 30px;
 }
 
@@ -105,7 +105,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #69c6ee;
+  border-color: #5dc1b9;
   box-shadow: 0 0 0 3px rgba(87, 187, 180, 0.15);
 }
 
@@ -120,7 +120,7 @@
   line-height: 1.5;
   padding: 10px;
   background: #f4f9f9;
-  border-left: 3px solid #69c6ee;
+  border-left: 3px solid #5dc1b9;
   border-radius: 6px;
   margin: 2px 0;
 }
@@ -140,12 +140,12 @@
 
 .consentimiento-label input[type='checkbox'] {
   margin-top: 3px;
-  accent-color: #159bd0;
+  accent-color: #42a8a1;
 }
 
 .btn-submit {
   margin-top: 4px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -158,7 +158,7 @@
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 10px 20px rgba(66, 168, 161, 0.3);
 }
 
 .btn-submit:disabled {
@@ -196,4 +196,6 @@
     font-size: 24px;
   }
 }
+
+
 

@@ -100,8 +100,8 @@
 
 .hex-input:focus {
   outline: none;
-  border-color: var(--color-primary, #159bd0);
-  box-shadow: 0 0 0 3px rgba(21, 155, 208, 0.1);
+  border-color: var(--color-primary, #42a8a1);
+  box-shadow: 0 0 0 3px rgba(66, 168, 161, 0.1);
 }
 
 /* Vista Previa */
@@ -165,12 +165,12 @@
 }
 
 .actions-section .btn-primary {
-  background: var(--color-primary, #159bd0);
+  background: var(--color-primary, #42a8a1);
   color: white;
 }
 
 .actions-section .btn-primary:hover:not(:disabled) {
-  background: var(--color-primary-dark, #0b4f6b);
+  background: var(--color-primary-dark, #123f3c);
   transform: translateY(-2px);
 }
 
@@ -249,7 +249,7 @@
 }
 
 .paleta-card:hover {
-  border-color: var(--color-primary, #159bd0);
+  border-color: var(--color-primary, #42a8a1);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -297,4 +297,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
 

@@ -99,7 +99,7 @@ export default {
         { id: 30, nombre: 'CARLOS LEONIDAS MORALES NARANJO', iniciales: 'CM', especialidadId: 16, especialidad: 'Neurología', horario: 'Lunes a viernes, previa cita' },
         { id: 31, nombre: 'JAMES JOHANN MUÑOZ ZAMBRANO', iniciales: 'JM', especialidadId: 17, especialidad: 'Nefrología', horario: 'Lunes a viernes, previa cita' },
       ],
-      timeSlots: [],
+      turnosDisponibles: [],
     };
   },
   computed: {
@@ -107,16 +107,7 @@ export default {
       if (!this.selectedEspecialidad) return [];
       return this.medicos.filter(m => m.especialidadId === this.selectedEspecialidad.id);
     },
-    minDate() {
-      const tomorrow = new Date();
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      return tomorrow.toISOString().split('T')[0];
-    },
-    maxDate() {
-      const max = new Date();
-      max.setDate(max.getDate() + 60);
-      return max.toISOString().split('T')[0];
-    },
+
     /**
      * Errores derivados del estado actual del formulario.
      * Es la única fuente de verdad: no se guarda una copia mutable en `data`,
@@ -145,15 +136,29 @@ export default {
   },
   methods: {
 
+    normalizarTextoBusqueda(valor) {
+      return String(valor || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+    },
+    buscarEspecialidadPorNombre(nombre) {
+      const nombreNormalizado = this.normalizarTextoBusqueda(nombre);
+      const aliasEspecialidades = {
+        neumologia: 'neumonologia',
+      };
+      const nombreComparable = aliasEspecialidades[nombreNormalizado] || nombreNormalizado;
+
+      return this.especialidades.find((e) => (
+        this.normalizarTextoBusqueda(e.nombre) === nombreComparable
+      )) || null;
+    },
+
     /**
      * Preselecciona especialidad y médico a partir de la query string
      * (`/agendamiento-citas?especialidad=X&medico=Y`), como al llegar desde la
-     * tarjeta de un médico.
-     *
-     * Solo preselecciona: el asistente siempre arranca en el primer paso para
-     * que el paciente vea qué quedó elegido y pueda cambiarlo. Un parámetro que
-     * no exista en el catálogo se ignora y ese paso queda sin responder, en vez
-     * de arrastrar una selección a medias.
+     * tarjeta de una especialidad o de un médico.
      */
     aplicarSeleccionDesdeRuta() {
       const { especialidad: especialidadParam, medico: medicoParam } = this.$route.query;
@@ -173,8 +178,10 @@ export default {
       }
 
       if (especialidadParam) {
-        this.selectedEspecialidad =
-          this.especialidades.find((e) => e.nombre === especialidadParam) || null;
+        this.selectedEspecialidad = this.buscarEspecialidadPorNombre(especialidadParam);
+        if (this.selectedEspecialidad) {
+          this.currentStep = PASO_MEDICO;
+        }
       }
     },
     selectEspecialidad(esp) {
@@ -193,23 +200,47 @@ export default {
       this.selectedMedico = med;
       this.selectedDate = '';
       this.selectedTime = '';
+      this.generateTurnosDisponibles();
     },
-    selectTime(slot) {
-      this.selectedTime = slot;
+    selectTurno(turno) {
+      this.selectedDate = turno.fecha;
+      this.selectedTime = turno.hora;
     },
-    onDateChange() {
-      this.selectedTime = '';
-      this.generateTimeSlots();
-    },
-    generateTimeSlots() {
-      const slots = [];
-      const startHour = 8;
-      const endHour = 17;
-      for (let h = startHour; h < endHour; h++) {
-        slots.push(`${String(h).padStart(2, '0')}:00`);
-        slots.push(`${String(h).padStart(2, '0')}:30`);
+    generateTurnosDisponibles() {
+      const horasBase = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '14:00', '14:30', '15:00', '15:30', '16:00'];
+      const turnos = [];
+      const cursor = new Date();
+      cursor.setDate(cursor.getDate() + 1);
+
+      while (turnos.length < 15) {
+        const diaSemana = cursor.getDay();
+        if (diaSemana !== 0) {
+          const fecha = this.toDateInputValue(cursor);
+          const offset = (this.selectedMedico?.id || 0) % 4;
+          horasBase.slice(offset, offset + 5).forEach((hora) => {
+            turnos.push({
+              id: `${fecha}-${hora}`,
+              fecha,
+              hora,
+            });
+          });
+        }
+        cursor.setDate(cursor.getDate() + 1);
       }
-      this.timeSlots = slots;
+
+      this.turnosDisponibles = turnos.slice(0, 15);
+    },
+    toDateInputValue(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    },
+    formatDayLabel(dateStr) {
+      if (!dateStr) return '';
+      const [year, month, day] = dateStr.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      return date.toLocaleDateString('es-EC', { weekday: 'long', day: 'numeric', month: 'long' });
     },
     /* -------------------------------------------------------------- *
      * Validación de los datos del paciente
@@ -337,3 +368,5 @@ export default {
     },
   },
 };
+
+

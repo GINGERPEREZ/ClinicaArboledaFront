@@ -1,7 +1,7 @@
 /* Header general (estilo cl�nica) - S�lido por defecto */
 .header {
   font-family: "Roboto", sans-serif;
-  color: #0b4f6b;
+  color: #123f3c;
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: fixed;
@@ -48,7 +48,7 @@
   }
 
   .logo-icon {
-    background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+    background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
     color: white;
     font-size: 28px;
     font-weight: bold;
@@ -62,7 +62,7 @@
 
   .logo-text {
     font-size: 12px;
-    color: #159bd0;
+    color: #42a8a1;
     line-height: 1.2;
     transition: color 0.3s ease;
     text-shadow: 
@@ -143,8 +143,8 @@
     
     /* ESTILO TRANSPARENTE CON TEXTO AZUL */
     background: transparent !important;
-    color: #159bd0 !important;
-    border: 1.5px solid #159bd0 !important;
+    color: #42a8a1 !important;
+    border: 1.5px solid #42a8a1 !important;
     transition: all 0.2s ease;
     text-shadow: 
       -0.5px -0.5px 0 rgba(0, 0, 0, 0.2),
@@ -167,7 +167,7 @@
 
   /* Bot�n Pacientes - estilo especial en paleta teal */
   .btn-pacientes {
-    background: #2d8f89 !important;
+    background: #42a8a1 !important;
     color: white !important;
     border: none !important;
     border-radius: 20px !important;
@@ -181,7 +181,7 @@
   }
 
   .btn-pacientes:hover {
-    background: #216f6a !important;
+    background: #42a8a1 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(33, 111, 106, 0.35);
     text-shadow: 
@@ -195,8 +195,8 @@
   /* Bot�n M�dicos - estilo especial con borde azul */
   .btn-medicos {
     background: transparent !important;
-    color: #159bd0 !important;
-    border: 2px solid #159bd0 !important;
+    color: #42a8a1 !important;
+    border: 2px solid #42a8a1 !important;
     border-radius: 20px !important;
     padding: 0 16px !important;
     transition: all 0.3s ease;
@@ -220,7 +220,7 @@
   }
 
   .btn-medicos:hover {
-    background: #159bd0 !important;
+    background: #42a8a1 !important;
     color: white !important;
     text-shadow: 
       -1px -1px 0 rgba(0, 0, 0, 0.4),
@@ -243,7 +243,7 @@
   .carrito-button .carrito-icon {
     width: 18px;
     height: 18px;
-    stroke: #159bd0;
+    stroke: #42a8a1;
     transition: all 0.2s ease;
   }
   
@@ -251,7 +251,7 @@
     position: absolute;
     top: -6px;
     right: -6px;
-    background: linear-gradient(135deg, #159bd0, #69c6ee);
+    background: linear-gradient(135deg, #42a8a1, #5dc1b9);
     color: white;
     border-radius: 50%;
     width: 16px;
@@ -261,7 +261,7 @@
     justify-content: center;
     font-size: 9px;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 102, 179, 0.3);
+    box-shadow: 0 2px 4px rgba(66, 168, 161, 0.3);
   }
 
   /* Efecto hover uniforme para todos los botones */
@@ -271,11 +271,11 @@
   .tecnicos-button:hover,
   .perfil-button:hover,
   .action-button:hover {
-    background: #159bd0 !important;
+    background: #42a8a1 !important;
     color: white !important;
-    border-color: #159bd0 !important;
+    border-color: #42a8a1 !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
+    box-shadow: 0 4px 12px rgba(66, 168, 161, 0.25);
     text-shadow: 
       -1px -1px 0 rgba(0, 0, 0, 0.4),
       1px -1px 0 rgba(0, 0, 0, 0.4),
@@ -290,7 +290,7 @@
   
   /* Men� de navegaci�n principal */
   .main-menu {
-  background-color: #0b4f6b;
+  background-color: #123f3c;
 	border-top: 1px solid rgba(0, 0, 0, 0.04);
 	border-bottom: none;
 	padding: 12px 0;
@@ -343,39 +343,39 @@
 
   /* Estado Hover y Activo con el color resaltado */
   .main-menu a:hover {
-  color: #69c6ee;
-  border-bottom: 3px solid #69c6ee;
+  color: #5dc1b9;
+  border-bottom: 3px solid #5dc1b9;
   transform: translateY(-2.5px);
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
     1px -1px 0 rgba(0, 0, 0, 0.6),
     -1px 1px 0 rgba(0, 0, 0, 0.6),
     1px 1px 0 rgba(0, 0, 0, 0.6),
-    0 2px 6px rgba(0, 168, 232, 0.5);
+    0 2px 6px rgba(93, 193, 185, 0.5);
   }
 
   /* Si tienes una clase para el enlace de la p�gina actual */
   .main-menu a.router-link-active {
-  color: #69c6ee;
-  border-bottom: 3px solid #69c6ee;
+  color: #5dc1b9;
+  border-bottom: 3px solid #5dc1b9;
   text-shadow: 
     -1px -1px 0 rgba(0, 0, 0, 0.6),
     1px -1px 0 rgba(0, 0, 0, 0.6),
     -1px 1px 0 rgba(0, 0, 0, 0.6),
     1px 1px 0 rgba(0, 0, 0, 0.6),
-    0 2px 6px rgba(0, 168, 232, 0.5);
+    0 2px 6px rgba(93, 193, 185, 0.5);
   }
 
   /* Cuando el header esta en scroll (fondo claro), usar teal para mejor contraste */
   .header.scrolled .main-menu a {
-    color: #69c6ee;
+    color: #5dc1b9;
     text-shadow: none;
   }
 
   .header.scrolled .main-menu a:hover,
   .header.scrolled .main-menu a.router-link-active {
-    color: #69c6ee;
-    border-bottom: 3px solid #69c6ee;
+    color: #5dc1b9;
+    border-bottom: 3px solid #5dc1b9;
     text-shadow: none;
   }
   
@@ -450,9 +450,9 @@
 
   .header.scrolled .dropdown-content {
     background-color: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(87, 187, 180, 0.35);
+    border: 1px solid rgba(93, 193, 185, 0.35);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12),
-                0 0 0 1px rgba(87, 187, 180, 0.12) inset;
+                0 0 0 1px rgba(93, 193, 185, 0.12) inset;
   }
   
   /* Scrollbar del dropdown */
@@ -470,7 +470,7 @@
   }
 
   .dropdown-content::-webkit-scrollbar-thumb:hover {
-    background: #159bd0;
+    background: #42a8a1;
   }
   
   /* Items del dropdown */
@@ -512,7 +512,7 @@
   }
 
   .header.scrolled .dropdown-content a {
-    color: #69c6ee;
+    color: #5dc1b9;
     text-shadow: none;
     font-weight: 600;
   }
@@ -537,7 +537,7 @@
 
   .header.scrolled .dropdown-content a:hover {
     background: rgba(94, 137, 30, 0.14);
-    color: #159bd0;
+    color: #42a8a1;
     text-shadow: none;
   }
   
@@ -572,9 +572,9 @@
    REFRESH INSTITUCIONAL AZUL / BLANCO
    ============================================ */
 .header {
-  color: #073b52;
+  color: #123f3c;
   background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 10px 30px rgba(11, 57, 84, 0.08);
+  box-shadow: 0 10px 30px rgba(66, 168, 161, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -594,7 +594,7 @@
 .logo-image,
 .header.scrolled .logo-image {
   height: 72px;
-  filter: drop-shadow(0 8px 18px rgba(11, 57, 84, 0.12));
+  filter: drop-shadow(0 8px 18px rgba(66, 168, 161, 0.12));
 }
 
 .user-actions {
@@ -613,34 +613,34 @@
 }
 
 .btn-pacientes {
-  background: #0b83b0 !important;
-  border: 1px solid #0b83b0 !important;
+  background: #42a8a1 !important;
+  border: 1px solid #42a8a1 !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 20px rgba(0, 107, 149, 0.18);
+  box-shadow: 0 8px 20px rgba(66, 168, 161, 0.18);
 }
 
 .btn-medicos,
 .action-button {
   background: #ffffff !important;
-  border: 1px solid rgba(0, 107, 149, 0.28) !important;
-  color: #0b83b0 !important;
+  border: 1px solid rgba(66, 168, 161, 0.28) !important;
+  color: #42a8a1 !important;
 }
 
 .header.is-home:not(.scrolled) .btn-medicos,
 .header.is-home:not(.scrolled) .action-button {
-  color: #0b83b0 !important;
-  border-color: rgba(0, 107, 149, 0.28) !important;
+  color: #42a8a1 !important;
+  border-color: rgba(66, 168, 161, 0.28) !important;
   text-shadow: none !important;
 }
 
 .action-button:hover,
 .btn-medicos:hover,
 .btn-pacientes:hover {
-  background: #073b52 !important;
-  border-color: #073b52 !important;
+  background: #123f3c !important;
+  border-color: #123f3c !important;
   color: #ffffff !important;
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(11, 57, 84, 0.2);
+  box-shadow: 0 10px 24px rgba(66, 168, 161, 0.2);
   text-shadow: none !important;
 }
 
@@ -649,14 +649,14 @@
   margin: 0 auto 14px;
   padding: 0;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 107, 149, 0.1);
+  border: 1px solid rgba(66, 168, 161, 0.1);
   border-radius: 8px;
-  box-shadow: 0 14px 32px rgba(11, 57, 84, 0.1);
+  box-shadow: 0 14px 32px rgba(66, 168, 161, 0.1);
 }
 
 .header.is-home:not(.scrolled) .main-menu {
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 107, 149, 0.1);
+  border: 1px solid rgba(66, 168, 161, 0.1);
 }
 
 .main-menu ul {
@@ -666,7 +666,7 @@
 
 .main-menu a,
 .header.scrolled .main-menu a {
-  color: #005f88;
+  color: #42a8a1;
   min-height: 38px;
   padding: 9px 12px;
   border-bottom: 2px solid transparent;
@@ -680,9 +680,9 @@
 .main-menu a.router-link-active,
 .header.scrolled .main-menu a:hover,
 .header.scrolled .main-menu a.router-link-active {
-  color: #073b52;
-  background: #e8f4fa;
-  border-bottom-color: #0b83b0;
+  color: #123f3c;
+  background: #f7fcfb;
+  border-bottom-color: #42a8a1;
   border-radius: 6px;
   transform: none;
   text-shadow: none;
@@ -691,20 +691,20 @@
 .dropdown-content,
 .header.scrolled .dropdown-content {
   background: rgba(255, 255, 255, 0.98);
-  border: 1px solid rgba(0, 107, 149, 0.12);
-  box-shadow: 0 18px 36px rgba(11, 57, 84, 0.16);
+  border: 1px solid rgba(66, 168, 161, 0.12);
+  box-shadow: 0 18px 36px rgba(66, 168, 161, 0.16);
 }
 
 .dropdown-content a,
 .header.scrolled .dropdown-content a {
-  color: #005f88;
+  color: #42a8a1;
   text-shadow: none;
 }
 
 .dropdown-content a:hover,
 .header.scrolled .dropdown-content a:hover {
-  background: #e8f4fa;
-  color: #073b52;
+  background: #f7fcfb;
+  color: #123f3c;
   text-shadow: none;
 }
 
@@ -738,7 +738,7 @@
 .header.is-home:not(.scrolled),
 .header.scrolled {
   background: #ffffff !important;
-  box-shadow: 0 6px 24px rgba(11, 79, 107, 0.08) !important;
+  box-shadow: 0 6px 24px rgba(66, 168, 161, 0.08) !important;
 }
 
 .header .main-header {
@@ -757,7 +757,7 @@
 
 .header .main-menu,
 .header.is-home:not(.scrolled) .main-menu {
-  background: linear-gradient(90deg, #0b83b0 0%, #159bd0 48%, #29abe2 100%) !important;
+  background: linear-gradient(90deg, #42a8a1 0%, #42a8a1 48%, #5dc1b9 100%) !important;
   border: 0 !important;
   padding: 10px 0;
 }
@@ -789,19 +789,19 @@
   padding: 0 18px !important;
   border-radius: 999px !important;
   background: #ffffff !important;
-  color: #0b83b0 !important;
-  border: 1.5px solid #95d5f1 !important;
-  box-shadow: 0 8px 20px rgba(11, 79, 107, 0.1) !important;
+  color: #42a8a1 !important;
+  border: 1.5px solid #cfecea !important;
+  box-shadow: 0 8px 20px rgba(66, 168, 161, 0.1) !important;
   text-shadow: none !important;
 }
 
 .header .action-button:hover,
 .header .btn-pacientes:hover,
 .header .btn-medicos:hover {
-  background: #e8fbfc !important;
-  color: #073b52 !important;
+  background: #f7fcfb !important;
+  color: #123f3c !important;
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(11, 79, 107, 0.16) !important;
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.16) !important;
 }
 
 @media (max-width: 768px) {
@@ -824,7 +824,7 @@
 .header.is-home:not(.scrolled),
 .header.scrolled {
   background: rgba(255, 255, 255, 0.96) !important;
-  box-shadow: 0 1px 14px rgba(11, 79, 107, 0.08) !important;
+  box-shadow: 0 1px 14px rgba(66, 168, 161, 0.08) !important;
   backdrop-filter: blur(10px);
 }
 
@@ -855,7 +855,7 @@
 .header.is-home:not(.scrolled) .main-menu a {
   min-height: 28px !important;
   padding: 4px 2px !important;
-  color: #0b4f6b !important;
+  color: #123f3c !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   text-shadow: none !important;
@@ -865,9 +865,9 @@
 
 .header .main-menu a:hover,
 .header .main-menu a.router-link-active {
-  color: #0b83b0 !important;
+  color: #42a8a1 !important;
   background: transparent !important;
-  border-bottom-color: #0b83b0;
+  border-bottom-color: #42a8a1;
 }
 
 .header .user-actions {
@@ -884,16 +884,16 @@
   padding: 0 18px !important;
   border-radius: 999px !important;
   background: #ffffff !important;
-  color: #0b83b0 !important;
-  border: 1.5px solid #95d5f1 !important;
+  color: #42a8a1 !important;
+  border: 1.5px solid #cfecea !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
 .header .btn-medicos,
 .header.is-home:not(.scrolled) .btn-medicos {
-  background: #0b83b0 !important;
-  border-color: #0b83b0 !important;
+  background: #42a8a1 !important;
+  border-color: #42a8a1 !important;
   color: #ffffff !important;
 }
 
@@ -901,7 +901,7 @@
 .header .btn-pacientes:hover,
 .header .btn-medicos:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(11, 79, 107, 0.12) !important;
+  box-shadow: 0 8px 18px rgba(66, 168, 161, 0.12) !important;
 }
 
 @media (max-width: 768px) {
@@ -923,8 +923,8 @@
 .header.is-home:not(.scrolled),
 .header.scrolled {
   height: 104px !important;
-  background: #f7f1f1 !important;
-  box-shadow: 0 8px 26px rgba(11, 79, 107, 0.08) !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 26px rgba(66, 168, 161, 0.08) !important;
   backdrop-filter: none !important;
 }
 
@@ -987,7 +987,7 @@
 .header.is-home:not(.scrolled) .main-menu a {
   min-height: 38px !important;
   padding: 9px 10px !important;
-  color: #0b4f6b !important;
+  color: #123f3c !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   text-shadow: none !important;
@@ -1001,8 +1001,8 @@
 .header .main-menu a.router-link-active,
 .header .main-menu a[href="/home"] {
   color: #ffffff !important;
-  background: #0b83b0 !important;
-  border-color: #0b83b0 !important;
+  background: #42a8a1 !important;
+  border-color: #42a8a1 !important;
 }
 
 .header .action-button,
@@ -1016,9 +1016,9 @@
   padding: 0 20px !important;
   border-radius: 999px !important;
   background: #ffffff !important;
-  color: #0b83b0 !important;
-  border: 1.5px solid #95d5f1 !important;
-  box-shadow: 0 8px 18px rgba(11, 79, 107, 0.1) !important;
+  color: #42a8a1 !important;
+  border: 1.5px solid #cfecea !important;
+  box-shadow: 0 8px 18px rgba(66, 168, 161, 0.1) !important;
   text-shadow: none !important;
   font-size: 13px !important;
   font-weight: 750 !important;
@@ -1026,8 +1026,8 @@
 
 .header .btn-medicos,
 .header.is-home:not(.scrolled) .btn-medicos {
-  background: #0b83b0 !important;
-  border-color: #0b83b0 !important;
+  background: #42a8a1 !important;
+  border-color: #42a8a1 !important;
   color: #ffffff !important;
 }
 
@@ -1035,7 +1035,7 @@
 .header .btn-pacientes:hover,
 .header .btn-medicos:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(11, 79, 107, 0.16) !important;
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.16) !important;
 }
 
 @media (max-width: 1100px) {
@@ -1108,7 +1108,7 @@
   height: 2px;
   margin: 0 auto;
   border-radius: 2px;
-  background: #0b4f6b;
+  background: #123f3c;
   transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
@@ -1184,7 +1184,7 @@
 .header .drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(7, 59, 82, 0.45);
+  background: rgba(66, 168, 161, 0.35);
   backdrop-filter: blur(2px);
   z-index: 10000;   /* por encima del widget de WhatsApp (9999) */
 }
@@ -1203,7 +1203,7 @@
   overflow-y: auto;
   overscroll-behavior: contain;   /* el scroll no se propaga a la página */
   background: #ffffff;
-  box-shadow: -8px 0 30px rgba(11, 79, 107, 0.18);
+  box-shadow: -8px 0 30px rgba(66, 168, 161, 0.18);
 }
 
 .header .mobile-drawer-top {
@@ -1211,13 +1211,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 20px;
-  border-bottom: 1px solid rgba(11, 79, 107, 0.1);
+  border-bottom: 1px solid rgba(66, 168, 161, 0.1);
 }
 
 .header .mobile-drawer-title {
   font-size: 15px;
   font-weight: 700;
-  color: #0b4f6b;
+  color: #123f3c;
   letter-spacing: 0.02em;
 }
 
@@ -1230,8 +1230,8 @@
   padding: 0;
   border: 0;
   border-radius: 10px;
-  background: rgba(21, 155, 208, 0.08);
-  color: #0b4f6b;
+  background: rgba(66, 168, 161, 0.08);
+  color: #123f3c;
   cursor: pointer;
 }
 
@@ -1248,14 +1248,14 @@
   align-items: center;
   min-height: 48px;   /* objetivo táctil cómodo */
   padding: 8px 20px;
-  color: #0b4f6b;
+  color: #123f3c;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
 }
 
 .header .mobile-drawer-link:active {
-  background: rgba(21, 155, 208, 0.08);
+  background: rgba(66, 168, 161, 0.08);
 }
 
 /* Cabecera de un grupo desplegable: en móvil se listan siempre abiertos, para
@@ -1263,7 +1263,7 @@
 .header .mobile-drawer-group {
   display: block;
   padding: 16px 20px 6px;
-  color: #6f8f9e;
+  color: #6c8b88;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1287,16 +1287,16 @@
   flex-direction: column;
   gap: 10px;
   padding: 18px 20px 24px;
-  border-top: 1px solid rgba(11, 79, 107, 0.1);
+  border-top: 1px solid rgba(66, 168, 161, 0.1);
 }
 
 .header .mobile-drawer-btn {
   min-height: 46px;
   padding: 0 18px;
-  border: 1.5px solid #95d5f1;
+  border: 1.5px solid #cfecea;
   border-radius: 999px;
   background: #ffffff;
-  color: #0b83b0;
+  color: #42a8a1;
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
@@ -1304,8 +1304,8 @@
 }
 
 .header .mobile-drawer-btn.is-primary {
-  border-color: #0b83b0;
-  background: #0b83b0;
+  border-color: #42a8a1;
+  background: #42a8a1;
   color: #ffffff;
 }
 
@@ -1337,3 +1337,6 @@
     transition: none !important;
   }
 }
+
+
+

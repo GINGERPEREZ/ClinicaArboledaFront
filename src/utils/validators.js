@@ -173,3 +173,5 @@ export function aFormatoInternacionalEc(valor) {
 }
 
 export const esEmail = (valor) => esTexto(valor) && RE_EMAIL.test(valor.trim());
+
+

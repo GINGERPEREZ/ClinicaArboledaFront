@@ -23,7 +23,7 @@
 .agendamiento-hero {
   position: relative;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
   text-align: center;
   overflow: hidden;
 }
@@ -126,11 +126,11 @@
 }
 
 .step.completed::after {
-  background: #159bd0;
+  background: #42a8a1;
 }
 
 .step.active::after {
-  background: linear-gradient(90deg, #159bd0 0%, #e0e0e0 100%);
+  background: linear-gradient(90deg, #42a8a1 0%, #e0e0e0 100%);
 }
 
 .step-circle {
@@ -151,16 +151,16 @@
 }
 
 .step.active .step-circle {
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
-  border-color: #159bd0;
+  border-color: #42a8a1;
   box-shadow: 0 0 0 4px rgba(35, 144, 137, 0.2);
 }
 
 .step.completed .step-circle {
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
-  border-color: #159bd0;
+  border-color: #42a8a1;
 }
 
 .step.completed .step-circle svg {
@@ -176,11 +176,11 @@
 }
 
 .step.active .step-label {
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .step.completed .step-label {
-  color: #0b4f6b;
+  color: #123f3c;
 }
 
 /* Form Section */
@@ -213,7 +213,7 @@
 .form-step-title {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #0b4f6b;
+  color: #123f3c;
   margin: 0 0 8px;
 }
 
@@ -245,13 +245,13 @@
 }
 
 .especialidad-card:hover {
-  border-color: #69c6ee;
+  border-color: #5dc1b9;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(35, 144, 137, 0.12);
 }
 
 .especialidad-card.selected {
-  border-color: #159bd0;
+  border-color: #42a8a1;
   background: linear-gradient(180deg, #f0faf9 0%, #e4f5f3 100%);
   box-shadow: 0 4px 16px rgba(35, 144, 137, 0.2);
 }
@@ -264,7 +264,7 @@
 .especialidad-name {
   font-size: 13px;
   font-weight: 600;
-  color: #0b4f6b;
+  color: #123f3c;
   text-align: center;
   line-height: 1.3;
 }
@@ -291,13 +291,13 @@
 }
 
 .medico-card:hover {
-  border-color: #69c6ee;
+  border-color: #5dc1b9;
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(35, 144, 137, 0.12);
 }
 
 .medico-card.selected {
-  border-color: #159bd0;
+  border-color: #42a8a1;
   background: linear-gradient(180deg, #f0faf9 0%, #e4f5f3 100%);
   box-shadow: 0 4px 16px rgba(35, 144, 137, 0.2);
 }
@@ -307,7 +307,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -324,13 +324,13 @@
 .medico-name {
   font-size: 15px;
   font-weight: 700;
-  color: #0b4f6b;
+  color: #123f3c;
   margin: 0 0 4px;
 }
 
 .medico-especialidad {
   font-size: 13px;
-  color: #159bd0;
+  color: #42a8a1;
   margin: 0 0 6px;
   font-weight: 500;
 }
@@ -349,18 +349,59 @@
 }
 
 /* Date/Time */
-.datetime-grid {
+.turnos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px;
+}
+
+.turno-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 92px;
+  padding: 16px;
+  border: 2px solid rgba(63, 165, 158, 0.18);
+  border-radius: 12px;
+  background: white;
+  color: #123f3c;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.turno-card:hover {
+  border-color: #5dc1b9;
+  box-shadow: 0 8px 20px rgba(66, 168, 161, 0.14);
+  transform: translateY(-1px);
+}
+
+.turno-card.selected {
+  background: #42a8a1;
+  border-color: #42a8a1;
+  color: white;
+  box-shadow: 0 10px 24px rgba(66, 168, 161, 0.28);
+}
+
+.turno-fecha {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.turno-hora {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .field-label {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #0b4f6b;
+  color: #123f3c;
   margin-bottom: 10px;
 }
 
@@ -378,7 +419,7 @@
 
 .date-input:focus {
   outline: none;
-  border-color: #159bd0;
+  border-color: #42a8a1;
   box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.12);
 }
 
@@ -395,22 +436,22 @@
   background: white;
   font-size: 14px;
   font-weight: 600;
-  color: #0b4f6b;
+  color: #123f3c;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
 }
 
 .time-slot:hover {
-  border-color: #69c6ee;
+  border-color: #5dc1b9;
   background: #f4fbfa;
 }
 
 .time-slot.selected {
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
-  border-color: #159bd0;
-  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
+  border-color: #42a8a1;
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.3);
 }
 
 /* Patient Form */
@@ -447,7 +488,7 @@
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #159bd0;
+  border-color: #42a8a1;
   box-shadow: 0 0 0 3px rgba(35, 144, 137, 0.12);
 }
 
@@ -516,7 +557,7 @@
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(21, 155, 208, 0.1);
+  box-shadow: 0 8px 30px rgba(66, 168, 161, 0.1);
   border: 1px solid rgba(63, 165, 158, 0.12);
 }
 
@@ -532,7 +573,7 @@
 .confirmation-icon {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -546,7 +587,7 @@
 .confirmation-header h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #0b4f6b;
+  color: #123f3c;
   margin: 0;
 }
 
@@ -581,7 +622,7 @@
 .detail-value {
   font-size: 15px;
   font-weight: 600;
-  color: #0b4f6b;
+  color: #123f3c;
 }
 
 /* Success */
@@ -623,13 +664,13 @@
 }
 
 .success-icon-wrapper svg {
-  stroke: #159bd0;
+  stroke: #42a8a1;
 }
 
 .success-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #0b4f6b;
+  color: #123f3c;
   margin: 0 0 12px;
 }
 
@@ -662,9 +703,9 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
   color: white;
-  box-shadow: 0 4px 14px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 14px rgba(66, 168, 161, 0.3);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -682,7 +723,7 @@
 }
 
 .btn-confirm {
-  background: linear-gradient(135deg, #159bd0 0%, #0b83b0 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #42a8a1 100%);
   color: white;
   box-shadow: 0 4px 14px rgba(35, 144, 137, 0.35);
   padding: 14px 40px;
@@ -801,4 +842,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
 

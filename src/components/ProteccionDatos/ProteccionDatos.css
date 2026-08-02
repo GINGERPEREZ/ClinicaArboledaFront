@@ -30,7 +30,7 @@
 .page-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #159bd0;
+  color: #42a8a1;
   margin: 0 0 12px;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -63,7 +63,7 @@
 .proteccion-datos-info .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #0b83b0;
+  color: #42a8a1;
   margin: 0 0 12px 0;
 }
 
@@ -108,7 +108,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   border-radius: 50%;
   margin-bottom: 16px;
 }
@@ -170,7 +170,7 @@
 
 /* CTA */
 .proteccion-datos-cta {
-  background: linear-gradient(135deg, #0b4f6b 0%, #0d3b38 100%);
+  background: linear-gradient(135deg, #123f3c 0%, #0d3b38 100%);
   padding: 56px 20px;
   text-align: center;
 }
@@ -195,7 +195,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: #ffffff;
   border: none;
   padding: 16px 40px;
@@ -204,20 +204,20 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 20px rgba(66, 168, 161, 0.3);
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(35, 144, 137, 0.4);
-  background: linear-gradient(135deg, #159bd0 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
 }
 
 .descarga-politica-section {
   position: relative;
   overflow: hidden;
   padding: 52px 20px 18px;
-  background: linear-gradient(135deg, #0b4f6b 0%, #0d3b38 100%);
+  background: linear-gradient(135deg, #123f3c 0%, #0d3b38 100%);
 }
 
 .descarga-politica-section::before {
@@ -256,7 +256,7 @@
 }
 
 .legal-links-section {
-  background: linear-gradient(135deg, #0b4f6b 0%, #0d3b38 100%);
+  background: linear-gradient(135deg, #123f3c 0%, #0d3b38 100%);
   border-top: 1px solid rgba(217, 232, 247, 0.3);
   border-bottom: none;
   padding: 14px 20px 26px;
@@ -423,4 +423,6 @@
     font-size: 14px;
   }
 }
+
+
 

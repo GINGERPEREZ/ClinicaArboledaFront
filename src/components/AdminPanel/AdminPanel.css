@@ -366,7 +366,7 @@
 
 .permiso-badge.permiso-banners {
   background: #e0f2f1;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .permiso-badge.permiso-promociones {
@@ -395,11 +395,11 @@
 }
 
 .btn-warning {
-  background: #159bd0 !important;
+  background: #42a8a1 !important;
 }
 
 .btn-warning:hover {
-  background: #0b4f6b !important;
+  background: #123f3c !important;
 }
 
 /* Banners Grid */
@@ -454,13 +454,13 @@
 /* Mensajes informativos */
 .info-message {
   background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
-  border-left: 4px solid #159bd0;
+  border-left: 4px solid #42a8a1;
   padding: 15px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  color: #0b4f6b;
+  color: #123f3c;
   font-size: 14px;
-  box-shadow: 0 2px 8px rgba(21, 155, 208, 0.1);
+  box-shadow: 0 2px 8px rgba(66, 168, 161, 0.1);
 }
 
 .readonly-badge {
@@ -533,7 +533,7 @@
 
 .role-badge.role-vendedor {
   background: #e0f2f1;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .role-badge.role-tecnico {
@@ -564,4 +564,6 @@
     padding: 8px;
   }
 }
+
+
 

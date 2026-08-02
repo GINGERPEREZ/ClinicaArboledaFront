@@ -18,7 +18,7 @@
 .servicios-hero {
   position: relative;
   min-height: 400px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@
 .intro-title {
   font-size: 38px;
   font-weight: 700;
-  color: #0b83b0;
+  color: #42a8a1;
   margin: 0 0 20px 0;
 }
 
@@ -125,7 +125,7 @@
 .section-title {
   font-size: 38px;
   font-weight: 700;
-  color: #0b83b0;
+  color: #42a8a1;
   text-align: center;
   margin: 0 0 60px 0;
 }
@@ -154,7 +154,7 @@
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(90deg, #5dc1b9 0%, #42a8a1 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -193,12 +193,12 @@
 .card-icon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 8px 24px rgba(66, 168, 161, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -223,7 +223,7 @@
 .card-title {
   font-size: 26px;
   font-weight: 700;
-  color: #0b83b0;
+  color: #42a8a1;
   margin: 0 0 16px 0;
 }
 
@@ -253,7 +253,7 @@
   content: '?';
   position: absolute;
   left: 0;
-  color: #69c6ee;
+  color: #5dc1b9;
   font-weight: bold;
   font-size: 18px;
 }
@@ -277,9 +277,9 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
-  box-shadow: 0 4px 20px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 20px rgba(66, 168, 161, 0.3);
 }
 
 .btn-primary:hover {
@@ -337,7 +337,7 @@
 .beneficio-icon {
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -353,7 +353,7 @@
 .beneficio-item h4 {
   font-size: 20px;
   font-weight: 700;
-  color: #0b83b0;
+  color: #42a8a1;
   margin: 0 0 10px 0;
 }
 
@@ -366,7 +366,7 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #0b4f6b 0%, #0d3b38 100%);
+  background: linear-gradient(135deg, #123f3c 0%, #0d3b38 100%);
   padding: 80px 20px;
   text-align: center;
 }
@@ -391,7 +391,7 @@
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
   border: none;
   padding: 18px 48px;
@@ -549,4 +549,6 @@
     grid-template-columns: 1fr;
   }
 }
+
+
 

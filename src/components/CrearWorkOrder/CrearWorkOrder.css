@@ -30,7 +30,7 @@
 .btn-volver {
   background: transparent;
   border: none;
-  color: #159bd0;
+  color: #42a8a1;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -42,7 +42,7 @@
 }
 
 .btn-volver:hover {
-  color: #159bd0;
+  color: #42a8a1;
   transform: translateX(-3px);
 }
 
@@ -198,8 +198,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #159bd0;
-  box-shadow: 0 0 0 3px rgba(21, 155, 208, 0.1);
+  border-color: #42a8a1;
+  box-shadow: 0 0 0 3px rgba(66, 168, 161, 0.1);
 }
 
 .form-group input:disabled,
@@ -256,14 +256,14 @@
 }
 
 .btn-crear {
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
 }
 
 .btn-crear:hover:not(:disabled) {
-  background: #159bd0;
+  background: #42a8a1;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.3);
 }
 
 .btn-cancelar:disabled,
@@ -328,4 +328,6 @@
     justify-content: center;
   }
 }
+
+
 

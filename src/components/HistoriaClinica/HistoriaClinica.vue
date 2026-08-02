@@ -175,3 +175,5 @@ export default {
 
 <style src="./HistoriaClinica.css"></style>
 
+
+

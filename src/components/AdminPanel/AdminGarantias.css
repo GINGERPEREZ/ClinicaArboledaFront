@@ -150,11 +150,11 @@
 
 .btn-editar {
   background: #e0f2f1;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .btn-editar:hover {
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
   transform: scale(1.1);
 }
@@ -493,4 +493,6 @@
     justify-content: center;
   }
 }
+
+
 

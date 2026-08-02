@@ -28,3 +28,5 @@ class InactivityService {
 
 // Exportar una instancia única (singleton)
 export default new InactivityService();
+
+

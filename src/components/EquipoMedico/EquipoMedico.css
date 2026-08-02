@@ -16,7 +16,7 @@
 .page-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #159bd0;
+  color: #42a8a1;
   margin: 0 0 20px 0;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -70,7 +70,7 @@
 .search-select:focus,
 .search-input:focus {
   outline: none;
-  border-color: #29abe2;
+  border-color: #5dc1b9;
   box-shadow: 0 0 0 3px rgba(63, 165, 158, 0.1);
 }
 
@@ -93,7 +93,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: #159bd0;
+  background: #42a8a1;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -102,9 +102,9 @@
 }
 
 .search-button:hover {
-  background: #29abe2;
+  background: #5dc1b9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.3);
 }
 
 .search-button:active {
@@ -139,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #29abe2 0%, #72cdc5 100%);
+  background: linear-gradient(90deg, #5dc1b9 0%, #72cdc5 100%);
 }
 
 .medico-card:hover {
@@ -163,7 +163,7 @@
   flex-shrink: 0;
   width: 46px;
   height: 46px;
-  background: linear-gradient(135deg, #69c6ee 0%, #29abe2 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #5dc1b9 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -197,11 +197,11 @@
   display: inline-block;
   padding: 5px 12px;
   background: linear-gradient(145deg, #ebf9f7 0%, #d8efec 100%);
-  color: #159bd0;
+  color: #42a8a1;
   font-size: 0.78rem;
   font-weight: 600;
   border-radius: 20px;
-  border-left: 3px solid #29abe2;
+  border-left: 3px solid #5dc1b9;
   letter-spacing: 0.2px;
   transition: all 0.3s ease;
   max-width: 100%;
@@ -210,9 +210,9 @@
 }
 
 .medico-card:hover .medico-especialidad-badge {
-  background: linear-gradient(135deg, #159bd0, #29abe2);
+  background: linear-gradient(135deg, #42a8a1, #5dc1b9);
   color: white;
-  border-left-color: #0b83b0;
+  border-left-color: #42a8a1;
 }
 
 /* No Results */
@@ -303,16 +303,16 @@
   margin-top: 14px;
   padding: 12px 14px;
   border-radius: 8px;
-  background: #f6fdff;
+  background: #ffffff;
   border: 1px solid #d8f0fa;
-  color: #0b4f6b;
+  color: #123f3c;
   font-size: 0.82rem;
   line-height: 1.35;
 }
 
 .medico-horario-atencion .horario-label {
   display: block;
-  color: #0b83b0;
+  color: #42a8a1;
   font-weight: 800;
   margin-bottom: 4px;
 }
@@ -323,7 +323,7 @@
   min-height: 38px;
   border: 0;
   border-radius: 8px;
-  background: #159bd0;
+  background: #42a8a1;
   color: #ffffff;
   font-weight: 800;
   cursor: pointer;
@@ -331,7 +331,7 @@
 }
 
 .medico-agendar-btn:hover {
-  background: #0b83b0;
+  background: #42a8a1;
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(11, 131, 176, 0.22);
 }
@@ -377,7 +377,7 @@
   white-space: normal !important;
   font-size: 1rem !important;
   line-height: 1.25 !important;
-  color: #0b4f6b !important;
+  color: #123f3c !important;
 }
 
 .medico-especialidad-badge {
@@ -388,9 +388,9 @@
   word-break: normal !important;
   white-space: normal !important;
   border-left: 0 !important;
-  border: 1px solid #bfe6f7 !important;
-  background: #e8fbfc !important;
-  color: #0b83b0 !important;
+  border: 1px solid #e6f5f4 !important;
+  background: #ffffff !important;
+  color: #42a8a1 !important;
 }
 
 .medico-horario-atencion {
@@ -425,10 +425,10 @@
   max-width: 980px;
   margin: 0 auto 30px;
   padding: 18px 22px;
-  border: 1px solid #bfe6f7;
+  border: 1px solid #e6f5f4;
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 8px 22px rgba(11, 79, 107, 0.08);
+  box-shadow: 0 8px 22px rgba(66, 168, 161, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -441,15 +441,15 @@
 }
 
 .especialidad-activa-section strong {
-  color: #0b83b0;
+  color: #42a8a1;
   font-size: 1.25rem;
   margin-right: auto;
 }
 
 .especialidad-activa-section button {
-  border: 1px solid #95d5f1;
-  background: #e8fbfc;
-  color: #0b83b0;
+  border: 1px solid #cfecea;
+  background: #ffffff;
+  color: #42a8a1;
   border-radius: 999px;
   padding: 9px 16px;
   font-weight: 800;
@@ -500,3 +500,5 @@
     align-items: flex-start;
   }
 }
+
+

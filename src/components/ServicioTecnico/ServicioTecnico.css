@@ -141,7 +141,7 @@ video.modal-image {
 }
 
 .survey-button {
-  background-color: #159bd0;
+  background-color: #42a8a1;
   color: white;
   border: none;
   padding: 12px 30px;
@@ -153,7 +153,7 @@ video.modal-image {
 }
 
 .survey-button:hover {
-  background-color: #0b4f6b;
+  background-color: #123f3c;
   transform: translateY(-2px);
 }
 
@@ -238,7 +238,7 @@ video.modal-image {
 
 .survey-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #159bd0, #0b4f6b);
+  background: linear-gradient(90deg, #42a8a1, #123f3c);
   border-radius: 10px;
   transition: width 0.3s ease;
 }
@@ -321,11 +321,11 @@ video.modal-image {
   cursor: pointer;
   width: 18px;
   height: 18px;
-  accent-color: #159bd0;
+  accent-color: #42a8a1;
 }
 
 .radio-option:hover {
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .survey-textarea,
@@ -342,8 +342,8 @@ video.modal-image {
 .survey-textarea:focus,
 .survey-input:focus {
   outline: none;
-  border-color: #159bd0;
-  box-shadow: 0 0 5px rgba(21, 155, 208, 0.3);
+  border-color: #42a8a1;
+  box-shadow: 0 0 5px rgba(66, 168, 161, 0.3);
 }
 
 /* Barra de navegación */
@@ -384,12 +384,12 @@ video.modal-image {
 }
 
 .btn-nav-next {
-  background-color: #159bd0;
+  background-color: #42a8a1;
   color: white;
 }
 
 .btn-nav-next:hover:not(:disabled) {
-  background-color: #0b4f6b;
+  background-color: #123f3c;
   transform: translateX(2px);
 }
 
@@ -470,3 +470,5 @@ video.modal-image {
     grid-template-columns: 1fr;
   }
 }
+
+

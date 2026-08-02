@@ -15,7 +15,7 @@
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 2rem;
-  border-left: 5px solid #159bd0;
+  border-left: 5px solid #42a8a1;
   padding-left: 15px;
 }
 
@@ -46,7 +46,7 @@
 .stat-value {
   font-size: 2rem;
   font-weight: 700;
-  color: #159bd0;
+  color: #42a8a1;
   display: block;
   margin-top: 0.5rem;
 }
@@ -79,7 +79,7 @@
 }
 
 .btn-crear-orden {
-  background-color: #159bd0;
+  background-color: #42a8a1;
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -93,9 +93,9 @@
 }
 
 .btn-crear-orden:hover {
-  background-color: #159bd0;
+  background-color: #42a8a1;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.3);
 }
 
 /* Grid de Órdenes */
@@ -200,3 +200,5 @@
 .badge-en_espera { background: #fef3c7; color: #92400e; }
 .badge-en_revision { background: #dbeafe; color: #1e40af; }
 .badge-reparado { background: #d1fae5; color: #065f46; }
+
+

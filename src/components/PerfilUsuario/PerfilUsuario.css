@@ -7,7 +7,7 @@
 }
 
 .perfil-header {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -78,11 +78,11 @@
 
 .nav-item:hover {
   background-color: #f0f0f0;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .nav-item.active {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
 }
 
@@ -139,7 +139,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #159bd0;
+  border-color: #42a8a1;
   box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.1);
 }
 
@@ -184,7 +184,7 @@
 }
 
 .btn-editar {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
 }
 
@@ -218,7 +218,7 @@
 }
 
 .btn-comprar {
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: white;
   text-decoration: none;
   margin-top: 20px;
@@ -314,12 +314,12 @@
 
 .estado-badge.shipped {
   background-color: #cce5ff;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .estado-badge.completed {
   background-color: #d4edda;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .estado-badge.cancelled {
@@ -342,7 +342,7 @@
 
 .btn-ver-detalle {
   padding: 10px 20px;
-  background: #159bd0;
+  background: #42a8a1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -352,7 +352,7 @@
 }
 
 .btn-ver-detalle:hover {
-  background: #159bd0;
+  background: #42a8a1;
   transform: translateX(5px);
 }
 
@@ -415,4 +415,6 @@
     font-size: 1.5rem;
   }
 }
+
+
 

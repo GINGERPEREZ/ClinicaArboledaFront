@@ -271,3 +271,5 @@ export default {
 
 <style src="./EquipoMedico.css"></style>
 
+
+

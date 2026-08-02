@@ -63,3 +63,4 @@ function getImageUrl(imagePath) {
 }
 
 export { API_BASE_URL, getImageUrl };
+

@@ -71,7 +71,7 @@ export default {
             titleColor: '#fff',
             bodyColor: '#fff',
             padding: 12,
-            borderColor: '#159bd0',
+            borderColor: '#42a8a1',
             borderWidth: 1,
             displayColors: true,
             callbacks: {
@@ -178,4 +178,6 @@ export default {
   }
 }
 </style>
+
+
 

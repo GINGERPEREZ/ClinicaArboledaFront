@@ -68,7 +68,7 @@
 }
 
 .input-group input:focus {
-  border-color: #159bd0;
+  border-color: #42a8a1;
   outline: none;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(255, 96, 0, 0.1);
@@ -96,12 +96,12 @@
 }
 
 .toggle-password:hover {
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .toggle-password:focus {
   outline: none;
-  color: #159bd0;
+  color: #42a8a1;
 }
 
 .toggle-password svg {
@@ -112,7 +112,7 @@
 .login-button {
   width: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #69c6ee 0%, #159bd0 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #42a8a1 100%);
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -123,11 +123,11 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(21, 155, 208, 0.3);
+  box-shadow: 0 4px 12px rgba(66, 168, 161, 0.3);
 }
 
 .login-button:hover {
-  background: linear-gradient(135deg, #29abe2 0%, #0b4f6b 100%);
+  background: linear-gradient(135deg, #5dc1b9 0%, #123f3c 100%);
   box-shadow: 0 6px 16px rgba(35, 144, 137, 0.4);
   transform: translateY(-2px);
 }
@@ -144,7 +144,7 @@
 }
 
 .forgot-password-link {
-  color: #159bd0;
+  color: #42a8a1;
   font-size: 14px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -166,7 +166,7 @@
 }
 
 .create-account-link {
-  color: #159bd0;
+  color: #42a8a1;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -208,3 +208,5 @@
     padding: 30px 15px 50px;
   }
 }
+
+

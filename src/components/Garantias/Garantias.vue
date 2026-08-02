@@ -74,3 +74,5 @@ export default {
 </script>
 
 <style src="./Garantias.css"></style>
+
+
