@@ -12,11 +12,11 @@ export default {
       paginaActiva: 0,
       instalaciones: [
         { nombre: 'Quirófanos', imagen: '/Instalaciones/Quirofano1.jpg' },
-        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/Ginecologia.webp' },
+        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/Ginecologia.jpg' },
         { nombre: 'Habitaciones', imagen: '/Instalaciones/Habitacion1.jpg' },
         { nombre: 'Sala de Espera', imagen: '/Instalaciones/SalaEspera.jpg' },
         { nombre: 'Equipos Médicos', imagen: '/Instalaciones/Equipos.jpg' },
-        { nombre: 'Hospitalización', imagen: '/Instalaciones/Hospitalizacion.webp' }
+        { nombre: 'Hospitalización', imagen: '/Instalaciones/Hospitalizacion.jpg' }
       ]
     };
   },
