@@ -1575,11 +1575,16 @@ body {
 }
 
 .categoria-icon-img {
-  filter: invert(32%) sepia(87%) saturate(1139%) hue-rotate(165deg) brightness(88%) contrast(93%);
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+  filter: none;
+  transition: transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon-img {
-  filter: invert(22%) sepia(64%) saturate(1244%) hue-rotate(168deg) brightness(86%) contrast(94%);
+  filter: none;
+  transform: scale(1.08);
 }
 
 .categoria-card h3 {
@@ -2571,4 +2576,39 @@ button.especialidad-card-animated {
     grid-template-columns: 1fr !important;
     max-width: 440px !important;
   }
+}
+
+.categoria-icon svg,
+.categoria-icon svg * {
+  color: #000 !important;
+  stroke: #000 !important;
+}
+
+/* Specialty icons must stay black */
+.categoria-icon-svg,
+.categoria-icon-svg svg,
+.categoria-icon-svg svg *,
+.categoria-icon svg,
+.categoria-icon svg *,
+.categoria-card:hover .categoria-icon-svg,
+.categoria-card:hover .categoria-icon-svg svg,
+.categoria-card:hover .categoria-icon-svg svg *,
+.categoria-card:hover .categoria-icon svg,
+.categoria-card:hover .categoria-icon svg * {
+  color: #000 !important;
+  stroke: #000 !important;
+}
+
+.categoria-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.categoria-icon-svg svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: none !important;
 }

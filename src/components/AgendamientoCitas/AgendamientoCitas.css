@@ -257,7 +257,12 @@
 }
 
 .especialidad-icon {
-  font-size: 2rem;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
   line-height: 1;
 }
 
@@ -1007,4 +1012,29 @@
   .print-hidden {
     display: none !important;
   }
+}
+
+
+
+.especialidad-icon-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: none;
+}
+
+
+.especialidad-icon svg {
+  width: 34px;
+  height: 34px;
+  stroke: #000;
+}
+
+/* Appointment specialty icons must stay black */
+.especialidad-icon,
+.especialidad-icon svg,
+.especialidad-icon svg * {
+  color: #000 !important;
+  stroke: #000 !important;
+  fill: none !important;
 }

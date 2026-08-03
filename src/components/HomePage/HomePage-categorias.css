@@ -80,25 +80,27 @@
   width: 3.2rem;
   height: 3.2rem;
   object-fit: contain;
-  filter: invert(58%) sepia(20%) saturate(926%) hue-rotate(126deg) brightness(91%) contrast(89%);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: none;
+  transition: transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon-img {
-  filter: invert(70%) sepia(29%) saturate(686%) hue-rotate(126deg) brightness(87%) contrast(88%);
-  transform: scale(1.1);
+  filter: none;
+  transform: scale(1.08);
 }
 
 .categoria-icon svg {
   width: 3.2rem;
   height: 3.2rem;
-  stroke: #42a8a1;
-  transition: stroke 0.3s ease, transform 0.3s ease;
+  color: #000;
+  stroke: #000 !important;
+  transition: transform 0.3s ease;
 }
 
 .categoria-card:hover .categoria-icon svg {
-  stroke: #5dc1b9;
-  transform: scale(1.1);
+  color: #000;
+  stroke: #000 !important;
+  transform: scale(1.08);
 }
 
 .categoria-card h3 {
@@ -329,3 +331,39 @@
   }
 }
 
+
+
+.categoria-icon svg,
+.categoria-icon svg * {
+  color: #000 !important;
+  stroke: #000 !important;
+}
+
+/* Specialty icons must stay black */
+.categoria-icon-svg,
+.categoria-icon-svg svg,
+.categoria-icon-svg svg *,
+.categoria-icon svg,
+.categoria-icon svg *,
+.categoria-card:hover .categoria-icon-svg,
+.categoria-card:hover .categoria-icon-svg svg,
+.categoria-card:hover .categoria-icon-svg svg *,
+.categoria-card:hover .categoria-icon svg,
+.categoria-card:hover .categoria-icon svg * {
+  color: #000 !important;
+  stroke: #000 !important;
+}
+
+.categoria-icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.categoria-icon-svg svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: none !important;
+}
