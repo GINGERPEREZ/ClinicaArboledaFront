@@ -269,16 +269,73 @@
 
           <!-- Success -->
           <div v-if="citaConfirmada" class="form-step success-step" key="step-success">
-            <div class="success-card">
-              <div class="success-icon-wrapper">
+            <div class="success-card appointment-receipt" id="comprobante-cita">
+              <div class="success-icon-wrapper print-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <h2 class="success-title">¡Cita Agendada!</h2>
-              <p class="success-desc">Tu cita ha sido registrada exitosamente. Revisa tu WhatsApp, te enviamos la confirmación con los detalles de tu cita.</p>
-              <button class="btn-primary" @click="nuevaCita">Agendar otra cita</button>
+
+              <div class="receipt-header">
+                <img src="/Logos/Logo1.png" alt="Clínica Arboleda" class="receipt-logo" />
+                <div>
+                  <p class="receipt-kicker">Comprobante de cita médica</p>
+                  <h2 class="success-title">¡Cita Agendada!</h2>
+                </div>
+              </div>
+
+              <p class="success-desc">
+                Tu cita ha sido registrada exitosamente. Conserva este comprobante con los detalles de tu reserva.
+              </p>
+
+              <div class="receipt-details">
+                <div class="receipt-row">
+                  <span>Paciente</span>
+                  <strong>{{ patientData.nombre }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Cédula / Pasaporte</span>
+                  <strong>{{ patientData.cedula }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Teléfono</span>
+                  <strong>{{ patientData.telefono }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Correo electrónico</span>
+                  <strong>{{ patientData.email || 'No registrado' }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Especialidad</span>
+                  <strong>{{ selectedEspecialidad?.nombre }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Médico</span>
+                  <strong>{{ selectedMedico?.nombre }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Fecha</span>
+                  <strong>{{ formatDate(selectedDate) }}</strong>
+                </div>
+                <div class="receipt-row">
+                  <span>Hora</span>
+                  <strong>{{ selectedTime }}</strong>
+                </div>
+                <div class="receipt-row receipt-row-full">
+                  <span>Motivo de consulta</span>
+                  <strong>{{ patientData.motivo || 'No registrado' }}</strong>
+                </div>
+              </div>
+
+              <p class="receipt-note">
+                Por favor, acude con 15 minutos de anticipación y presenta este comprobante al llegar a Clínica Arboleda.
+              </p>
+
+              <div class="success-actions print-hidden">
+                <button class="btn-secondary" @click="imprimirComprobante">Imprimir comprobante</button>
+                <button class="btn-primary" @click="nuevaCita">Agendar otra cita</button>
+              </div>
             </div>
           </div>
 

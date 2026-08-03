@@ -350,6 +350,9 @@ export default {
         '¡Te esperamos!',
       ].filter(Boolean).join('\n');
     },
+    imprimirComprobante() {
+      window.print();
+    },
     nuevaCita() {
       this.currentStep = PASO_ESPECIALIDAD;
       this.citaConfirmada = false;
