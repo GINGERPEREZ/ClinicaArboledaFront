@@ -1,7 +1,6 @@
 import HeaderAnth from '../HeaderAnth/HeaderAnth.vue';
 import FooterAnth from '../FooterAnth/FooterAnth.vue';
 import { validarFormulario, sanitizarFormulario } from '@/utils/formValidation';
-import { aFormatoInternacionalEc, esCelularEcuador } from '@/utils/validators';
 import {
   ESQUEMA_PACIENTE,
   SANITIZADORES_PACIENTE,
@@ -48,23 +47,23 @@ export default {
       camposTocados: {},
       limites: LIMITES,
       especialidades: [
-        { id: 1, nombre: 'Medicina Crítica', icon: '💓' },
-        { id: 2, nombre: 'Ortopedia y Traumatología', icon: '🧍' },
-        { id: 3, nombre: 'Neumonología', icon: '🫁' },
-        { id: 4, nombre: 'Gastroenterología', icon: '🌐' },
-        { id: 5, nombre: 'Cirugía General', icon: '🖊️' },
-        { id: 6, nombre: 'Pediatría', icon: '🧸' },
-        { id: 7, nombre: 'Cirugía Pediátrica', icon: '👶' },
-        { id: 8, nombre: 'Anestesiología y Reanimación', icon: '💉' },
-        { id: 9, nombre: 'Ginecología y Obstetricia', icon: '🤰' },
-        { id: 10, nombre: 'Medicina Interna', icon: '🩺' },
-        { id: 11, nombre: 'Psiquiatría', icon: '🧠' },
-        { id: 12, nombre: 'Imagenología', icon: '💪' },
-        { id: 13, nombre: 'Cardiología', icon: '💙' },
-        { id: 14, nombre: 'Angiología y Cirugía Vascular', icon: '🦵' },
-        { id: 15, nombre: 'Cirugía Oncológica', icon: '⚙️' },
-        { id: 16, nombre: 'Neurología', icon: '👤' },
-        { id: 17, nombre: 'Nefrología', icon: '🔬' },
+        { id: 1, nombre: 'Medicina Crítica', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/><path d="M12 21C7 17 4 14 4 10a4 4 0 0 1 7-2.6A4 4 0 0 1 18 10c0 4-3 7-6 11z"/></svg>` },
+        { id: 2, nombre: 'Ortopedia y Traumatología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v18"/><path d="M15 3v18"/><path d="M7 7h10"/><path d="M7 17h10"/><path d="M5 12h14"/></svg>` },
+        { id: 3, nombre: 'Neumonología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M12 10c-2-3-5-4-7-1-1 2-1 8 2 10 2 1 4-1 5-4"/><path d="M12 10c2-3 5-4 7-1 1 2 1 8-2 10-2 1-4-1-5-4"/></svg>` },
+        { id: 4, nombre: 'Gastroenterología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c4 2 7 5 6 9-.8 3-3.2 4-5.5 4"/><path d="M9 21c5-1 8-4 8-9 0-4-3-7-7-9"/><path d="M7 8c2 1 3 3 2 5"/></svg>` },
+        { id: 5, nombre: 'Cirugía General', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 20 4"/><path d="M14 4h6v6"/><path d="M4 16l4 4"/></svg>` },
+        { id: 6, nombre: 'Pediatría', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M6 21c1-4 3-6 6-6s5 2 6 6"/><path d="M8 11c-2 1-3 2-3 4"/><path d="M16 11c2 1 3 2 3 4"/></svg>` },
+        { id: 7, nombre: 'Cirugía Pediátrica', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M6 21c1-4 3-6 6-6s5 2 6 6"/><path d="M4 5h5"/><path d="M6.5 2.5v5"/></svg>` },
+        { id: 8, nombre: 'Anestesiología y Reanimación', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h6l6 6-9 9-6-6 3-9z"/><path d="M14 7 7 14"/><path d="m17 10 3 3"/></svg>` },
+        { id: 9, nombre: 'Ginecología y Obstetricia', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M12 12v9"/><path d="M8 17h8"/></svg>` },
+        { id: 10, nombre: 'Medicina Interna', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v7a4 4 0 0 0 8 0V3"/><path d="M12 14v4a3 3 0 0 0 6 0v-2"/><circle cx="18" cy="14" r="2"/></svg>` },
+        { id: 11, nombre: 'Psiquiatría', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8 14c-2-1-3-3-3-6a7 7 0 0 1 14 0c0 3-1 5-3 6"/><path d="M9 10c1-2 5-2 6 0"/></svg>` },
+        { id: 12, nombre: 'Imagenología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>` },
+        { id: 13, nombre: 'Cardiología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/><path d="M19 6c-2-2-5-1-7 2-2-3-5-4-7-2"/></svg>` },
+        { id: 14, nombre: 'Angiología y Cirugía Vascular', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M12 8c-3 0-5 2-5 5"/><path d="M12 8c3 0 5 2 5 5"/><path d="M12 14c-2 0-3 1-3 3"/><path d="M12 14c2 0 3 1 3 3"/></svg>` },
+        { id: 15, nombre: 'Cirugía Oncológica', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/><path d="m5 5 2 2"/><path d="m17 17 2 2"/><path d="m19 5-2 2"/><path d="m7 17-2 2"/></svg>` },
+        { id: 16, nombre: 'Neurología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0 0 6v1a3 3 0 0 0 5 2"/><path d="M15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 0 6v1a3 3 0 0 1-5 2"/><path d="M12 5v14"/></svg>` },
+        { id: 17, nombre: 'Nefrología', icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4c-4 2-5 8-2 12 2 3 5 1 5-2V8c0-3-1-5-3-4z"/><path d="M15 4c4 2 5 8 2 12-2 3-5 1-5-2V8c0-3 1-5 3-4z"/></svg>` },
       ],
       medicos: [
         { id: 1, nombre: 'VICTOR MANUEL ARIAS LOOR', iniciales: 'VA', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
@@ -321,14 +320,6 @@ export default {
         this.enfocarPrimerCampoInvalido();
         return;
       }
-
-      // WhatsApp solo tiene sentido sobre un celular; un fijo no recibe el mensaje.
-      if (esCelularEcuador(this.patientData.telefono)) {
-        const numeroWhatsApp = aFormatoInternacionalEc(this.patientData.telefono);
-        const mensaje = this.construirMensajeConfirmacion();
-        window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`, '_blank');
-      }
-
       this.citaConfirmada = true;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },

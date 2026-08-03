@@ -58,7 +58,7 @@
                 :class="['especialidad-card', { selected: selectedEspecialidad?.id === esp.id }]"
                 @click="selectEspecialidad(esp)"
               >
-                <span class="especialidad-icon">{{ esp.icon }}</span>
+                <span class="especialidad-icon" v-html="esp.icon"></span>
                 <span class="especialidad-name">{{ esp.nombre }}</span>
               </button>
             </div>
@@ -110,7 +110,7 @@
           <!-- Paso 4: Datos del paciente -->
           <div v-if="currentStep === 3" class="form-step patient-sheet-step" key="step-3">
             <h2 class="form-step-title">Datos del Paciente</h2>
-            <p class="form-step-desc">Completa tu información para confirmar la cita</p>
+            <p class="form-step-desc">Completa tu información para solicitar la cita</p>
 
             <div class="patient-sheet">
               <form class="patient-form" novalidate @submit.prevent="nextStep">
@@ -171,7 +171,7 @@
                     @blur="onCampoBlur('telefono')"
                   />
                   <span v-if="errorDe('telefono')" id="error-telefono" class="field-error" role="alert">{{ errorDe('telefono') }}</span>
-                  <span v-else class="field-hint">Usaremos este número para enviarte la confirmación por WhatsApp.</span>
+                  <span v-else class="field-hint">La clínica usará este número para contactarte y confirmar la disponibilidad.</span>
                 </div>
 
                 <div class="form-group">
@@ -219,15 +219,15 @@
 
           <!-- Paso 5: Confirmación -->
           <div v-if="currentStep === 4 && !citaConfirmada" class="form-step" key="step-4">
-            <h2 class="form-step-title">Confirma tu Cita</h2>
-            <p class="form-step-desc">Revisa los datos antes de confirmar</p>
+            <h2 class="form-step-title">Solicita tu cita</h2>
+            <p class="form-step-desc">Revisa los datos antes de enviar la solicitud</p>
 
             <div class="confirmation-card">
               <div class="confirmation-header">
                 <div class="confirmation-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
-                <h3>Resumen de tu Cita</h3>
+                <h3>Resumen de tu solicitud</h3>
               </div>
 
               <div class="confirmation-details">
@@ -269,6 +269,10 @@
 
           <!-- Success -->
           <div v-if="citaConfirmada" class="form-step success-step" key="step-success">
+            <div class="pending-confirmation-alert print-hidden">
+              Importante: la fecha y hora seleccionadas están pendientes de confirmación por parte de la Clínica.
+            </div>
+
             <div class="success-card appointment-receipt" id="comprobante-cita">
               <div class="success-icon-wrapper print-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -280,13 +284,13 @@
               <div class="receipt-header">
                 <img src="/Logos/Logo1.png" alt="Clínica Arboleda" class="receipt-logo" />
                 <div>
-                  <p class="receipt-kicker">Comprobante de cita médica</p>
-                  <h2 class="success-title">¡Cita Agendada!</h2>
+                  <p class="receipt-kicker">Comprobante de solicitud de cita médica</p>
+                  <h2 class="success-title">Solicitud de cita recibida</h2>
                 </div>
               </div>
 
               <p class="success-desc">
-                Tu cita ha sido registrada exitosamente. Conserva este comprobante con los detalles de tu reserva.
+                Tu solicitud fue registrada correctamente. Conserva este comprobante con los datos enviados.
               </p>
 
               <div class="receipt-details">
@@ -329,7 +333,7 @@
               </div>
 
               <p class="receipt-note">
-                Por favor, acude con 15 minutos de anticipación y presenta este comprobante al llegar a Clínica Arboleda.
+                Nos comunicaremos contigo para confirmar la Cita.
               </p>
 
               <div class="success-actions print-hidden">
@@ -362,7 +366,7 @@
               :disabled="!canProceed"
               @click="confirmarCita"
             >
-              ✓ Confirmar Cita
+              ✓ Enviar solicitud
             </button>
           </div>
 

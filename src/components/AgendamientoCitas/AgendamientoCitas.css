@@ -668,10 +668,11 @@
 }
 
 .success-step {
-  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .success-card {
@@ -1037,4 +1038,20 @@
   color: #000 !important;
   stroke: #000 !important;
   fill: none !important;
+}
+
+.pending-confirmation-alert {
+  display: block;
+  width: min(640px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  padding: 14px 18px;
+  border: 1px solid #d93025;
+  border-radius: 10px;
+  background: #fff5f5;
+  color: #b42318;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(180, 35, 24, 0.08);
 }
