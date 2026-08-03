@@ -35,13 +35,13 @@
 
 .footer-logo {
   display: flex;
-  align-items: flex-start;
-  height: 48px;
+  align-items: center;
+  height: 40px;
   margin: 0;
 }
 
 .footer-logo-image {
-  height: 48px;
+  height: 115px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
