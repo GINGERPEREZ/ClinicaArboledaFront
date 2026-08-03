@@ -18,24 +18,24 @@
 
 .noticias-header {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .noticias-kicker {
   color: #5dc1b9;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
 }
 
 .noticias-title {
   color: #132033;
-  font-size: 40px;
+  font-size: clamp(2.8rem, 3.2vw, 4.6rem);
   font-weight: 800;
-  margin: 0 0 12px;
-  line-height: 1.1;
+  margin: 0 0 10px;
+  line-height: 1.05;
 }
 
 .noticias-description {
