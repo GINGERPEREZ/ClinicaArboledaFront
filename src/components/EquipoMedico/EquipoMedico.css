@@ -513,4 +513,46 @@
   }
 }
 
+/* ==========================================================================
+   Texto en negro e iconos en gris.
+   Todo se ancla a .equipo-medico-view: .page-layout, .page-title y
+   .content-container son nombres genericos compartidos por otros
+   componentes y estos CSS no son scoped.
+   Los botones (.search-button, .medico-agendar-btn y el de la seccion de
+   especialidad activa) quedan fuera a proposito: son los unicos elementos
+   que siguen en verde.
+   ========================================================================== */
+
+/* Va con !important porque varios de estos nombres estan declarados con
+   !important en otras hojas globales (select/option/optgroup, .medico-nombre
+   y .medico-especialidad-badge), y sin el ganarian ellas pese a tener menos
+   especificidad. */
+.equipo-medico-view .page-title,
+.equipo-medico-view .page-description,
+.equipo-medico-view .search-select,
+.equipo-medico-view .search-input,
+.equipo-medico-view .no-results p,
+.equipo-medico-view .especialidad-activa-section span,
+.equipo-medico-view .especialidad-activa-section strong,
+.equipo-medico-view .medico-nombre,
+.equipo-medico-view .medico-especialidad-badge,
+.equipo-medico-view .medico-horario-atencion,
+.equipo-medico-view .medico-horario-atencion .horario-label {
+  color: #000000 !important;
+}
+
+/* Iconos de especialidad: mismo tratamiento que los del inicio, gris
+   #4a4a4a sobre fondo claro. Son PNG del CDN, asi que el color se logra
+   con filtro: brightness(0) los vuelve negros e invert(29%) los sube
+   justo a #4a4a4a. */
+.equipo-medico-view .medico-icon {
+  background: #ffffff;
+  border: 1px solid #e2eceb;
+  box-shadow: 0 2px 8px rgba(18, 63, 60, 0.08);
+}
+
+.equipo-medico-view .specialty-icon {
+  filter: brightness(0) invert(29%);
+}
+
 

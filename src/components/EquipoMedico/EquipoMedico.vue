@@ -1,5 +1,5 @@
 <template>
-  <div class="page-layout">
+  <div class="page-layout equipo-medico-view">
     <!-- Header -->
     <HeaderAnth
       :searchQuery="searchQuery"
