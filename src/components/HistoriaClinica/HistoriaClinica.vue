@@ -1,5 +1,5 @@
 <template>
-  <div class="page-layout">
+  <div class="page-layout historia-page">
     <!-- Header -->
     <HeaderAnth
       :searchQuery="searchQuery"

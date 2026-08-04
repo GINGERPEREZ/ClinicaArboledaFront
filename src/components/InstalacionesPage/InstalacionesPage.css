@@ -1,39 +1,69 @@
-.instalaciones-hero {
-  background: linear-gradient(160deg, #123f3c 0%, #42a8a1 100%);
-  color: #ffffff;
-  padding: 64px 20px 54px;
+/* Hero claro, mismo lenguaje visual que el de Sobre Nosotros.
+   Todo va anclado a .instalaciones-view: .hero-title, .hero-subtitle y
+   .page-layout son nombres genericos compartidos por otros componentes y
+   estos CSS no son scoped. Ademas globals.css declara
+   .hero-title { color: white !important }, de ahi el !important del color.
+   Ojo: NO usar .instalaciones-page como gancho, ese nombre ya lo ocupa
+   InstalacionesSection.css para las paginas ocultas de su grid
+   (opacity: 0; position: absolute), y dejaria la vista entera invisible. */
+.instalaciones-view .instalaciones-hero {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 120% at 50% 0%, rgba(66, 168, 161, 0.09) 0%, transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbfb 100%);
+  border-bottom: 1px solid #e6ecec;
+  color: #000000;
+  padding: 86px 24px 92px;
 }
 
-.instalaciones-hero-content {
-  max-width: 1100px;
+.instalaciones-view .instalaciones-hero-content {
+  max-width: 820px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.hero-kicker {
-  margin: 0 0 10px;
+.instalaciones-view .hero-kicker {
+  margin: 0 0 22px;
   display: inline-block;
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #000000;
+  background: #f1f9f8;
+  border: 1px solid #bfe3e0;
   border-radius: 999px;
-  padding: 6px 12px;
+  padding: 7px 16px;
 }
 
-.hero-title {
+.instalaciones-view .hero-title {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #000000 !important;
+  text-shadow: none !important;
 }
 
-.hero-subtitle {
-  margin: 14px 0 0;
-  max-width: 780px;
-  font-size: 1.05rem;
+/* Filete de acento bajo el titulo */
+.instalaciones-view .hero-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 22px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #42a8a1 0%, #5dc1b9 100%);
+}
+
+.instalaciones-view .hero-subtitle {
+  margin: 22px auto 0;
+  max-width: 620px;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 400;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.94);
+  color: #4a4a4a !important;
 }
 
 .instalaciones-content {
@@ -130,17 +160,23 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.98rem;
+  /* El tamano del hero lo resuelve clamp() en las reglas base */
+  .instalaciones-view .instalaciones-hero {
+    padding: 58px 20px 62px;
   }
 
   .area-card-body p {
     min-height: auto;
   }
+}
+
+/* Texto de las tarjetas en negro, a juego con el hero */
+.instalaciones-view .intro-card h2,
+.instalaciones-view .intro-card p,
+.instalaciones-view .area-card-body h3,
+.instalaciones-view .area-card-body p,
+.instalaciones-view .meta-item {
+  color: #000000;
 }
 
 

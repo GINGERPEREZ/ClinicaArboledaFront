@@ -317,5 +317,32 @@
   }
 }
 
+/* Todo el texto de la pagina de Historia en negro.
+   Se ancla a .historia-page porque .page-layout, .section-title, .stat-card
+   y demas son nombres genericos que comparten otros 8 componentes y estos
+   CSS no son scoped.
+   Los distintivos verdes (.date-badge y .convenio-badge) quedan fuera: su
+   regla propia de color gana sobre la herencia, asi que conservan el fondo
+   verde y su texto blanco. */
+.historia-page .content-container,
+.historia-page .page-title,
+.historia-page .page-subtitle,
+.historia-page .section-title,
+.historia-page .section-content,
+.historia-page .section-content p,
+.historia-page .section-content strong,
+.historia-page .stat-icon,
+.historia-page .stat-number,
+.historia-page .stat-label,
+.historia-page .stat-description,
+.historia-page .commitment-section,
+.historia-page .commitment-section .section-title,
+.historia-page .commitment-section .section-content,
+.historia-page .commitment-kicker,
+.historia-page .commitment-text {
+  color: #000000;
+}
+
+
 
 
