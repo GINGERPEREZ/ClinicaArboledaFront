@@ -2013,7 +2013,7 @@ body {
 
 .home-stat-item strong {
   display: block;
-  color: #42a8a1;
+  color: #4a4a4a;
   font-size: clamp(1.65rem, 2.4vw, 2.35rem);
   line-height: 1;
   font-weight: 900;
@@ -2021,7 +2021,7 @@ body {
 }
 
 .home-stat-item span {
-  color: #123f3c;
+  color: #4a4a4a;
   font-size: 0.98rem;
   font-weight: 700;
 }
@@ -2459,6 +2459,24 @@ button.especialidad-card-animated {
 .home-container .especialidad-card-animated .categoria-stats {
   color: #000000 !important;
 }
+
+/* Textos de las tarjetas del Home en gris suave */
+.home-container .categoria-card h3,
+.home-container .categoria-stats,
+.home-container .categoria-productos,
+.home-container .especialidad-card-animated h3,
+.home-container .especialidad-card-animated .categoria-stats,
+.home-container .servicio-card h3,
+.home-container .servicio-card p,
+.home-container .noticia-preview-card-title,
+.home-container .noticia-preview-card-text,
+.home-container .medico-nombre,
+.home-container .medico-nombre-destacado,
+.home-container .medico-especialidad,
+.home-container .medico-especialidad-destacado {
+  color: #4a4a4a !important;
+}
+
 .btn-ver-noticias {
   background: #5dc1b9 !important;
   color: #000000 !important;
@@ -2584,7 +2602,7 @@ button.especialidad-card-animated {
   stroke: #000 !important;
 }
 
-/* Specialty icons must stay black */
+/* Specialty icons: soft dark gray */
 .categoria-icon-svg,
 .categoria-icon-svg svg,
 .categoria-icon-svg svg *,
@@ -2595,8 +2613,8 @@ button.especialidad-card-animated {
 .categoria-card:hover .categoria-icon-svg svg *,
 .categoria-card:hover .categoria-icon svg,
 .categoria-card:hover .categoria-icon svg * {
-  color: #000 !important;
-  stroke: #000 !important;
+  color: #4a4a4a !important;
+  stroke: #4a4a4a !important;
 }
 
 .categoria-icon-svg {
