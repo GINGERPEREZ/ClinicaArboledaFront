@@ -1,8 +1,8 @@
 .admin-panel {
   max-width: 1400px;
   margin: 20px auto;
-  /* Compensar header fijo */
-  margin-top: 150px;
+  /* Compensar el header fijo del sitio y evitar solapamiento con el menú principal */
+  margin-top: 180px;
   padding: 20px;
   background: #fff;
   border-radius: 8px;

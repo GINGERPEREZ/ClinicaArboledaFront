@@ -108,6 +108,16 @@
         </div>
       </div>
 
+      <!-- Tab de Carrusel Inicio -->
+      <div v-if="activeTab === 'carrusel' && (isAdmin || isVendedor)" class="tab-panel">
+        <AdminCarrusel />
+      </div>
+
+      <!-- Tab de Noticias -->
+      <div v-if="activeTab === 'noticias' && (isAdmin || isVendedor)" class="tab-panel">
+        <AdminNoticias />
+      </div>
+
       <!-- Tab de Logo -->
       <div v-if="activeTab === 'logo'" class="tab-panel">
         <h2>Configuración del Logo</h2>

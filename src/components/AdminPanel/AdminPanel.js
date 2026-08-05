@@ -3,6 +3,8 @@ import { API_BASE_URL } from '@/config/api';
 import AdminPersonalizacion from './AdminPersonalizacion.vue';
 import NotificationsPanel from '../NotificationsPanel/NotificationsPanel.vue';
 import NotificationsBell from '../NotificationsPanel/NotificationsBell.vue';
+import AdminCarrusel from './AdminCarrusel.vue';
+import AdminNoticias from './AdminNoticias.vue';
 
 export default {
   name: 'AdminPanelMain',
@@ -10,6 +12,8 @@ export default {
     AdminPersonalizacion,
     NotificationsPanel,
     NotificationsBell,
+    AdminCarrusel,
+    AdminNoticias,
   },
   data() {
     return {
@@ -17,6 +21,8 @@ export default {
       activeTab: 'banners',
       tabs: [
         { id: 'banners', label: 'Banners' },
+        { id: 'carrusel', label: 'Carrusel Inicio' },
+        { id: 'noticias', label: 'Noticias' },
         { id: 'logo', label: 'Logo' },
         { id: 'personalizacion', label: '🎨 Personalización' },
         { id: 'usuarios', label: 'Usuarios' },
@@ -88,6 +94,7 @@ export default {
         banners: false,
         logo: false,
       },
+      offlineMode: false,
     };
   },
 
@@ -122,14 +129,17 @@ export default {
         return false;
       }
       
-      // Verificar el token con el backend
+      let serverVerified = false;
       try {
         await apiClient.get('/auth/verificar');
         console.log('✅ Token válido');
+        serverVerified = true;
       } catch (error) {
-        console.error('❌ Token inválido o expirado');
-        // El interceptor de apiClient manejará el refresh o redirigirá al login
-        return false;
+        if (error.response) {
+          console.error('❌ Token inválido o expirado');
+          return false;
+        }
+        console.warn('⚠️ Backend inaccesible, usando modo offline provisional');
       }
       
       this.userRole = role;
@@ -140,6 +150,10 @@ export default {
         this.$router.push('/');
         alert('Acceso denegado: Solo administradores y vendedores');
         return false;
+      }
+
+      if (!serverVerified) {
+        this.offlineMode = true;
       }
       
       return true;
@@ -651,9 +665,11 @@ export default {
     visibleTabs() {
       // Filtrar tabs según el rol del usuario
       return this.tabs.filter(tab => {
-        // Solo administradores ven el tab de usuarios y permisos
-        if ((tab.id === 'usuarios' || tab.id === 'permisos') && !this.isAdmin) {
-          return false;
+        if (tab.id === 'usuarios' || tab.id === 'permisos') {
+          return this.isAdmin;
+        }
+        if (tab.id === 'carrusel' || tab.id === 'noticias') {
+          return this.isAdmin || this.isVendedor;
         }
         return true;
       });

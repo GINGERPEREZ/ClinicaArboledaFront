@@ -16,8 +16,8 @@
 
     <div class="hero-overlay">
       <div class="hero-content-main">
-        <h1 class="hero-main-title">Amor desde el<br><span class="highlight">primer latido.</span></h1>
-        <p class="hero-main-subtitle">Cuidamos de tu salud y la de tu familia con los mejores especialistas.</p>
+        <h1 class="hero-main-title">{{ activeSlideData.titulo }}<br><span class="highlight">{{ activeSlideData.titulo_highlight }}</span></h1>
+        <p class="hero-main-subtitle">{{ activeSlideData.subtitulo }}</p>
         <div class="hero-main-actions">
           <button class="hero-cta-primary" type="button" @click="$router.push('/equipo-medico')">Conoce Nuestro Equipo Medico <span>→</span></button>
         </div>
@@ -41,13 +41,13 @@
 </template>
 
 <script>
-import { homeBannerImages } from './homeBannerImages';
+import { loadCarouselSlides } from '@/utils/contentStore';
 
 export default {
   name: 'HomeBannerCarousel',
   data() {
     return {
-      bannerImages: homeBannerImages,
+      bannerSlides: loadCarouselSlides(),
       bannerPositions: [
         'center 12%',
         'center 42%',
@@ -62,6 +62,15 @@ export default {
       intervalId: null
     };
   },
+  computed: {
+    bannerImages() {
+      return this.bannerSlides.map((slide) => slide.imagen);
+    },
+    activeSlideData() {
+      const slide = this.bannerSlides[this.activeSlide];
+      return slide || { titulo: '', titulo_highlight: '', subtitulo: '' };
+    }
+  },
   mounted() {
     this.startAutoPlay();
   },
@@ -70,7 +79,7 @@ export default {
   },
   methods: {
     startAutoPlay() {
-      if (this.bannerImages.length <= 1) {
+      if (this.bannerSlides.length <= 1) {
         return;
       }
       this.intervalId = setInterval(() => {
@@ -83,10 +92,12 @@ export default {
       }
     },
     nextSlide() {
-      this.activeSlide = (this.activeSlide + 1) % this.bannerImages.length;
+      if (!this.bannerSlides.length) return;
+      this.activeSlide = (this.activeSlide + 1) % this.bannerSlides.length;
     },
     prevSlide() {
-      this.activeSlide = (this.activeSlide - 1 + this.bannerImages.length) % this.bannerImages.length;
+      if (!this.bannerSlides.length) return;
+      this.activeSlide = (this.activeSlide - 1 + this.bannerSlides.length) % this.bannerSlides.length;
     },
     setSlide(index) {
       this.activeSlide = index;

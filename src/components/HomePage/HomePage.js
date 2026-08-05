@@ -4,6 +4,7 @@ import HeaderAnth from "../HeaderAnth/HeaderAnth.vue";
 import FooterAnth from "../FooterAnth/FooterAnth.vue";
 import InstalacionesSection from "../InstalacionesSection/InstalacionesSection.vue";
 import HomeBannerCarousel from "./HomeBannerCarousel.vue";
+import { loadNoticias } from '@/utils/contentStore';
 
 export default {
   name: "HomePage",
@@ -26,32 +27,7 @@ export default {
       noticiaCarouselTimer: null,
 
       // Noticias recientes para preview en home
-      noticiasPreview: [
-        {
-          id: 1,
-          autor: 'Admin',
-          fecha: '01 / 03 / 2026',
-          titulo: 'Prevencion y bienestar familiar',
-          resumen: 'Recomendaciones para fortalecer habitos de salud y prevencion en toda la familia.',
-          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/1.jpg'
-        },
-        {
-          id: 2,
-          autor: 'Admin',
-          fecha: '05 / 03 / 2026',
-          titulo: 'Nuevas areas de atencion',
-          resumen: 'Conoce los espacios renovados para consultas y procedimientos con mayor comodidad.',
-          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/Ginecologia.jpg'
-        },
-        {
-          id: 3,
-          autor: 'Admin',
-          fecha: '10 / 03 / 2026',
-          titulo: 'Avances en tecnologia medica',
-          resumen: 'Equipamiento y tecnologia de apoyo para diagnosticos mas precisos y oportunos.',
-          imagen: '/wetransfer_fotos-clinica-arboleda_2026-02-26_1420/Equipos.jpg'
-        }
-      ],
+      noticiasPreview: loadNoticias().slice(0, 3),
       
       // Especialidades médicas - Sincronizadas con EquipoMedico
       especialidadesMedicas: [
