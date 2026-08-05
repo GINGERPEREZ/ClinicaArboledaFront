@@ -124,18 +124,19 @@
   align-items: center;
   gap: 6px;
   padding: 10px 16px;
-  background: #6c757d;
-  color: white;
-  border-radius: 4px;
+  background: #6bd7d0;
+  color: #ffffff;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  transition: background 0.3s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .upload-btn:hover {
-  background: #545b62;
+  background: #329383;
+  transform: translateY(-1px);
 }
 
 .image-preview {

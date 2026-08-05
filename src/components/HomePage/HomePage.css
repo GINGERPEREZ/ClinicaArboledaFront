@@ -1746,8 +1746,11 @@ body {
   border-radius: 50%;
   background: #ffffff;
   color: #42a8a1;
-  font-size: 30px;
-  line-height: 1;
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(66, 168, 161, 0.12);
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
@@ -2123,6 +2126,12 @@ body {
   color: #42a8a1;
   border: 1px solid #cfecea;
   box-shadow: 0 8px 18px rgba(66, 168, 161, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1;
 }
 
 
@@ -2226,6 +2235,12 @@ body {
   color: #42a8a1 !important;
   border: 1px solid #5dc1b9  !important;
   box-shadow: 0 12px 28px rgba(66, 168, 161, 0.12) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
 }
 
 .especialidades-arrow:first-child {
