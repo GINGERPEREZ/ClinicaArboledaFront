@@ -104,5 +104,33 @@ El proyecto está configurado para desplegarse en Dokploy con:
 - [DIAGNOSTICO_DOCKER.md](./DIAGNOSTICO_DOCKER.md) - Solución de problemas con Docker
 - [MIGRACION_API_CLIENT.md](./MIGRACION_API_CLIENT.md) - Guía de migración de API
 
+## Uso del Panel Admin sin acceso al backend
+Este proyecto incluye un panel de administración local para editar el carrusel de la página de inicio y la sección de noticias, incluso cuando no tienes acceso al backend ni a credenciales de login.
+
+### Qué se modificó
+- `src/components/AdminPanel/AdminPanel.js`
+  - Ajuste de `visibleTabs()` para que las pestañas de `Carrusel` y `Noticias` también sean visibles para el rol `vendedor`.
+  - Modificación de `checkAuth()` para aceptar un modo offline cuando el backend no responde, de modo que no bloquee el acceso al panel local.
+  - Se agregó un campo interno `offlineMode` para indicar que la página funciona sin verificación de backend.
+- `src/components/AdminPanel/AdminPanel.vue`
+  - Actualización de los `v-if` de los paneles `Carrusel` y `Noticias` para que no requieran estrictamente `isAdmin`.
+- `src/components/AdminPanel/AdminPanel.css`
+  - Incremento del `margin-top` para que el admin panel no quede tapado por el header fijo del sitio.
+
+### Cómo funciona ahora
+- Las secciones `Carrusel Inicio` y `Noticias` cargan datos desde el `localStorage` usando `contentStore.js`.
+- Puedes crear, editar y eliminar entradas desde el panel.
+- Los cambios se guardan en el navegador y no dependen del backend cuando éste está inaccesible.
+
+### Cómo volver a la seguridad anterior
+Si luego se recupera el acceso al backend y quieres restaurar el comportamiento original, revierte estos cambios:
+- En `src/components/AdminPanel/AdminPanel.js`, devuelve `checkAuth()` a la verificación estricta contra `/auth/verificar`.
+- En `src/components/AdminPanel/AdminPanel.js`, restablece `visibleTabs()` para que solo `administrador` vea `Carrusel` y `Noticias`.
+- En `src/components/AdminPanel/AdminPanel.vue`, vuelve a usar `isAdmin` en los `v-if` de `Carrusel` y `Noticias`.
+- En `src/components/AdminPanel/AdminPanel.css`, ajusta `margin-top` al valor previo si es necesario.
+
+### Nota
+Este arreglo es útil cuando trabajas solo con el frontend y no hay backend disponible. Cuando tengas credenciales válidas o backend activo, lo ideal es volver a la lógica original para mantener la seguridad.
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
