@@ -1130,11 +1130,12 @@ body {
   .editorial-services-header {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-start;
     gap: 24px;
     margin: 72px 0 24px;
     padding-top: 12px;
     border-top: 1px solid rgba(18, 63, 60, 0.12);
+    text-align: left;
   }
 
   .editorial-services-header h2 {

@@ -84,7 +84,7 @@
             <h2>{{ noticiasPreview[noticiaActivaIndex].titulo }}</h2>
             <p>{{ noticiasPreview[noticiaActivaIndex].resumen }}</p>
             <div class="editorial-actions">
-              <button class="btn-ver-noticias primary" @click="$router.push('/noticias')">Ver todas las noticias →</button>
+              <button class="btn-ver-noticias primary" @click="$router.push('/noticias')">Ver noticia</button>
             </div>
           </article>
 
