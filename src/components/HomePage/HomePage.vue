@@ -56,7 +56,7 @@
 
           <div ref="especialidadesCarrusel" class="especialidades-carousel">
           <router-link
-            v-for="(especialidad, index) in especialidadesMedicas"
+            v-for="(especialidad, index) in especialidadesOrdenadas"
             :key="especialidad.id"
             class="categoria-card especialidad-card-animated"
             :style="{ '--card-index': index }"
@@ -66,7 +66,11 @@
               <span class="categoria-icon-svg" v-html="especialidad.icon"></span>
             </div>
             <h3>{{ especialidad.nombre }}</h3>
-            <p class="categoria-stats">{{ especialidad.medicos }} médicos</p>
+            <p class="categoria-stats">
+              <span class="categoria-stats-badge">
+                {{ especialidad.medicos }} {{ especialidad.medicos === 1 ? 'médico' : 'médicos' }}
+              </span>
+            </p>
           </router-link>
           </div>
         </div>

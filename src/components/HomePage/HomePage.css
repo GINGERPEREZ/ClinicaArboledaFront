@@ -2181,20 +2181,27 @@ body {
   padding: 0 40px !important;
 }
 
+/* Ancho a ras del contenido de .home-container, igual que
+   .home-editorial-section, para que las tarjetas queden alineadas con la
+   seccion de abajo. Antes forzaba width: min(92vw, 1180px), mas ancho que
+   la caja de contenido del contenedor, y se desalineaba por la derecha. */
 .home-container > .especialidades-section {
-  width: min(92vw, 1180px) !important;
-  max-width: 1180px !important;
+  width: 100% !important;
+  max-width: none !important;
   margin: 0 auto 0 !important;
   transform: none !important;
   padding: 0 !important;
 }
 
+/* Sin padding lateral: el carrusel ocupa todo el ancho y las flechas pasan
+   a montarse sobre el borde (ver .especialidades-arrow mas abajo).
+   overflow visible para que esas flechas no se recorten. */
 .home-container > .especialidades-section .especialidades-shell {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  padding: 0 54px 34px !important;
-  overflow: hidden !important;
+  padding: 0 0 34px !important;
+  overflow: visible !important;
   position: relative;
 }
 
@@ -2213,10 +2220,11 @@ body {
   font-weight: 900 !important;
 }
 
+/* Sin max-width para que la frase entre en una sola linea en escritorio;
+   en pantallas estrechas sigue partiendo sola, que es lo deseable. */
 .especialidades-header .section-title::after {
-  content: 'Contamos con un equipo multidisciplinario listo para brindarte la mejor atencion personalizada en cada etapa de tu vida.' !important;
+  content: 'Contamos con un equipo multidisciplinario listo para brindarte la mejor atención personalizada en cada etapa de tu vida.' !important;
   display: block !important;
-  max-width: 680px;
   margin-top: 12px;
   color: #010202;
   font-size: 1rem;
@@ -2243,12 +2251,14 @@ body {
   line-height: 1 !important;
 }
 
+/* Media flecha fuera del carrusel, aprovechando el padding de
+   .home-container, para no comerse el ancho de las tarjetas. */
 .especialidades-arrow:first-child {
-  left: 0 !important;
+  left: -21px !important;
 }
 
 .especialidades-arrow:last-child {
-  right: 0 !important;
+  right: -21px !important;
 }
 
 .especialidades-carousel {
@@ -2644,4 +2654,23 @@ button.especialidad-card-animated {
   width: 3.2rem;
   height: 3.2rem;
   fill: none !important;
+}
+
+/* Recuadro del contador de medicos en las tarjetas de especialidad.
+   El singular/plural ("1 médico" vs "5 médicos") lo resuelve el template. */
+.home-container .especialidad-card-animated .categoria-stats {
+  margin: 0 !important;
+}
+
+.home-container .especialidad-card-animated .categoria-stats-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #e8f6f4;
+  border: 1px solid #bfe3e0;
+  color: #000000 !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3;
+  white-space: nowrap;
 }

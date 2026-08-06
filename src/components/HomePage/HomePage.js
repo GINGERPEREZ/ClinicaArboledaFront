@@ -181,6 +181,15 @@ export default {
     this.detenerCarruselNoticias();
   },
   computed: {
+    // Orden alfabetico por nombre. Se ordena aqui y no en el array de datos
+    // para no tocar los ids, que se usan como :key.
+    // localeCompare con 'es' hace que las tildes no alteren el orden
+    // (Cardiologia antes que Cirugia, Neumologia antes que Neurologia).
+    especialidadesOrdenadas() {
+      return [...this.especialidadesMedicas].sort((a, b) =>
+        a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
+      );
+    },
     productosDestacados() {
       if (!this.productos || this.productos.length === 0) return [];
 
