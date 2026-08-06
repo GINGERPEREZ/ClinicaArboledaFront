@@ -986,14 +986,6 @@
   line-height: 1.35;
 }
 
-.receipt-note {
-  margin: 0 0 26px;
-  color: #55716f;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  text-align: center;
-}
-
 .success-actions {
   display: flex;
   justify-content: center;
@@ -1068,18 +1060,31 @@
   fill: none !important;
 }
 
+/* Va dentro del comprobante, entre la introduccion y los datos. Alineado a
+   la izquierda y con filete lateral: centrado y en negrita, como estaba
+   fuera de la tarjeta, un parrafo largo se lee mal. */
 .pending-confirmation-alert {
-  display: block;
-  width: min(640px, calc(100% - 32px));
-  margin: 0 auto 18px;
-  padding: 14px 18px;
-  border: 1px solid #d93025;
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border: 1px solid #f0c6c1;
+  border-left: 4px solid #d93025;
   border-radius: 10px;
-  background: #fff5f5;
-  color: #b42318;
-  font-size: 1rem;
+  background: #fff6f5;
+  color: #7a2119;
+  text-align: left;
+}
+
+.pending-confirmation-alert p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.pending-confirmation-alert p + p {
+  margin-top: 8px;
+}
+
+.pending-confirmation-titulo {
   font-weight: 800;
-  line-height: 1.45;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(180, 35, 24, 0.08);
+  color: #b42318;
 }

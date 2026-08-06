@@ -288,10 +288,6 @@
 
           <!-- Success -->
           <div v-if="citaConfirmada" class="form-step success-step" key="step-success">
-            <div class="pending-confirmation-alert print-hidden">
-              Importante: la fecha y hora seleccionadas están pendientes de confirmación por parte de la Clínica.
-            </div>
-
             <div class="success-card appointment-receipt" id="comprobante-cita">
               <div class="success-icon-wrapper print-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -311,6 +307,22 @@
               <p class="success-desc">
                 Tu solicitud fue registrada correctamente. Conserva este comprobante con los datos enviados.
               </p>
+
+              <!-- Sin print-hidden: al imprimir el comprobante, la advertencia
+                   de que la cita aun no esta confirmada es lo primero que el
+                   paciente necesita leer. -->
+              <div class="pending-confirmation-alert" role="status">
+                <p class="pending-confirmation-titulo">Importante: tu cita aún no está confirmada</p>
+                <p>
+                  La fecha y la hora que seleccionaste quedan reservadas de forma provisional y están
+                  sujetas a la disponibilidad del especialista. Un asesor de Clínica Arboleda se
+                  comunicará contigo al teléfono registrado para confirmar tu cita o coordinar una
+                  nueva fecha si fuera necesario.
+                </p>
+                <p>
+                  Te recomendamos conservar este comprobante y presentarlo el día de tu atención.
+                </p>
+              </div>
 
               <div class="receipt-details">
                 <div class="receipt-row">
@@ -350,10 +362,6 @@
                   <strong>{{ patientData.motivo || 'No registrado' }}</strong>
                 </div>
               </div>
-
-              <p class="receipt-note">
-                Nos comunicaremos contigo para confirmar la Cita.
-              </p>
 
               <div class="success-actions print-hidden">
                 <button class="btn-secondary" @click="imprimirComprobante">Imprimir comprobante</button>
