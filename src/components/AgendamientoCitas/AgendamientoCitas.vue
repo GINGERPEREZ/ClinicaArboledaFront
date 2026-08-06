@@ -230,39 +230,58 @@
                 <h3>Resumen de tu solicitud</h3>
               </div>
 
+              <!-- Los datos van agrupados y en rejilla, con la etiqueta encima
+                   del valor: en filas a lo ancho la etiqueta y el dato quedaban
+                   en extremos opuestos de la tarjeta y costaba relacionarlos. -->
               <div class="confirmation-details">
-                <div class="detail-row">
-                  <span class="detail-label">Especialidad</span>
-                  <span class="detail-value">{{ selectedEspecialidad?.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Médico</span>
-                  <span class="detail-value">{{ selectedMedico?.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Fecha</span>
-                  <span class="detail-value">{{ formatDate(selectedDate) }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Hora</span>
-                  <span class="detail-value">{{ selectedTime }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Paciente</span>
-                  <span class="detail-value">{{ patientData.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Cédula</span>
-                  <span class="detail-value">{{ patientData.cedula }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Teléfono</span>
-                  <span class="detail-value">{{ patientData.telefono }}</span>
-                </div>
-                <div v-if="patientData.motivo" class="detail-row detail-row-full">
-                  <span class="detail-label">Motivo</span>
-                  <span class="detail-value">{{ patientData.motivo }}</span>
-                </div>
+                <section class="resumen-bloque">
+                  <h4 class="resumen-bloque-titulo">La cita</h4>
+                  <dl class="resumen-grid">
+                    <div class="resumen-item">
+                      <dt>Especialidad</dt>
+                      <dd>{{ selectedEspecialidad?.nombre }}</dd>
+                    </div>
+                    <div class="resumen-item">
+                      <dt>Médico</dt>
+                      <dd>{{ selectedMedico?.nombre }}</dd>
+                    </div>
+                    <div class="resumen-item">
+                      <dt>Fecha</dt>
+                      <dd>{{ formatDate(selectedDate) }}</dd>
+                    </div>
+                    <div class="resumen-item">
+                      <dt>Hora</dt>
+                      <dd>{{ selectedTime }}</dd>
+                    </div>
+                  </dl>
+                </section>
+
+                <section class="resumen-bloque">
+                  <h4 class="resumen-bloque-titulo">El paciente</h4>
+                  <dl class="resumen-grid">
+                    <div class="resumen-item">
+                      <dt>Nombre</dt>
+                      <dd>{{ patientData.nombre }}</dd>
+                    </div>
+                    <div class="resumen-item">
+                      <dt>Cédula</dt>
+                      <dd>{{ patientData.cedula }}</dd>
+                    </div>
+                    <div class="resumen-item">
+                      <dt>Teléfono</dt>
+                      <dd>{{ patientData.telefono }}</dd>
+                    </div>
+                    <div v-if="patientData.email" class="resumen-item">
+                      <dt>Correo</dt>
+                      <dd>{{ patientData.email }}</dd>
+                    </div>
+                  </dl>
+                </section>
+
+                <section v-if="patientData.motivo" class="resumen-bloque">
+                  <h4 class="resumen-bloque-titulo">Motivo de la consulta</h4>
+                  <p class="resumen-motivo">{{ patientData.motivo }}</p>
+                </section>
               </div>
             </div>
           </div>

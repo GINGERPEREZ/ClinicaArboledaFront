@@ -186,20 +186,27 @@ export default {
     selectEspecialidad(esp) {
       // Volver a pulsar la especialidad ya elegida no debe descartar el médico
       // preseleccionado desde la tarjeta: solo un cambio real limpia lo de abajo.
-      if (this.selectedEspecialidad?.id === esp.id) return;
+      if (this.selectedEspecialidad?.id !== esp.id) {
+        this.selectedEspecialidad = esp;
+        this.selectedMedico = null;
+        this.selectedDate = '';
+        this.selectedTime = '';
+      }
 
-      this.selectedEspecialidad = esp;
-      this.selectedMedico = null;
-      this.selectedDate = '';
-      this.selectedTime = '';
+      // Elegir especialidad ya avanza: el paso tiene una sola decisión, asi
+      // que pedir además "Siguiente" es un clic de más. El avance va fuera
+      // del if para que volver atrás y repulsar la misma tambien avance.
+      this.irAPaso(PASO_MEDICO);
     },
     selectMedico(med) {
-      if (this.selectedMedico?.id === med.id) return;
+      if (this.selectedMedico?.id !== med.id) {
+        this.selectedMedico = med;
+        this.selectedDate = '';
+        this.selectedTime = '';
+        this.generateTurnosDisponibles();
+      }
 
-      this.selectedMedico = med;
-      this.selectedDate = '';
-      this.selectedTime = '';
-      this.generateTurnosDisponibles();
+      this.irAPaso(PASO_FECHA_HORA);
     },
     selectTurno(turno) {
       this.selectedDate = turno.fecha;
@@ -286,6 +293,12 @@ export default {
      * Navegación
      * -------------------------------------------------------------- */
 
+    // Único punto que cambia de paso hacia delante, para que el scroll al
+    // inicio sea siempre el mismo venga de "Siguiente" o de un autoavance.
+    irAPaso(paso) {
+      this.currentStep = paso;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
     nextStep() {
       if (this.currentStep === PASO_DATOS && !this.datosPacienteValidos) {
         this.revelarErrores();
@@ -294,8 +307,7 @@ export default {
       }
 
       if (this.canProceed && this.currentStep < PASO_CONFIRMACION) {
-        this.currentStep++;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.irAPaso(this.currentStep + 1);
       }
     },
     prevStep() {
