@@ -11,18 +11,18 @@ export default {
       carruselTimer: null,
       paginaActiva: 0,
       instalaciones: [
-        { nombre: 'Quirófanos', imagen: '/Instalaciones/Quirofano1.jpg' },
-        { nombre: 'Equipo Quirúrgico', imagen: '/Instalaciones/Quirurgico.jpeg' },
         { nombre: 'Artroscopia', imagen: '/Instalaciones/Artroscopia.jpeg' },
+        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/Ginecologia.jpg' },
+        { nombre: 'Área de Operaciones', imagen: '/Instalaciones/Operaciones.jpeg' },
+        { nombre: 'Área de visitas', imagen: '/Instalaciones/Visitas.jpeg' },
+        { nombre: 'Camillas', imagen: '/Instalaciones/Recuperacion.jpeg' },
+        { nombre: 'Equipo Quirúrgico', imagen: '/Instalaciones/Quirurgico.jpeg' },
+        { nombre: 'Equipos Médicos', imagen: '/Instalaciones/Equipos.jpg' },
         { nombre: 'Fluoroscopia', imagen: '/Instalaciones/Fluoroscopia.jpeg' },
         { nombre: 'Habitaciones', imagen: '/Instalaciones/Habitacion1.jpg' },
-        { nombre: 'Camillas', imagen: '/Instalaciones/Recuperacion.jpeg' },
         { nombre: 'Hospitalización', imagen: '/Instalaciones/Habitacion.jpeg' },
-        { nombre: 'Área de visitas', imagen: '/Instalaciones/Visitas.jpeg' },
-        { nombre: 'Sala de Espera', imagen: '/Instalaciones/SalaEspera.jpg' },
-        { nombre: 'Equipos Médicos', imagen: '/Instalaciones/Equipos.jpg' },
-        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/Ginecologia.jpg' },
-        { nombre: 'Área de Operaciones', imagen: '/Instalaciones/Operaciones.jpeg' }
+        { nombre: 'Quirófanos', imagen: '/Instalaciones/Quirofano1.jpg' },
+        { nombre: 'Sala de Espera', imagen: '/Instalaciones/SalaEspera.jpg' }
       ]
     };
   },
@@ -46,7 +46,7 @@ export default {
       this.detenerAutoplay();
       this.carruselTimer = window.setInterval(() => {
         this.cambiarPagina(1, false);
-      }, 4500);
+      }, 6500);
     },
     detenerAutoplay() {
       if (this.carruselTimer) {

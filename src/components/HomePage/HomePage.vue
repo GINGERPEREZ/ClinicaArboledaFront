@@ -123,6 +123,30 @@
         </div>
       </section>
 
+      <section class="home-convenios-section">
+        <div class="home-convenios-header">
+          <div>
+            <h2>Convenios públicos y privados</h2>
+            <p>Conoce las entidades con las que trabajamos para ofrecerte atención médica dentro de nuestra red de convenios.</p>
+          </div>
+        </div>
+        <div class="home-convenios-slider-wrapper">
+          <div ref="conveniosSlider" class="home-convenios-slider">
+            <div
+              v-for="convenio in conveniosLogos"
+              :key="convenio.id"
+              class="convenio-logo-item"
+            >
+              <img :src="convenio.logo" :alt="convenio.nombre" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="home-convenios-controls">
+          <button type="button" @click="scrollConvenios(-1)" aria-label="Convenios anteriores">‹</button>
+          <button type="button" @click="scrollConvenios(1)" aria-label="Siguientes convenios">›</button>
+        </div>
+      </section>
+
     <!-- Lista de Médicos/Doctores -->
 <div class="product-grid">
   <div

@@ -50,6 +50,30 @@ export default {
         { id: 17, nombre: 'Nefrología',                    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.6 4.5C6 4.5 4 7.7 4 11.8s2 7.3 4.6 7.3c1.3 0 2-.9 2-2.1 0-1.6-1.2-2.5-1.2-4.1s1.2-2.4 1.2-4c0-1.3-.7-2.1-2-2.1z"/><path d="M15.4 4.5c2.6 0 4.6 3.2 4.6 7.3s-2 7.3-4.6 7.3c-1.3 0-2-.9-2-2.1 0-1.6 1.2-2.5 1.2-4.1s-1.2-2.4-1.2-4c0-1.3.7-2.1 2-2.1z"/></svg>`, medicos: 1 },
       ],
 
+      // Convenios públicos y privados
+      conveniosLogos: [
+        { id: 'privado-1', nombre: 'AIG Metropolitana', logo: '/Logos/Convenios/AIG.jpg' },
+        { id: 'privado-2', nombre: 'Aseguradora del Sur', logo: '/Logos/Convenios/aseguradoradelsur.jpg' },
+        { id: 'privado-3', nombre: 'Asisken', logo: '/Logos/Convenios/asisken.jpg' },
+        { id: 'privado-4', nombre: 'BMI Seguros', logo: '/Logos/Convenios/BMI.png' },
+        { id: 'privado-5', nombre: 'Chubb Seguros', logo: '/Logos/Convenios/chubb.png' },
+        { id: 'privado-6', nombre: 'Confiamed', logo: '/Logos/Convenios/Confiamed.jpg' },
+        { id: 'privado-7', nombre: 'Ecuasanitas', logo: '/Logos/Convenios/ecuasanitas.png' },
+        { id: 'privado-8', nombre: 'Equivida', logo: '/Logos/Convenios/equivida.png' },
+        { id: 'privado-9', nombre: 'Latina Seguros', logo: '/Logos/Convenios/Latina.jpg' },
+        { id: 'privado-10', nombre: 'Liberty Seguros', logo: '/Logos/Convenios/liberty.png' },
+        { id: 'privado-11', nombre: 'Mapfre', logo: '/Logos/Convenios/mapfre.svg' },
+        { id: 'privado-12', nombre: 'Oriente Seguros', logo: '/Logos/Convenios/oriente.png' },
+        { id: 'privado-13', nombre: 'Saludsa', logo: '/Logos/Convenios/saludsa.png' },
+        { id: 'privado-14', nombre: 'Seguros Equinoccial', logo: '/Logos/Convenios/Equinoccial.png' },
+        { id: 'privado-15', nombre: 'Seguros Sucre', logo: '/Logos/Convenios/SegurosSucre.avif' },
+        { id: 'privado-16', nombre: 'Zurich Seguros', logo: '/Logos/Convenios/zurich.png' },
+        { id: 'publico-1', nombre: 'IESS', logo: '/Logos/Convenios/IESS.png' },
+        { id: 'publico-2', nombre: 'ISSFA', logo: '/Logos/Convenios/ISSFA.jpg' },
+        { id: 'publico-3', nombre: 'ISSPOL', logo: '/Logos/Convenios/ISSPOL.png' },
+        { id: 'publico-4', nombre: 'Ministerio de Salud Pública', logo: '/Logos/Convenios/MSP.png' }
+      ],
+
       // Servicios destacados
       serviciosDestacados: [
         {
@@ -206,7 +230,7 @@ export default {
       if (this.noticiasPreview.length <= 1) return;
       this.noticiaCarouselTimer = window.setInterval(() => {
         this.nextNoticia(false);
-      }, 5000);
+      }, 5500);
     },
     detenerCarruselNoticias() {
       if (this.noticiaCarouselTimer) {
@@ -227,6 +251,12 @@ export default {
       if (!this.noticiasPreview.length) return;
       this.noticiaActivaIndex = (this.noticiaActivaIndex - 1 + this.noticiasPreview.length) % this.noticiasPreview.length;
       this.iniciarCarruselNoticias();
+    },
+    scrollConvenios(direction) {
+      const slider = this.$refs.conveniosSlider;
+      if (!slider) return;
+      const scrollAmount = slider.clientWidth * 0.6;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     },
     irAEquipoMedico(especialidad) {
       this.$router.push({

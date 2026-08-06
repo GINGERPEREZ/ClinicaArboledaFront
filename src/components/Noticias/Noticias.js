@@ -43,7 +43,7 @@ export default {
       }
     },
     startAutoSlide() {
-      this.slideInterval = setInterval(this.nextSlide, 3000);
+      this.slideInterval = setInterval(this.nextSlide, 6500);
     },
     nextSlide() {
       this.isTransitioning = true;
