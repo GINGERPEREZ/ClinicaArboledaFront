@@ -1080,11 +1080,7 @@
   line-height: 1.55;
 }
 
-.pending-confirmation-alert p + p {
-  margin-top: 8px;
-}
-
-.pending-confirmation-titulo {
-  font-weight: 800;
+.pending-confirmation-alert strong {
   color: #b42318;
+  font-weight: 800;
 }

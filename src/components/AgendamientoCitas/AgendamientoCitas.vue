@@ -312,15 +312,9 @@
                    de que la cita aun no esta confirmada es lo primero que el
                    paciente necesita leer. -->
               <div class="pending-confirmation-alert" role="status">
-                <p class="pending-confirmation-titulo">Importante: tu cita aún no está confirmada</p>
                 <p>
-                  La fecha y la hora que seleccionaste quedan reservadas de forma provisional y están
-                  sujetas a la disponibilidad del especialista. Un asesor de Clínica Arboleda se
-                  comunicará contigo al teléfono registrado para confirmar tu cita o coordinar una
-                  nueva fecha si fuera necesario.
-                </p>
-                <p>
-                  Te recomendamos conservar este comprobante y presentarlo el día de tu atención.
+                  <strong>Importante:</strong> la fecha y hora seleccionadas están pendientes de
+                  confirmación por parte de la Clínica. Se estarán contactando con usted.
                 </p>
               </div>
 
