@@ -173,6 +173,12 @@ export default {
         this.selectedMedico = medico;
         this.selectedEspecialidad =
           this.especialidades.find((e) => e.id === medico.especialidadId) || null;
+        // Si venimos con médico preseleccionado desde otra página,
+        // generamos los turnos disponibles pero mantenemos al usuario
+        // en el primer paso. Así la especialidad y el médico aparecen
+        // resaltados y el usuario elige la fecha/horario manualmente.
+        this.generateTurnosDisponibles();
+        this.currentStep = PASO_ESPECIALIDAD;
         return;
       }
 
