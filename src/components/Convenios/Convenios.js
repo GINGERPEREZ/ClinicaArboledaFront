@@ -10,11 +10,6 @@ export default {
   computed: {
     segurosPrivadosCarrusel() {
       return [...this.segurosPrivados];
-    },
-    whatsappSegurosLink() {
-      const phone = '+593995924867';
-      const message = encodeURIComponent('Hola! Me gustaría consultar sobre coberturas con seguros privados en Clínica Metropolitana.');
-      return `https://wa.me/${phone}?text=${message}`;
     }
   },
   data() {
