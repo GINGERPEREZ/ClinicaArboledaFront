@@ -136,10 +136,9 @@ export default {
 
       // Indicadores destacados
       indicadoresResumen: [
-        { valor: '22', label: 'Especialistas' },
-        { valor: '8200+', label: 'Clientes Felices' },
-        { valor: '12', label: 'Camas' },
-        { valor: '100%', label: 'Satisfacción' }
+        { valor: '20+', label: 'Profesionales Médicos' },
+        { valor: '4.8*', label: 'Satisfacción' },
+        { valor: '1.000+', label: 'Pacientes atendidos al mes' }
       ],
       
       // Mapeo de especialidades (para compatibilidad)

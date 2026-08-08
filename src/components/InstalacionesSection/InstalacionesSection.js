@@ -46,7 +46,7 @@ export default {
       this.detenerAutoplay();
       this.carruselTimer = window.setInterval(() => {
         this.cambiarPagina(1, false);
-      }, 6500);
+      }, 5500);
     },
     detenerAutoplay() {
       if (this.carruselTimer) {

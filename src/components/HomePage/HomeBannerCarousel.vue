@@ -121,30 +121,25 @@ export default {
 
 .hero-slide {
   opacity: 0;
-  transform: scale(1.02);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  background-size: cover;
-  background-position: center;
-}
+    transform: none;
+    transition: opacity 0.8s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    backface-visibility: hidden;
+    will-change: opacity;
+  }
 
-.hero-slide::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(18, 56, 52, 0.62) 0%, rgba(18, 56, 52, 0.32) 45%, rgba(18, 56, 52, 0.22) 100%);
-}
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(18, 56, 52, 0.62) 0%, rgba(18, 56, 52, 0.32) 45%, rgba(18, 56, 52, 0.22) 100%);
+  }
 
-.hero-slide.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
+  .hero-slide.active {
+    opacity: 1;
 }
 
 .hero-content-main {

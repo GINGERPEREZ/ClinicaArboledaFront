@@ -15,17 +15,41 @@
 
 
       <section class="home-stats-section" aria-label="Indicadores de confianza">
-        <div class="home-stat-item">
-          <strong>22</strong>
-          <span>Especialistas</span>
+        <div class="home-stat-item color-medicos">
+          <div class="home-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />
+              <path d="M7 23c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+              <path d="M10.5 17.5c1.2-1.4 3-2.3 5.5-2.3s4.3.9 5.5 2.3" />
+            </svg>
+          </div>
+          <strong>20</strong>
+          <span>Profesionales Médicos</span>
         </div>
-        <div class="home-stat-item">
-          <strong>8200+</strong>
-          <span>Clientes Felices</span>
-        </div>
-        <div class="home-stat-item">
-          <strong>100%</strong>
+        <div class="home-stat-item color-satisfaccion">
+          <div class="home-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 4.5v19" />
+              <path d="M4.5 12.5h19" />
+              <path d="M8.5 8.5l11 11" />
+              <path d="M8.5 19.5l11-11" />
+            </svg>
+          </div>
+          <strong>4.8</strong>
           <span>Satisfacción</span>
+        </div>
+        <div class="home-stat-item color-pacientes">
+          <div class="home-stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 10h14" />
+              <path d="M7 14h14" />
+              <path d="M7 18h14" />
+              <path d="M9 6a2 2 0 1 1 4 0" />
+              <path d="M16 6a2 2 0 1 1 4 0" />
+            </svg>
+          </div>
+          <strong>1.000</strong>
+          <span>Pacientes atendidos al mes</span>
         </div>
       </section>
 

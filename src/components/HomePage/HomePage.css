@@ -1504,59 +1504,59 @@ body {
      ======================================== */
   .indicadores-section {
     margin: 0;
-    padding: 28px 20px;
-    background: #123f3c;
-    border-radius: 0;
-    box-shadow: none;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #0f3734 0%, #123f3c 40%, #2f6b67 100%);
+    border-radius: 28px;
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.16);
   }
 
   .indicadores-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(140px, 1fr));
-    gap: 0;
-    margin-bottom: 0;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 18px;
+    align-items: stretch;
   }
 
   .indicador-card {
-    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: relative;
-    transition: none;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .indicador-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 10%;
-    width: 1px;
-    height: 80%;
-    border-right: 2px dashed rgba(255, 255, 255, 0.28);
-    display: block;
+    gap: 8px;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    backdrop-filter: blur(14px);
   }
 
   .indicador-card:hover {
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .indicador-porcentaje {
-    font-size: 3.2rem;
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 800;
-    margin-bottom: 4px;
+    margin: 0;
     line-height: 1;
     color: #ffffff;
+    letter-spacing: -0.04em;
   }
 
   .indicador-label {
-    font-size: 2rem;
-    font-weight: 600;
-    opacity: 1;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.4;
+    max-width: 200px;
+  }
+
+  .indicador-label::first-letter {
+    text-transform: uppercase;
   }
 
   /* Responsive para m�dicos destacados e indicadores */
@@ -2109,33 +2109,97 @@ body {
   width: min(92vw, 1180px);
   max-width: 1180px;
   margin: 40px auto 38px;
-  padding: 22px 30px;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  background: #f6fbff;
-  border: 1px solid #d8f0fa;
-  border-radius: 8px;
-  box-shadow: 0 12px 28px rgba(66, 168, 161, 0.08);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  background: transparent;
 }
 
 .home-stat-item {
   text-align: center;
+  min-height: 180px;
+  border-radius: 24px;
+  padding: 28px 18px;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  gap: 10px;
+}
+
+.home-stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.1);
+}
+
+.home-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.home-stat-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .home-stat-item strong {
   display: block;
-  color: #4a4a4a;
-  font-size: clamp(1.65rem, 2.4vw, 2.35rem);
+  color: #3d3d3d;
+  font-size: clamp(2.1rem, 3.5vw, 3rem);
   line-height: 1;
   font-weight: 900;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .home-stat-item span {
-  color: #4a4a4a;
-  font-size: 0.98rem;
-  font-weight: 700;
+  color: #3d3d3d;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 180px;
+}
+
+.color-medicos {
+  background: rgba(236, 232, 232, 0.88);
+}
+
+.color-satisfaccion {
+  background: rgba(236, 232, 232, 0.88);
+}
+
+.color-pacientes {
+  background: rgba(236, 232, 232, 0.88);
+}
+
+.color-medicos .home-stat-icon {
+  background: #1b5e53;
+}
+
+.color-satisfaccion .home-stat-icon {
+  background: #1a4a8f;
+}
+
+.color-pacientes .home-stat-icon {
+  background: #c82a12;
+}
+
+.home-stat-item.color-medicos .home-stat-icon {
+  background: #42a8a1;
+}
+
+.home-stat-item.color-satisfaccion .home-stat-icon {
+  background: #42a8a1;
+}
+
+.home-stat-item.color-pacientes .home-stat-icon {
+  background: #42a8a1;
 }
 
 @media (max-width: 640px) {
