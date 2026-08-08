@@ -32,13 +32,6 @@ export default {
           },
           { texto: 'Nuestro Equipo Médico', ruta: '/equipo-medico' },
           { texto: 'Convenios', ruta: '/convenios' },
-          {
-            texto: 'Servicios Virtuales',
-            hijos: [
-              { texto: 'Agendamiento de Citas', ruta: '/agendamiento-citas' },
-              { texto: 'Chatbot', ruta: '/chatbot' },
-            ],
-          },
           { texto: 'Noticias', ruta: '/noticias' },
         ],
       };
@@ -152,6 +145,9 @@ export default {
       },
       goToRegister() {
         this.$router.push("/registro");
+      },
+      goToAgendarCita() {
+        this.$router.push("/agendamiento-citas");
       },
       goToCategorias() {
         // Funcionalidad de categorías deshabilitada

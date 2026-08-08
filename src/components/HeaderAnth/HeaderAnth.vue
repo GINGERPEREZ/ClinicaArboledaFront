@@ -12,13 +12,9 @@
           <!-- Acciones de usuario -->
           <div class="user-actions">
             <template v-if="!isAuthenticated">
-              <button class="action-button btn-pacientes" @click="goToLogin">
-                <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                Pacientes
-              </button>
-              <button class="action-button btn-medicos" @click="goToRegister">
-                <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                Médicos
+              <button class="action-button btn-medicos" @click="goToAgendarCita">
+                <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3h8v4"/><path d="M6 9h12v10H6z"/><path d="M9 13h6"/><path d="M12 10v6"/></svg>
+                Agendar cita
               </button>
             </template>
             <template v-else>
@@ -87,21 +83,6 @@
             </li>
             <li><a href="/equipo-medico">Nuestro Equipo Médico</a></li>
             <li><a href="/convenios">Convenios</a></li>
-            <li 
-              class="dropdown-menu"
-              @mouseenter="showServiciosMenu = true"
-              @mouseleave="showServiciosMenu = false"
-            >
-              <a href="#" @click.prevent>Servicios Virtuales</a>
-              <transition name="dropdown-fade">
-                <div v-if="showServiciosMenu" class="dropdown-wrapper">
-                  <ul class="dropdown-content">
-                    <li><a href="/agendamiento-citas">Agendamiento de Citas</a></li>
-                    <li><a href="/chatbot">Chatbot</a></li>
-                  </ul>
-                </div>
-              </transition>
-            </li>
             <li><a href="/noticias">Noticias</a></li>
           </ul>
         </nav>
@@ -152,8 +133,7 @@
             <!-- Los accesos de usuario se mudan aquí para liberar la barra superior -->
             <div class="mobile-drawer-actions">
               <template v-if="!isAuthenticated">
-                <button class="mobile-drawer-btn" type="button" @click="irDesdeMenu('/login')">Pacientes</button>
-                <button class="mobile-drawer-btn is-primary" type="button" @click="irDesdeMenu('/registro')">Médicos</button>
+                <button class="mobile-drawer-btn is-primary" type="button" @click="irDesdeMenu('/agendamiento-citas')">Agendar cita</button>
               </template>
               <template v-else>
                 <button class="mobile-drawer-btn" type="button" @click="irDesdeMenu('/perfil')">Mi Perfil</button>

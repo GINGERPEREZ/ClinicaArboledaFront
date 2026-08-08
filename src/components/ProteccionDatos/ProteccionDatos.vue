@@ -7,9 +7,9 @@
       <section class="proteccion-datos-intro">
         <div class="content-container">
           <div class="page-header">
-            <h1 class="page-title">PROTECCION DE DATOS PERSONALES</h1>
+            <h1 class="page-title">PROTECCIÓN DE DATOS PERSONALES</h1>
             <p class="page-description">
-              Compromiso institucional con la confidencialidad, el uso responsable y la seguridad de la informacion de nuestros pacientes.
+              Compromiso institucional con la confidencialidad, el uso responsable y la seguridad de la información de nuestros pacientes.
             </p>
           </div>
         </div>
@@ -19,8 +19,8 @@
         <div class="info-container">
           <h2 class="section-title">Alcance y Uso de esta Web</h2>
           <p class="section-description">
-            Esta pagina web esta orientada a personas naturales o juridicas con residencia en Ecuador, o que acceden desde Ecuador,
-            para brindar informacion general sobre servicios hospitalarios, canales de contacto y atencion en salud de Clinica Arboleda.
+            Esta página web está orientada a personas naturales o jurídicas con residencia en Ecuador, o que acceden desde Ecuador,
+            para brindar información general sobre servicios hospitalarios, canales de contacto y atención en salud de Clínica Arboleda.
           </p>
         </div>
       </section>
@@ -41,16 +41,16 @@
           <div class="content-card">
             <ol class="disposiciones-list">
               <li>
-                La informacion contenida en esta direccion electronica y en sus paginas anexas o conexas, incluidos ciertos servicios de orientacion,
-                atencion y contacto hospitalario, esta destinada a su uso por personas naturales, sociedades, personas juridicas u otras entidades
-                con residencia en Ecuador o que accedan desde Ecuador. Clinica Arboleda declina responsabilidad por accesos desde jurisdicciones donde
-                el contenido o uso de esta web pudiera contravenir normativa local. Determinados servicios podrian no estar disponibles en todas las
-                jurisdicciones o para todas las personas, por lo que la Clinica podra restringir o rechazar accesos que no cumplan los requisitos aplicables.
+                La información contenida en esta dirección electrónica y en sus páginas anexas o conexas, incluidos ciertos servicios de orientación,
+                atención y contacto hospitalario, está destinada a su uso por personas naturales, sociedades, personas jurídicas u otras entidades
+                con residencia en Ecuador o que accedan desde Ecuador. Clínica Arboleda declina responsabilidad por accesos desde jurisdicciones donde
+                el contenido o uso de esta web pudiera contravenir normativa local. Determinados servicios podrían no estar disponibles en todas las
+                jurisdicciones o para todas las personas, por lo que la Clínica podrá restringir o rechazar accesos que no cumplan los requisitos aplicables.
               </li>
               <li>
-                Al acceder a esta direccion electronica y a cualquiera de sus paginas anexas o conexas, usted adquiere la calidad de usuario y acepta
-                las estipulaciones aqui contenidas, asi como las condiciones de tratamiento de datos personales aplicables conforme a la normativa vigente
-                en Ecuador, incluida la Ley Organica de Proteccion de Datos Personales.
+                Al acceder a esta dirección electrónica y a cualquiera de sus páginas anexas o conexas, usted adquiere la calidad de usuario y acepta
+                las estipulaciones aquí contenidas, así como las condiciones de tratamiento de datos personales aplicables conforme a la normativa vigente
+                en Ecuador, incluida la Ley Orgánica de Protección de Datos Personales.
               </li>
             </ol>
           </div>
@@ -67,18 +67,18 @@
                 <path d="M11 12h2v4h-2"></path>
               </svg>
             </div>
-            <h2 class="section-title">Aclaracion</h2>
+            <h2 class="section-title">Aclaración</h2>
             <p class="section-subtitle">Naturaleza informativa del contenido publicado</p>
           </div>
 
           <div class="content-card">
             <p class="aclaracion-text">
-              Esta pagina electronica no reemplaza la consulta medica profesional, el diagnostico clinico, la indicacion terapeutica ni el criterio de especialistas
-              de salud. Tampoco constituye asesoramiento legal, tributario o de otra naturaleza tecnica.
+              Esta página electrónica no reemplaza la consulta médica profesional, el diagnóstico clínico, la indicación terapéutica ni el criterio de especialistas
+              de salud. Tampoco constituye asesoramiento legal, tributario o de otra naturaleza técnica.
             </p>
             <p class="aclaracion-text">
-              La informacion publicada tiene caracter general e informativo y no debe utilizarse como unico fundamento para decisiones clinicas o personales.
-              Para decisiones relacionadas con su estado de salud, tratamiento o historia clinica, debe solicitarse atencion profesional personalizada y especializada.
+              La información publicada tiene carácter general e informativo y no debe utilizarse como único fundamento para decisiones clínicas o personales.
+              Para decisiones relacionadas con su estado de salud, tratamiento o historia clínica, debe solicitarse atención profesional personalizada y especializada.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="cta-container">
           <h2 class="cta-title">Tus datos y tu salud son prioridad</h2>
           <p class="cta-description">
-            Si tienes dudas sobre el tratamiento de tus datos personales, contactanos y te guiaremos en el ejercicio de tus derechos.
+            Si tienes dudas sobre el tratamiento de tus datos personales, contáctanos y te guiaremos en el ejercicio de tus derechos.
           </p>
           <button class="cta-button" @click="irAContacto">
             Contactar a un asesor
@@ -98,10 +98,10 @@
 
       <section class="descarga-politica-section">
         <div class="descarga-politica-box">
-          <h3>Descargar Politica de Proteccion de Datos Personales.</h3>
           <p>
-            Para descargar las politicas de cookies,
-            <a href="#cookies">de clic aqui</a>
+            <a href="#ccookies">
+              Descargar Política de Protección de Datos Personales
+            </a>
           </p>
         </div>
       </section>
