@@ -542,13 +542,13 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  filter: saturate(0.82) contrast(0.92) brightness(1.04);
+  filter: saturate(1.06) contrast(1.05) brightness(1.03);
 }
 
 .hero-slide::after {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(11, 131, 176, 0.42) 52%, rgba(18, 63, 60, 0.68) 100%),
-    linear-gradient(90deg, rgba(18, 63, 60, 0.72) 0%, rgba(11, 131, 176, 0.42) 42%, rgba(232, 251, 252, 0.18) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(11, 131, 176, 0.16) 52%, rgba(18, 63, 60, 0.28) 100%),
+    linear-gradient(90deg, rgba(18, 63, 60, 0.46) 0%, rgba(11, 131, 176, 0.22) 42%, rgba(232, 251, 252, 0.04) 100%);
 }
 
 .hero-main-title,
@@ -662,6 +662,7 @@ export default {
 
 .hero-overlay {
   min-height: 1020px;
+  background: transparent;
 }
 
 .hero-content-main {

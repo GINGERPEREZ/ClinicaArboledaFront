@@ -25,6 +25,9 @@ export default {
       totalMedicos: 418,
       noticiaActivaIndex: 0,
       noticiaCarouselTimer: null,
+      conveniosDragging: false,
+      arrastreX: 0,
+      arrastreScroll: 0,
 
       // Noticias recientes para preview en home
       noticiasPreview: loadNoticias().slice(0, 3),
@@ -80,25 +83,25 @@ export default {
           id: 1,
           nombre: 'Hospitalización',
           descripcion: 'Contamos con habitaciones cómodas y seguras equipadas con tecnología médica de última generación para tu recuperación.',
-          imagen: '/Servicios/Hospitalizacion.jpg'
+          imagen: '/Servicios/opt/Hospitalizacion.jpg'
         },
         {
           id: 2,
           nombre: 'Óptica',
           descripcion: 'Servicio integral de salud visual con los mejores especialistas y equipos de diagnóstico para cuidar tu visión.',
-          imagen: '/Servicios/Optica1.jpg'
+          imagen: '/Servicios/opt/Optica1.jpg'
         },
         {
           id: 3,
           nombre: 'Pediatría',
           descripcion: 'Atención especializada para el cuidado y desarrollo de tus hijos, con un equipo médico dedicado exclusivamente a los más pequeños.',
-          imagen: '/Servicios/Pediatrico2.jpg'
+          imagen: '/Servicios/opt/Pediatrico2.jpg'
         },
         {
           id: 4,
           nombre: 'Imagenología',
           descripcion: 'Realizamos estudios diagnósticos por imagen con equipos modernos y personal capacitado para una atención precisa y oportuna.',
-          imagen: '/Servicios/Imagenologia1.jpg'
+          imagen: '/Servicios/opt/Imagenologia1.jpg'
         }
       ],
 
@@ -199,9 +202,22 @@ export default {
   },
   mounted() {
     this.iniciarCarruselNoticias();
+    this.$nextTick(() => {
+      this.centrarCarruselConvenios();
+      const slider = this.$refs.conveniosSlider;
+      if (slider) {
+        slider.addEventListener('scroll', this.ajustarLoopConvenios);
+      }
+      window.addEventListener('resize', this.centrarCarruselConvenios);
+    });
   },
   beforeUnmount() {
     this.detenerCarruselNoticias();
+    const slider = this.$refs.conveniosSlider;
+    if (slider) {
+      slider.removeEventListener('scroll', this.ajustarLoopConvenios);
+    }
+    window.removeEventListener('resize', this.centrarCarruselConvenios);
   },
   computed: {
     // Orden alfabetico por nombre. Se ordena aqui y no en el array de datos
@@ -212,6 +228,10 @@ export default {
       return [...this.especialidadesMedicas].sort((a, b) =>
         a.nombre.localeCompare(b.nombre, 'es', { sensitivity: 'base' })
       );
+    },
+    // Triplicamos los logos para lograr un carrusel infinito al arrastrar
+    conveniosLogosInfinite() {
+      return [...this.conveniosLogos, ...this.conveniosLogos, ...this.conveniosLogos];
     },
     productosDestacados() {
       if (!this.productos || this.productos.length === 0) return [];
@@ -251,11 +271,56 @@ export default {
       this.noticiaActivaIndex = (this.noticiaActivaIndex - 1 + this.noticiasPreview.length) % this.noticiasPreview.length;
       this.iniciarCarruselNoticias();
     },
-    scrollConvenios(direction) {
+    iniciarArrastreConvenios(event) {
       const slider = this.$refs.conveniosSlider;
       if (!slider) return;
-      const scrollAmount = slider.clientWidth * 0.6;
-      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+      this.conveniosDragging = true;
+      this.arrastreX = event.clientX;
+      this.arrastreScroll = slider.scrollLeft;
+      slider.style.scrollBehavior = 'auto';
+      try {
+        slider.setPointerCapture(event.pointerId);
+      } catch (error) {
+        // El puntero puede no ser capturable en algunos navegadores
+      }
+      event.preventDefault();
+    },
+    moverArrastreConvenios(event) {
+      if (!this.conveniosDragging) return;
+      const slider = this.$refs.conveniosSlider;
+      if (!slider) return;
+      const delta = event.clientX - this.arrastreX;
+      slider.scrollLeft = this.arrastreScroll - delta;
+    },
+    finalizarArrastreConvenios() {
+      if (!this.conveniosDragging) return;
+      this.conveniosDragging = false;
+      const slider = this.$refs.conveniosSlider;
+      if (slider) {
+        slider.style.scrollBehavior = '';
+      }
+      this.ajustarLoopConvenios();
+    },
+    ajustarLoopConvenios() {
+      const slider = this.$refs.conveniosSlider;
+      if (!slider) return;
+      const copia = slider.scrollWidth / 3;
+      if (copia <= 0 || slider.clientWidth >= slider.scrollWidth) return;
+
+      if (slider.scrollLeft < copia) {
+        slider.scrollLeft += copia;
+      } else if (slider.scrollLeft >= copia * 2) {
+        slider.scrollLeft -= copia;
+      }
+    },
+    centrarCarruselConvenios() {
+      const slider = this.$refs.conveniosSlider;
+      if (!slider) return;
+      const copia = slider.scrollWidth / 3;
+      if (copia <= 0) return;
+      slider.scrollLeft = copia;
     },
     irAEquipoMedico(especialidad) {
       this.$router.push({

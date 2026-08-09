@@ -33,6 +33,8 @@
                   :src="instalacion.imagen"
                   :alt="instalacion.nombre"
                   class="instalacion-image"
+                  loading="lazy"
+                  decoding="async"
                   @error="handleImageError"
                 />
                 <div class="instalacion-overlay">

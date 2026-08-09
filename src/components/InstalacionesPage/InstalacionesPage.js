@@ -17,7 +17,7 @@ export default {
           nombre: 'Quirófanos',
           descripcion: 'Contamos con quirófanos completamente equipados con tecnología de última generación, diseñados para garantizar las condiciones de esterilidad y precisión que exigen los procedimientos quirúrgicos más complejos.',
           capacidad: '6 salas',
-          imagen: '/Instalaciones/Quirofano1.jpg',
+          imagen: '/Instalaciones/opt/Quirofano1.jpg',
         },
         {
           id: 2,
@@ -45,7 +45,7 @@ export default {
           nombre: 'Equipos Médicos',
           descripcion: 'Disponemos de un amplio parque tecnológico con equipos de diagnóstico de vanguardia, que permiten a nuestros especialistas obtener resultados precisos y tomar decisiones clínicas oportunas.',
           capacidad: '4 módulos',
-          imagen: '/Instalaciones/Equipos.jpg',
+          imagen: '/Instalaciones/opt/Equipos.jpg',
         },
         {
           id: 6,

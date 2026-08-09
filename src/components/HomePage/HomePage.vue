@@ -137,7 +137,7 @@
             class="editorial-service-card"
           >
             <div class="editorial-service-image">
-              <img :src="servicio.imagen" :alt="servicio.nombre" />
+              <img :src="servicio.imagen" :alt="servicio.nombre" loading="lazy" decoding="async" />
             </div>
             <div class="editorial-service-body">
               <h3>{{ servicio.nombre }}</h3>
@@ -155,19 +155,24 @@
           </div>
         </div>
         <div class="home-convenios-slider-wrapper">
-          <div ref="conveniosSlider" class="home-convenios-slider">
+          <div
+            ref="conveniosSlider"
+            class="home-convenios-slider"
+            :class="{ dragging: conveniosDragging }"
+            @pointerdown="iniciarArrastreConvenios"
+            @pointermove="moverArrastreConvenios"
+            @pointerup="finalizarArrastreConvenios"
+            @pointercancel="finalizarArrastreConvenios"
+            @pointerleave="finalizarArrastreConvenios"
+          >
             <div
-              v-for="convenio in conveniosLogos"
-              :key="convenio.id"
+              v-for="(convenio, index) in conveniosLogosInfinite"
+              :key="convenio.id + '-' + index"
               class="convenio-logo-item"
             >
-              <img :src="convenio.logo" :alt="convenio.nombre" loading="lazy" />
+              <img :src="convenio.logo" :alt="convenio.nombre" loading="lazy" decoding="async" draggable="false" />
             </div>
           </div>
-        </div>
-        <div class="home-convenios-controls">
-          <button type="button" @click="scrollConvenios(-1)" aria-label="Convenios anteriores">‹</button>
-          <button type="button" @click="scrollConvenios(1)" aria-label="Siguientes convenios">›</button>
         </div>
       </section>
 

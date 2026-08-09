@@ -1239,33 +1239,6 @@ body {
     max-width: none;
   }
 
-  .home-convenios-controls {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 18px;
-  }
-
-  .home-convenios-controls button {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(15, 143, 137, 0.22);
-    background: #fff;
-    color: #0f8f89;
-    cursor: pointer;
-    font-size: 1.3rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .home-convenios-controls button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px rgba(15, 143, 137, 0.18);
-  }
-
   .home-convenios-slider-wrapper {
     overflow: hidden;
   }
@@ -1277,7 +1250,9 @@ body {
     gap: 22px;
     overflow-x: auto;
     padding-bottom: 0;
-    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-x pan-y;
   }
 
   .home-convenios-slider::-webkit-scrollbar,
@@ -1302,12 +1277,18 @@ body {
     justify-content: center;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(15, 143, 137, 0.08);
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .convenio-logo-item img {
     max-width: 100%;
     max-height: 80px;
     object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
   }
 
   @media (max-width: 1100px) {

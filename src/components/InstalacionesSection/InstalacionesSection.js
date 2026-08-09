@@ -11,18 +11,18 @@ export default {
       carruselTimer: null,
       paginaActiva: 0,
       instalaciones: [
-        { nombre: 'Artroscopia', imagen: '/Instalaciones/Artroscopia1.png' },
-        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/Ginecologia2.png' },
-        { nombre: 'Área de Operaciones', imagen: '/Instalaciones/Operaciones1.png' },
-        { nombre: 'Área de visitas', imagen: '/Instalaciones/Visitas1.png' },
-        { nombre: 'Camillas', imagen: '/Instalaciones/Recuperacion1.png' },
-        { nombre: 'Equipo Quirúrgico', imagen: '/Instalaciones/Quirurgico1.png' },
-        { nombre: 'Equipos Médicos', imagen: '/Instalaciones/Equipos1.png' },
-        { nombre: 'Fluoroscopia', imagen: '/Instalaciones/Fluoroscopia1.png' },
-        { nombre: 'Habitaciones', imagen: '/Instalaciones/Habitacion1.jpg' },
-        { nombre: 'Hospitalización', imagen: '/Instalaciones/Habitacion2.png' },
-        { nombre: 'Quirófanos', imagen: '/Instalaciones/Quirofano1.jpg' },
-        { nombre: 'Sala de Espera', imagen: '/Instalaciones/SalaEspera.jpg' }
+        { nombre: 'Artroscopia', imagen: '/Instalaciones/opt/Artroscopia1.jpg' },
+        { nombre: 'Área de Ginecología', imagen: '/Instalaciones/opt/Ginecologia2.jpg' },
+        { nombre: 'Área de Operaciones', imagen: '/Instalaciones/opt/Operaciones1.jpg' },
+        { nombre: 'Área de visitas', imagen: '/Instalaciones/opt/Visitas1.jpg' },
+        { nombre: 'Camillas', imagen: '/Instalaciones/opt/Recuperacion1.jpg' },
+        { nombre: 'Equipo Quirúrgico', imagen: '/Instalaciones/opt/Quirurgico1.jpg' },
+        { nombre: 'Equipos Médicos', imagen: '/Instalaciones/opt/Equipos1.jpg' },
+        { nombre: 'Fluoroscopia', imagen: '/Instalaciones/opt/Fluoroscopia1.jpg' },
+        { nombre: 'Habitaciones', imagen: '/Instalaciones/opt/Habitacion1.jpg' },
+        { nombre: 'Hospitalización', imagen: '/Instalaciones/opt/Habitacion2.jpg' },
+        { nombre: 'Quirófanos', imagen: '/Instalaciones/opt/Quirofano1.jpg' },
+        { nombre: 'Sala de Espera', imagen: '/Instalaciones/opt/SalaEspera.jpg' }
       ]
     };
   },
