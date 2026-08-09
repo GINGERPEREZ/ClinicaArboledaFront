@@ -212,19 +212,6 @@ export default {
       sistemasPublicos: [
         {
           id: 1,
-          nombre: 'IESS - Instituto Ecuatoriano de Seguridad Social',
-          logo: '/Logos/Convenios/IESS.png',
-          descripcion: 'Atención médica para afiliados y beneficiarios del seguro social.',
-          servicios: [
-            'Consulta externa',
-            'Hospitalización',
-            'Cirugía programada',
-            'Emergencias',
-            'Medicina preventiva'
-          ]
-        },
-        {
-          id: 2,
           nombre: 'ISSFA - Seguro Social de las Fuerzas Armadas',
           logo: '/Logos/Convenios/ISSFA.jpg',
           descripcion: 'Cobertura integral para miembros activos y en retiro de las FF.AA.',
@@ -237,7 +224,7 @@ export default {
           ]
         },
         {
-          id: 3,
+          id: 2,
           nombre: 'ISSPOL - Instituto de Seguridad Social de la Policía',
           logo: '/Logos/Convenios/ISSPOL.png',
           descripcion: 'Servicios médicos para personal policial y sus familias.',
@@ -250,7 +237,7 @@ export default {
           ]
         },
         {
-          id: 4,
+          id: 3,
           nombre: 'Ministerio de Salud Pública',
           logo: '/Logos/Convenios/MSP.png',
           descripcion: 'Convenio para derivación de pacientes y atención especializada.',

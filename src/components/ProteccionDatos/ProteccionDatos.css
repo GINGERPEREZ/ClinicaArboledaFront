@@ -216,7 +216,7 @@
 .descarga-politica-section {
   position: relative;
   overflow: hidden;
-  padding: 52px 20px 18px;
+  padding: 28px 20px 18px;
   background: linear-gradient(135deg, #123f3c 0%, #0d3b38 100%);
 }
 
@@ -243,7 +243,7 @@
 }
 
 .descarga-politica-box p {
-  margin: 12px 0 0;
+  margin: 0;
   font-size: 37px;
   font-weight: 300;
   color: #f3f8ff;

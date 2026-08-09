@@ -1028,10 +1028,11 @@ body {
     max-width: 560px;
     margin: 0 0 18px;
     color: #fff;
-    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-size: 3.6rem;
     font-weight: 900;
     line-height: 1.02;
     letter-spacing: 0;
+    min-height: 2.2em;
   }
 
   .editorial-news-copy p:not(.editorial-kicker) {

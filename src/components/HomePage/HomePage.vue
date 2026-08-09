@@ -150,8 +150,8 @@
       <section class="home-convenios-section">
         <div class="home-convenios-header">
           <div>
-            <h2>Convenios públicos y privados</h2>
-            <p>Conoce las entidades con las que trabajamos para ofrecerte atención médica dentro de nuestra red de convenios.</p>
+            <h2>Convenios con seguros</h2>
+            <p>La Clínica Arboleda mantiene convenios con las más importantes aseguradoras del país.</p>
           </div>
         </div>
         <div class="home-convenios-slider-wrapper">

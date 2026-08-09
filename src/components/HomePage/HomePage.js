@@ -71,10 +71,9 @@ export default {
         { id: 'privado-14', nombre: 'Seguros Equinoccial', logo: '/Logos/Convenios/Equinoccial.png' },
         { id: 'privado-15', nombre: 'Seguros Sucre', logo: '/Logos/Convenios/SegurosSucre.avif' },
         { id: 'privado-16', nombre: 'Zurich Seguros', logo: '/Logos/Convenios/zurich.png' },
-        { id: 'publico-1', nombre: 'IESS', logo: '/Logos/Convenios/IESS.png' },
-        { id: 'publico-2', nombre: 'ISSFA', logo: '/Logos/Convenios/ISSFA.jpg' },
-        { id: 'publico-3', nombre: 'ISSPOL', logo: '/Logos/Convenios/ISSPOL.png' },
-        { id: 'publico-4', nombre: 'Ministerio de Salud Pública', logo: '/Logos/Convenios/MSP.png' }
+        { id: 'publico-1', nombre: 'ISSFA', logo: '/Logos/Convenios/ISSFA.jpg' },
+        { id: 'publico-2', nombre: 'ISSPOL', logo: '/Logos/Convenios/ISSPOL.png' },
+        { id: 'publico-3', nombre: 'Ministerio de Salud Pública', logo: '/Logos/Convenios/MSP.png' }
       ],
 
       // Servicios destacados

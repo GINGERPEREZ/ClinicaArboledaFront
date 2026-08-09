@@ -152,7 +152,7 @@ export default {
 .hero-main-title {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: 3.3rem;
   line-height: 1.08;
   font-weight: 700;
 }
@@ -366,6 +366,7 @@ export default {
   font-weight: 800;
   letter-spacing: 0;
   max-width: 560px;
+  min-height: 3.2em;
 }
 
 .highlight {
