@@ -1251,6 +1251,7 @@ body {
     gap: 22px;
     overflow-x: auto;
     padding-bottom: 0;
+    scroll-behavior: smooth;
     user-select: none;
     -webkit-user-select: none;
     touch-action: pan-x pan-y;
@@ -2093,7 +2094,7 @@ body {
   margin: 40px auto 38px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
   background: transparent;
 }
@@ -2182,6 +2183,20 @@ body {
 
 .home-stat-item.color-pacientes .home-stat-icon {
   background: #42a8a1;
+}
+
+.color-aseguradoras {
+  background: rgba(236, 232, 232, 0.88);
+}
+
+.home-stat-item.color-aseguradoras .home-stat-icon {
+  background: #42a8a1;
+}
+
+@media (max-width: 1100px) {
+  .home-stats-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {

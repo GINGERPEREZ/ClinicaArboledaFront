@@ -26,8 +26,18 @@ export default {
       noticiaActivaIndex: 0,
       noticiaCarouselTimer: null,
       conveniosDragging: false,
+      conveniosTimer: null,
       arrastreX: 0,
       arrastreScroll: 0,
+      statsObserver: null,
+      statsRafId: null,
+      statsIniciados: false,
+      statsAnimados: {
+        medicos: 0,
+        satisfaccion: 0,
+        pacientes: 0,
+        aseguradoras: 0,
+      },
 
       // Noticias recientes para preview en home
       noticiasPreview: loadNoticias().slice(0, 3),
@@ -55,6 +65,9 @@ export default {
 
       // Convenios públicos y privados
       conveniosLogos: [
+        { id: 'publico-1', nombre: 'ISSFA', logo: '/Logos/Convenios/ISSFA.jpg' },
+        { id: 'publico-2', nombre: 'ISSPOL', logo: '/Logos/Convenios/ISSPOL.png' },
+        { id: 'publico-3', nombre: 'Ministerio de Salud Pública', logo: '/Logos/Convenios/MSP.png' },
         { id: 'privado-1', nombre: 'AIG Metropolitana', logo: '/Logos/Convenios/AIG.jpg' },
         { id: 'privado-2', nombre: 'Aseguradora del Sur', logo: '/Logos/Convenios/aseguradoradelsur.jpg' },
         { id: 'privado-3', nombre: 'Asisken', logo: '/Logos/Convenios/asisken.jpg' },
@@ -71,9 +84,6 @@ export default {
         { id: 'privado-14', nombre: 'Seguros Equinoccial', logo: '/Logos/Convenios/Equinoccial.png' },
         { id: 'privado-15', nombre: 'Seguros Sucre', logo: '/Logos/Convenios/SegurosSucre.avif' },
         { id: 'privado-16', nombre: 'Zurich Seguros', logo: '/Logos/Convenios/zurich.png' },
-        { id: 'publico-1', nombre: 'ISSFA', logo: '/Logos/Convenios/ISSFA.jpg' },
-        { id: 'publico-2', nombre: 'ISSPOL', logo: '/Logos/Convenios/ISSPOL.png' },
-        { id: 'publico-3', nombre: 'Ministerio de Salud Pública', logo: '/Logos/Convenios/MSP.png' }
       ],
 
       // Servicios destacados
@@ -140,7 +150,8 @@ export default {
       indicadoresResumen: [
         { valor: '20+', label: 'Profesionales Médicos' },
         { valor: '4.8*', label: 'Satisfacción' },
-        { valor: '1.000+', label: 'Pacientes atendidos al mes' }
+        { valor: '1.000+', label: 'Pacientes atendidos al mes' },
+        { valor: '19', label: 'Aseguradoras aliadas' }
       ],
       
       // Mapeo de especialidades (para compatibilidad)
@@ -208,10 +219,21 @@ export default {
         slider.addEventListener('scroll', this.ajustarLoopConvenios);
       }
       window.addEventListener('resize', this.centrarCarruselConvenios);
+      this.iniciarAutoplayConvenios();
+      this.configurarObserverIndicadores();
     });
   },
   beforeUnmount() {
     this.detenerCarruselNoticias();
+    this.detenerAutoplayConvenios();
+    if (this.statsObserver) {
+      this.statsObserver.disconnect();
+      this.statsObserver = null;
+    }
+    if (this.statsRafId) {
+      cancelAnimationFrame(this.statsRafId);
+      this.statsRafId = null;
+    }
     const slider = this.$refs.conveniosSlider;
     if (slider) {
       slider.removeEventListener('scroll', this.ajustarLoopConvenios);
@@ -231,6 +253,21 @@ export default {
     // Triplicamos los logos para lograr un carrusel infinito al arrastrar
     conveniosLogosInfinite() {
       return [...this.conveniosLogos, ...this.conveniosLogos, ...this.conveniosLogos];
+    },
+    totalAseguradoras() {
+      return this.conveniosLogos.length;
+    },
+    medicosTexto() {
+      return Math.round(this.statsAnimados.medicos) + '+';
+    },
+    satisfaccionTexto() {
+      return this.statsAnimados.satisfaccion.toFixed(1) + '+';
+    },
+    pacientesTexto() {
+      return Math.round(this.statsAnimados.pacientes).toLocaleString('es-EC') + '+';
+    },
+    aseguradorasTexto() {
+      return String(Math.round(this.statsAnimados.aseguradoras));
     },
     productosDestacados() {
       if (!this.productos || this.productos.length === 0) return [];
@@ -270,11 +307,90 @@ export default {
       this.noticiaActivaIndex = (this.noticiaActivaIndex - 1 + this.noticiasPreview.length) % this.noticiasPreview.length;
       this.iniciarCarruselNoticias();
     },
+    configurarObserverIndicadores() {
+      const stats = this.$refs.statsSection;
+      if (!stats) return;
+      if (!('IntersectionObserver' in window)) {
+        this.statsAnimados = { medicos: 20, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 19 };
+        return;
+      }
+      this.statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.statsIniciados) {
+            this.statsIniciados = true;
+            this.animarIndicadores();
+            this.statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      this.statsObserver.observe(stats);
+    },
+    animarIndicadores() {
+      const duracion = 2000;
+      const inicio = performance.now();
+      const finales = { medicos: 20, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 19 };
+      const paso = (ahora) => {
+        const progreso = Math.min((ahora - inicio) / duracion, 1);
+        const easing = 1 - Math.pow(1 - progreso, 3);
+        this.statsAnimados.medicos = finales.medicos * easing;
+        this.statsAnimados.satisfaccion = finales.satisfaccion * easing;
+        this.statsAnimados.pacientes = finales.pacientes * easing;
+        this.statsAnimados.aseguradoras = finales.aseguradoras * easing;
+        if (progreso < 1) {
+          this.statsRafId = requestAnimationFrame(paso);
+        }
+      };
+      this.statsRafId = requestAnimationFrame(paso);
+    },
+    iniciarAutoplayConvenios() {
+      this.detenerAutoplayConvenios();
+      if (this.conveniosLogos.length <= 1) return;
+      this.conveniosTimer = window.setInterval(() => {
+        this.avanzarConvenios();
+      }, 5000);
+    },
+    detenerAutoplayConvenios() {
+      if (this.conveniosTimer) {
+        window.clearInterval(this.conveniosTimer);
+        this.conveniosTimer = null;
+      }
+    },
+    avanzarConvenios() {
+      const slider = this.$refs.conveniosSlider;
+      if (!slider || this.conveniosDragging) return;
+      if (slider.clientWidth >= slider.scrollWidth) return;
+      const copia = slider.scrollWidth / 3;
+      if (copia <= 0) return;
+      const item = slider.querySelector('.convenio-logo-item');
+      if (!item) return;
+      const step = item.getBoundingClientRect().width + 22;
+
+      let base = slider.scrollLeft;
+      if (base >= copia * 2) {
+        this.saltarPosicionConvenios(slider, copia);
+        base = copia;
+      }
+
+      const destino = base + step;
+      if (destino >= copia * 2) {
+        this.saltarPosicionConvenios(slider, copia);
+        slider.scrollTo({ left: copia + (destino - copia * 2), behavior: 'smooth' });
+      } else {
+        slider.scrollTo({ left: destino, behavior: 'smooth' });
+      }
+    },
+    saltarPosicionConvenios(slider, posicion) {
+      const previo = slider.style.scrollBehavior;
+      slider.style.scrollBehavior = 'auto';
+      slider.scrollLeft = posicion;
+      slider.style.scrollBehavior = previo;
+    },
     iniciarArrastreConvenios(event) {
       const slider = this.$refs.conveniosSlider;
       if (!slider) return;
       if (event.pointerType === 'mouse' && event.button !== 0) return;
 
+      this.detenerAutoplayConvenios();
       this.conveniosDragging = true;
       this.arrastreX = event.clientX;
       this.arrastreScroll = slider.scrollLeft;
@@ -301,6 +417,7 @@ export default {
         slider.style.scrollBehavior = '';
       }
       this.ajustarLoopConvenios();
+      this.iniciarAutoplayConvenios();
     },
     ajustarLoopConvenios() {
       const slider = this.$refs.conveniosSlider;
@@ -309,9 +426,9 @@ export default {
       if (copia <= 0 || slider.clientWidth >= slider.scrollWidth) return;
 
       if (slider.scrollLeft < copia) {
-        slider.scrollLeft += copia;
+        this.saltarPosicionConvenios(slider, slider.scrollLeft + copia);
       } else if (slider.scrollLeft >= copia * 2) {
-        slider.scrollLeft -= copia;
+        this.saltarPosicionConvenios(slider, slider.scrollLeft - copia);
       }
     },
     centrarCarruselConvenios() {
@@ -319,7 +436,7 @@ export default {
       if (!slider) return;
       const copia = slider.scrollWidth / 3;
       if (copia <= 0) return;
-      slider.scrollLeft = copia;
+      this.saltarPosicionConvenios(slider, copia);
     },
     irAEquipoMedico(especialidad) {
       this.$router.push({
