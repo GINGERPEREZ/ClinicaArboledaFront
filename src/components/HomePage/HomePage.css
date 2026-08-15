@@ -2118,8 +2118,8 @@ body {
 }
 
 .home-stat-icon {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 18px;
   display: grid;
   place-items: center;
@@ -2130,6 +2130,13 @@ body {
 .home-stat-icon svg {
   width: 32px;
   height: 32px;
+}
+
+.home-stat-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  
 }
 
 .home-stat-item strong {

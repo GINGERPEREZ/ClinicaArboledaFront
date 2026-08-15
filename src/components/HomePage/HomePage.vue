@@ -17,28 +17,28 @@
       <section ref="statsSection" class="home-stats-section" aria-label="Indicadores de confianza">
         <div class="home-stat-item color-medicos">
           <div class="home-stat-icon" aria-hidden="true">
-            <font-awesome-icon :icon="['fas', 'user-doctor']" />
+            <img src="/IC-Indicadores/IC_doctor.png" alt="Profesionales Médicos" />
           </div>
           <strong>{{ medicosTexto }}</strong>
           <span>Profesionales Médicos</span>
         </div>
         <div class="home-stat-item color-satisfaccion">
           <div class="home-stat-icon" aria-hidden="true">
-            <font-awesome-icon :icon="['fas', 'face-smile']" />
+            <img src="/IC-Indicadores/IC_logro.png" alt="Satisfacción" />
           </div>
           <strong>{{ satisfaccionTexto }}</strong>
           <span>Satisfacción</span>
         </div>
         <div class="home-stat-item color-pacientes">
           <div class="home-stat-icon" aria-hidden="true">
-            <font-awesome-icon :icon="['fas', 'heart-pulse']" />
+            <img src="/IC-Indicadores/IC_grupo.png" alt="Pacientes atendidos al mes" />
           </div>
           <strong>{{ pacientesTexto }}</strong>
           <span>Pacientes atendidos al mes</span>
         </div>
         <div class="home-stat-item color-aseguradoras">
           <div class="home-stat-icon" aria-hidden="true">
-            <font-awesome-icon :icon="['fas', 'handshake']" />
+            <img src="/IC-Indicadores/IC_manos.png" alt="Aseguradoras aliadas" />
           </div>
           <strong>{{ aseguradorasTexto }}</strong>
           <span>Aseguradoras aliadas</span>
