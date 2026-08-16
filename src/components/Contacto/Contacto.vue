@@ -7,7 +7,7 @@
       <section class="contacto-hero">
         <div class="contacto-hero-content">
           <h1>Contacto</h1>
-          <p>Un asesor de Clinica Arboleda se comunicara contigo lo antes posible.</p>
+          <p>Un asesor de Clínica Arboleda se comunicará contigo lo antes posible.</p>
         </div>
       </section>
 
@@ -40,7 +40,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Correo electronico</label>
+              <label for="email">Correo electrónico</label>
               <input
                 id="email"
                 v-model="formularioContacto.email"
@@ -59,7 +59,7 @@
             </div>
 
             <div class="form-group">
-              <label for="telefono">Telefono *</label>
+              <label for="telefono">Teléfono *</label>
               <input
                 id="telefono"
                 v-model="formularioContacto.telefono"
@@ -89,8 +89,8 @@
                 aria-describedby="error-asunto"
                 @change="validarCampo('asunto')"
               >
-                <option value="cita">Agendar cita medica</option>
-                <option value="informacion">Solicitar informacion</option>
+                <option value="cita">Agendar cita médica</option>
+                <option value="informacion">Solicitar información</option>
                 <option value="otro">Otro</option>
               </select>
               <p id="error-asunto" class="form-error" role="alert">
@@ -104,7 +104,7 @@
                 id="mensaje"
                 v-model="formularioContacto.mensaje"
                 rows="4"
-                placeholder="Escribe tu mensaje aqui..."
+                placeholder="Escribe tu mensaje aquí..."
                 maxlength="500"
                 required
                 :class="{ 'campo-invalido': errores.mensaje }"
@@ -120,7 +120,7 @@
             </div>
 
             <p class="disclaimer-text">
-              Al enviar este formulario, aceptas que tus datos personales sean procesados conforme a la Ley Organica de Proteccion de Datos Personales vigente. Tus datos seran utilizados unicamente para gestionar tu consulta y no seran compartidos con terceros.
+              Al enviar este formulario, aceptas que tus datos personales sean procesados conforme a la Ley Orgánica de Protección de Datos Personales vigente. Tus datos serán utilizados únicamente para gestionar tu consulta y no serán compartidos con terceros.
             </p>
 
             <div class="consentimiento-group">
@@ -135,7 +135,7 @@
                   @change="validarCampo('aceptaTratamientoDatos')"
                 />
                 <span>
-                 Autorizo el tratamiento de mis datos personales conforme a la Politica  de Proteccion de Datos Personales de la Clinica para la gestion de mi solicitud.
+                 Autorizo el tratamiento de mis datos personales conforme a la Política de Protección de Datos Personales de la Clínica para la gestión de mi solicitud.
                 </span>
               </label>
               <p id="error-consentimiento" class="form-error" role="alert">

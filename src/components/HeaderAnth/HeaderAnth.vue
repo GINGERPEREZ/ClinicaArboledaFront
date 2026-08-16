@@ -84,6 +84,7 @@
             <li><a href="/equipo-medico">Nuestro Equipo Médico</a></li>
             <li><a href="/convenios">Convenios</a></li>
             <li><a href="/noticias">Noticias</a></li>
+            <li><a href="/contacto">Contacto</a></li>
           </ul>
         </nav>
 

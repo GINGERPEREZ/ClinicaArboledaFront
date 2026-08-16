@@ -33,6 +33,7 @@ export default {
           { texto: 'Nuestro Equipo Médico', ruta: '/equipo-medico' },
           { texto: 'Convenios', ruta: '/convenios' },
           { texto: 'Noticias', ruta: '/noticias' },
+          { texto: 'Contacto', ruta: '/contacto' },
         ],
       };
     },
