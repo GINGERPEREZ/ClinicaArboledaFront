@@ -48,12 +48,38 @@
 
           <!-- Paso 1: Especialidad -->
           <div v-if="currentStep === 0" class="form-step" key="step-0">
-            <h2 class="form-step-title">Selecciona una Especialidad</h2>
-            <p class="form-step-desc">Elige la especialidad médica para tu consulta</p>
+            <div class="specialty-panel">
+              <h2 class="form-step-title specialty-title">Selecciona una Especialidad</h2>
+              <p class="form-step-desc specialty-desc">Elige el área médica en la que deseas recibir atención</p>
 
-            <div class="especialidades-grid">
+              <div class="specialty-search-wrap">
+                <svg class="specialty-search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  v-model="specialtySearch"
+                  class="specialty-search-input"
+                  type="text"
+                  placeholder="Buscar especialidad (ej. Cardiología, Pediatría...)"
+                />
+              </div>
+
+              <div class="specialty-filters">
+                <button
+                  v-for="filter in filtrosEspecialidad"
+                  :key="filter.id"
+                  type="button"
+                  :class="['specialty-filter-chip', { active: specialtyFilter === filter.id }]"
+                  @click="setSpecialtyFilter(filter.id)"
+                >
+                  {{ filter.label }}
+                </button>
+              </div>
+
+              <div class="especialidades-grid specialty-grid-enhanced">
               <button
-                v-for="esp in especialidades"
+                v-for="esp in especialidadesFiltradas"
                 :key="esp.id"
                 :class="['especialidad-card', { selected: selectedEspecialidad?.id === esp.id }]"
                 @click="selectEspecialidad(esp)"
@@ -61,6 +87,11 @@
                 <span class="especialidad-icon" v-html="esp.icon"></span>
                 <span class="especialidad-name">{{ esp.nombre }}</span>
               </button>
+              </div>
+
+              <p v-if="!especialidadesFiltradas.length" class="specialty-empty-state">
+                No encontramos especialidades con ese criterio.
+              </p>
             </div>
           </div>
 
@@ -92,38 +123,115 @@
           <!-- Paso 3: Fecha y Hora -->
           <div v-if="currentStep === 2" class="form-step" key="step-2">
             <h2 class="form-step-title">Selecciona Fecha y Hora</h2>
-            <p class="form-step-desc">Elige una opción principal y, si deseas, una alternativa para que la clínica confirme la disponibilidad con {{ selectedMedico?.nombre }}</p>
+            <p class="form-step-desc">Elige tu opción prioritaria y una alternativa en caso de imprevistos de agenda.</p>
 
-            <div class="selection-summary">
-              <div class="selection-chip selection-chip-primary">
-                <span class="selection-chip-label">Opción principal</span>
-                <strong>{{ slotPrincipal ? formatearTurno(slotPrincipal) : 'Aún no seleccionada' }}</strong>
-              </div>
-              <div class="selection-chip selection-chip-alt">
-                <span class="selection-chip-label">Opción alternativa</span>
-                <strong>{{ slotAlternativo ? formatearTurno(slotAlternativo) : 'Opcional, recomendada' }}</strong>
-              </div>
+            <div class="selected-medico-pill">
+              <span class="selected-medico-dot">👨‍⚕️</span>
+              <span>{{ selectedMedico?.nombre }} • {{ selectedMedico?.especialidad }}</span>
             </div>
 
-            <div class="turnos-grid" role="group" aria-label="Horarios disponibles">
+            <div class="selection-summary">
               <button
-                v-for="turno in turnosDisponibles"
-                :key="turno.id"
-                :class="[
-                  'turno-card',
-                  {
-                    selected: slotSeleccionado(turno) >= 0,
-                    'selected-primary': slotSeleccionado(turno) === 0,
-                    'selected-alt': slotSeleccionado(turno) === 1,
-                  }
-                ]"
-                @click="selectTurno(turno)"
+                type="button"
+                :class="['selection-chip', 'selection-chip-primary', { active: activeSlotTarget === 0 }]"
+                @click="setActiveSlotTarget(0)"
               >
-                <span v-if="slotSeleccionado(turno) === 0" class="turno-badge turno-badge-primary">Principal</span>
-                <span v-else-if="slotSeleccionado(turno) === 1" class="turno-badge turno-badge-alt">Alternativa</span>
-                <span class="turno-fecha">{{ formatDayLabel(turno.fecha) }}</span>
-                <span class="turno-hora">{{ turno.hora }}</span>
+                <span class="selection-chip-label">Opción principal (requerida)</span>
+                <strong>{{ slotPrincipal ? formatShortDayLabel(slotPrincipal.fecha) + ' - ' + slotPrincipal.hora : 'Aún no seleccionada' }}</strong>
               </button>
+              <button
+                type="button"
+                :class="['selection-chip', 'selection-chip-alt', { active: activeSlotTarget === 1 }]"
+                @click="setActiveSlotTarget(1)"
+              >
+                <span class="selection-chip-label">Segunda opción (recomendada)</span>
+                <strong>{{ slotAlternativo ? formatShortDayLabel(slotAlternativo.fecha) + ' - ' + slotAlternativo.hora : 'Opcional, recomendada' }}</strong>
+              </button>
+            </div>
+
+            <div class="schedule-layout">
+              <div class="calendar-card">
+                <div class="calendar-header">
+                  <button class="calendar-arrow" type="button" disabled>&lt;</button>
+                  <strong>{{ mesCalendarioLabel }}</strong>
+                  <button class="calendar-arrow" type="button" disabled>&gt;</button>
+                </div>
+
+                <div class="calendar-weekdays">
+                  <span>Lun</span>
+                  <span>Mar</span>
+                  <span>Mié</span>
+                  <span>Jue</span>
+                  <span>Vie</span>
+                  <span>Sáb</span>
+                  <span>Dom</span>
+                </div>
+
+                <div class="calendar-grid">
+                  <button
+                    v-for="dia in diasCalendario"
+                    :key="dia.fecha"
+                    type="button"
+                    :disabled="!dia.disponible"
+                    :class="[
+                      'calendar-day',
+                      {
+                        muted: dia.pasada,
+                        active: fechaCalendarioActiva === dia.fecha,
+                        available: dia.disponible,
+                        empty: dia.vacio,
+                      }
+                    ]"
+                    @click="seleccionarFechaCalendario(dia.fecha)"
+                  >
+                    {{ dia.dia }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="slots-panel">
+                <div class="slots-group">
+                  <h3 class="slots-group-title">Mañana</h3>
+                  <div class="slots-row" role="group" aria-label="Horarios de la mañana">
+                    <button
+                      v-for="turno in turnosManana"
+                      :key="turno.id"
+                      type="button"
+                      :class="[
+                        'time-option',
+                        {
+                          'selected-primary': slotSeleccionado(turno) === 0,
+                          'selected-alt': slotSeleccionado(turno) === 1,
+                        }
+                      ]"
+                      @click="selectTurno(turno)"
+                    >
+                      {{ turno.hora }}
+                    </button>
+                  </div>
+                </div>
+
+                <div class="slots-group">
+                  <h3 class="slots-group-title">Tarde</h3>
+                  <div class="slots-row" role="group" aria-label="Horarios de la tarde">
+                    <button
+                      v-for="turno in turnosTarde"
+                      :key="turno.id"
+                      type="button"
+                      :class="[
+                        'time-option',
+                        {
+                          'selected-primary': slotSeleccionado(turno) === 0,
+                          'selected-alt': slotSeleccionado(turno) === 1,
+                        }
+                      ]"
+                      @click="selectTurno(turno)"
+                    >
+                      {{ turno.hora }}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
             <p class="selection-note">La fecha y hora definitivas serán coordinadas y confirmadas por Clínica Arboleda.</p>
           </div>
@@ -275,56 +383,6 @@
                    del valor: en filas a lo ancho la etiqueta y el dato quedaban
                    en extremos opuestos de la tarjeta y costaba relacionarlos. -->
               <div class="confirmation-details">
-<<<<<<< HEAD
-                <section class="resumen-bloque">
-                  <h4 class="resumen-bloque-titulo">La cita</h4>
-                  <dl class="resumen-grid">
-                    <div class="resumen-item">
-                      <dt>Especialidad</dt>
-                      <dd>{{ selectedEspecialidad?.nombre }}</dd>
-                    </div>
-                    <div class="resumen-item">
-                      <dt>Médico</dt>
-                      <dd>{{ selectedMedico?.nombre }}</dd>
-                    </div>
-                    <div class="resumen-item">
-                      <dt>Fecha</dt>
-                      <dd>{{ formatDate(selectedDate) }}</dd>
-                    </div>
-                    <div class="resumen-item">
-                      <dt>Hora</dt>
-                      <dd>{{ selectedTime }}</dd>
-                    </div>
-                  </dl>
-                </section>
-
-                <section class="resumen-bloque">
-                  <h4 class="resumen-bloque-titulo">El paciente</h4>
-                  <dl class="resumen-grid">
-                    <div class="resumen-item">
-                      <dt>Nombre</dt>
-                      <dd>{{ patientData.nombre }}</dd>
-                    </div>
-                    <div class="resumen-item">
-                      <dt>Cédula</dt>
-                      <dd>{{ patientData.cedula }}</dd>
-                    </div>
-                    <div class="resumen-item">
-                      <dt>Teléfono</dt>
-                      <dd>{{ patientData.telefono }}</dd>
-                    </div>
-                    <div v-if="patientData.email" class="resumen-item">
-                      <dt>Correo</dt>
-                      <dd>{{ patientData.email }}</dd>
-                    </div>
-                  </dl>
-                </section>
-
-                <section v-if="patientData.motivo" class="resumen-bloque">
-                  <h4 class="resumen-bloque-titulo">Motivo de la consulta</h4>
-                  <p class="resumen-motivo">{{ patientData.motivo }}</p>
-                </section>
-=======
                 <div class="detail-row">
                   <span class="detail-label">Especialidad</span>
                   <span class="detail-value">{{ selectedEspecialidad?.nombre }}</span>
@@ -361,7 +419,6 @@
                   <span class="detail-label">Motivo</span>
                   <span class="detail-value">{{ patientData.motivo }}</span>
                 </div>
->>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
               </div>
 
               <div class="confirmation-footer-note">
@@ -441,13 +498,9 @@
                 </div>
               </div>
 
-<<<<<<< HEAD
-=======
               <p class="receipt-note">
                 Nos comunicaremos contigo por WhatsApp o correo electrónico para indicarte la fecha y hora confirmadas por la clínica.
               </p>
-
->>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
               <div class="success-actions print-hidden">
                 <button class="btn-secondary" @click="imprimirComprobante">Imprimir comprobante</button>
                 <button class="btn-primary" @click="nuevaCita">Agendar otra cita</button>
