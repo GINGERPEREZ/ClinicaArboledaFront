@@ -26,6 +26,11 @@ const crearDatosPaciente = () => ({
   motivo: '',
 });
 
+const crearConsents = () => ({
+  privacidad: false,
+  recordatorios: false,
+});
+
 export default {
   name: 'AgendamientoCitas',
   components: {
@@ -39,9 +44,9 @@ export default {
       steps: ['Especialidad', 'Médico', 'Fecha y Hora', 'Datos', 'Confirmar'],
       selectedEspecialidad: null,
       selectedMedico: null,
-      selectedDate: '',
-      selectedTime: '',
+      selectedSlots: [],
       patientData: crearDatosPaciente(),
+      consents: crearConsents(),
       // Un campo solo muestra su error después de que el usuario lo tocó o
       // intentó avanzar: evita marcar en rojo un formulario recién abierto.
       camposTocados: {},
@@ -122,11 +127,17 @@ export default {
       switch (this.currentStep) {
         case PASO_ESPECIALIDAD: return !!this.selectedEspecialidad;
         case PASO_MEDICO: return !!this.selectedMedico;
-        case PASO_FECHA_HORA: return !!this.selectedDate && !!this.selectedTime;
-        case PASO_DATOS: return this.datosPacienteValidos;
+        case PASO_FECHA_HORA: return this.selectedSlots.length >= 1;
+        case PASO_DATOS: return this.datosPacienteValidos && this.consents.privacidad;
         case PASO_CONFIRMACION: return this.datosPacienteValidos;
         default: return false;
       }
+    },
+    slotPrincipal() {
+      return this.selectedSlots[0] || null;
+    },
+    slotAlternativo() {
+      return this.selectedSlots[1] || null;
     },
   },
   mounted() {
@@ -199,10 +210,16 @@ export default {
         this.selectedTime = '';
       }
 
+<<<<<<< HEAD
       // Elegir especialidad ya avanza: el paso tiene una sola decisión, asi
       // que pedir además "Siguiente" es un clic de más. El avance va fuera
       // del if para que volver atrás y repulsar la misma tambien avance.
       this.irAPaso(PASO_MEDICO);
+=======
+      this.selectedEspecialidad = esp;
+      this.selectedMedico = null;
+      this.selectedSlots = [];
+>>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
     },
     selectMedico(med) {
       if (this.selectedMedico?.id !== med.id) {
@@ -212,11 +229,27 @@ export default {
         this.generateTurnosDisponibles();
       }
 
+<<<<<<< HEAD
       this.irAPaso(PASO_FECHA_HORA);
+=======
+      this.selectedMedico = med;
+      this.selectedSlots = [];
+      this.generateTurnosDisponibles();
+>>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
     },
     selectTurno(turno) {
-      this.selectedDate = turno.fecha;
-      this.selectedTime = turno.hora;
+      const indiceExistente = this.selectedSlots.findIndex((slot) => slot.id === turno.id);
+
+      if (indiceExistente >= 0) {
+        this.selectedSlots.splice(indiceExistente, 1);
+        return;
+      }
+
+      if (this.selectedSlots.length >= 2) return;
+      this.selectedSlots.push(turno);
+    },
+    slotSeleccionado(turno) {
+      return this.selectedSlots.findIndex((slot) => slot.id === turno.id);
     },
     generateTurnosDisponibles() {
       const horasBase = ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '14:00', '14:30', '15:00', '15:30', '16:00'];
@@ -349,8 +382,8 @@ export default {
         '',
         linea('Especialidad', this.selectedEspecialidad?.nombre),
         linea('Médico', this.selectedMedico?.nombre),
-        linea('Fecha', this.formatDate(this.selectedDate)),
-        linea('Hora', this.selectedTime),
+        linea('Opción principal', this.formatearTurno(this.slotPrincipal)),
+        this.slotAlternativo ? linea('Opción alternativa', this.formatearTurno(this.slotAlternativo)) : '',
         linea('Paciente', this.patientData.nombre),
         linea('Cédula', this.patientData.cedula),
         linea('Teléfono', this.patientData.telefono),
@@ -367,10 +400,14 @@ export default {
       this.citaConfirmada = false;
       this.selectedEspecialidad = null;
       this.selectedMedico = null;
-      this.selectedDate = '';
-      this.selectedTime = '';
+      this.selectedSlots = [];
       this.patientData = crearDatosPaciente();
+      this.consents = crearConsents();
       this.camposTocados = {};
+    },
+    formatearTurno(turno) {
+      if (!turno) return '';
+      return `${this.formatDate(turno.fecha)} - ${turno.hora}`;
     },
     formatDate(dateStr) {
       if (!dateStr) return '';

@@ -92,25 +92,46 @@
           <!-- Paso 3: Fecha y Hora -->
           <div v-if="currentStep === 2" class="form-step" key="step-2">
             <h2 class="form-step-title">Selecciona Fecha y Hora</h2>
-            <p class="form-step-desc">Horarios disponibles con {{ selectedMedico?.nombre }}</p>
+            <p class="form-step-desc">Elige una opción principal y, si deseas, una alternativa para que la clínica confirme la disponibilidad con {{ selectedMedico?.nombre }}</p>
+
+            <div class="selection-summary">
+              <div class="selection-chip selection-chip-primary">
+                <span class="selection-chip-label">Opción principal</span>
+                <strong>{{ slotPrincipal ? formatearTurno(slotPrincipal) : 'Aún no seleccionada' }}</strong>
+              </div>
+              <div class="selection-chip selection-chip-alt">
+                <span class="selection-chip-label">Opción alternativa</span>
+                <strong>{{ slotAlternativo ? formatearTurno(slotAlternativo) : 'Opcional, recomendada' }}</strong>
+              </div>
+            </div>
 
             <div class="turnos-grid" role="group" aria-label="Horarios disponibles">
               <button
                 v-for="turno in turnosDisponibles"
                 :key="turno.id"
-                :class="['turno-card', { selected: selectedDate === turno.fecha && selectedTime === turno.hora }]"
+                :class="[
+                  'turno-card',
+                  {
+                    selected: slotSeleccionado(turno) >= 0,
+                    'selected-primary': slotSeleccionado(turno) === 0,
+                    'selected-alt': slotSeleccionado(turno) === 1,
+                  }
+                ]"
                 @click="selectTurno(turno)"
               >
+                <span v-if="slotSeleccionado(turno) === 0" class="turno-badge turno-badge-primary">Principal</span>
+                <span v-else-if="slotSeleccionado(turno) === 1" class="turno-badge turno-badge-alt">Alternativa</span>
                 <span class="turno-fecha">{{ formatDayLabel(turno.fecha) }}</span>
                 <span class="turno-hora">{{ turno.hora }}</span>
               </button>
             </div>
+            <p class="selection-note">La fecha y hora definitivas serán coordinadas y confirmadas por Clínica Arboleda.</p>
           </div>
 
           <!-- Paso 4: Datos del paciente -->
           <div v-if="currentStep === 3" class="form-step patient-sheet-step" key="step-3">
             <h2 class="form-step-title">Datos del Paciente</h2>
-            <p class="form-step-desc">Completa tu información para solicitar la cita</p>
+            <p class="form-step-desc">Completa tu información para que podamos revisar tu solicitud y contactarte con la confirmación</p>
 
             <div class="patient-sheet">
               <form class="patient-form" novalidate @submit.prevent="nextStep">
@@ -213,27 +234,48 @@
                   <span class="field-counter">{{ patientData.motivo.length }} / {{ limites.motivo }}</span>
                 </div>
               </div>
+
+              <div class="privacy-card">
+                <h3 class="privacy-title">Información básica sobre protección de datos personales</h3>
+                <p><strong>Responsable:</strong> Centro Médico Arboleda S.A.</p>
+                <p><strong>Finalidad:</strong> Gestionar tu solicitud de cita médica y coordinar su confirmación asistencial.</p>
+                <p><strong>Base legal:</strong> Ejecución de medidas precontractuales y consentimiento para datos sensibles de salud.</p>
+                <p><strong>Destinatarios:</strong> Personal asistencial directo y entidades aseguradoras cuando corresponda.</p>
+                <p><strong>Derechos:</strong> Puedes ejercer acceso, rectificación, eliminación y oposición escribiendo a protecciondedatos@clinicarboleda.com.</p>
+                <p>Consulta el detalle completo en nuestra Política de Privacidad Integral.</p>
+              </div>
+
+              <label class="consent-option">
+                <input v-model="consents.privacidad" type="checkbox" />
+                <span>He leído y acepto la Política de Privacidad y autorizo el tratamiento de mis datos personales, incluidos los de salud, para gestionar y confirmar esta solicitud de cita médica.</span>
+              </label>
+
+              <label class="consent-option">
+                <input v-model="consents.recordatorios" type="checkbox" />
+                <span>Autorizo el envío de recordatorios preventivos de salud, campañas y novedades de servicios médicos por parte de Clínica Arboleda.</span>
+              </label>
             </form>
             </div>
           </div>
 
           <!-- Paso 5: Confirmación -->
           <div v-if="currentStep === 4 && !citaConfirmada" class="form-step" key="step-4">
-            <h2 class="form-step-title">Solicita tu cita</h2>
-            <p class="form-step-desc">Revisa los datos antes de enviar la solicitud</p>
+            <h2 class="form-step-title">Resumen de tu solicitud</h2>
+            <p class="form-step-desc">Verifica la información antes de enviarla. La clínica validará disponibilidad y te confirmará la cita definitiva.</p>
 
             <div class="confirmation-card">
               <div class="confirmation-header">
                 <div class="confirmation-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
-                <h3>Resumen de tu solicitud</h3>
+                <h3>Solicitud pendiente de confirmación</h3>
               </div>
 
               <!-- Los datos van agrupados y en rejilla, con la etiqueta encima
                    del valor: en filas a lo ancho la etiqueta y el dato quedaban
                    en extremos opuestos de la tarjeta y costaba relacionarlos. -->
               <div class="confirmation-details">
+<<<<<<< HEAD
                 <section class="resumen-bloque">
                   <h4 class="resumen-bloque-titulo">La cita</h4>
                   <dl class="resumen-grid">
@@ -282,6 +324,48 @@
                   <h4 class="resumen-bloque-titulo">Motivo de la consulta</h4>
                   <p class="resumen-motivo">{{ patientData.motivo }}</p>
                 </section>
+=======
+                <div class="detail-row">
+                  <span class="detail-label">Especialidad</span>
+                  <span class="detail-value">{{ selectedEspecialidad?.nombre }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Médico</span>
+                  <span class="detail-value">{{ selectedMedico?.nombre }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Opción principal</span>
+                  <span class="detail-value">{{ formatearTurno(slotPrincipal) }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Opción alternativa</span>
+                  <span class="detail-value">{{ slotAlternativo ? formatearTurno(slotAlternativo) : 'No registrada' }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Paciente</span>
+                  <span class="detail-value">{{ patientData.nombre }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Cédula</span>
+                  <span class="detail-value">{{ patientData.cedula }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Teléfono</span>
+                  <span class="detail-value">{{ patientData.telefono }}</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Correo electrónico</span>
+                  <span class="detail-value">{{ patientData.email || 'No registrado' }}</span>
+                </div>
+                <div v-if="patientData.motivo" class="detail-row detail-row-full">
+                  <span class="detail-label">Motivo</span>
+                  <span class="detail-value">{{ patientData.motivo }}</span>
+                </div>
+>>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
+              </div>
+
+              <div class="confirmation-footer-note">
+                Nuestro equipo coordinará la agenda médica y te confirmará la cita definitiva por WhatsApp o correo electrónico.
               </div>
             </div>
           </div>
@@ -305,7 +389,7 @@
               </div>
 
               <p class="success-desc">
-                Tu solicitud fue registrada correctamente. Conserva este comprobante con los datos enviados.
+                Tu solicitud fue registrada correctamente. Conserva este comprobante mientras nuestro equipo valida la disponibilidad y te confirma la cita definitiva.
               </p>
 
               <!-- Sin print-hidden: al imprimir el comprobante, la advertencia
@@ -344,12 +428,12 @@
                   <strong>{{ selectedMedico?.nombre }}</strong>
                 </div>
                 <div class="receipt-row">
-                  <span>Fecha</span>
-                  <strong>{{ formatDate(selectedDate) }}</strong>
+                  <span>Opción principal</span>
+                  <strong>{{ formatearTurno(slotPrincipal) }}</strong>
                 </div>
                 <div class="receipt-row">
-                  <span>Hora</span>
-                  <strong>{{ selectedTime }}</strong>
+                  <span>Opción alternativa</span>
+                  <strong>{{ slotAlternativo ? formatearTurno(slotAlternativo) : 'No registrada' }}</strong>
                 </div>
                 <div class="receipt-row receipt-row-full">
                   <span>Motivo de consulta</span>
@@ -357,6 +441,13 @@
                 </div>
               </div>
 
+<<<<<<< HEAD
+=======
+              <p class="receipt-note">
+                Nos comunicaremos contigo por WhatsApp o correo electrónico para indicarte la fecha y hora confirmadas por la clínica.
+              </p>
+
+>>>>>>> 91289df (Ajusta contenido del flujo de agendamiento)
               <div class="success-actions print-hidden">
                 <button class="btn-secondary" @click="imprimirComprobante">Imprimir comprobante</button>
                 <button class="btn-primary" @click="nuevaCita">Agendar otra cita</button>
@@ -387,7 +478,7 @@
               :disabled="!canProceed"
               @click="confirmarCita"
             >
-              ✓ Enviar solicitud
+              ✓ Confirmar y enviar solicitud
             </button>
           </div>
 
