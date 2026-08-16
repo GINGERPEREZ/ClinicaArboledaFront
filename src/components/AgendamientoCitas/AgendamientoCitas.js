@@ -528,6 +528,24 @@ export default {
       if (!turno) return '';
       return `${this.formatDate(turno.fecha)} - ${turno.hora}`;
     },
+    formatearDiaLargo(fecha) {
+      if (!fecha) return '';
+      const date = this.parseDateString(fecha);
+      const label = date.toLocaleDateString('es-EC', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      });
+      return label.charAt(0).toUpperCase() + label.slice(1);
+    },
+    formatearHora12(hora) {
+      if (!hora) return '';
+      const [horaParte, minutos] = hora.split(':').map(Number);
+      const periodo = horaParte >= 12 ? 'PM' : 'AM';
+      const hora12 = horaParte % 12 === 0 ? 12 : horaParte % 12;
+      return `${hora12}:${String(minutos).padStart(2, '0')} ${periodo}`;
+    },
     formatDate(dateStr) {
       if (!dateStr) return '';
       const [year, month, day] = dateStr.split('-');

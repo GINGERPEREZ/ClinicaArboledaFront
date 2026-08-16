@@ -397,61 +397,132 @@
 
           <!-- Paso 5: Confirmación -->
           <div v-if="currentStep === 4 && !citaConfirmada" class="form-step" key="step-4">
-            <h2 class="form-step-title">Resumen de tu solicitud</h2>
-            <p class="form-step-desc">Verifica la información antes de enviarla. La clínica validará disponibilidad y te confirmará la cita definitiva.</p>
+            <div class="summary-header">
+              <h2 class="form-step-title">Resumen de tu solicitud</h2>
+              <p class="form-step-desc">Por favor, revisa que todos los datos sean correctos antes de confirmar.</p>
+            </div>
 
-            <div class="confirmation-card">
-              <div class="confirmation-header">
-                <div class="confirmation-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <div class="confirmation-card summary-card">
+              <div class="doctor-card">
+                <div class="doctor-avatar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle>
+                  </svg>
                 </div>
-                <h3>Solicitud pendiente de confirmación</h3>
-              </div>
-
-              <!-- Los datos van agrupados y en rejilla, con la etiqueta encima
-                   del valor: en filas a lo ancho la etiqueta y el dato quedaban
-                   en extremos opuestos de la tarjeta y costaba relacionarlos. -->
-              <div class="confirmation-details">
-                <div class="detail-row">
-                  <span class="detail-label">Especialidad</span>
-                  <span class="detail-value">{{ selectedEspecialidad?.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Médico</span>
-                  <span class="detail-value">{{ selectedMedico?.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Opción principal</span>
-                  <span class="detail-value">{{ formatearTurno(slotPrincipal) }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Opción alternativa</span>
-                  <span class="detail-value">{{ slotAlternativo ? formatearTurno(slotAlternativo) : 'No registrada' }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Paciente</span>
-                  <span class="detail-value">{{ patientData.nombre }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Cédula</span>
-                  <span class="detail-value">{{ patientData.cedula }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Teléfono</span>
-                  <span class="detail-value">{{ patientData.telefono }}</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Correo electrónico</span>
-                  <span class="detail-value">{{ patientData.email || 'No registrado' }}</span>
-                </div>
-                <div v-if="patientData.motivo" class="detail-row detail-row-full">
-                  <span class="detail-label">Motivo</span>
-                  <span class="detail-value">{{ patientData.motivo }}</span>
+                <div class="doctor-info">
+                  <h3 class="doctor-name">{{ selectedMedico?.nombre }}</h3>
+                  <span class="doctor-specialty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                    {{ selectedEspecialidad?.nombre }}
+                  </span>
+                  <p class="doctor-location">Sede Principal — {{ consultorioDe(selectedMedico) }}</p>
                 </div>
               </div>
 
-              <div class="confirmation-footer-note">
-                Nuestro equipo coordinará la agenda médica y te confirmará la cita definitiva por WhatsApp o correo electrónico.
+              <div class="summary-section">
+                <div class="section-label">Horarios solicitados</div>
+                <div class="dates-container">
+                  <div class="date-card date-card-primary">
+                    <div class="date-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                      </svg>
+                      Opción Principal
+                    </div>
+                    <div class="date-card-content">
+                      <div class="schedule-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path>
+                        </svg>
+                        <span>{{ formatearDiaLargo(slotPrincipal.fecha) }}</span>
+                      </div>
+                      <div class="schedule-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>{{ formatearHora12(slotPrincipal.hora) }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="date-card date-card-secondary">
+                    <div class="date-badge">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M12 11v6"></path><path d="M9 14h6"></path>
+                      </svg>
+                      Opción Alternativa
+                    </div>
+                    <div class="date-card-content">
+                      <template v-if="slotAlternativo">
+                        <div class="schedule-row">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path>
+                          </svg>
+                          <span>{{ formatearDiaLargo(slotAlternativo.fecha) }}</span>
+                        </div>
+                        <div class="schedule-row">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                          </svg>
+                          <span>{{ formatearHora12(slotAlternativo.hora) }}</span>
+                        </div>
+                      </template>
+                      <div v-else class="schedule-row schedule-row-empty">No registrada</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="summary-section">
+                <div class="section-label">Información del Paciente</div>
+                <div class="patient-details-box">
+                  <div class="patient-grid">
+                    <div class="patient-field">
+                      <span class="field-title">Paciente</span>
+                      <span class="field-value">{{ patientData.nombre }}</span>
+                    </div>
+                    <div class="patient-field">
+                      <span class="field-title">Cédula / Pasaporte</span>
+                      <span class="field-value">{{ patientData.cedula }}</span>
+                    </div>
+                    <div class="patient-field">
+                      <span class="field-title">Teléfono</span>
+                      <span class="field-value">{{ patientData.telefono }}</span>
+                    </div>
+                    <div class="patient-field">
+                      <span class="field-title">Correo electrónico</span>
+                      <span class="field-value">{{ patientData.email || 'No registrado' }}</span>
+                    </div>
+                    <div v-if="patientData.motivo" class="patient-field field-full">
+                      <span class="field-title">Motivo de consulta</span>
+                      <span class="field-value">{{ patientData.motivo }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+                </svg>
+                <p>Nuestro equipo coordinará con la agenda médica y te confirmará la cita definitiva vía <strong>WhatsApp y correo electrónico</strong> en un lapso menor a 2 horas.</p>
+              </div>
+
+              <div class="actions-container">
+                <button class="btn-summary-confirm" type="button" @click="confirmarCita">
+                  <span>Confirmar y Enviar Solicitud</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </button>
+                <button class="btn-summary-back" type="button" @click="prevStep">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                  <span>Modificar datos o fechas</span>
+                </button>
               </div>
             </div>
           </div>
@@ -538,7 +609,7 @@
           </div>
 
           <!-- Navigation -->
-          <div v-if="!citaConfirmada" class="form-navigation">
+          <div v-if="!citaConfirmada && currentStep !== 4" class="form-navigation">
             <button
               class="btn-secondary"
               :disabled="currentStep === 0"
