@@ -97,26 +97,55 @@
 
           <!-- Paso 2: Médico -->
           <div v-if="currentStep === 1" class="form-step" key="step-1">
-            <h2 class="form-step-title">Elige tu Médico</h2>
-            <p class="form-step-desc">Médicos disponibles en {{ selectedEspecialidad?.nombre }}</p>
+            <div class="doctor-panel">
+              <div class="selected-specialty-pill">
+                <span class="selected-specialty-icon">🩺</span>
+                <span>Especialidad: {{ selectedEspecialidad?.nombre }}</span>
+              </div>
 
-            <div class="medicos-grid">
+              <h2 class="form-step-title doctor-title">Elige a tu Profesional</h2>
+              <p class="form-step-desc doctor-desc">Puedes seleccionar un especialista específico buscando por nombre o consultorio.</p>
+
+              <div class="doctor-search-wrap">
+                <svg class="doctor-search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  v-model="doctorSearch"
+                  class="doctor-search-input"
+                  type="text"
+                  placeholder="Buscar por nombre del médico o consultorio..."
+                />
+              </div>
+
+              <div class="medicos-grid doctor-grid-enhanced">
               <button
-                v-for="med in medicosDisponibles"
+                v-for="med in medicosFiltrados"
                 :key="med.id"
                 :class="['medico-card', { selected: selectedMedico?.id === med.id }]"
                 @click="selectMedico(med)"
               >
-                <div class="medico-avatar">{{ med.iniciales }}</div>
+                <div class="medico-avatar doctor-avatar-emoji">
+                  <span class="especialidad-icon doctor-specialty-icon" v-html="selectedEspecialidad?.icon"></span>
+                </div>
                 <div class="medico-info">
                   <h4 class="medico-name">{{ med.nombre }}</h4>
                   <p class="medico-especialidad">{{ med.especialidad }}</p>
-                  <div class="medico-horario">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    {{ med.horario }}
+                  <div class="doctor-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z"></path>
+                      <circle cx="12" cy="11" r="2"></circle>
+                    </svg>
+                    {{ consultorioDe(med) }}
                   </div>
                 </div>
               </button>
+              </div>
+
+              <p v-if="!medicosFiltrados.length" class="doctor-empty-state">
+                No encontramos profesionales con ese criterio.
+              </p>
             </div>
           </div>
 

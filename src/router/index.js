@@ -22,8 +22,8 @@ import SobreNosotros from '../components/SobreNosotros/SobreNosotros.vue';
 import ProteccionDatos from '../components/ProteccionDatos/ProteccionDatos.vue';
 import ContactoPage from '../components/Contacto/Contacto.vue';
 import EncuentranosPage from '../components/EncuentranosPage/EncuentranosPage.vue';
-import PoliticaCookies from '../components/PoliticaCookies/PoliticaCookies.vue';
 import AgendamientoCitas from '../components/AgendamientoCitas/AgendamientoCitas.vue';
+import DerechosARCO from '../components/DerechosARCO/DerechosARCO.vue';
 
 
 const routes = [
@@ -141,6 +141,7 @@ const routes = [
     path: '/proteccion-datos',
     name: 'ProteccionDatos',
     component: ProteccionDatos,
+    props: { currentSection: 'proteccion' },
   },
   {
     path: '/contacto',
@@ -155,7 +156,19 @@ const routes = [
   {
     path: '/politica-cookies',
     name: 'PoliticaCookies',
-    component: PoliticaCookies,
+    component: ProteccionDatos,
+    props: { currentSection: 'cookies' },
+  },
+  {
+    path: '/terminos-condiciones',
+    name: 'TerminosCondiciones',
+    component: ProteccionDatos,
+    props: { currentSection: 'terminos' },
+  },
+  {
+    path: '/derechos-arco',
+    name: 'DerechosARCO',
+    component: DerechosARCO,
   },
   {
     path: '/agendamiento-citas',

@@ -1,0 +1,297 @@
+.arco-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at top center, rgba(40, 134, 126, 0.26), transparent 28%),
+    linear-gradient(180deg, #f0faf9 0%, #ffffff 100%);
+  padding-top: 130px;
+}
+
+.arco-content {
+  flex: 1;
+}
+
+.arco-shell {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.arco-hero {
+  padding: 26px 0 14px;
+  text-align: center;
+}
+
+.arco-badge {
+  display: inline-flex;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(24, 120, 113, 0.12);
+  color: #166d67;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.arco-hero h1 {
+  margin: 16px 0 10px;
+  color: #143d3a;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.arco-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #587370;
+  line-height: 1.65;
+}
+
+.arco-form-section {
+  padding: 10px 0 42px;
+}
+
+.arco-form-card {
+  padding: 28px;
+  border: 1px solid #d8ece8;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 46px rgba(18, 78, 74, 0.1);
+}
+
+.arco-form-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: #f4fbfa;
+  border: 1px solid #d8ece8;
+}
+
+.arco-form-top-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.arco-form-top-copy strong {
+  color: #153f3c;
+}
+
+.arco-form-top-copy span {
+  color: #5b7673;
+}
+
+.arco-download {
+  flex-shrink: 0;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #e86554;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.arco-form {
+  display: grid;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.arco-block {
+  padding: 24px;
+  border: 1px solid #dceceb;
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.arco-block h2 {
+  margin: 0 0 18px;
+  color: #173f3c;
+  font-size: 1.3rem;
+}
+
+.solicitante-grid,
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.solicitante-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.solicitante-option {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid #d9ece9;
+  border-radius: 18px;
+  background: #fbfefe;
+  color: #194844;
+  text-align: left;
+  cursor: pointer;
+}
+
+.solicitante-option span {
+  color: #617c79;
+  line-height: 1.5;
+}
+
+.solicitante-option.active {
+  border-color: #2d958d;
+  box-shadow: inset 0 0 0 1px rgba(45, 149, 141, 0.15);
+  background: #f2fbf9;
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field-full {
+  display: grid;
+}
+
+.arco-form label {
+  display: grid;
+  gap: 8px;
+}
+
+.arco-form span {
+  color: #224946;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.arco-form input,
+.arco-form select,
+.arco-form textarea {
+  width: 100%;
+  border: 1px solid #cfe4e1;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  color: #183f3c;
+  background: #ffffff;
+}
+
+.arco-form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.file-summary {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #f7fbfb;
+  border: 1px dashed #cfe4e1;
+}
+
+.file-summary p,
+.arco-note p {
+  margin: 0;
+  color: #587370;
+  line-height: 1.6;
+}
+
+.file-summary p + p {
+  margin-top: 6px;
+}
+
+.arco-note {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-left: 4px solid #2b9189;
+  border-radius: 0 16px 16px 0;
+  background: #f3fbfa;
+}
+
+.checkbox-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.checkbox-line input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.checkbox-line span {
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.form-error {
+  margin: 0;
+  color: #c14a3d;
+  font-weight: 600;
+}
+
+.arco-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.back-link,
+.submit-button {
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-link {
+  border: 1px solid #d0e4e1;
+  background: #ffffff;
+  color: #174844;
+}
+
+.submit-button {
+  border: none;
+  background: linear-gradient(135deg, #1f9088, #166f69);
+  color: #ffffff;
+  box-shadow: 0 14px 24px rgba(31, 144, 136, 0.24);
+}
+
+@media (max-width: 860px) {
+  .solicitante-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arco-form-top,
+  .arco-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .arco-download,
+  .back-link,
+  .submit-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .arco-container {
+    padding-top: 118px;
+  }
+
+  .arco-shell {
+    width: min(1040px, calc(100% - 20px));
+  }
+
+  .arco-form-card,
+  .arco-block {
+    padding: 20px 18px;
+    border-radius: 22px;
+  }
+}

@@ -3,123 +3,220 @@
   <div class="proteccion-datos-container">
     <HeaderAnth />
 
-    <div class="proteccion-datos-content">
-      <section class="proteccion-datos-intro">
-        <div class="content-container">
-          <div class="page-header">
-            <h1 class="page-title">PROTECCIÓN DE DATOS PERSONALES</h1>
-            <p class="page-description">
-              Compromiso institucional con la confidencialidad, el uso responsable y la seguridad de la información de nuestros pacientes.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="proteccion-datos-info">
-        <div class="info-container">
-          <h2 class="section-title">Alcance y Uso de esta Web</h2>
-          <p class="section-description">
-            Esta página web está orientada a personas naturales o jurídicas con residencia en Ecuador, o que acceden desde Ecuador,
-            para brindar información general sobre servicios hospitalarios, canales de contacto y atención en salud de Clínica Arboleda.
+    <main class="proteccion-datos-content">
+      <section class="privacy-hero">
+        <div class="privacy-shell">
+          <span class="privacy-badge">Centro de Privacidad Clinica Arboleda</span>
+          <h1 class="privacy-title">Proteccion de Datos, Cookies y Terminos de Uso</h1>
+          <p class="privacy-description">
+            En este espacio reunimos la informacion esencial sobre el tratamiento de datos personales, uso de cookies
+            y condiciones generales aplicables a los usuarios de nuestros canales digitales.
           </p>
-        </div>
-      </section>
 
-      <section class="proteccion-datos-section proteccion-datos-disposiciones">
-        <div class="proteccion-datos-wrapper">
-          <div class="section-header">
-            <div class="header-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"></path>
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
-            </div>
-            <h2 class="section-title">Disposiciones Generales</h2>
-            <p class="section-subtitle">Aplicables a los usuarios de nuestros medios digitales</p>
-          </div>
-
-          <div class="content-card">
-            <ol class="disposiciones-list">
-              <li>
-                La información contenida en esta dirección electrónica y en sus páginas anexas o conexas, incluidos ciertos servicios de orientación,
-                atención y contacto hospitalario, está destinada a su uso por personas naturales, sociedades, personas jurídicas u otras entidades
-                con residencia en Ecuador o que accedan desde Ecuador. Clínica Arboleda declina responsabilidad por accesos desde jurisdicciones donde
-                el contenido o uso de esta web pudiera contravenir normativa local. Determinados servicios podrían no estar disponibles en todas las
-                jurisdicciones o para todas las personas, por lo que la Clínica podrá restringir o rechazar accesos que no cumplan los requisitos aplicables.
-              </li>
-              <li>
-                Al acceder a esta dirección electrónica y a cualquiera de sus páginas anexas o conexas, usted adquiere la calidad de usuario y acepta
-                las estipulaciones aquí contenidas, así como las condiciones de tratamiento de datos personales aplicables conforme a la normativa vigente
-                en Ecuador, incluida la Ley Orgánica de Protección de Datos Personales.
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section class="proteccion-datos-section proteccion-datos-aclaracion">
-        <div class="proteccion-datos-wrapper">
-          <div class="section-header">
-            <div class="header-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 8h.01"></path>
-                <path d="M11 12h2v4h-2"></path>
-              </svg>
-            </div>
-            <h2 class="section-title">Aclaración</h2>
-            <p class="section-subtitle">Naturaleza informativa del contenido publicado</p>
-          </div>
-
-          <div class="content-card">
-            <p class="aclaracion-text">
-              Esta página electrónica no reemplaza la consulta médica profesional, el diagnóstico clínico, la indicación terapéutica ni el criterio de especialistas
-              de salud. Tampoco constituye asesoramiento legal, tributario o de otra naturaleza técnica.
-            </p>
-            <p class="aclaracion-text">
-              La información publicada tiene carácter general e informativo y no debe utilizarse como único fundamento para decisiones clínicas o personales.
-              Para decisiones relacionadas con su estado de salud, tratamiento o historia clínica, debe solicitarse atención profesional personalizada y especializada.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="proteccion-datos-cta">
-        <div class="cta-container">
-          <h2 class="cta-title">Tus datos y tu salud son prioridad</h2>
-          <p class="cta-description">
-            Si tienes dudas sobre el tratamiento de tus datos personales, contáctanos y te guiaremos en el ejercicio de tus derechos.
-          </p>
-          <button class="cta-button" @click="irAContacto">
-            Contactar a un asesor
-          </button>
-        </div>
-      </section>
-
-      <section class="descarga-politica-section">
-        <div class="descarga-politica-box">
-          <p>
-            <a href="#ccookies">
-              Descargar Política de Protección de Datos Personales
+          <div class="privacy-shortcuts">
+            <a
+              v-for="atajo in accesosLegales"
+              :key="atajo.id"
+              class="privacy-shortcut"
+              :class="{ 'is-active': currentSection === atajo.id }"
+              :href="`#${atajo.id}`"
+            >
+              <strong>{{ atajo.titulo }}</strong>
+              <span>{{ atajo.resumen }}</span>
             </a>
-          </p>
+          </div>
         </div>
       </section>
 
-      <section class="legal-links-section">
-        <span id="terminos" class="legal-anchor"></span>
-        <span id="panel-cookies" class="legal-anchor"></span>
-        <div class="legal-links-row">
-          <a href="#terminos">Terminos y Condiciones de Uso</a>
-          <span>|</span>
-          <a id="cookies" href="#cookies">Politica de Cookies</a>
-          <span>|</span>
-          <a href="/proteccion-datos">Ley de Proteccion de Datos Personales</a>
-          <span>|</span>
-          <a href="#panel-cookies">Panel Cookies</a>
+      <section class="privacy-nav-section">
+        <div class="privacy-shell">
+          <div class="privacy-nav-card">
+            <div class="privacy-nav-copy">
+              <h2>Informacion legal centralizada</h2>
+              <p>
+                Las opciones Proteccion de Datos Personales, Politica de Cookies y Terminos y Condiciones de Uso
+                ahora dirigen a esta misma page para que el paciente encuentre todo en un solo lugar.
+              </p>
+            </div>
+
+            <div class="privacy-nav-actions">
+              <button type="button" class="secondary-link" @click="irASeccion('proteccion')">
+                Ver proteccion de datos
+              </button>
+              <button type="button" class="secondary-link" @click="irASeccion('cookies')">
+                Ver cookies
+              </button>
+              <button type="button" class="secondary-link" @click="irASeccion('terminos')">
+                Ver terminos
+              </button>
+            </div>
+          </div>
         </div>
       </section>
-    </div>
+
+      <section id="proteccion" class="privacy-section">
+        <div class="privacy-shell">
+          <div class="section-head">
+            <span class="section-kicker">1. Proteccion de Datos Personales</span>
+            <h2>Compromiso institucional con la confidencialidad y el uso responsable de la informacion</h2>
+          </div>
+
+          <div class="content-panel">
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Alcance</h3>
+                <p>
+                  Esta web esta orientada a personas naturales o juridicas con residencia en Ecuador, o que acceden
+                  desde Ecuador, para brindar informacion general sobre servicios hospitalarios y canales de contacto.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Base legal</h3>
+                <p>
+                  El tratamiento de datos se realiza conforme a la Ley Organica de Proteccion de Datos Personales y a
+                  las obligaciones asistenciales, administrativas y de atencion al paciente aplicables.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Finalidad</h3>
+                <p>
+                  Los datos personales se usan para gestionar consultas, coordinar servicios medicos, responder
+                  solicitudes y mantener la seguridad operativa de nuestros canales institucionales.
+                </p>
+              </article>
+            </div>
+
+            <div class="text-block">
+              <h3>Disposiciones generales</h3>
+              <ol>
+                <li>
+                  Al acceder a esta web, el usuario acepta las condiciones aqui contenidas y reconoce que el uso del
+                  sitio puede estar sujeto a validaciones, restricciones y controles de seguridad.
+                </li>
+                <li>
+                  La informacion publicada no reemplaza la consulta medica profesional, el diagnostico clinico ni la
+                  orientacion legal especializada.
+                </li>
+                <li>
+                  El titular puede ejercer sus derechos de acceso, rectificacion, eliminacion, oposicion, portabilidad
+                  y suspension del tratamiento a traves del canal ARCO y del correo institucional de privacidad.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cookies" class="privacy-section privacy-section-alt">
+        <div class="privacy-shell">
+          <div class="section-head">
+            <span class="section-kicker">2. Politica de Cookies</span>
+            <h2>Uso de cookies y tecnologias similares en nuestros canales digitales</h2>
+          </div>
+
+          <div class="content-panel">
+            <div class="info-grid">
+              <article class="info-card">
+                <h3>Cookies necesarias</h3>
+                <p>
+                  Son indispensables para el funcionamiento del sitio, la navegacion, la seguridad de sesion y la
+                  prestacion de funciones esenciales.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Cookies analiticas</h3>
+                <p>
+                  Permiten analizar patrones de uso para mejorar el rendimiento, el contenido y la experiencia general
+                  del paciente dentro del sitio.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Cookies de preferencias</h3>
+                <p>
+                  Ayudan a recordar configuraciones del usuario y a ofrecer una navegacion mas personalizada cuando el
+                  paciente regresa al sitio.
+                </p>
+              </article>
+            </div>
+
+            <div class="text-block">
+              <h3>Control y gestion</h3>
+              <p>
+                El usuario puede aceptar, rechazar o eliminar cookies desde la configuracion de su navegador. La
+                desactivacion de determinadas cookies puede afectar la disponibilidad de algunas funciones del sitio.
+              </p>
+              <ul>
+                <li>Google Chrome: Configuracion, Privacidad y seguridad, Cookies y otros datos de sitios.</li>
+                <li>Mozilla Firefox: Ajustes, Privacidad y seguridad, Cookies y datos del sitio.</li>
+                <li>Microsoft Edge: Configuracion, Privacidad, busqueda y servicios, Cookies.</li>
+                <li>Safari: Preferencias, Privacidad, Gestionar datos del sitio web.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="terminos" class="privacy-section">
+        <div class="privacy-shell">
+          <div class="section-head">
+            <span class="section-kicker">3. Terminos y Condiciones de Uso</span>
+            <h2>Condiciones generales aplicables al uso de la plataforma</h2>
+          </div>
+
+          <div class="content-panel">
+            <div class="text-block">
+              <h3>Condiciones esenciales</h3>
+              <ul>
+                <li>El contenido del sitio tiene fines informativos y de orientacion institucional.</li>
+                <li>La clinica puede actualizar servicios, textos, funcionalidades y avisos legales sin previo aviso.</li>
+                <li>El usuario se compromete a proporcionar informacion veraz en formularios y canales de contacto.</li>
+                <li>No se permite el uso del sitio para fines ilicitos, fraudulentos o que afecten su seguridad.</li>
+                <li>La coordinacion final de citas, disponibilidad y horarios esta sujeta a validacion de la clinica.</li>
+              </ul>
+            </div>
+
+            <div class="info-grid single-row">
+              <article class="info-card">
+                <h3>Propiedad del contenido</h3>
+                <p>
+                  Los textos, logotipos, imagenes, marcas y recursos institucionales pertenecen a Clinica Arboleda o a
+                  sus respectivos titulares y no pueden reutilizarse sin autorizacion.
+                </p>
+              </article>
+              <article class="info-card">
+                <h3>Canales oficiales</h3>
+                <p>
+                  Las respuestas oficiales sobre privacidad y derechos del titular se emiten unicamente a traves de
+                  nuestros formularios, correo institucional y canales validados por la clinica.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-cta">
+        <div class="privacy-shell">
+          <div class="cta-card">
+            <div>
+              <h2>Necesitas ejercer un derecho o contactar al responsable?</h2>
+              <p>
+                Puedes abrir el formulario ARCO o escribir directamente al canal institucional de proteccion de datos.
+              </p>
+            </div>
+
+            <div class="cta-actions">
+              <button type="button" class="primary-link" @click="irADerechosArco">
+                Ir a Derechos ARCO
+              </button>
+              <button type="button" class="secondary-link" @click="abrirCorreoDpo">
+                Contacto del DPO
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <FooterAnth />
   </div>
@@ -127,6 +224,3 @@
 
 <script src="./ProteccionDatos.js"></script>
 <style src="./ProteccionDatos.css"></style>
-
-
-

@@ -61,8 +61,11 @@
       <div class="footer-column">
         <h4>Políticas y Condiciones</h4>
         <ul>
-          <li><a href="/proteccion-datos">Protección de datos</a></li>
+          <li><a href="/proteccion-datos">Protección de Datos Personales</a></li>
           <li><a href="/politica-cookies">Política de Cookies</a></li>
+          <li><a href="/terminos-condiciones">Términos y Condiciones de Uso</a></li>
+          <li><a href="/derechos-arco">Derechos (ARCO)</a></li>
+          <li><a href="mailto:protecciondedatos@clinicarboleda.com?subject=Consulta%20DPO%20-%20Clinica%20Arboleda">Contacto del DPO</a></li>
         </ul>
       </div>
     </div>

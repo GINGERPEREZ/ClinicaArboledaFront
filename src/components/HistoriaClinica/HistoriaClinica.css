@@ -1,348 +1,315 @@
-/* Content Container */
-.content-container {
-  max-width: 1200px;
+.historia-page .content-container {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 20px;
-  /* page-layout ya compensa el header */
-  padding-top: 40px;
-  color: #1f2937;
-}
-
-/* Page Header */
-.page-header {
-  text-align: center;
-  margin-bottom: 60px;
-  padding: 42px 20px 28px;
-  border-bottom: 1px solid #c8e6e4;
-}
-
-.page-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0 0 20px 0;
+  padding: 44px 20px 72px;
   color: #123f3c;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
 }
 
-.page-subtitle {
-  font-size: 1.2rem;
-  color: #4a5a6b;
-  font-weight: 400;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto;
+.historia-page {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(67, 161, 154, 0.12), transparent 28%),
+    radial-gradient(circle at 90% 10%, rgba(102, 194, 186, 0.14), transparent 26%),
+    linear-gradient(180deg, #f4fbfa 0%, #eef7f6 36%, #f8fbfb 100%);
 }
 
-/* Section Cards */
-.section-card {
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #c8e6e4;
-  padding: 40px;
-  margin-bottom: 30px;
-  box-shadow: 0 8px 22px rgba(35, 144, 137, 0.06);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.section-card:hover {
-  border-color: #a3d5d1;
-  box-shadow: 0 12px 28px rgba(66, 168, 161, 0.1);
-}
-
-.card-highlight {
-  background: linear-gradient(180deg, #f4fbfa 0%, #ecf7f6 100%);
-  border-left: 4px solid #42a8a1;
-}
-
-.section-title {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #123f3c;
-  margin-bottom: 20px;
-  letter-spacing: 0.01em;
-}
-
-.section-content {
-  color: #3f4f60;
-  font-size: 1.05rem;
-  line-height: 1.85;
-}
-
-.section-content p {
-  margin-bottom: 20px;
-}
-
-.section-content strong {
-  color: #42a8a1;
-  font-weight: 600;
-}
-
-/* Historia Content */
-.historia-content {
+.history-hero {
   position: relative;
-}
-
-.founding-info {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-
-.date-badge {
-  background: linear-gradient(135deg, #42a8a1 0%, #123f3c 100%);
+  padding: 58px 28px 92px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #0f5c56 0%, #1f7d76 55%, #0f5c56 100%);
   color: white;
-  padding: 20px;
-  border-radius: 10px;
   text-align: center;
-  min-width: 120px;
-  box-shadow: 0 8px 18px rgba(35, 144, 137, 0.25);
-}
-
-.date-day {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.date-month {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 5px;
-}
-
-.date-year {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-/* Stats Grid */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin: 40px 0;
-}
-
-.stat-card {
-  background: #ffffff;
-  border: 1px solid #c8e6e4;
-  border-radius: 10px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(35, 144, 137, 0.06);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.stat-card:hover {
-  border-color: #a3d5d1;
-  box-shadow: 0 10px 24px rgba(35, 144, 137, 0.12);
-}
-
-.stat-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  border: 1px solid #a3d5d1;
-  background: #ecf7f6;
-  color: #42a8a1;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #42a8a1;
-  margin-bottom: 10px;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #123f3c;
-  margin-bottom: 10px;
-}
-
-.stat-description {
-  font-size: 0.9rem;
-  color: #5b6b7b;
-  margin: 0;
-}
-
-/* Convenios */
-.convenios-list {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  justify-content: center;
-}
-
-.convenio-badge {
-  background: #42a8a1;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 10px rgba(35, 144, 137, 0.2);
-  transition: background-color 0.25s ease;
-}
-
-.convenio-badge:hover {
-  background: #123f3c;
-}
-
-/* Commitment Section */
-.commitment-section {
-  background: linear-gradient(180deg, #ffffff 0%, #ecf7f6 100%);
-  color: #123f3c;
-  border: 1px solid #c8e6e4;
-  border-radius: 12px;
-  box-shadow: 0 12px 26px rgba(35, 144, 137, 0.12);
-  position: relative;
   overflow: hidden;
+  box-shadow: 0 22px 48px rgba(16, 79, 74, 0.18);
 }
 
-.commitment-section::before {
+.history-hero::after {
   content: '';
   position: absolute;
-  top: -60px;
-  right: -70px;
-  width: 220px;
-  height: 220px;
+  inset: auto -80px -120px auto;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(35, 144, 137, 0.18) 0%, rgba(35, 144, 137, 0) 72%);
-  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
-.commitment-section .section-title {
-  color: #123f3c;
-  margin-bottom: 14px;
+.history-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.commitment-section .section-content {
-  color: #2f445b;
+.historia-page .page-title {
+  margin: 0 auto 14px;
+  max-width: 700px;
+  color: white;
+  font-size: 2.55rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.historia-page .page-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: -42px auto 28px;
+  max-width: 860px;
+  background: white;
+  border: 1px solid rgba(63, 165, 158, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 14px 28px rgba(18, 63, 60, 0.08);
   position: relative;
   z-index: 1;
 }
 
-.text-center {
+.history-stat-card {
+  padding: 22px 16px;
   text-align: center;
 }
 
-.commitment-kicker {
+.history-stat-card + .history-stat-card {
+  border-left: 1px solid rgba(63, 165, 158, 0.14);
+}
+
+.history-stat-number {
+  display: block;
+  margin-bottom: 6px;
+  color: #14756d;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.history-stat-label {
+  color: #738c8a;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.pillar-card {
+  padding: 22px 20px;
+  border: 1px solid rgba(63, 165, 158, 0.14);
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 22px rgba(18, 63, 60, 0.05);
+}
+
+.pillar-icon {
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 12px;
-  padding: 6px 14px;
-  border: 1px solid #a3d5d1;
-  background: #ecf7f6;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: #eef7f6;
+  font-size: 1.15rem;
+}
+
+.pillar-title {
+  margin: 0 0 10px;
+  color: #123f3c;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.pillar-text {
+  margin: 0;
+  color: #59716f;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.timeline-section {
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(63, 165, 158, 0.14);
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 14px 30px rgba(18, 63, 60, 0.06);
+}
+
+.timeline-title {
+  margin: 0 0 18px;
+  text-align: center;
+  color: #123f3c;
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.timeline-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.timeline-tab {
+  padding: 9px 14px;
+  border: 1px solid rgba(63, 165, 158, 0.15);
   border-radius: 999px;
+  background: #f5f9f9;
+  color: #7a9190;
   font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeline-tab.active {
+  background: #1d7d77;
+  border-color: #1d7d77;
+  color: white;
+}
+
+.timeline-feature {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(63, 165, 158, 0.12);
+  border-radius: 18px;
+  background: #fbfdfd;
+}
+
+.timeline-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(18, 63, 60, 0.08);
+}
+
+.timeline-copy {
+  min-width: 0;
+}
+
+.timeline-year {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #1d7d77;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #1f4f7c;
 }
 
-.commitment-text {
-  font-size: 1.12rem;
-  font-weight: 500;
-  line-height: 1.85;
-  max-width: 760px;
-  margin: 0 auto;
-  color: #2f445b;
+.timeline-feature-title {
+  margin: 0 0 10px;
+  color: #123f3c;
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .page-title {
+.timeline-feature-text {
+  margin: 0;
+  color: #59716f;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.history-cta {
+  padding: 34px 26px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0f5c56 0%, #1f7d76 100%);
+  color: white;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(16, 79, 74, 0.16);
+}
+
+.history-cta-title {
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+  font-weight: 800;
+}
+
+.history-cta-text {
+  max-width: 620px;
+  margin: 0 auto 18px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.history-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: white;
+  color: #0f5c56;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.history-cta-button:hover {
+  color: #0f5c56;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .history-stats,
+  .pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline-feature {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .historia-page .content-container {
+    padding: 24px 16px 56px;
+  }
+
+  .history-hero {
+    padding: 42px 18px 82px;
+  }
+
+  .historia-page .page-title {
     font-size: 2rem;
   }
 
-  .page-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .section-card {
-    padding: 25px;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .founding-info {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .stats-grid {
+  .history-stats,
+  .pillars-grid {
     grid-template-columns: 1fr;
   }
 
-  .stat-number {
-    font-size: 2.5rem;
+  .history-stat-card + .history-stat-card {
+    border-left: none;
+    border-top: 1px solid rgba(63, 165, 158, 0.14);
   }
 
-  .convenios-list {
-    justify-content: flex-start;
-  }
-
-  .commitment-kicker {
-    letter-spacing: 0.08em;
-  }
-
-  .commitment-text {
-    font-size: 1.02rem;
-    line-height: 1.75;
+  .timeline-section,
+  .history-cta {
+    padding: 22px 18px;
   }
 }
-
-/* Todo el texto de la pagina de Historia en negro.
-   Se ancla a .historia-page porque .page-layout, .section-title, .stat-card
-   y demas son nombres genericos que comparten otros 8 componentes y estos
-   CSS no son scoped.
-   Los distintivos verdes (.date-badge y .convenio-badge) quedan fuera: su
-   regla propia de color gana sobre la herencia, asi que conservan el fondo
-   verde y su texto blanco. */
-.historia-page .content-container,
-.historia-page .page-title,
-.historia-page .page-subtitle,
-.historia-page .section-title,
-.historia-page .section-content,
-.historia-page .section-content p,
-.historia-page .section-content strong,
-.historia-page .stat-icon,
-.historia-page .stat-number,
-.historia-page .stat-label,
-.historia-page .stat-description,
-.historia-page .commitment-section,
-.historia-page .commitment-section .section-title,
-.historia-page .commitment-section .section-content,
-.historia-page .commitment-kicker,
-.historia-page .commitment-text {
-  color: #000000;
-}
-
-
-
-

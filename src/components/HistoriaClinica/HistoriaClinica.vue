@@ -1,6 +1,5 @@
 <template>
   <div class="page-layout historia-page">
-    <!-- Header -->
     <HeaderAnth
       :searchQuery="searchQuery"
       :isAuthenticated="isAuthenticated"
@@ -8,133 +7,72 @@
       @cerrar-sesion="cerrarSesion"
     />
 
-    <!-- Contenido Principal -->
     <div class="content-container">
-      <!-- Título Principal -->
-      <div class="page-header">
-        <h1 class="page-title">Nuestra Historia</h1>
+      <section class="history-hero">
+        <span class="history-kicker">Compromiso y crecimiento sostenido</span>
+        <h1 class="page-title">Más de 20 años cuidando la salud de tu familia</h1>
         <p class="page-subtitle">
-          Más de 4 años comprometidos con la salud de nuestra comunidad
+          Conoce nuestra trayectoria, valores y evolución como un centro de salud
+          moderno al servicio de Manta y su comunidad.
         </p>
-      </div>
-      <!-- Historia Principal -->
-      <section class="section-card">
-        <div class="section-content historia-content">
-          <div class="founding-info">
-            <div class="date-badge">
-              <span class="date-day">16</span>
-              <span class="date-month">Junio</span>
-              <span class="date-year">2020</span>
-            </div>
-            <h2 class="section-title">Nuestros Inicios</h2>
+      </section>
+
+      <section class="history-stats">
+        <article v-for="stat in stats" :key="stat.label" class="history-stat-card">
+          <strong class="history-stat-number">{{ stat.value }}</strong>
+          <span class="history-stat-label">{{ stat.label }}</span>
+        </article>
+      </section>
+
+      <section class="pillars-grid">
+        <article v-for="pillar in pillars" :key="pillar.title" class="pillar-card">
+          <div class="pillar-icon" aria-hidden="true">{{ pillar.icon }}</div>
+          <h2 class="pillar-title">{{ pillar.title }}</h2>
+          <p class="pillar-text">{{ pillar.text }}</p>
+        </article>
+      </section>
+
+      <section class="timeline-section">
+        <h2 class="timeline-title">Hitos que Marcaron Nuestra Historia</h2>
+
+        <div class="timeline-tabs">
+          <button
+            v-for="milestone in milestones"
+            :key="milestone.year"
+            type="button"
+            :class="['timeline-tab', { active: selectedMilestoneYear === milestone.year }]"
+            @click="selectedMilestoneYear = milestone.year"
+          >
+            {{ milestone.year }}
+          </button>
+        </div>
+
+        <div v-if="selectedMilestone" class="timeline-feature">
+          <img
+            class="timeline-image"
+            :src="selectedMilestone.image"
+            :alt="selectedMilestone.title"
+          />
+
+          <div class="timeline-copy">
+            <span class="timeline-year">{{ selectedMilestone.year }}</span>
+            <h3 class="timeline-feature-title">{{ selectedMilestone.title }}</h3>
+            <p class="timeline-feature-text">{{ selectedMilestone.text }}</p>
           </div>
-
-          <p>
-            Fundada el <strong>16 de junio de 2020</strong>, Clínica Arboleda nació inicialmente como un centro 
-            médico ambulatorio. A raíz del contexto sanitario mundial, sus fundadores reorientaron su visión hacia 
-            el sector salud, respondiendo a la creciente necesidad de servicios médicos de calidad en la comunidad.
-          </p>
-
-          <p>
-            Desde sus inicios, la institución ha evolucionado significativamente. Lo que comenzó como una iniciativa 
-            impulsada por un grupo de accionistas en su mayoría médicos junto a <strong>Guillermo Arboleda</strong> y 
-            <strong>Marina Andrade</strong>, hoy se consolida como un centro de atención integral comprometido con el 
-            bienestar de la población y la excelencia operativa.
-          </p>
         </div>
       </section>
 
-      <!-- Crecimiento y Desarrollo -->
-      <section class="section-card card-highlight">
-        <h2 class="section-title">Crecimiento y Desarrollo</h2>
-        <div class="section-content">
-          <p>
-            Actualmente, Clínica Arboleda cuenta con <strong>más de 20 especialidades médicas</strong>, entre las 
-            más demandadas: traumatología, fisioterapia, ginecología, neonatología, psicología y psiquiatría. 
-            En 2025 se incorporó el área de neonatología, fortaleciendo su compromiso con la atención desde el 
-            nacimiento y ampliando su cobertura a todas las etapas del ciclo de vida.
-          </p>
-        </div>
-      </section>
-
-      <!-- Stats Grid -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon" aria-hidden="true">CL</div>
-          <div class="stat-number">71</div>
-          <div class="stat-label">Colaboradores</div>
-          <p class="stat-description">Personal administrativo y médico/asistencial</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon" aria-hidden="true">ES</div>
-          <div class="stat-number">20+</div>
-          <div class="stat-label">Especialidades Médicas</div>
-          <p class="stat-description">Servicios especializados de salud</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon" aria-hidden="true">AL</div>
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Aseguradoras Privadas</div>
-          <p class="stat-description">Convenios activos para tu comodidad</p>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon" aria-hidden="true">CM</div>
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Compromiso</div>
-          <p class="stat-description">Con la salud de la comunidad</p>
-        </div>
-      </div>
-
-      <!-- Nuestro Equipo -->
-      <section class="section-card">
-        <h2 class="section-title">Nuestro Equipo</h2>
-        <div class="section-content">
-          <p>
-            Nuestro equipo está conformado por <strong>71 colaboradores</strong> entre personal administrativo y 
-            médico/asistencial, quienes trabajan con un enfoque humano, ético y profesional. Atendemos a pacientes 
-            desde recién nacidos hasta adultos mayores, principalmente de la ciudad de Manta.
-          </p>
-        </div>
-      </section>
-
-      <!-- Convenios -->
-      <section class="section-card card-highlight">
-        <h2 class="section-title">Convenios y Alianzas</h2>
-        <div class="section-content">
-          <p>
-            Clínica Arboleda mantiene convenios con redes de salud públicas y privadas, incluyendo más de 
-            <strong>15 aseguradoras privadas</strong>, así como entidades públicas como:
-          </p>
-          <div class="convenios-list">
-            <div class="convenio-badge">MSP</div>
-            <div class="convenio-badge">ISSFA</div>
-            <div class="convenio-badge">ISSPOL</div>
-            <div class="convenio-badge">SPPAT</div>
-          </div>
-          <p>
-            Esto nos permite formar parte activa del sistema de salud y brindar atención accesible y articulada 
-            a una amplia población.
-          </p>
-        </div>
-      </section>
-
-      <!-- Compromiso -->
-      <section class="section-card commitment-section">
-        <div class="section-content text-center">
-          <p class="commitment-kicker">Principios Institucionales</p>
-          <h2 class="section-title">Nuestro Compromiso</h2>
-          <p class="commitment-text">
-            En Clínica Arboleda trabajamos para ofrecer un servicio integral, humanizado y de alta calidad, 
-            comprometidos con la salud y el bienestar de nuestra comunidad.
-          </p>
-        </div>
+      <section class="history-cta">
+        <h2 class="history-cta-title">¿Necesitas atención médica especializada?</h2>
+        <p class="history-cta-text">
+          Nuestro equipo está listo para brindarte una atención cercana, moderna y confiable.
+        </p>
+        <router-link class="history-cta-button" to="/agendamiento-citas">
+          Agendar una cita ahora
+        </router-link>
       </section>
     </div>
 
-    <!-- Footer -->
     <FooterAnth />
   </div>
 </template>
@@ -153,7 +91,62 @@ export default {
     return {
       searchQuery: '',
       isAuthenticated: false,
+      selectedMilestoneYear: '2004',
+      stats: [
+        { value: '+20', label: 'Años de Trayectoria' },
+        { value: '+45K', label: 'Pacientes Atendidos' },
+        { value: '+30', label: 'Especialidades' },
+        { value: '98%', label: 'Satisfacción de Atención' },
+      ],
+      pillars: [
+        {
+          icon: '🤍',
+          title: 'Atención Humana',
+          text: 'Cuidamos a cada paciente con cercanía, respeto y acompañamiento profesional.',
+        },
+        {
+          icon: '🧪',
+          title: 'Tecnología Médica',
+          text: 'Invertimos en infraestructura y equipamiento para diagnósticos más ágiles y precisos.',
+        },
+        {
+          icon: '🛡️',
+          title: 'Excelencia y Ética',
+          text: 'Nos guía una cultura de calidad clínica, responsabilidad y mejora continua.',
+        },
+      ],
+      milestones: [
+        {
+          year: '2004',
+          title: 'Apertura del Primer Consultorio',
+          text: 'Iniciamos nuestra historia con un primer espacio de atención, enfocado en medicina integral y servicio humano a la comunidad.',
+          image: '/InstalacionesPage/ConsultaExterna.jpg',
+        },
+        {
+          year: '2012',
+          title: 'Expansión de Servicios Especializados',
+          text: 'Ampliamos nuestras áreas médicas con nuevas especialidades y una atención más completa para pacientes de todas las edades.',
+          image: '/Instalaciones/Ginecologia.jpg',
+        },
+        {
+          year: '2020',
+          title: 'Fortalecimiento Institucional',
+          text: 'Reforzamos procesos asistenciales y administrativos para responder a nuevos retos en salud con mayor capacidad operativa.',
+          image: '/Instalaciones/Equipos.jpg',
+        },
+        {
+          year: '2025',
+          title: 'Innovación y Crecimiento Clínico',
+          text: 'Seguimos consolidando tecnología, cobertura y equipo humano para ofrecer una experiencia médica moderna y segura.',
+          image: '/InstalacionesPage/Hospitalizacion.jpg',
+        },
+      ],
     };
+  },
+  computed: {
+    selectedMilestone() {
+      return this.milestones.find((milestone) => milestone.year === this.selectedMilestoneYear) || this.milestones[0];
+    },
   },
   mounted() {
     this.isAuthenticated = !!localStorage.getItem('access_token');

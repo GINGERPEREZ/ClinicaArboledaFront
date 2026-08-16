@@ -44,6 +44,7 @@ export default {
       steps: ['Especialidad', 'Médico', 'Fecha y Hora', 'Datos', 'Confirmar'],
       specialtySearch: '',
       specialtyFilter: 'todas',
+      doctorSearch: '',
       selectedEspecialidad: null,
       selectedMedico: null,
       selectedSlots: [],
@@ -136,6 +137,17 @@ export default {
     medicosDisponibles() {
       if (!this.selectedEspecialidad) return [];
       return this.medicos.filter(m => m.especialidadId === this.selectedEspecialidad.id);
+    },
+    medicosFiltrados() {
+      const busqueda = this.normalizarTextoBusqueda(this.doctorSearch);
+      if (!busqueda) return this.medicosDisponibles;
+
+      return this.medicosDisponibles.filter((medico) => {
+        const nombre = this.normalizarTextoBusqueda(medico.nombre);
+        const especialidad = this.normalizarTextoBusqueda(medico.especialidad);
+        const consultorio = this.normalizarTextoBusqueda(this.consultorioDe(medico));
+        return nombre.includes(busqueda) || especialidad.includes(busqueda) || consultorio.includes(busqueda);
+      });
     },
 
     /**
@@ -286,6 +298,7 @@ export default {
       // preseleccionado desde la tarjeta: solo un cambio real limpia lo de abajo.
       if (this.selectedEspecialidad?.id !== esp.id) {
         this.selectedEspecialidad = esp;
+        this.doctorSearch = '';
         this.selectedMedico = null;
         this.selectedSlots = [];
         this.activeSlotTarget = 0;
@@ -299,6 +312,9 @@ export default {
     },
     setSpecialtyFilter(filterId) {
       this.specialtyFilter = filterId;
+    },
+    consultorioDe() {
+      return 'Consultorio 00';
     },
     selectMedico(med) {
       if (this.selectedMedico?.id !== med.id) {
@@ -500,6 +516,7 @@ export default {
       this.currentStep = PASO_ESPECIALIDAD;
       this.citaConfirmada = false;
       this.selectedEspecialidad = null;
+      this.doctorSearch = '';
       this.selectedMedico = null;
       this.selectedSlots = [];
       this.activeSlotTarget = 0;
