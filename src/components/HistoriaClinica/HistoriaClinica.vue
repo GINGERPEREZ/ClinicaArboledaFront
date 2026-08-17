@@ -7,16 +7,20 @@
       @cerrar-sesion="cerrarSesion"
     />
 
-    <div class="content-container">
-      <section class="history-hero">
+    <!-- El hero va fuera de .content-container para que la banda verde ocupe
+         todo el ancho, como en el centro de privacidad y el formulario ARCO. -->
+    <section class="history-hero">
+      <div class="history-hero-inner">
         <span class="history-kicker">Compromiso y crecimiento sostenido</span>
-        <h1 class="page-title">Más de 20 años cuidando la salud de tu familia</h1>
+        <h1 class="page-title">Más de 20 años cuidando <span>la salud de tu familia</span></h1>
         <p class="page-subtitle">
           Conoce nuestra trayectoria, valores y evolución como un centro de salud
           moderno al servicio de Manta y su comunidad.
         </p>
-      </section>
+      </div>
+    </section>
 
+    <div class="content-container">
       <section class="history-stats">
         <article v-for="stat in stats" :key="stat.label" class="history-stat-card">
           <strong class="history-stat-number">{{ stat.value }}</strong>

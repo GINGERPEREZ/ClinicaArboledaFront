@@ -1,165 +1,218 @@
+/* Mismo lenguaje visual que el centro de privacidad y el formulario ARCO:
+   verde oscuro, pastilla translucida, titulo en dos tonos, filete de acento
+   en las tarjetas y radios contenidos.
+   Todo va anclado a .historia-page porque estos CSS son globales y
+   .content-container, .page-title y .page-subtitle son nombres genericos que
+   comparten otros componentes. */
+.historia-page {
+  --h-oscuro: #0e3b36;
+  --h-oscuro-2: #16544c;
+  --h-acento: #5dc1b9;
+  --h-acento-fuerte: #42a8a1;
+  --h-texto: #133e3b;
+  --h-texto-suave: #55716f;
+  --h-borde: #dceceb;
+  --h-suave: #f4fbfa;
+
+  background: linear-gradient(180deg, #f2faf9 0%, #f9fcfc 40%, #ffffff 100%);
+}
+
+/* .page-layout (global) mete 130px de padding para el header fijo. Aqui se
+   anula y ese espacio lo asume el hero, para que la banda verde llegue hasta
+   arriba en lugar de dejar una franja clara. */
+.page-layout.historia-page {
+  padding-top: 0;
+}
+
 .historia-page .content-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 44px 20px 72px;
-  color: #123f3c;
+  padding: 0 20px 72px;
+  color: var(--h-texto);
 }
 
-.historia-page {
-  background:
-    radial-gradient(circle at 8% 12%, rgba(67, 161, 154, 0.12), transparent 28%),
-    radial-gradient(circle at 90% 10%, rgba(102, 194, 186, 0.14), transparent 26%),
-    linear-gradient(180deg, #f4fbfa 0%, #eef7f6 36%, #f8fbfb 100%);
-}
+/* ---------------------------------------------------------------- Hero */
 
-.history-hero {
+/* Banda a todo el ancho, igual que en privacidad y ARCO */
+.historia-page .history-hero {
   position: relative;
-  padding: 58px 28px 92px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #0f5c56 0%, #1f7d76 55%, #0f5c56 100%);
-  color: white;
+  padding: 168px 20px 96px;
+  background:
+    radial-gradient(ellipse 60% 90% at 15% 0%, rgba(93, 193, 185, 0.25), transparent 60%),
+    linear-gradient(135deg, var(--h-oscuro) 0%, var(--h-oscuro-2) 55%, #0c342f 100%);
+  color: #ffffff;
   text-align: center;
-  overflow: hidden;
-  box-shadow: 0 22px 48px rgba(16, 79, 74, 0.18);
 }
 
-.history-hero::after {
+/* Onda inferior, el mismo recurso que el resto de heroes del sitio */
+.historia-page .history-hero::after {
   content: '';
   position: absolute;
-  inset: auto -80px -120px auto;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 70px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="%23f2faf9" d="M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,64C1200,53,1320,43,1380,37.3L1440,32L1440,120L0,120Z"></path></svg>') no-repeat center / 100% 100%;
+  pointer-events: none;
 }
 
-.history-kicker {
+.historia-page .history-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.historia-page .history-kicker {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  padding: 7px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  color: #d6f2ef;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
+  backdrop-filter: blur(2px);
 }
 
 .historia-page .page-title {
-  margin: 0 auto 14px;
-  max-width: 700px;
-  color: white;
-  font-size: 2.55rem;
+  max-width: 760px;
+  margin: 0 auto 16px;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
   font-weight: 800;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+}
+
+/* Segunda mitad del titulo en verde claro */
+.historia-page .page-title span {
+  color: var(--h-acento);
 }
 
 .historia-page .page-subtitle {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.02rem;
-  line-height: 1.75;
+  color: rgba(226, 244, 242, 0.86);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.history-stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  margin: -42px auto 28px;
-  max-width: 860px;
-  background: white;
-  border: 1px solid rgba(63, 165, 158, 0.14);
-  border-radius: 20px;
-  box-shadow: 0 14px 28px rgba(18, 63, 60, 0.08);
+/* ------------------------------------------------------------ Indicadores */
+
+.historia-page .history-stats {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 860px;
+  margin: -42px auto 30px;
+  border: 1px solid var(--h-borde);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(14, 59, 54, 0.12);
 }
 
-.history-stat-card {
+.historia-page .history-stat-card {
   padding: 22px 16px;
   text-align: center;
 }
 
-.history-stat-card + .history-stat-card {
-  border-left: 1px solid rgba(63, 165, 158, 0.14);
+.historia-page .history-stat-card + .history-stat-card {
+  border-left: 1px solid var(--h-borde);
 }
 
-.history-stat-number {
+.historia-page .history-stat-number {
   display: block;
-  margin-bottom: 6px;
-  color: #14756d;
+  margin-bottom: 4px;
+  color: #14746d;
   font-size: 1.6rem;
   font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
-.history-stat-label {
-  color: #738c8a;
-  font-size: 0.9rem;
-  font-weight: 700;
+.historia-page .history-stat-label {
+  color: var(--h-texto-suave);
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
-.pillars-grid {
+/* ---------------------------------------------------------------- Pilares */
+
+.historia-page .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-bottom: 30px;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
-.pillar-card {
+.historia-page .pillar-card {
   padding: 22px 20px;
-  border: 1px solid rgba(63, 165, 158, 0.14);
-  border-radius: 18px;
-  background: white;
-  box-shadow: 0 10px 22px rgba(18, 63, 60, 0.05);
+  border: 1px solid var(--h-borde);
+  border-top: 3px solid var(--h-acento);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(14, 59, 54, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.pillar-icon {
-  width: 44px;
-  height: 44px;
+.historia-page .pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(14, 59, 54, 0.1);
+}
+
+.historia-page .pillar-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
   margin-bottom: 14px;
-  border-radius: 14px;
-  background: #eef7f6;
+  border: 1px solid #cbe9e6;
+  border-radius: 12px;
+  background: var(--h-suave);
   font-size: 1.15rem;
 }
 
-.pillar-title {
-  margin: 0 0 10px;
-  color: #123f3c;
-  font-size: 1.1rem;
-  font-weight: 800;
+.historia-page .pillar-title {
+  margin: 0 0 8px;
+  color: var(--h-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
-.pillar-text {
+.historia-page .pillar-text {
   margin: 0;
-  color: #59716f;
-  font-size: 0.95rem;
+  color: var(--h-texto-suave);
+  font-size: 0.94rem;
   line-height: 1.65;
 }
 
-.timeline-section {
+/* ----------------------------------------------------------- Linea de tiempo */
+
+.historia-page .timeline-section {
   padding: 30px;
-  margin-bottom: 30px;
-  border: 1px solid rgba(63, 165, 158, 0.14);
-  border-radius: 22px;
-  background: white;
-  box-shadow: 0 14px 30px rgba(18, 63, 60, 0.06);
+  margin-bottom: 28px;
+  border: 1px solid var(--h-borde);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(14, 59, 54, 0.06);
 }
 
-.timeline-title {
+.historia-page .timeline-title {
   margin: 0 0 18px;
   text-align: center;
-  color: #123f3c;
-  font-size: 1.55rem;
-  font-weight: 800;
+  color: var(--h-texto);
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-.timeline-tabs {
+.historia-page .timeline-tabs {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -167,149 +220,165 @@
   margin-bottom: 22px;
 }
 
-.timeline-tab {
-  padding: 9px 14px;
-  border: 1px solid rgba(63, 165, 158, 0.15);
+.historia-page .timeline-tab {
+  padding: 8px 16px;
+  border: 1px solid #cbe9e6;
   border-radius: 999px;
-  background: #f5f9f9;
-  color: #7a9190;
+  background: var(--h-suave);
+  color: #14746d;
   font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.timeline-tab.active {
-  background: #1d7d77;
-  border-color: #1d7d77;
-  color: white;
+.historia-page .timeline-tab:hover {
+  transform: translateY(-2px);
+  border-color: var(--h-acento);
 }
 
-.timeline-feature {
+.historia-page .timeline-tab.active {
+  border-color: var(--h-oscuro-2);
+  background: var(--h-oscuro-2);
+  color: #ffffff;
+}
+
+/* Filete de acento a la izquierda, como los bloques destacados del resto */
+.historia-page .timeline-feature {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
-  gap: 20px;
+  gap: 22px;
   align-items: center;
   padding: 20px;
-  border: 1px solid rgba(63, 165, 158, 0.12);
-  border-radius: 18px;
-  background: #fbfdfd;
+  border: 1px solid var(--h-borde);
+  border-left: 4px solid var(--h-acento);
+  border-radius: 12px;
+  background: var(--h-suave);
 }
 
-.timeline-image {
+.historia-page .timeline-image {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 10px 22px rgba(18, 63, 60, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(14, 59, 54, 0.14);
 }
 
-.timeline-copy {
+.historia-page .timeline-copy {
   min-width: 0;
 }
 
-.timeline-year {
+.historia-page .timeline-year {
   display: inline-flex;
   margin-bottom: 8px;
-  color: #1d7d77;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border: 1px solid #cbe9e6;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #14746d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.timeline-feature-title {
-  margin: 0 0 10px;
-  color: #123f3c;
-  font-size: 1.25rem;
-  font-weight: 800;
+.historia-page .timeline-feature-title {
+  margin: 0 0 8px;
+  color: var(--h-texto);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-.timeline-feature-text {
+.historia-page .timeline-feature-text {
   margin: 0;
-  color: #59716f;
-  font-size: 0.98rem;
+  color: var(--h-texto-suave);
+  font-size: 0.96rem;
   line-height: 1.7;
 }
 
-.history-cta {
-  padding: 34px 26px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #0f5c56 0%, #1f7d76 100%);
-  color: white;
+/* --------------------------------------------------------- Llamada final */
+
+.historia-page .history-cta {
+  padding: 36px 26px;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse 70% 120% at 100% 0%, rgba(93, 193, 185, 0.22), transparent 60%),
+    linear-gradient(135deg, var(--h-oscuro) 0%, var(--h-oscuro-2) 100%);
+  color: #ffffff;
   text-align: center;
-  box-shadow: 0 18px 40px rgba(16, 79, 74, 0.16);
+  box-shadow: 0 18px 40px rgba(14, 59, 54, 0.22);
 }
 
-.history-cta-title {
+.historia-page .history-cta-title {
   margin: 0 0 10px;
-  font-size: 1.55rem;
-  font-weight: 800;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  font-weight: 700;
 }
 
-.history-cta-text {
+.historia-page .history-cta-text {
   max-width: 620px;
-  margin: 0 auto 18px;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.98rem;
+  margin: 0 auto 20px;
+  color: rgba(226, 244, 242, 0.82);
+  font-size: 0.96rem;
   line-height: 1.7;
 }
 
-.history-cta-button {
+.historia-page .history-cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: white;
-  color: #0f5c56;
-  font-size: 0.95rem;
-  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--h-acento) 0%, var(--h-acento-fuerte) 100%);
+  color: #ffffff;
+  font-size: 0.94rem;
+  font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.34);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.history-cta-button:hover {
-  color: #0f5c56;
-  transform: translateY(-1px);
+.historia-page .history-cta-button:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(66, 168, 161, 0.42);
 }
+
+/* --------------------------------------------------------- Responsive */
 
 @media (max-width: 900px) {
-  .history-stats,
-  .pillars-grid {
+  .historia-page .history-stats,
+  .historia-page .pillars-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .timeline-feature {
+  .historia-page .timeline-feature {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
   .historia-page .content-container {
-    padding: 24px 16px 56px;
+    padding: 0 16px 56px;
   }
 
-  .history-hero {
-    padding: 42px 18px 82px;
+  .historia-page .history-hero {
+    padding: 150px 18px 88px;
   }
 
-  .historia-page .page-title {
-    font-size: 2rem;
-  }
-
-  .history-stats,
-  .pillars-grid {
+  .historia-page .history-stats,
+  .historia-page .pillars-grid {
     grid-template-columns: 1fr;
   }
 
-  .history-stat-card + .history-stat-card {
+  .historia-page .history-stat-card + .history-stat-card {
     border-left: none;
-    border-top: 1px solid rgba(63, 165, 158, 0.14);
+    border-top: 1px solid var(--h-borde);
   }
 
-  .timeline-section,
-  .history-cta {
+  .historia-page .timeline-section,
+  .historia-page .history-cta {
     padding: 22px 18px;
   }
 }
