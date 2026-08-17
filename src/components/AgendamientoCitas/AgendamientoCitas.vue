@@ -554,7 +554,7 @@
                    paciente necesita leer. -->
               <div class="pending-confirmation-alert" role="status">
                 <p>
-                  <strong>Importante:</strong> la fecha y hora seleccionadas están pendientes de
+                  <strong>Importante:</strong> las fechas y horas seleccionadas están pendientes de
                   confirmación por parte de la Clínica. Se estarán contactando con usted.
                 </p>
               </div>

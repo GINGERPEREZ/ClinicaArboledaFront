@@ -347,7 +347,7 @@ export default {
       if (this.conveniosLogos.length <= 1) return;
       this.conveniosTimer = window.setInterval(() => {
         this.avanzarConvenios();
-      }, 5000);
+      }, 3500);
     },
     detenerAutoplayConvenios() {
       if (this.conveniosTimer) {

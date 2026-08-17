@@ -19,7 +19,7 @@
         <div class="info-container">
           <h2 class="section-title">Nuestras Alianzas Estratégicas</h2>
           <p class="section-description">
-            En Clínica Metropolitana mantenemos acuerdos con las principales compañías de seguros privados 
+            En Clínica Arboleda mantenemos acuerdos con las principales compañías de seguros privados 
             y sistemas públicos de salud, facilitando el acceso a nuestros servicios médicos de calidad.
           </p>
         </div>
