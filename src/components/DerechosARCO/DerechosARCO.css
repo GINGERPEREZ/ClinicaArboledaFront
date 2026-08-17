@@ -1,297 +1,426 @@
+/* Mismo lenguaje visual que el centro de privacidad: hero verde oscuro,
+   titulo en dos tonos, tarjetas con filete de acento y radios contenidos.
+   Todo va anclado a .arco-container porque estos CSS son globales y varias
+   clases de aqui (.form-error, .form-grid, .field-full) ya existen en
+   Contacto, CrearWorkOrder y AgendamientoCitas. */
 .arco-container {
+  --arco-oscuro: #0e3b36;
+  --arco-oscuro-2: #16544c;
+  --arco-acento: #5dc1b9;
+  --arco-acento-fuerte: #42a8a1;
+  --arco-texto: #133e3b;
+  --arco-texto-suave: #55716f;
+  --arco-borde: #dceceb;
+  --arco-suave: #f4fbfa;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background:
-    radial-gradient(circle at top center, rgba(40, 134, 126, 0.26), transparent 28%),
-    linear-gradient(180deg, #f0faf9 0%, #ffffff 100%);
-  padding-top: 130px;
+  background: linear-gradient(180deg, #f2faf9 0%, #f9fcfc 40%, #ffffff 100%);
 }
 
-.arco-content {
+.arco-container .arco-content {
   flex: 1;
 }
 
-.arco-shell {
+.arco-container .arco-shell {
   width: min(1040px, calc(100% - 32px));
   margin: 0 auto;
 }
 
-.arco-hero {
-  padding: 26px 0 14px;
+/* ---------------------------------------------------------------- Hero */
+
+/* El padding del header fijo se pasa del contenedor al hero para que la
+   banda oscura llegue hasta arriba en vez de dejar una franja clara. */
+.arco-container .arco-hero {
+  position: relative;
+  padding: 168px 0 96px;
+  background:
+    radial-gradient(ellipse 60% 90% at 15% 0%, rgba(93, 193, 185, 0.25), transparent 60%),
+    linear-gradient(135deg, var(--arco-oscuro) 0%, var(--arco-oscuro-2) 55%, #0c342f 100%);
   text-align: center;
 }
 
-.arco-badge {
+/* Onda inferior, el mismo recurso que el resto de heroes del sitio */
+.arco-container .arco-hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 70px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="%23f2faf9" d="M0,64L60,58.7C120,53,240,43,360,48C480,53,600,75,720,80C840,85,960,75,1080,64C1200,53,1320,43,1380,37.3L1440,32L1440,120L0,120Z"></path></svg>') no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+
+.arco-container .arco-hero .arco-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.arco-container .arco-badge {
   display: inline-flex;
-  padding: 8px 16px;
+  align-items: center;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  background: rgba(24, 120, 113, 0.12);
-  color: #166d67;
-  font-size: 0.9rem;
-  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d6f2ef;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(2px);
 }
 
-.arco-hero h1 {
-  margin: 16px 0 10px;
-  color: #143d3a;
-  font-size: clamp(2rem, 4vw, 3.1rem);
+.arco-container .arco-hero h1 {
+  max-width: 900px;
+  margin: 22px auto 16px;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: #ffffff;
 }
 
-.arco-hero p {
-  max-width: 760px;
+/* Segunda mitad del titulo en verde claro */
+.arco-container .arco-hero h1 span {
+  color: var(--arco-acento);
+}
+
+.arco-container .arco-hero p {
+  max-width: 700px;
   margin: 0 auto;
-  color: #587370;
-  line-height: 1.65;
+  color: rgba(226, 244, 242, 0.86);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.arco-form-section {
-  padding: 10px 0 42px;
+/* ------------------------------------------------------ Tarjeta del form */
+
+/* La tarjeta se monta sobre el borde del hero, como los accesos rapidos
+   del centro de privacidad. */
+.arco-container .arco-form-section {
+  padding: 0 0 60px;
 }
 
-.arco-form-card {
+.arco-container .arco-form-card {
+  position: relative;
+  z-index: 2;
+  margin-top: -56px;
   padding: 28px;
-  border: 1px solid #d8ece8;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 20px 46px rgba(18, 78, 74, 0.1);
+  border: 1px solid var(--arco-borde);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(14, 59, 54, 0.12);
 }
 
-.arco-form-top {
+.arco-container .arco-form-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  padding: 18px 20px;
-  border-radius: 20px;
-  background: #f4fbfa;
-  border: 1px solid #d8ece8;
+  padding: 16px 20px;
+  border: 1px solid var(--arco-borde);
+  border-left: 4px solid var(--arco-acento);
+  border-radius: 12px;
+  background: var(--arco-suave);
 }
 
-.arco-form-top-copy {
+.arco-container .arco-form-top-copy {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
-.arco-form-top-copy strong {
-  color: #153f3c;
+.arco-container .arco-form-top-copy strong {
+  color: var(--arco-texto);
+  font-size: 0.98rem;
 }
 
-.arco-form-top-copy span {
-  color: #5b7673;
+.arco-container .arco-form-top-copy span {
+  color: var(--arco-texto-suave);
+  font-size: 0.9rem;
 }
 
-.arco-download {
+.arco-container .arco-download {
   flex-shrink: 0;
-  padding: 12px 16px;
-  border-radius: 14px;
-  background: #e86554;
+  padding: 11px 18px;
+  border-radius: 10px;
+  background: #d64d3c;
   color: #ffffff;
+  font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 8px 18px rgba(214, 77, 60, 0.26);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.arco-form {
+.arco-container .arco-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(214, 77, 60, 0.34);
+}
+
+/* ---------------------------------------------------------- Bloques */
+
+.arco-container .arco-form {
   display: grid;
-  gap: 22px;
-  margin-top: 24px;
+  gap: 18px;
+  margin-top: 22px;
 }
 
-.arco-block {
-  padding: 24px;
-  border: 1px solid #dceceb;
-  border-radius: 24px;
+.arco-container .arco-block {
+  padding: 22px;
+  border: 1px solid var(--arco-borde);
+  border-top: 3px solid var(--arco-acento);
+  border-radius: 12px;
   background: #ffffff;
 }
 
-.arco-block h2 {
+/* Numeral del bloque como pastilla, igual que en el centro de privacidad */
+.arco-container .arco-block h2 {
+  display: inline-block;
   margin: 0 0 18px;
-  color: #173f3c;
-  font-size: 1.3rem;
+  padding: 6px 16px;
+  border: 1px solid #cbe9e6;
+  border-radius: 999px;
+  background: var(--arco-suave);
+  color: #14746d;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.solicitante-grid,
-.form-grid {
+.arco-container .solicitante-grid,
+.arco-container .form-grid {
   display: grid;
   gap: 16px;
 }
 
-.solicitante-grid {
+.arco-container .solicitante-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 18px;
 }
 
-.solicitante-option {
+.arco-container .solicitante-option {
   display: grid;
-  gap: 8px;
-  padding: 18px;
-  border: 1px solid #d9ece9;
-  border-radius: 18px;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--arco-borde);
+  border-left: 4px solid transparent;
+  border-radius: 12px;
   background: #fbfefe;
-  color: #194844;
+  color: var(--arco-texto);
   text-align: left;
   cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
-.solicitante-option span {
-  color: #617c79;
+.arco-container .solicitante-option strong {
+  font-size: 0.98rem;
+}
+
+.arco-container .solicitante-option span {
+  color: var(--arco-texto-suave);
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.solicitante-option.active {
-  border-color: #2d958d;
-  box-shadow: inset 0 0 0 1px rgba(45, 149, 141, 0.15);
-  background: #f2fbf9;
+.arco-container .solicitante-option:hover {
+  transform: translateY(-2px);
+  border-left-color: #bfe3e0;
 }
 
-.form-grid {
+/* La opcion elegida se marca con el filete de acento, no solo con el fondo */
+.arco-container .solicitante-option.active {
+  border-color: var(--arco-acento-fuerte);
+  border-left-color: var(--arco-acento-fuerte);
+  background: #f1fbf9;
+}
+
+.arco-container .form-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.field-full {
+.arco-container .field-full {
   display: grid;
+  grid-column: 1 / -1;
 }
 
-.arco-form label {
+/* ------------------------------------------------------------- Campos */
+
+.arco-container .arco-form label {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
-.arco-form span {
+.arco-container .arco-form label > span {
   color: #224946;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
 }
 
-.arco-form input,
-.arco-form select,
-.arco-form textarea {
+.arco-container .arco-form input,
+.arco-container .arco-form select,
+.arco-container .arco-form textarea {
   width: 100%;
   border: 1px solid #cfe4e1;
-  border-radius: 14px;
-  padding: 14px 16px;
+  border-radius: 10px;
+  padding: 11px 14px;
   font: inherit;
-  color: #183f3c;
+  font-size: 0.94rem;
+  color: var(--arco-texto);
   background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.arco-form textarea {
+.arco-container .arco-form input:focus,
+.arco-container .arco-form select:focus,
+.arco-container .arco-form textarea:focus {
+  outline: none;
+  border-color: var(--arco-acento);
+  box-shadow: 0 0 0 3px rgba(93, 193, 185, 0.18);
+}
+
+.arco-container .arco-form textarea {
   resize: vertical;
-  min-height: 130px;
+  min-height: 120px;
 }
 
-.file-summary {
+.arco-container .file-summary {
   margin-top: 14px;
   padding: 16px 18px;
-  border-radius: 16px;
-  background: #f7fbfb;
-  border: 1px dashed #cfe4e1;
+  border: 1px dashed #bfdfdb;
+  border-radius: 12px;
+  background: #f9fcfc;
+  text-align: center;
 }
 
-.file-summary p,
-.arco-note p {
+.arco-container .file-summary p,
+.arco-container .arco-note p {
   margin: 0;
-  color: #587370;
+  color: var(--arco-texto-suave);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
-.file-summary p + p {
+.arco-container .file-summary p + p {
   margin-top: 6px;
 }
 
-.arco-note {
+.arco-container .arco-note {
   margin-top: 16px;
-  padding: 16px 18px;
-  border-left: 4px solid #2b9189;
-  border-radius: 0 16px 16px 0;
-  background: #f3fbfa;
+  padding: 14px 18px;
+  border: 1px solid var(--arco-borde);
+  border-left: 4px solid var(--arco-acento);
+  border-radius: 12px;
+  background: var(--arco-suave);
 }
 
-.checkbox-line {
+/* Se nombra el label en el selector para ganar a .arco-form label, que es
+   display:grid y dejaba la casilla encima del texto en vez de a su lado. */
+.arco-container .arco-form label.checkbox-line {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   margin-top: 18px;
 }
 
-.checkbox-line input {
-  width: 18px;
-  height: 18px;
+.arco-container .checkbox-line input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
   margin-top: 2px;
+  accent-color: var(--arco-acento-fuerte);
 }
 
-.checkbox-line span {
+.arco-container .arco-form label.checkbox-line > span {
+  color: var(--arco-texto-suave);
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.6;
 }
 
-.form-error {
+.arco-container .form-error {
   margin: 0;
-  color: #c14a3d;
+  color: #a5281c;
+  font-size: 0.86rem;
   font-weight: 600;
 }
 
-.arco-actions {
+/* ------------------------------------------------------------ Acciones */
+
+.arco-container .arco-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 }
 
-.back-link,
-.submit-button {
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-size: 0.98rem;
+.arco-container .back-link,
+.arco-container .submit-button {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 0.94rem;
   font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.back-link {
-  border: 1px solid #d0e4e1;
+.arco-container .back-link {
+  border: 1px solid #cfe6e3;
   background: #ffffff;
-  color: #174844;
+  color: #16544c;
 }
 
-.submit-button {
+.arco-container .submit-button {
   border: none;
-  background: linear-gradient(135deg, #1f9088, #166f69);
+  background: linear-gradient(135deg, var(--arco-acento) 0%, var(--arco-acento-fuerte) 100%);
   color: #ffffff;
-  box-shadow: 0 14px 24px rgba(31, 144, 136, 0.24);
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.3);
 }
+
+.arco-container .back-link:hover,
+.arco-container .submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.arco-container .submit-button:hover {
+  box-shadow: 0 14px 28px rgba(66, 168, 161, 0.38);
+}
+
+/* --------------------------------------------------------- Responsive */
 
 @media (max-width: 860px) {
-  .solicitante-grid,
-  .form-grid {
+  .arco-container .solicitante-grid,
+  .arco-container .form-grid {
     grid-template-columns: 1fr;
   }
 
-  .arco-form-top,
-  .arco-actions {
+  .arco-container .arco-form-top,
+  .arco-container .arco-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
-  .arco-download,
-  .back-link,
-  .submit-button {
+  .arco-container .arco-download,
+  .arco-container .back-link,
+  .arco-container .submit-button {
     width: 100%;
     text-align: center;
   }
 }
 
 @media (max-width: 768px) {
-  .arco-container {
-    padding-top: 118px;
+  .arco-container .arco-hero {
+    padding: 150px 0 84px;
   }
 
-  .arco-shell {
+  .arco-container .arco-shell {
     width: min(1040px, calc(100% - 20px));
   }
 
-  .arco-form-card,
-  .arco-block {
+  .arco-container .arco-form-card,
+  .arco-container .arco-block {
     padding: 20px 18px;
-    border-radius: 22px;
   }
 }

@@ -7,7 +7,7 @@
       <section class="arco-hero">
         <div class="arco-shell">
           <span class="arco-badge">Canal Oficial de Derechos ARCO+ (Ecuador)</span>
-          <h1>Solicitud de Ejercicio de Derechos del Titular</h1>
+          <h1>Solicitud de Ejercicio de <span>Derechos del Titular</span></h1>
           <p>
             Canal formal para ejercer tus derechos de Acceso, Rectificacion, Eliminacion, Oposicion,
             Portabilidad o Suspension de tus datos de acuerdo a la LOPDP.
