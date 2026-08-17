@@ -6,12 +6,12 @@
     <main class="proteccion-datos-content">
       <section class="privacy-hero">
         <div class="privacy-shell">
-          <span class="privacy-badge">Centro de Privacidad Clinica Arboleda</span>
+          <span class="privacy-badge">Centro de Privacidad Clínica Arboleda</span>
           <h1 class="privacy-title">
-            Proteccion de Datos, <span>Cookies y Terminos de Uso</span>
+            Protección de Datos, <span>Cookies y Términos de Uso</span>
           </h1>
           <p class="privacy-description">
-            En este espacio reunimos la informacion esencial sobre el tratamiento de datos personales, uso de cookies
+            En este espacio reunimos la información esencial sobre el tratamiento de datos personales, uso de cookies
             y condiciones generales aplicables a los usuarios de nuestros canales digitales.
           </p>
 
@@ -34,22 +34,22 @@
         <div class="privacy-shell">
           <div class="privacy-nav-card">
             <div class="privacy-nav-copy">
-              <h2>Informacion legal centralizada</h2>
+              <h2>Información legal centralizada</h2>
               <p>
-                Las opciones Proteccion de Datos Personales, Politica de Cookies y Terminos y Condiciones de Uso
-                ahora dirigen a esta misma page para que el paciente encuentre todo en un solo lugar.
+                Las opciones Protección de Datos Personales, Política de Cookies y Términos y Condiciones de Uso
+                ahora dirigen a esta misma página para que el paciente encuentre todo en un solo lugar.
               </p>
             </div>
 
             <div class="privacy-nav-actions">
               <button type="button" class="secondary-link" @click="irASeccion('proteccion')">
-                Ver proteccion de datos
+                Ver protección de datos
               </button>
               <button type="button" class="secondary-link" @click="irASeccion('cookies')">
                 Ver cookies
               </button>
               <button type="button" class="secondary-link" @click="irASeccion('terminos')">
-                Ver terminos
+                Ver términos
               </button>
             </div>
           </div>
@@ -59,8 +59,8 @@
       <section id="proteccion" class="privacy-section">
         <div class="privacy-shell">
           <div class="section-head">
-            <span class="section-kicker">1. Proteccion de Datos Personales</span>
-            <h2>Compromiso institucional con la confidencialidad y el uso responsable de la informacion</h2>
+            <span class="section-kicker">1. Protección de Datos Personales</span>
+            <h2>Compromiso institucional con la confidencialidad y el uso responsable de la información</h2>
           </div>
 
           <div class="content-panel">
@@ -68,21 +68,21 @@
               <article class="info-card">
                 <h3>Alcance</h3>
                 <p>
-                  Esta web esta orientada a personas naturales o juridicas con residencia en Ecuador, o que acceden
-                  desde Ecuador, para brindar informacion general sobre servicios hospitalarios y canales de contacto.
+                  Esta web está orientada a personas naturales o jurídicas con residencia en Ecuador, o que acceden
+                  desde Ecuador, para brindar información general sobre servicios hospitalarios y canales de contacto.
                 </p>
               </article>
               <article class="info-card">
                 <h3>Base legal</h3>
                 <p>
-                  El tratamiento de datos se realiza conforme a la Ley Organica de Proteccion de Datos Personales y a
-                  las obligaciones asistenciales, administrativas y de atencion al paciente aplicables.
+                  El tratamiento de datos se realiza conforme a la Ley Orgánica de Protección de Datos Personales y a
+                  las obligaciones asistenciales, administrativas y de atención al paciente aplicables.
                 </p>
               </article>
               <article class="info-card">
                 <h3>Finalidad</h3>
                 <p>
-                  Los datos personales se usan para gestionar consultas, coordinar servicios medicos, responder
+                  Los datos personales se usan para gestionar consultas, coordinar servicios médicos, responder
                   solicitudes y mantener la seguridad operativa de nuestros canales institucionales.
                 </p>
               </article>
@@ -92,16 +92,16 @@
               <h3>Disposiciones generales</h3>
               <ol>
                 <li>
-                  Al acceder a esta web, el usuario acepta las condiciones aqui contenidas y reconoce que el uso del
+                  Al acceder a esta web, el usuario acepta las condiciones aquí contenidas y reconoce que el uso del
                   sitio puede estar sujeto a validaciones, restricciones y controles de seguridad.
                 </li>
                 <li>
-                  La informacion publicada no reemplaza la consulta medica profesional, el diagnostico clinico ni la
-                  orientacion legal especializada.
+                  La información publicada no reemplaza la consulta médica profesional, el diagnóstico clínico ni la
+                  orientación legal especializada.
                 </li>
                 <li>
-                  El titular puede ejercer sus derechos de acceso, rectificacion, eliminacion, oposicion, portabilidad
-                  y suspension del tratamiento a traves del canal ARCO y del correo institucional de privacidad.
+                  El titular puede ejercer sus derechos de acceso, rectificación, eliminación, oposición, portabilidad
+                  y suspensión del tratamiento a través del canal ARCO y del correo institucional de privacidad.
                 </li>
               </ol>
             </div>
@@ -112,8 +112,8 @@
       <section id="cookies" class="privacy-section privacy-section-alt">
         <div class="privacy-shell">
           <div class="section-head">
-            <span class="section-kicker">2. Politica de Cookies</span>
-            <h2>Uso de cookies y tecnologias similares en nuestros canales digitales</h2>
+            <span class="section-kicker">2. Política de Cookies</span>
+            <h2>Uso de cookies y tecnologías similares en nuestros canales digitales</h2>
           </div>
 
           <div class="content-panel">
@@ -121,12 +121,12 @@
               <article class="info-card">
                 <h3>Cookies necesarias</h3>
                 <p>
-                  Son indispensables para el funcionamiento del sitio, la navegacion, la seguridad de sesion y la
-                  prestacion de funciones esenciales.
+                  Son indispensables para el funcionamiento del sitio, la navegación, la seguridad de sesión y la
+                  prestación de funciones esenciales.
                 </p>
               </article>
               <article class="info-card">
-                <h3>Cookies analiticas</h3>
+                <h3>Cookies analíticas</h3>
                 <p>
                   Permiten analizar patrones de uso para mejorar el rendimiento, el contenido y la experiencia general
                   del paciente dentro del sitio.
@@ -135,22 +135,22 @@
               <article class="info-card">
                 <h3>Cookies de preferencias</h3>
                 <p>
-                  Ayudan a recordar configuraciones del usuario y a ofrecer una navegacion mas personalizada cuando el
+                  Ayudan a recordar configuraciones del usuario y a ofrecer una navegación más personalizada cuando el
                   paciente regresa al sitio.
                 </p>
               </article>
             </div>
 
             <div class="text-block">
-              <h3>Control y gestion</h3>
+              <h3>Control y gestión</h3>
               <p>
-                El usuario puede aceptar, rechazar o eliminar cookies desde la configuracion de su navegador. La
-                desactivacion de determinadas cookies puede afectar la disponibilidad de algunas funciones del sitio.
+                El usuario puede aceptar, rechazar o eliminar cookies desde la configuración de su navegador. La
+                desactivación de determinadas cookies puede afectar la disponibilidad de algunas funciones del sitio.
               </p>
               <ul>
-                <li>Google Chrome: Configuracion, Privacidad y seguridad, Cookies y otros datos de sitios.</li>
+                <li>Google Chrome: Configuración, Privacidad y seguridad, Cookies y otros datos de sitios.</li>
                 <li>Mozilla Firefox: Ajustes, Privacidad y seguridad, Cookies y datos del sitio.</li>
-                <li>Microsoft Edge: Configuracion, Privacidad, busqueda y servicios, Cookies.</li>
+                <li>Microsoft Edge: Configuración, Privacidad, búsqueda y servicios, Cookies.</li>
                 <li>Safari: Preferencias, Privacidad, Gestionar datos del sitio web.</li>
               </ul>
             </div>
@@ -161,7 +161,7 @@
       <section id="terminos" class="privacy-section">
         <div class="privacy-shell">
           <div class="section-head">
-            <span class="section-kicker">3. Terminos y Condiciones de Uso</span>
+            <span class="section-kicker">3. Términos y Condiciones de Uso</span>
             <h2>Condiciones generales aplicables al uso de la plataforma</h2>
           </div>
 
@@ -169,11 +169,11 @@
             <div class="text-block">
               <h3>Condiciones esenciales</h3>
               <ul>
-                <li>El contenido del sitio tiene fines informativos y de orientacion institucional.</li>
-                <li>La clinica puede actualizar servicios, textos, funcionalidades y avisos legales sin previo aviso.</li>
-                <li>El usuario se compromete a proporcionar informacion veraz en formularios y canales de contacto.</li>
-                <li>No se permite el uso del sitio para fines ilicitos, fraudulentos o que afecten su seguridad.</li>
-                <li>La coordinacion final de citas, disponibilidad y horarios esta sujeta a validacion de la clinica.</li>
+                <li>El contenido del sitio tiene fines informativos y de orientación institucional.</li>
+                <li>La clínica puede actualizar servicios, textos, funcionalidades y avisos legales sin previo aviso.</li>
+                <li>El usuario se compromete a proporcionar información veraz en formularios y canales de contacto.</li>
+                <li>No se permite el uso del sitio para fines ilícitos, fraudulentos o que afecten su seguridad.</li>
+                <li>La coordinación final de citas, disponibilidad y horarios está sujeta a validación de la clínica.</li>
               </ul>
             </div>
 
@@ -181,15 +181,15 @@
               <article class="info-card">
                 <h3>Propiedad del contenido</h3>
                 <p>
-                  Los textos, logotipos, imagenes, marcas y recursos institucionales pertenecen a Clinica Arboleda o a
-                  sus respectivos titulares y no pueden reutilizarse sin autorizacion.
+                  Los textos, logotipos, imágenes, marcas y recursos institucionales pertenecen a Clínica Arboleda o a
+                  sus respectivos titulares y no pueden reutilizarse sin autorización.
                 </p>
               </article>
               <article class="info-card">
                 <h3>Canales oficiales</h3>
                 <p>
-                  Las respuestas oficiales sobre privacidad y derechos del titular se emiten unicamente a traves de
-                  nuestros formularios, correo institucional y canales validados por la clinica.
+                  Las respuestas oficiales sobre privacidad y derechos del titular se emiten únicamente a través de
+                  nuestros formularios, correo institucional y canales validados por la clínica.
                 </p>
               </article>
             </div>
@@ -201,9 +201,9 @@
         <div class="privacy-shell">
           <div class="cta-card">
             <div>
-              <h2>Necesitas ejercer un derecho o contactar al responsable?</h2>
+              <h2>¿Necesitas ejercer un derecho o contactar con el responsable?</h2>
               <p>
-                Puedes abrir el formulario ARCO o escribir directamente al canal institucional de proteccion de datos.
+                Puedes abrir el formulario ARCO o escribir directamente al canal institucional de protección de datos.
               </p>
             </div>
 

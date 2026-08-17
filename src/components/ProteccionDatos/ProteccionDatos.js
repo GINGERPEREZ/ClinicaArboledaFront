@@ -20,17 +20,17 @@ export default {
       accesosLegales: [
         {
           id: 'proteccion',
-          titulo: 'Proteccion de Datos',
+          titulo: 'Protección de Datos',
           resumen: 'Tratamiento, finalidad y base legal.',
         },
         {
           id: 'cookies',
-          titulo: 'Politica de Cookies',
-          resumen: 'Uso de cookies y gestion de preferencias.',
+          titulo: 'Política de Cookies',
+          resumen: 'Uso de cookies y gestión de preferencias.',
         },
         {
           id: 'terminos',
-          titulo: 'Terminos de Uso',
+          titulo: 'Términos de Uso',
           resumen: 'Condiciones generales de la plataforma.',
         },
       ],
@@ -66,7 +66,7 @@ export default {
       this.$router.push('/derechos-arco');
     },
     abrirCorreoDpo() {
-      window.location.href = `mailto:${this.correoDpo}?subject=Consulta%20sobre%20proteccion%20de%20datos`;
+      window.location.href = `mailto:${this.correoDpo}?subject=${encodeURIComponent('Consulta sobre protección de datos')}`;
     },
   },
 };

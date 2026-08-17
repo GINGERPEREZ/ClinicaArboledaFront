@@ -331,6 +331,19 @@
   color: #16544c;
 }
 
+/* Los tres accesos de la tarjeta de navegacion usan el mismo verde que el
+   resto de botones del sitio, en vez del blanco con borde. */
+.proteccion-datos-container .privacy-nav-actions .secondary-link {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--pd-acento) 0%, var(--pd-acento-fuerte) 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(66, 168, 161, 0.3);
+}
+
+.proteccion-datos-container .privacy-nav-actions .secondary-link:hover {
+  box-shadow: 0 14px 28px rgba(66, 168, 161, 0.38);
+}
+
 /* Dentro de la tarjeta oscura el secundario se invierte para que se lea */
 .proteccion-datos-container .cta-card .secondary-link {
   border-color: rgba(255, 255, 255, 0.45);
