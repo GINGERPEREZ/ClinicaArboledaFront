@@ -9,8 +9,8 @@
           <span class="arco-badge">Canal Oficial de Derechos ARCO+ (Ecuador)</span>
           <h1>Solicitud de Ejercicio de <span>Derechos del Titular</span></h1>
           <p>
-            Canal formal para ejercer tus derechos de Acceso, Rectificacion, Eliminacion, Oposicion,
-            Portabilidad o Suspension de tus datos de acuerdo a la LOPDP.
+            Canal formal para ejercer tus derechos de Acceso, Rectificación, Eliminación, Oposición,
+            Portabilidad o Suspensión de tus datos de acuerdo con la LOPDP.
           </p>
         </div>
       </section>
@@ -20,11 +20,11 @@
           <div class="arco-form-card">
             <div class="arco-form-top">
               <div class="arco-form-top-copy">
-                <strong>Prefieres presentar tu solicitud de forma fisica o presencial en la clinica?</strong>
-                <span>Tambien puedes descargar el formato oficial en PDF.</span>
+                <strong>¿Prefieres presentar tu solicitud de forma física o presencial en la clínica?</strong>
+                <span>También puedes descargar el formato oficial en PDF.</span>
               </div>
               <a class="arco-download" :href="pdfUrl" download>
-                Descargar Formato Fisico (PDF)
+                Descargar Formato Físico (PDF)
               </a>
             </div>
 
@@ -40,7 +40,7 @@
                     @click="formulario.calidadSolicitante = 'titular'"
                   >
                     <strong>Titular de los Datos</strong>
-                    <span>Ejerce directamente tus derechos sobre datos personales o medicos.</span>
+                    <span>Ejerce directamente tus derechos sobre datos personales o médicos.</span>
                   </button>
 
                   <button
@@ -60,15 +60,15 @@
                     <input v-model.trim="formulario.nombre" type="text" placeholder="Ej. Carlos Eduardo Mendoza" />
                   </label>
                   <label>
-                    <span>Tipo y Numero de Identificacion *</span>
-                    <input v-model.trim="formulario.identificacion" type="text" placeholder="Cedula, DNI o Pasaporte" />
+                    <span>Tipo y Número de Identificación *</span>
+                    <input v-model.trim="formulario.identificacion" type="text" placeholder="Cédula, DNI o Pasaporte" />
                   </label>
                   <label>
-                    <span>Correo Electronico de Notificacion *</span>
+                    <span>Correo Electrónico de Notificación *</span>
                     <input v-model.trim="formulario.correo" type="email" placeholder="ejemplo@correo.com" />
                   </label>
                   <label>
-                    <span>Telefono de Contacto (WhatsApp/Movil) *</span>
+                    <span>Teléfono de Contacto (WhatsApp/Móvil) *</span>
                     <input v-model.trim="formulario.telefono" type="text" placeholder="0991234567" />
                   </label>
                 </div>
@@ -88,20 +88,20 @@
                 </label>
 
                 <label class="field-full">
-                  <span>Descripcion detallada y fundamentacion de la solicitud *</span>
+                  <span>Descripción detallada y fundamentación de la solicitud *</span>
                   <textarea
                     v-model.trim="formulario.descripcion"
                     rows="5"
-                    placeholder="Describe con claridad y precision la informacion o historial al que te refieres, el motivo de tu solicitud o los datos especificos a corregir."
+                    placeholder="Describe con claridad y precisión la información o historial al que te refieres, el motivo de tu solicitud o los datos específicos a corregir."
                   ></textarea>
                 </label>
               </section>
 
               <section class="arco-block">
-                <h2>3. Documentos Adjuntos de Identificacion y Respaldo</h2>
+                <h2>3. Documentos Adjuntos de Identificación y Respaldo</h2>
 
                 <label class="field-full">
-                  <span>Copia de Cedula de Identidad / Pasaporte (Anverso y Reverso) *</span>
+                  <span>Copia de Cédula de Identidad / Pasaporte (Anverso y Reverso) *</span>
                   <input type="file" accept=".pdf,.jpg,.jpeg,.png" @change="registrarArchivo($event, 'identificacion')" />
                 </label>
 
@@ -117,16 +117,16 @@
 
                 <div class="arco-note">
                   <p>
-                    Plazo legal de respuesta: Conforme al Art. 47 de la LOPDP, Clinica Arboleda S.A. tramitara y
-                    notificara la contestacion formal motivada en un plazo maximo de quince (15) dias habiles posteriores a la recepcion completa de esta solicitud.
+                    Plazo legal de respuesta: Conforme al Art. 47 de la LOPDP, Clínica Arboleda S.A. tramitará y
+                    notificará la contestación formal motivada en un plazo máximo de quince (15) días hábiles posteriores a la recepción completa de esta solicitud.
                   </p>
                 </div>
 
                 <label class="checkbox-line">
                   <input v-model="formulario.declaracion" type="checkbox" />
                   <span>
-                    Declaro bajo juramento que los datos ingresados y la documentacion adjunta son legitimos y veraces,
-                    autorizando su verificacion para atender esta solicitud formal de privacidad.
+                    Declaro bajo juramento que los datos ingresados y la documentación adjunta son legítimos y veraces,
+                    autorizando su verificación para atender esta solicitud formal de privacidad.
                   </span>
                 </label>
               </section>

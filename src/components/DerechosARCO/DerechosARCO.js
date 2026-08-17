@@ -2,12 +2,12 @@ import HeaderAnth from '../HeaderAnth/HeaderAnth.vue';
 import FooterAnth from '../FooterAnth/FooterAnth.vue';
 
 const DERECHOS_DISPONIBLES = [
-  '1. Derecho de Acceso (Art. 13 LOPDP) — Conocer que datos personales o medicos existen',
-  '2. Derecho de Rectificacion y Actualizacion (Art. 14 LOPDP) — Modificar datos erroneos',
-  '3. Derecho de Eliminacion / Supresion (Art. 15 LOPDP) — Dar de baja datos no asistenciales',
-  '4. Derecho de Oposicion (Art. 16 LOPDP) — Oponerme al tratamiento para ciertos fines',
+  '1. Derecho de Acceso (Art. 13 LOPDP) — Conocer qué datos personales o médicos existen',
+  '2. Derecho de Rectificación y Actualización (Art. 14 LOPDP) — Modificar datos erróneos',
+  '3. Derecho de Eliminación / Supresión (Art. 15 LOPDP) — Dar de baja datos no asistenciales',
+  '4. Derecho de Oposición (Art. 16 LOPDP) — Oponerme al tratamiento para ciertos fines',
   '5. Derecho a la Portabilidad (Art. 17 LOPDP) — Solicitar copia en formato interoperable',
-  '6. Derecho a la Suspension del Tratamiento (Art. 19 LOPDP) — Detener temporalmente el uso',
+  '6. Derecho a la Suspensión del Tratamiento (Art. 19 LOPDP) — Detener temporalmente el uso',
 ];
 
 export default {
@@ -71,7 +71,7 @@ export default {
       } = this.formulario;
 
       if (!nombre || !identificacion || !correo || !telefono || !derecho || !descripcion || !identificacionArchivo || !declaracion) {
-        this.error = 'Completa los campos obligatorios, adjunta tu identificacion y acepta la declaracion para continuar.';
+        this.error = 'Completa los campos obligatorios, adjunta tu identificación y acepta la declaración para continuar.';
         return;
       }
 
@@ -82,12 +82,12 @@ export default {
         '',
         `Calidad del solicitante: ${calidadSolicitante === 'titular' ? 'Titular de los datos' : 'Representante legal / apoderado'}`,
         `Nombre del titular: ${nombre}`,
-        `Identificacion: ${identificacion}`,
-        `Correo de notificacion: ${correo}`,
-        `Telefono: ${telefono}`,
+        `Identificación: ${identificacion}`,
+        `Correo de notificación: ${correo}`,
+        `Teléfono: ${telefono}`,
         `Derecho solicitado: ${derecho}`,
         '',
-        'Descripcion de la solicitud:',
+        'Descripción de la solicitud:',
         descripcion,
         '',
         `Archivo principal adjunto por el solicitante: ${identificacionArchivo.name}`,
