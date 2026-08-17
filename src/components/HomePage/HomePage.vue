@@ -79,7 +79,7 @@
             :to="{ path: '/agendamiento-citas', query: { especialidad: especialidad.nombre } }"
           >
             <div class="categoria-icon">
-              <span class="categoria-icon-svg" v-html="especialidad.icon"></span>
+              <img :src="especialidad.icon" class="categoria-icon-img" alt="" loading="lazy" />
             </div>
             <h3>{{ especialidad.nombre }}</h3>
             <p class="categoria-stats">

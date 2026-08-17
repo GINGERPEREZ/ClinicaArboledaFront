@@ -84,7 +84,7 @@
                 :class="['especialidad-card', { selected: selectedEspecialidad?.id === esp.id }]"
                 @click="selectEspecialidad(esp)"
               >
-                <span class="especialidad-icon" v-html="esp.icon"></span>
+                <img :src="esp.icon" class="especialidad-icon-img" alt="" loading="lazy" />
                 <span class="especialidad-name">{{ esp.nombre }}</span>
               </button>
               </div>
@@ -127,7 +127,7 @@
                 @click="selectMedico(med)"
               >
                 <div class="medico-avatar doctor-avatar-emoji">
-                  <span class="especialidad-icon doctor-specialty-icon" v-html="selectedEspecialidad?.icon"></span>
+                  <img :src="selectedEspecialidad?.icon" class="especialidad-icon-img doctor-specialty-icon" alt="" loading="lazy" />
                 </div>
                 <div class="medico-info">
                   <h4 class="medico-name">{{ med.nombre }}</h4>
