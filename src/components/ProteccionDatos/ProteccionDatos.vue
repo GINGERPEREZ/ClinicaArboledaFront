@@ -7,7 +7,9 @@
       <section class="privacy-hero">
         <div class="privacy-shell">
           <span class="privacy-badge">Centro de Privacidad Clinica Arboleda</span>
-          <h1 class="privacy-title">Proteccion de Datos, Cookies y Terminos de Uso</h1>
+          <h1 class="privacy-title">
+            Proteccion de Datos, <span>Cookies y Terminos de Uso</span>
+          </h1>
           <p class="privacy-description">
             En este espacio reunimos la informacion esencial sobre el tratamiento de datos personales, uso de cookies
             y condiciones generales aplicables a los usuarios de nuestros canales digitales.
