@@ -4,24 +4,31 @@ const NOTICIAS_KEY = 'clinica_noticias';
 export const defaultCarouselSlides = [
   {
     id: 1,
-    imagen: '/Banners/opt/Banner1.jpg',
+    imagen: '/Banners/Banner1.jpg',
     titulo: 'Amor desde el',
     titulo_highlight: 'primer latido.',
     subtitulo: 'Cuidamos de tu salud y la de tu familia con los mejores especialistas.'
   },
   {
     id: 2,
-    imagen: '/Banners/opt/Banner2.jpg',
+    imagen: '/Banners/Banner2.jpg',
     titulo: 'Salud y bienestar',
     titulo_highlight: 'para toda la familia.',
     subtitulo: 'Contamos con especialistas en múltiples áreas médicas para ti y los tuyos.'
   },
   {
     id: 3,
-    imagen: '/Banners/opt/Banner3.jpg',
+    imagen: '/Banners/Banner3.jpg',
     titulo: 'Atención médica',
     titulo_highlight: 'de calidad.',
     subtitulo: 'Instalaciones modernas y tecnología de última generación a tu servicio.'
+  },
+  {
+    id: 4,
+    imagen: '/Banners/Banner4.jpg',
+    titulo: 'Cuidamos de ti',
+    titulo_highlight: 'en cada etapa.',
+    subtitulo: 'Cuidamos de ti con experiencia, compromiso y dedicación.'
   }
 ];
 

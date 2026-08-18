@@ -51,9 +51,11 @@ export default {
       bannerPositions: [
         'center 12%',
         'center 42%',
-        'center 28%'
+        'center 28%',
+        'center center'
       ],
       bannerSizes: [
+        'cover',
         'cover',
         'cover',
         'cover'
