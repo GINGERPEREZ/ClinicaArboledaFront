@@ -7,28 +7,36 @@ export const defaultCarouselSlides = [
     imagen: '/Banners/Banner1.jpg',
     titulo: 'Amor desde el',
     titulo_highlight: 'primer latido.',
-    subtitulo: 'Cuidamos de tu salud y la de tu familia con los mejores especialistas.'
+    subtitulo: 'Cuidamos de tu salud y la de tu familia con los mejores especialistas.',
+    cta_texto: 'Conoce Sobre Nosotros',
+    cta_enlace: '/sobre-nosotros'
   },
   {
     id: 2,
     imagen: '/Banners/Banner2.jpg',
     titulo: 'Salud y bienestar',
     titulo_highlight: 'para toda la familia.',
-    subtitulo: 'Contamos con especialistas en múltiples áreas médicas para ti y los tuyos.'
+    subtitulo: 'Contamos con especialistas en múltiples áreas médicas para ti y los tuyos.',
+    cta_texto: 'Nuestra Historia',
+    cta_enlace: '/historia'
   },
   {
     id: 3,
     imagen: '/Banners/Banner3.jpg',
     titulo: 'Atención médica',
     titulo_highlight: 'de calidad.',
-    subtitulo: 'Instalaciones modernas y tecnología de última generación a tu servicio.'
+    subtitulo: 'Instalaciones modernas y tecnología de última generación a tu servicio.',
+    cta_texto: 'Conoce Nuestras Instalaciones',
+    cta_enlace: '/instalaciones'
   },
   {
     id: 4,
     imagen: '/Banners/Banner4.jpg',
     titulo: 'Cuidamos de ti',
     titulo_highlight: 'en cada etapa.',
-    subtitulo: 'Cuidamos de ti con experiencia, compromiso y dedicación.'
+    subtitulo: 'Cuidamos de ti con experiencia, compromiso y dedicación.',
+    cta_texto: 'Conoce Nuestro Equipo Medico',
+    cta_enlace: '/equipo-medico'
   }
 ];
 
@@ -120,9 +128,22 @@ function cloneDefaults(source) {
   return source.map((item) => ({ ...item }));
 }
 
+function mergeCtaDefaults(slides) {
+  const defaults = cloneDefaults(defaultCarouselSlides);
+  return slides.map((slide, i) => {
+    if (slide.cta_texto && slide.cta_enlace) return slide;
+    const fallback = defaults[i] || defaults[defaults.length - 1];
+    return {
+      ...slide,
+      cta_texto: slide.cta_texto || fallback.cta_texto,
+      cta_enlace: slide.cta_enlace || fallback.cta_enlace
+    };
+  });
+}
+
 export function loadCarouselSlides() {
   const parsed = parseJson(localStorage.getItem(CAROUSEL_KEY));
-  if (Array.isArray(parsed)) return parsed;
+  if (Array.isArray(parsed)) return mergeCtaDefaults(parsed);
   return cloneDefaults(defaultCarouselSlides);
 }
 

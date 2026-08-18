@@ -23,8 +23,8 @@
       </h1>
       <p class="hero-main-subtitle">{{ activeSlideData.subtitulo }}</p>
       <div class="hero-main-actions">
-        <button class="hero-cta-primary" type="button" @click="$router.push('/equipo-medico')">
-          Conoce Nuestro Equipo Medico <span>→</span>
+        <button class="hero-cta-primary" type="button" @click="$router.push(activeSlideData.cta_enlace || '/equipo-medico')">
+          {{ activeSlideData.cta_texto || 'Conoce Nuestro Equipo Medico' }} <span>→</span>
         </button>
       </div>
     </div>
@@ -209,13 +209,13 @@ export default {
   inset: 0;
   background:
     /* Capa 1: vignette radial oscuro en bordes */
-    radial-gradient(ellipse at 60% 50%, transparent 0%, transparent 20%, rgba(10, 40, 38, 0.25) 50%, rgba(10, 40, 38, 0.55) 80%, rgba(8, 30, 28, 0.75) 100%),
+    radial-gradient(ellipse at 60% 50%, transparent 0%, transparent 20%, rgba(10, 40, 38, 0.15) 50%, rgba(10, 40, 38, 0.35) 80%, rgba(8, 30, 28, 0.5) 100%),
     /* Capa 2: gradient lateral izquierdo para texto legible */
-    linear-gradient(90deg, rgba(10, 40, 38, 0.7) 0%, rgba(10, 40, 38, 0.35) 30%, rgba(10, 40, 38, 0.1) 55%, transparent 75%),
+    linear-gradient(90deg, rgba(10, 40, 38, 0.45) 0%, rgba(10, 40, 38, 0.2) 30%, rgba(10, 40, 38, 0.05) 55%, transparent 75%),
     /* Capa 3: gradient inferior para dots y navegacion */
-    linear-gradient(0deg, rgba(8, 25, 23, 0.65) 0%, rgba(8, 25, 23, 0.15) 25%, transparent 45%),
+    linear-gradient(0deg, rgba(8, 25, 23, 0.45) 0%, rgba(8, 25, 23, 0.1) 25%, transparent 45%),
     /* Capa 4: sutil tinte color corporativo */
-    linear-gradient(135deg, rgba(18, 63, 60, 0.12) 0%, transparent 60%);
+    linear-gradient(135deg, rgba(18, 63, 60, 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
 

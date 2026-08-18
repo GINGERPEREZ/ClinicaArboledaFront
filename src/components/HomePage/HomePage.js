@@ -148,10 +148,10 @@ export default {
 
       // Indicadores destacados
       indicadoresResumen: [
-        { valor: '20+', label: 'Profesionales Médicos' },
-        { valor: '4.8*', label: 'Satisfacción' },
+        { valor: '40+', label: 'Profesionales Médicos' },
+        { valor: '4.8+', label: 'Satisfacción' },
         { valor: '1.000+', label: 'Pacientes atendidos al mes' },
-        { valor: '19', label: 'Aseguradoras aliadas' }
+        { valor: '18', label: 'Aseguradoras aliadas' }
       ],
       
       // Mapeo de especialidades (para compatibilidad)
@@ -311,7 +311,7 @@ export default {
       const stats = this.$refs.statsSection;
       if (!stats) return;
       if (!('IntersectionObserver' in window)) {
-        this.statsAnimados = { medicos: 20, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 19 };
+        this.statsAnimados = { medicos: 40, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 18 };
         return;
       }
       this.statsObserver = new IntersectionObserver((entries) => {
@@ -328,7 +328,7 @@ export default {
     animarIndicadores() {
       const duracion = 2000;
       const inicio = performance.now();
-      const finales = { medicos: 20, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 19 };
+      const finales = { medicos: 40, satisfaccion: 4.8, pacientes: 1000, aseguradoras: 18 };
       const paso = (ahora) => {
         const progreso = Math.min((ahora - inicio) / duracion, 1);
         const easing = 1 - Math.pow(1 - progreso, 3);
