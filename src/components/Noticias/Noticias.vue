@@ -14,17 +14,19 @@
         </div>
 
         <div class="noticias-slider-outer">
-          <div class="noticias-slider-wrapper" ref="sliderWrapper">
-            <div class="noticias-slider-track" :style="trackStyle">
-              <article
-                v-for="(item, idx) in loopedNoticias"
-                :key="`${item.id}-${idx}`"
-                class="noticia-card"
-                :style="{ width: cardWidth + 'px' }"
-              >
+          <Swiper
+            v-bind="swiperOptions"
+            :modules="swiperModules"
+            class="noticias-swiper"
+          >
+            <SwiperSlide
+              v-for="item in noticias"
+              :key="item.id"
+            >
+              <article class="noticia-card">
                 <div class="noticia-card-inner">
                   <div class="noticia-image-wrapper">
-                    <img :src="item.imagen" :alt="item.titulo" class="noticia-image" />
+                    <img :src="item.imagen" :alt="item.titulo" class="noticia-image" loading="lazy" />
                   </div>
                   <div class="noticia-body">
                     <p class="noticia-meta">{{ item.autor }} | {{ item.fecha }}</p>
@@ -34,17 +36,8 @@
                   </div>
                 </div>
               </article>
-            </div>
-          </div>
-
-          <div class="noticias-dots">
-            <span
-              v-for="i in noticias.length"
-              :key="i"
-              :class="['dot', { active: (currentIndex % noticias.length) === i - 1 }]"
-              @click="goToSlide(i - 1)"
-            ></span>
-          </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
     </main>
@@ -55,5 +48,3 @@
 
 <script src="./Noticias.js"></script>
 <style src="./Noticias.css"></style>
-
-
