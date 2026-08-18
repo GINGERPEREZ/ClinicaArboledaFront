@@ -127,25 +127,95 @@ export default {
 
 .hero-slide {
   position: absolute;
-  inset: 0;
+  inset: -20px;
   opacity: 0;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease, filter 0.8s ease;
   background-repeat: no-repeat;
   backface-visibility: hidden;
+  /* Focal Point: radial mask que difumina bordes y centra la atencion */
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 55% 45%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 80% at 55% 45%, black 40%, transparent 100%);
+  /* Background Blur en slides inactivos */
+  filter: blur(6px) brightness(0.85);
 }
 
 .hero-slide.active {
   opacity: 1;
+  filter: blur(0px) brightness(1);
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
-/* ── Vignette + gradient overlay ── */
+/* Ken Burns Effect: zoom suave + pan que le da vida cinematica */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.08) translate(-1%, -0.5%);
+  }
+  100% {
+    transform: scale(1.04) translate(0.5%, 0.3%);
+  }
+}
+
+@keyframes kenBurns2 {
+  0% {
+    transform: scale(1.05) translate(1%, 0);
+  }
+  50% {
+    transform: scale(1) translate(-0.5%, 0.8%);
+  }
+  100% {
+    transform: scale(1.08) translate(0%, -0.3%);
+  }
+}
+
+@keyframes kenBurns3 {
+  0% {
+    transform: scale(1) translate(0.5%, -0.5%);
+  }
+  50% {
+    transform: scale(1.06) translate(-0.8%, 0.5%);
+  }
+  100% {
+    transform: scale(1.02) translate(0.3%, -0.2%);
+  }
+}
+
+@keyframes kenBurns4 {
+  0% {
+    transform: scale(1.03) translate(-0.5%, 0.3%);
+  }
+  50% {
+    transform: scale(1) translate(0.8%, -0.6%);
+  }
+  100% {
+    transform: scale(1.07) translate(-0.2%, 0.4%);
+  }
+}
+
+.hero-slide-0.active { animation-name: kenBurns; }
+.hero-slide-1.active { animation-name: kenBurns2; }
+.hero-slide-2.active { animation-name: kenBurns3; }
+.hero-slide-3.active { animation-name: kenBurns4; }
+
+/* ── Vignette + gradient overlay (multi-capa para profundidad) ── */
 .hero-slide::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 60% 50%, transparent 0%, transparent 25%, rgba(18, 63, 60, 0.15) 50%, rgba(18, 63, 60, 0.45) 80%, rgba(18, 63, 60, 0.6) 100%),
-    linear-gradient(90deg, rgba(18, 63, 60, 0.6) 0%, rgba(18, 63, 60, 0.25) 35%, rgba(18, 63, 60, 0.08) 55%, transparent 75%);
+    /* Capa 1: vignette radial oscuro en bordes */
+    radial-gradient(ellipse at 60% 50%, transparent 0%, transparent 20%, rgba(10, 40, 38, 0.25) 50%, rgba(10, 40, 38, 0.55) 80%, rgba(8, 30, 28, 0.75) 100%),
+    /* Capa 2: gradient lateral izquierdo para texto legible */
+    linear-gradient(90deg, rgba(10, 40, 38, 0.7) 0%, rgba(10, 40, 38, 0.35) 30%, rgba(10, 40, 38, 0.1) 55%, transparent 75%),
+    /* Capa 3: gradient inferior para dots y navegacion */
+    linear-gradient(0deg, rgba(8, 25, 23, 0.65) 0%, rgba(8, 25, 23, 0.15) 25%, transparent 45%),
+    /* Capa 4: sutil tinte color corporativo */
+    linear-gradient(135deg, rgba(18, 63, 60, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -328,6 +398,8 @@ export default {
 
   .hero-slide {
     background-position: 58% center !important;
+    -webkit-mask-image: radial-gradient(ellipse 90% 75% at 58% 45%, black 35%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 75% at 58% 45%, black 35%, transparent 100%);
   }
 }
 </style>
