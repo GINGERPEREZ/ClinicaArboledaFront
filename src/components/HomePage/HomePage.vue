@@ -122,20 +122,45 @@
           </div>
         </div>
 
-        <div class="editorial-services-grid">
-          <article
-            v-for="servicio in serviciosDestacados"
-            :key="servicio.id"
-            class="editorial-service-card"
+        <div class="editorial-services-carousel-wrapper">
+          <Swiper
+            v-bind="swiperServiciosOptions"
+            :modules="swiperServiciosModules"
+            class="editorial-services-swiper"
+            @swiper="onServiciosSwiperInit"
+            @touch-start="stopServiciosAutoplay"
           >
-            <div class="editorial-service-image">
-              <img :src="servicio.imagen" :alt="servicio.nombre" loading="lazy" decoding="async" />
-            </div>
-            <div class="editorial-service-body">
-              <h3>{{ servicio.nombre }}</h3>
-              <p>{{ servicio.descripcion }}</p>
-            </div>
-          </article>
+            <SwiperSlide
+              v-for="servicio in serviciosDestacados"
+              :key="servicio.id"
+            >
+              <article class="editorial-service-card">
+                <div class="editorial-service-image">
+                  <img :src="servicio.imagen" :alt="servicio.nombre" loading="lazy" decoding="async" />
+                  <div class="editorial-service-gradient"></div>
+                  <div class="editorial-service-overlay">
+                    <h3>{{ servicio.nombre }}</h3>
+                    <span v-if="servicio.nuevo" class="editorial-service-badge">Nuevo</span>
+                    <button
+                      class="editorial-service-toggle"
+                      :class="{ active: expandedServices.includes(servicio.id) }"
+                      @click.stop="toggleServiceDesc(servicio.id)"
+                      :aria-label="expandedServices.includes(servicio.id) ? 'Ocultar descripción' : 'Ver más'"
+                      type="button"
+                    >+</button>
+                  </div>
+                </div>
+                <div class="editorial-service-body" :class="{ expanded: expandedServices.includes(servicio.id) }">
+                  <transition name="desc-expand">
+                    <p
+                      v-show="expandedServices.includes(servicio.id)"
+                      class="editorial-service-desc"
+                    >{{ servicio.descripcion }}</p>
+                  </transition>
+                </div>
+              </article>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 

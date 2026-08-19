@@ -5,6 +5,10 @@ import FooterAnth from "../FooterAnth/FooterAnth.vue";
 import InstalacionesSection from "../InstalacionesSection/InstalacionesSection.vue";
 import HomeBannerCarousel from "./HomeBannerCarousel.vue";
 import { loadNoticias } from '@/utils/contentStore';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export default {
   name: "HomePage",
@@ -13,6 +17,8 @@ export default {
     FooterAnth,
     InstalacionesSection,
     HomeBannerCarousel,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
@@ -87,30 +93,128 @@ export default {
       ],
 
       // Servicios destacados
+      expandedServices: [],
+      serviciosSwiperInstance: null,
+      swiperServiciosModules: [Autoplay, Navigation],
+      swiperServiciosOptions: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: false,
+        lazy: true,
+        preloadImages: false,
+        watchOverflow: true,
+        navigation: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        speed: 400,
+        breakpoints: {
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 16
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 22
+          }
+        }
+      },
       serviciosDestacados: [
         {
           id: 1,
-          nombre: 'Hospitalización',
-          descripcion: 'Contamos con habitaciones cómodas y seguras equipadas con tecnología médica de última generación para tu recuperación.',
-          imagen: '/Servicios/opt/Hospitalizacion.jpg'
+          nombre: 'Ambulancia (incluye UCI y Neo)',
+          descripcion: 'Respuesta rápida y traslado médico especializado ante urgencias y emergencias. Unidades modernas equipadas como UCI móvil (Cuidados Intensivos adultos) y neonatal, preparadas para soporte vital avanzado y atención médica crítica continua.',
+          imagen: '/Servicios/Ambulancia.jpg'
         },
         {
           id: 2,
-          nombre: 'Óptica',
-          descripcion: 'Servicio integral de salud visual con los mejores especialistas y equipos de diagnóstico para cuidar tu visión.',
-          imagen: '/Servicios/opt/Optica1.jpg'
+          nombre: 'Cirugía',
+          descripcion: 'Quirófanos modernos equipados con tecnología de vanguardia para procedimientos de alta y mediana complejidad. Brindamos máxima seguridad, precisión y excelencia médica con un equipo quirúrgico multidisciplinario altamente calificado.',
+          imagen: '/Servicios/Cirugía.jpg'
         },
         {
           id: 3,
-          nombre: 'Pediatría',
-          descripcion: 'Atención especializada para el cuidado y desarrollo de tus hijos, con un equipo médico dedicado exclusivamente a los más pequeños.',
-          imagen: '/Servicios/opt/Pediatrico2.jpg'
+          nombre: 'Consulta externa',
+          descripcion: 'Atención médica integral en diversas especialidades para la prevención, diagnóstico oportuno y tratamiento personalizado de patologías ambulatorias, con el respaldo de médicos especialistas certificados.',
+          imagen: '/Servicios/Consulta externa.jpg'
         },
         {
           id: 4,
+          nombre: 'Doctor en casa',
+          descripcion: 'Cuidado de la salud en la comodidad de tu hogar, brindamos consulta de medicina general y procedimientos de enfermería profesional, como sueroterapia, administración de medicación, curaciones y toma de signos vitales, con calidez y rapidez.',
+          imagen: '/Servicios/Doctor en casa.jpg',
+          nuevo: true
+        },
+        {
+          id: 5,
+          nombre: 'Emergencia',
+          descripcion: 'Respuesta médica inmediata las 24 horas del día. Equipamiento avanzado, áreas de observación y un equipo médico multidisciplinario preparado para resolver cuadros críticos con rapidez y precisión.',
+          imagen: '/Servicios/Emergencia.jpg'
+        },
+        {
+          id: 6,
+          nombre: 'Endoscopia',
+          descripcion: 'Estudios diagnósticos y terapéuticos avanzados (endoscopía alta y colonoscopía) para la detección temprana y manejo oportuno de afecciones gastrointestinales con total confort y seguridad para el paciente.',
+          imagen: '/Servicios/Endoscopia.jpg'
+        },
+        {
+          id: 7,
+          nombre: 'Fisioterapia',
+          descripcion: 'Tratamientos especializados para restaurar el movimiento, aliviar el dolor y acelerar la recuperación física tras lesiones o cirugías, adaptados a cada etapa del paciente.',
+          imagen: '/Servicios/Fisioterapia.jpg'
+        },
+        {
+          id: 8,
+          nombre: 'Hospitalización',
+          descripcion: 'Habitaciones diseñadas para brindar máximo confort, privacidad y seguridad durante el proceso de recuperación. Equipadas con tecnología médica avanzada y monitoreo asistencial 24/7 a cargo de un equipo médico y de enfermería altamente capacitado.',
+          imagen: '/Servicios/Hospitalización.jpg'
+        },
+        {
+          id: 9,
           nombre: 'Imagenología',
           descripcion: 'Realizamos estudios diagnósticos por imagen con equipos modernos y personal capacitado para una atención precisa y oportuna.',
-          imagen: '/Servicios/opt/Imagenologia1.jpg'
+          imagen: '/Servicios/Imagenología.jpg'
+        },
+        {
+          id: 10,
+          nombre: 'Laboratorio Clínico',
+          descripcion: 'Análisis clínicos de rutina y alta complejidad con estrictos estándares de control de calidad. Equipos automatizados de última generación y personal especializado para garantizar resultados confiables, precisos y con tiempos de respuesta oportunos.',
+          imagen: '/Servicios/Laboratorio Clínico.jpg'
+        },
+        {
+          id: 11,
+          nombre: 'Neonatología',
+          descripcion: 'Espacios seguros y equipamiento de vanguardia diseñados para el cuidado del bebé desde sus primeras horas de vida. Cuidado médico continuo con enfoque en el vínculo familiar y una estancia confortable y protegida.',
+          imagen: '/Servicios/Neonatología.jpg'
+        },
+        {
+          id: 12,
+          nombre: 'Óptica',
+          descripcion: 'Exámenes visuales completos y soluciones ópticas personalizadas. Lentes oftálmicos, de contacto y armazones de vanguardia para garantizar una visión nítida, cómoda y protegida.',
+          imagen: '/Servicios/Óptica.jpg'
+        },
+        {
+          id: 13,
+          nombre: 'Hiperbárica',
+          descripcion: 'Terapia médica de vanguardia con oxígeno al 100% a alta presión. Promueve la oxigenación celular profunda, desinflamación y rápida regeneración tisular en procesos postoperatorios, lesiones y heridas crónicas.',
+          imagen: '/Servicios/Oxigenoterapia-Hiperbárica.jpg'
+        },
+        {
+          id: 14,
+          nombre: 'Pediatría',
+          descripcion: 'Atención especializada para el cuidado y desarrollo de tus hijos, con un equipo médico dedicado exclusivamente a los más pequeños.',
+          imagen: '/Servicios/Pediatría.jpg'
+        },
+        {
+          id: 15,
+          nombre: 'Terapia intensiva',
+          descripcion: 'Atención médica continua y de alta complejidad para pacientes en estado crítico. Contamos con tecnología de soporte vital avanzado, monitoreo hemodinámico permanente y un equipo multidisciplinario de intensivistas y enfermería especializada comprometidos con la estabilización y pronta recuperación del paciente.',
+          imagen: '/Servicios/Terapia intensiva.jpg'
         }
       ],
 
@@ -280,6 +384,23 @@ export default {
     },
   },
   methods: {
+    onServiciosSwiperInit(swiper) {
+      this.serviciosSwiperInstance = swiper;
+    },
+    stopServiciosAutoplay() {
+      if (this.serviciosSwiperInstance && this.serviciosSwiperInstance.autoplay) {
+        this.serviciosSwiperInstance.autoplay.stop();
+      }
+    },
+    toggleServiceDesc(id) {
+      this.stopServiciosAutoplay();
+      const idx = this.expandedServices.indexOf(id);
+      if (idx === -1) {
+        this.expandedServices.push(id);
+      } else {
+        this.expandedServices.splice(idx, 1);
+      }
+    },
     iniciarCarruselNoticias() {
       this.detenerCarruselNoticias();
       if (this.noticiasPreview.length <= 1) return;
