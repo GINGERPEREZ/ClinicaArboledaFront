@@ -12,7 +12,7 @@
     <section class="history-hero">
       <div class="history-hero-inner">
         <span class="history-kicker">Compromiso y crecimiento sostenido</span>
-        <h1 class="page-title">Más de 20 años cuidando <span>la salud de tu familia</span></h1>
+        <h1 class="page-title">Más de 5 años cuidando <span>la salud de tu familia</span></h1>
         <p class="page-subtitle">
           Conoce nuestra trayectoria, valores y evolución como un centro de salud
           moderno al servicio de Manta y su comunidad.
@@ -38,32 +38,59 @@
 
       <section class="timeline-section">
         <h2 class="timeline-title">Hitos que Marcaron Nuestra Historia</h2>
+        <p class="timeline-subtitle">
+          Cinco etapas que resumen cómo hemos crecido junto a nuestros pacientes.
+        </p>
 
-        <div class="timeline-tabs">
+        <!-- Pestañas accesibles: rol tablist, un solo foco y flechas del teclado -->
+        <div
+          class="timeline-tabs"
+          role="tablist"
+          aria-label="Etapas de nuestra historia"
+          @keydown="moverEtapa"
+        >
           <button
-            v-for="milestone in milestones"
-            :key="milestone.year"
+            v-for="etapa in etapas"
+            :key="etapa.id"
             type="button"
-            :class="['timeline-tab', { active: selectedMilestoneYear === milestone.year }]"
-            @click="selectedMilestoneYear = milestone.year"
+            role="tab"
+            :id="'tab-' + etapa.id"
+            :aria-selected="etapaActiva === etapa.id ? 'true' : 'false'"
+            :aria-controls="'panel-' + etapa.id"
+            :tabindex="etapaActiva === etapa.id ? 0 : -1"
+            :class="['timeline-tab', { active: etapaActiva === etapa.id }]"
+            @click="etapaActiva = etapa.id"
           >
-            {{ milestone.year }}
+            <span class="timeline-tab-num" aria-hidden="true">{{ etapa.numero }}</span>
+            <span class="timeline-tab-text">{{ etapa.etiqueta }}</span>
           </button>
         </div>
 
-        <div v-if="selectedMilestone" class="timeline-feature">
-          <img
-            class="timeline-image"
-            :src="selectedMilestone.image"
-            :alt="selectedMilestone.title"
-          />
+        <transition name="etapa" mode="out-in">
+          <div
+            v-if="etapaSeleccionada"
+            :key="etapaSeleccionada.id"
+            class="timeline-feature"
+            role="tabpanel"
+            :id="'panel-' + etapaSeleccionada.id"
+            :aria-labelledby="'tab-' + etapaSeleccionada.id"
+          >
+            <img
+              class="timeline-image"
+              :src="etapaSeleccionada.imagen"
+              :alt="etapaSeleccionada.titulo"
+              loading="lazy"
+            />
 
-          <div class="timeline-copy">
-            <span class="timeline-year">{{ selectedMilestone.year }}</span>
-            <h3 class="timeline-feature-title">{{ selectedMilestone.title }}</h3>
-            <p class="timeline-feature-text">{{ selectedMilestone.text }}</p>
+            <div class="timeline-copy">
+              <span class="timeline-year">
+                Etapa {{ etapaSeleccionada.numero }} &middot; {{ etapaSeleccionada.etiqueta }}
+              </span>
+              <h3 class="timeline-feature-title">{{ etapaSeleccionada.titulo }}</h3>
+              <p class="timeline-feature-text">{{ etapaSeleccionada.texto }}</p>
+            </div>
           </div>
-        </div>
+        </transition>
       </section>
 
       <section class="history-cta">
@@ -95,11 +122,10 @@ export default {
     return {
       searchQuery: '',
       isAuthenticated: false,
-      selectedMilestoneYear: '2004',
       stats: [
-        { value: '+20', label: 'Años de Trayectoria' },
+        { value: '+5', label: 'Años de Trayectoria' },
         { value: '+45K', label: 'Pacientes Atendidos' },
-        { value: '+30', label: 'Especialidades' },
+        { value: '+15', label: 'Especialidades' },
         { value: '98%', label: 'Satisfacción de Atención' },
       ],
       pillars: [
@@ -119,43 +145,77 @@ export default {
           text: 'Nos guía una cultura de calidad clínica, responsabilidad y mejora continua.',
         },
       ],
-      milestones: [
+      // Las etapas sustituyen a los antiguos hitos por año: la clínica tiene
+      // 5 años de trayectoria, así que se narra por fases y no por fechas.
+      etapaActiva: 'inicios',
+      etapas: [
         {
-          year: '2004',
-          title: 'Apertura del Primer Consultorio',
-          text: 'Iniciamos nuestra historia con un primer espacio de atención, enfocado en medicina integral y servicio humano a la comunidad.',
-          image: '/InstalacionesPage/ConsultaExterna.jpg',
+          id: 'inicios',
+          numero: 1,
+          etiqueta: 'Los Inicios',
+          titulo: 'Apertura y Atención Ambulatoria',
+          texto: 'Iniciamos nuestras actividades brindando consultas médicas y atención ambulatoria personalizada, sentando las bases de nuestro compromiso con la comunidad.',
+          imagen: '/InstalacionesPage/ConsultaExterna.jpg',
         },
         {
-          year: '2012',
-          title: 'Expansión de Servicios Especializados',
-          text: 'Ampliamos nuestras áreas médicas con nuevas especialidades y una atención más completa para pacientes de todas las edades.',
-          image: '/Instalaciones/Ginecologia.jpg',
+          id: 'alianzas',
+          numero: 2,
+          etiqueta: 'Alianzas',
+          titulo: 'Integración de Convenios Médicos',
+          texto: 'Expandimos la accesibilidad a nuestros servicios formalizando acuerdos con las principales aseguradoras y empresas de medicina prepagada del país.',
+          imagen: '/Instalaciones/SalaEspera.jpg',
         },
         {
-          year: '2020',
-          title: 'Fortalecimiento Institucional',
-          text: 'Reforzamos procesos asistenciales y administrativos para responder a nuevos retos en salud con mayor capacidad operativa.',
-          image: '/Instalaciones/Equipos.jpg',
+          id: 'continuidad',
+          numero: 3,
+          etiqueta: 'Continuidad',
+          titulo: 'Servicio de Emergencias 24/7',
+          texto: 'Dimos el paso hacia la atención continua ininterrumpida los 365 días del año, con personal médico y de enfermería de guardia permanente.',
+          imagen: '/InstalacionesPage/Emergencia.jpg',
         },
         {
-          year: '2025',
-          title: 'Innovación y Crecimiento Clínico',
-          text: 'Seguimos consolidando tecnología, cobertura y equipo humano para ofrecer una experiencia médica moderna y segura.',
-          image: '/InstalacionesPage/Hospitalizacion.jpg',
+          id: 'crecimiento',
+          numero: 4,
+          etiqueta: 'Crecimiento',
+          titulo: 'Expansión Hospitalaria y Quirófanos',
+          texto: 'Inauguramos modernas salas de hospitalización y quirófanos totalmente equipados para cirugías programadas y de emergencia.',
+          imagen: '/Instalaciones/opt/Quirofano1.jpg',
+        },
+        {
+          id: 'vanguardia',
+          numero: 5,
+          etiqueta: 'Vanguardia',
+          titulo: 'Unidades Críticas y Servicios Especiales',
+          texto: 'Incorporamos soporte vital avanzado (UCI y Neonatología), ambulancia propia medicalizada y terapia en cámara hiperbárica.',
+          imagen: '/InstalacionesPage/UCI.jpg',
         },
       ],
     };
   },
   computed: {
-    selectedMilestone() {
-      return this.milestones.find((milestone) => milestone.year === this.selectedMilestoneYear) || this.milestones[0];
+    etapaSeleccionada() {
+      return this.etapas.find((etapa) => etapa.id === this.etapaActiva) || this.etapas[0];
     },
   },
   mounted() {
     this.isAuthenticated = !!localStorage.getItem('access_token');
   },
   methods: {
+    // Flechas para moverse entre pestanas, como pide el patron tablist.
+    moverEtapa(evento) {
+      const pasos = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+      const paso = pasos[evento.key];
+      if (!paso) return;
+      evento.preventDefault();
+      const actual = this.etapas.findIndex((etapa) => etapa.id === this.etapaActiva);
+      const destino = (actual + paso + this.etapas.length) % this.etapas.length;
+      this.etapaActiva = this.etapas[destino].id;
+      const lista = evento.currentTarget;
+      this.$nextTick(() => {
+        const botones = lista.querySelectorAll('.timeline-tab');
+        if (botones[destino]) botones[destino].focus();
+      });
+    },
     buscarMedicos(query) {
       this.searchQuery = query;
       this.$router.push({ path: '/productos', query: { search: query } });

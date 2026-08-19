@@ -382,3 +382,66 @@
     padding: 22px 18px;
   }
 }
+
+/* Subtitulo de la seccion de etapas */
+.historia-page .timeline-subtitle {
+  margin: -8px 0 20px;
+  text-align: center;
+  color: var(--h-texto-suave);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+/* Pestaña = numero en circulo + nombre de la etapa */
+.historia-page .timeline-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 16px 7px 8px;
+}
+
+.historia-page .timeline-tab-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #cbe9e6;
+  color: #14746d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.historia-page .timeline-tab.active .timeline-tab-num {
+  background: var(--h-acento);
+  border-color: var(--h-acento);
+  color: #0e3b36;
+}
+
+/* Foco visible: las pestañas se recorren con el teclado */
+.historia-page .timeline-tab:focus-visible {
+  outline: 2px solid var(--h-acento-fuerte);
+  outline-offset: 2px;
+}
+
+/* Cambio de etapa con un fundido corto, para que no salte de golpe */
+.historia-page .etapa-enter-active,
+.historia-page .etapa-leave-active {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.historia-page .etapa-enter-from,
+.historia-page .etapa-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .historia-page .etapa-enter-active,
+  .historia-page .etapa-leave-active {
+    transition: none;
+  }
+}
