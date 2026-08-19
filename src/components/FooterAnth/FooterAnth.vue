@@ -18,7 +18,21 @@
             <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span>Calle 17, entre Av. 37 y 38, Manta 130213</span>
+          <span>Manta: 130213, Calle 17, entre Av. 37 y 38 </span>
+        </p>
+        <p class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Portoviejo: Av. Rocafuerte y Calle Federico Gonzalez </span>
+        </p>
+        <p class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Pedernales: Av. Plaza Acosta, Calle 18L y S/N</span>
         </p>
       </div>
 
