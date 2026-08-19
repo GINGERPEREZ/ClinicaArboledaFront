@@ -18,30 +18,6 @@ export default {
       segurosPrivados: [
         {
           id: 1,
-          nombre: 'AIG Metropolitana',
-          logo: '/Logos/Convenios/AIG.jpg',
-          descripcion: 'Líder en seguros de salud con cobertura nacional e internacional.',
-          coberturas: [
-            'Consultas médicas',
-            'Cirugías y procedimientos',
-            'Cuidados intensivos',
-            'Medicamentos especializados'
-          ]
-        },
-        {
-          id: 2,
-          nombre: 'Aseguradora del Sur',
-          logo: '/Logos/Convenios/aseguradoradelsur.jpg',
-          descripcion: 'Amplia red de atención con cobertura en todo el territorio nacional.',
-          coberturas: [
-            'Consultas médicas generales',
-            'Atención de emergencias',
-            'Hospitalización',
-            'Medicamentos básicos'
-          ]
-        },
-        {
-          id: 3,
           nombre: 'Asisken',
           logo: '/Logos/Convenios/asisken.jpg',
           descripcion: 'Soluciones de salud personalizadas para empresas y personas naturales.',
@@ -53,31 +29,7 @@ export default {
           ]
         },
         {
-          id: 4,
-          nombre: 'BMI Seguros',
-          logo: '/Logos/Convenios/BMI.png',
-          descripcion: 'Planes corporativos e individuales con amplia cobertura médica.',
-          coberturas: [
-            'Medicina general',
-            'Atención especializada',
-            'Hospitalización programada',
-            'Servicios de emergencia'
-          ]
-        },
-        {
-          id: 5,
-          nombre: 'Chubb Seguros',
-          logo: '/Logos/Convenios/chubb.png',
-          descripcion: 'Cobertura internacional con estándares de calidad reconocidos globalmente.',
-          coberturas: [
-            'Hospitalización y cirugía',
-            'Urgencias médicas',
-            'Reembolsos médicos',
-            'Segunda opinión médica'
-          ]
-        },
-        {
-          id: 6,
+          id: 2,
           nombre: 'Confiamed',
           logo: '/Logos/Convenios/Confiamed.jpg',
           descripcion: 'Enfoque en medicina preventiva y atención integral familiar.',
@@ -89,7 +41,7 @@ export default {
           ]
         },
         {
-          id: 7,
+          id: 3,
           nombre: 'Ecuasanitas',
           logo: '/Logos/Convenios/ecuasanitas.png',
           descripcion: 'Atención médica integral con enfoque en calidad y bienestar familiar.',
@@ -101,19 +53,19 @@ export default {
           ]
         },
         {
-          id: 8,
-          nombre: 'Equivida',
-          logo: '/Logos/Convenios/equivida.png',
-          descripcion: 'Planes de salud y vida con cobertura flexible para cada necesidad.',
+          id: 4,
+          nombre: 'Humana',
+          logo: '/Logos/Convenios/humana.jpg',
+          descripcion: 'Planes de salud con cobertura integral y atención personalizada.',
           coberturas: [
-            'Atención ambulatoria',
-            'Procedimientos quirúrgicos',
-            'Diagnóstico por imagen',
-            'Rehabilitación'
+            'Consultas médicas',
+            'Atención especializada',
+            'Exámenes diagnósticos',
+            'Medicina preventiva'
           ]
         },
         {
-          id: 9,
+          id: 5,
           nombre: 'Latina Seguros',
           logo: '/Logos/Convenios/Latina.jpg',
           descripcion: 'Amplia red de cobertura con planes flexibles para toda la familia.',
@@ -125,39 +77,87 @@ export default {
           ]
         },
         {
-          id: 10,
-          nombre: 'Liberty Seguros',
-          logo: '/Logos/Convenios/liberty.png',
-          descripcion: 'Respaldo de una aseguradora global con presencia local y cercana.',
+          id: 6,
+          nombre: 'Medec',
+          logo: '/Logos/Convenios/medec.jpg',
+          descripcion: 'Servicios médicos con estándares de calidad y atención integral.',
           coberturas: [
-            'Emergencias 24/7',
-            'Hospitalización',
+            'Consultas médicas generales',
+            'Especialidades médicas',
+            'Procedimientos quirúrgicos',
+            'Atención de urgencias'
+          ]
+        },
+        {
+          id: 7,
+          nombre: 'Medi',
+          logo: '/Logos/Convenios/medi.png',
+          descripcion: 'Cobertura médica con amplia red de profesionales y servicios.',
+          coberturas: [
+            'Medicina general',
+            'Atención especializada',
+            'Exámenes de laboratorio',
+            'Hospitalización'
+          ]
+        },
+        {
+          id: 8,
+          nombre: 'Mediken',
+          logo: '/Logos/Convenios/mediken.jpg',
+          descripcion: 'Soluciones de salud con enfoque en bienestar y prevención.',
+          coberturas: [
+            'Chequeos preventivos',
+            'Consultas especializadas',
+            'Tratamientos médicos',
+            'Asistencia domiciliaria'
+          ]
+        },
+        {
+          id: 9,
+          nombre: 'Pan American Life de Ecuador ',
+          logo: '/Logos/Convenios/PAL.png',
+          descripcion: 'Planes de atención médica con cobertura integral.',
+          coberturas: [
+            'Atención ambulatoria',
             'Cirugías programadas',
-            'Medicina general'
+            'Medicina preventiva',
+            'Atención de emergencias'
+          ]
+        },
+        {
+          id: 10,
+          nombre: 'Plan Vital',
+          logo: '/Logos/Convenios/Plan-vital.png',
+          descripcion: 'Planes de salud y vida con cobertura flexible para cada necesidad.',
+          coberturas: [
+            'Consultas médicas',
+            'Procedimientos quirúrgicos',
+            'Diagnóstico por imagen',
+            'Rehabilitación'
           ]
         },
         {
           id: 11,
-          nombre: 'Mapfre',
-          logo: '/Logos/Convenios/mapfre.svg',
-          descripcion: 'Grupo asegurador internacional con sólida presencia en Ecuador.',
+          nombre: 'Privilegio',
+          logo: '/Logos/Convenios/privilegio.png',
+          descripcion: 'Seguros de salud con planes personalizados y atención de calidad.',
           coberturas: [
-            'Consultas médicas',
-            'Tratamientos oncológicos',
-            'Cuidados intensivos',
-            'Cobertura internacional'
+            'Atención médica integral',
+            'Especialidades médicas',
+            'Hospitalización',
+            'Atención de urgencias'
           ]
         },
         {
           id: 12,
-          nombre: 'Oriente Seguros',
-          logo: '/Logos/Convenios/oriente.png',
-          descripcion: 'Soluciones de salud accesibles con cobertura regional y nacional.',
+          nombre: 'Proassis Life',
+          logo: '/Logos/Convenios/proassislife.jpg',
+          descripcion: 'Planes de asistencia médica con amplia cobertura nacional.',
           coberturas: [
-            'Medicina preventiva',
-            'Hospitalización básica',
-            'Urgencias médicas',
-            'Exámenes de rutina'
+            'Consultas médicas generales y especializadas',
+            'Exámenes diagnósticos',
+            'Cirugías',
+            'Medicina preventiva'
           ]
         },
         {
@@ -174,38 +174,26 @@ export default {
         },
         {
           id: 14,
-          nombre: 'Seguros Equinoccial',
-          logo: '/Logos/Convenios/Equinoccial.png',
-          descripcion: 'Cobertura integral con una de las aseguradoras más reconocidas del país.',
-          coberturas: [
-            'Consultas médicas generales y especializadas',
-            'Exámenes de laboratorio e imagen',
-            'Hospitalización y cirugías',
-            'Emergencias 24/7'
-          ]
-        },
-        {
-          id: 15,
-          nombre: 'Seguros Sucre',
-          logo: '/Logos/Convenios/SegurosSucre.avif',
-          descripcion: 'Soluciones de salud personalizadas con excelente servicio al cliente.',
-          coberturas: [
-            'Consultas con especialistas',
-            'Tratamientos médicos',
-            'Estudios diagnósticos',
-            'Atención de urgencias'
-          ]
-        },
-        {
-          id: 16,
-          nombre: 'Zurich Seguros',
-          logo: '/Logos/Convenios/zurich.png',
-          descripcion: 'Cobertura de salud con respaldo internacional y atención personalizada.',
+          nombre: 'Sweaden',
+          logo: '/Logos/Convenios/sweaden.png',
+          descripcion: 'Cobertura médica con respaldo internacional y atención personalizada.',
           coberturas: [
             'Hospitalización y cirugía',
             'Emergencias médicas',
             'Medicamentos especializados',
             'Atención ambulatoria'
+          ]
+        },
+        {
+          id: 15,
+          nombre: 'Vida Buena',
+          logo: '/Logos/Convenios/vida buena.jpg',
+          descripcion: 'Planes de salud enfocados en el bienestar y la calidad de vida.',
+          coberturas: [
+            'Consultas médicas',
+            'Atención preventiva',
+            'Tratamientos especializados',
+            'Chequeos médicos anuales'
           ]
         }
       ],

@@ -155,7 +155,7 @@ export default {
           etiqueta: 'Los Inicios',
           titulo: 'Apertura y Atención Ambulatoria',
           texto: 'Iniciamos nuestras actividades brindando consultas médicas y atención ambulatoria personalizada, sentando las bases de nuestro compromiso con la comunidad.',
-          imagen: '/InstalacionesPage/ConsultaExterna.jpg',
+          imagen: '/InstalacionesPage/Historia.jpg',
         },
         {
           id: 'alianzas',
@@ -187,7 +187,7 @@ export default {
           etiqueta: 'Vanguardia',
           titulo: 'Unidades Críticas y Servicios Especiales',
           texto: 'Incorporamos soporte vital avanzado (UCI y Neonatología), ambulancia propia medicalizada y terapia en cámara hiperbárica.',
-          imagen: '/InstalacionesPage/UCI.jpg',
+          imagen: '/InstalacionesPage/Infraestructura.jpg',
         },
       ],
     };
