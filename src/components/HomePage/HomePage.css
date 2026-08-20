@@ -3007,3 +3007,31 @@ button.especialidad-card-animated {
 .home-container .especialidad-card-animated .categoria-stats-badge {
   color: #4a4a4a !important;
 }
+
+/* Encabezado de la seccion de novedades. Replica el de Convenios para que
+   las secciones del home tengan todas el mismo tratamiento de titulo. */
+.home-container .home-noticias-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(12, 56, 51, 0.06);
+  text-align: left;
+}
+
+.home-container .home-noticias-header h2 {
+  margin: 0;
+  color: #3d3d3d;
+  font-size: clamp(1.85rem, 2.25vw, 2.3rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.home-container .home-noticias-header p {
+  margin: 8px 0 0;
+  color: #6b6b6b;
+  font-size: 1rem;
+  line-height: 1.35;
+}

@@ -45,6 +45,57 @@
         </div>
       </section>
 
+      <!-- 3. Servicios Medicos -->
+      <section class="home-editorial-section">
+        <div class="editorial-services-header">
+          <div>
+            <h2>Servicios Médicos</h2>
+            <p>Conoce algunos de los servicios médicos que Clínica Arboleda pone a tu disposición.</p>
+          </div>
+        </div>
+
+        <div class="editorial-services-carousel-wrapper">
+          <Swiper
+            v-bind="swiperServiciosOptions"
+            :modules="swiperServiciosModules"
+            class="editorial-services-swiper"
+            @swiper="onServiciosSwiperInit"
+            @touch-start="stopServiciosAutoplay"
+          >
+            <SwiperSlide
+              v-for="servicio in serviciosDestacados"
+              :key="servicio.id"
+            >
+              <article class="editorial-service-card">
+                <div class="editorial-service-image">
+                  <img :src="servicio.imagen" :alt="servicio.nombre" loading="lazy" decoding="async" />
+                  <div class="editorial-service-gradient"></div>
+                  <div class="editorial-service-overlay">
+                    <h3>{{ servicio.nombre }}</h3>
+                    <span v-if="servicio.nuevo" class="editorial-service-badge">Nuevo</span>
+                    <button
+                      class="editorial-service-toggle"
+                      :class="{ active: expandedServices.includes(servicio.id) }"
+                      @click.stop="toggleServiceDesc(servicio.id)"
+                      :aria-label="expandedServices.includes(servicio.id) ? 'Ocultar descripción' : 'Ver más'"
+                      type="button"
+                    >+</button>
+                  </div>
+                </div>
+                <div class="editorial-service-body" :class="{ expanded: expandedServices.includes(servicio.id) }">
+                  <transition name="desc-expand">
+                    <p
+                      v-show="expandedServices.includes(servicio.id)"
+                      class="editorial-service-desc"
+                    >{{ servicio.descripcion }}</p>
+                  </transition>
+                </div>
+              </article>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+
       <!-- Especialidades médicas -->
       <section class="especialidades-section">
         <div class="especialidades-shell">
@@ -92,77 +143,9 @@
         </div>
       </section>
 
-      <!-- Noticias y Servicios Destacados -->
-      <section class="home-editorial-section">
-        <div v-if="noticiasPreview.length" class="editorial-news-layout">
-          <article class="editorial-news-copy">
-            <p class="editorial-kicker">Últimas novedades</p>
-            <h2>{{ noticiasPreview[noticiaActivaIndex].titulo }}</h2>
-            <p>{{ noticiasPreview[noticiaActivaIndex].resumen }}</p>
-            <div class="editorial-actions">
-              <button class="btn-ver-noticias primary" @click="$router.push('/noticias')">Ver noticia</button>
-            </div>
-          </article>
-
-          <div class="editorial-news-visual">
-            <img
-              class="editorial-news-image"
-              :src="noticiasPreview[noticiaActivaIndex].imagen"
-              :alt="noticiasPreview[noticiaActivaIndex].titulo"
-            />
-            <button class="news-carousel-arrow prev" type="button" aria-label="Novedad anterior" @click="prevNoticia">‹</button>
-            <button class="news-carousel-arrow next" type="button" aria-label="Siguiente novedad" @click="nextNoticia">›</button>
-          </div>
-        </div>
-
-        <div class="editorial-services-header">
-          <div>
-            <h2>Servicios destacados</h2>
-            <p>Conoce algunos de los servicios médicos que Clínica Arboleda pone a tu disposición.</p>
-          </div>
-        </div>
-
-        <div class="editorial-services-carousel-wrapper">
-          <Swiper
-            v-bind="swiperServiciosOptions"
-            :modules="swiperServiciosModules"
-            class="editorial-services-swiper"
-            @swiper="onServiciosSwiperInit"
-            @touch-start="stopServiciosAutoplay"
-          >
-            <SwiperSlide
-              v-for="servicio in serviciosDestacados"
-              :key="servicio.id"
-            >
-              <article class="editorial-service-card">
-                <div class="editorial-service-image">
-                  <img :src="servicio.imagen" :alt="servicio.nombre" loading="lazy" decoding="async" />
-                  <div class="editorial-service-gradient"></div>
-                  <div class="editorial-service-overlay">
-                    <h3>{{ servicio.nombre }}</h3>
-                    <span v-if="servicio.nuevo" class="editorial-service-badge">Nuevo</span>
-                    <button
-                      class="editorial-service-toggle"
-                      :class="{ active: expandedServices.includes(servicio.id) }"
-                      @click.stop="toggleServiceDesc(servicio.id)"
-                      :aria-label="expandedServices.includes(servicio.id) ? 'Ocultar descripción' : 'Ver más'"
-                      type="button"
-                    >+</button>
-                  </div>
-                </div>
-                <div class="editorial-service-body" :class="{ expanded: expandedServices.includes(servicio.id) }">
-                  <transition name="desc-expand">
-                    <p
-                      v-show="expandedServices.includes(servicio.id)"
-                      class="editorial-service-desc"
-                    >{{ servicio.descripcion }}</p>
-                  </transition>
-                </div>
-              </article>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </section>
+      <!-- 5. Conoce nuestras instalaciones -->
+      <!-- Instalaciones -->
+      <InstalacionesSection :embedded="true" />
 
       <section class="home-convenios-section">
         <div class="home-convenios-header">
@@ -193,6 +176,38 @@
         </div>
       </section>
 
+      <!-- 7. Ultimas novedades -->
+      <section class="home-editorial-section">
+        <div class="home-noticias-header">
+          <div>
+            <h2>Últimas novedades</h2>
+            <p>Noticias y novedades de Clínica Arboleda.</p>
+          </div>
+        </div>
+
+        <div v-if="noticiasPreview.length" class="editorial-news-layout">
+          <article class="editorial-news-copy">
+            <p class="editorial-kicker">Últimas novedades</p>
+            <h2>{{ noticiasPreview[noticiaActivaIndex].titulo }}</h2>
+            <p>{{ noticiasPreview[noticiaActivaIndex].resumen }}</p>
+            <div class="editorial-actions">
+              <button class="btn-ver-noticias primary" @click="$router.push('/noticias')">Ver noticia</button>
+            </div>
+          </article>
+
+          <div class="editorial-news-visual">
+            <img
+              class="editorial-news-image"
+              :src="noticiasPreview[noticiaActivaIndex].imagen"
+              :alt="noticiasPreview[noticiaActivaIndex].titulo"
+            />
+            <button class="news-carousel-arrow prev" type="button" aria-label="Novedad anterior" @click="prevNoticia">‹</button>
+            <button class="news-carousel-arrow next" type="button" aria-label="Siguiente novedad" @click="nextNoticia">›</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de medicos: no forma parte del orden pedido, se conserva al final -->
     <!-- Lista de Médicos/Doctores -->
 <div class="product-grid">
   <div
@@ -244,9 +259,6 @@
       <div v-if="productosMostrados.length === 0 && searchQuery.trim() !== ''">
         <p>No se encontraron médicos que coincidan con "{{ searchQuery }}".</p>
       </div>
-
-      <!-- Instalaciones -->
-      <InstalacionesSection :embedded="true" />
     </div>
 
     <!-- Indicadores -->
