@@ -3035,3 +3035,95 @@ button.especialidad-card-animated {
   font-size: 1rem;
   line-height: 1.35;
 }
+
+/* ==========================================================================
+   Encabezados de seccion del home: un solo tratamiento
+   Cada seccion traia el suyo: Instalaciones centrado, Convenios con 24px de
+   sangria por ser tarjeta, y titulos entre 29 y 40px con tres colores y tres
+   tamanos de subtitulo distintos. Aqui se igualan alineacion, tipografia y
+   espaciado. Lleva !important porque varias de las reglas originales lo usan.
+   ========================================================================== */
+
+/* Caja del encabezado: misma separacion y mismo filete inferior */
+.home-container .editorial-services-header,
+.home-container .home-convenios-header,
+.home-container .home-noticias-header {
+  display: block !important;
+  margin: 0 0 24px !important;
+  padding: 0 0 12px !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid rgba(12, 56, 51, 0.08) !important;
+  text-align: left !important;
+}
+
+/* Titulos */
+.home-container .editorial-services-header h2,
+.home-container .home-convenios-header h2,
+.home-container .home-noticias-header h2,
+.home-container > .especialidades-section .section-title,
+.home-container .instalaciones-section.embedded .instalaciones-title {
+  margin: 0 !important;
+  color: #3d3d3d !important;
+  font-size: clamp(1.85rem, 2.25vw, 2.3rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
+  text-align: left !important;
+}
+
+/* Subtitulos */
+.home-container .editorial-services-header p,
+.home-container .home-convenios-header p,
+.home-container .home-noticias-header p,
+.home-container > .especialidades-section .section-title::after,
+.home-container .instalaciones-section.embedded .instalaciones-description {
+  display: block !important;
+  /* Sin max-width: el subtitulo aprovecha todo el ancho del contenedor y
+     solo salta de linea cuando de verdad no cabe. */
+  max-width: none !important;
+  margin: 8px 0 0 !important;
+  color: #6b6b6b !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+}
+
+/* Instalaciones no tiene div de encabezado: el filete y el hueco inferior
+   se los pone el propio subtitulo. */
+.home-container .instalaciones-section.embedded .instalaciones-container {
+  text-align: left !important;
+}
+
+.home-container .instalaciones-section.embedded .instalaciones-description {
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid rgba(12, 56, 51, 0.08) !important;
+  margin-bottom: 24px !important;
+}
+
+/* Especialidades: el subtitulo es un ::after del titulo, asi que el filete
+   va debajo del propio encabezado. */
+.home-container > .especialidades-section .especialidades-header {
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid rgba(12, 56, 51, 0.08) !important;
+  margin-bottom: 24px !important;
+}
+
+/* Convenios es una tarjeta con 24px de padding, lo que empujaba su titulo.
+   Se quita el padding lateral de la tarjeta y se pasa al carrusel, de modo
+   que el titulo queda a ras de los demas y los logos conservan su holgura. */
+.home-container .home-convenios-section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.home-container .home-convenios-slider-wrapper {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* El encabezado queda a ras del contenedor, como el resto de secciones. */
+.home-container .home-convenios-header {
+  margin: 0 0 24px !important;
+  padding: 0 0 12px !important;
+}
