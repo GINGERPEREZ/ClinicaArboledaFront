@@ -2,9 +2,10 @@ export default {
   name: 'WhatsAppWidget',
   data() {
     return {
-      phoneNumber: '+593995924867',
-      defaultMessage: 'Hola! Me gustaría obtener información sobre sus productos.',
-      isHovered: false,
+      // wa.me exige solo digitos: codigo de pais + numero, sin + ni espacios.
+      // +593 939073995 -> 593939073995
+      phoneNumber: '593939073995',
+      defaultMessage: 'Hola, quisiera información sobre los servicios de Clínica Arboleda.',
       showMessage: false
     };
   },
