@@ -378,7 +378,7 @@
                 <p><strong>Finalidad:</strong> Gestionar tu solicitud de cita médica y coordinar su confirmación asistencial.</p>
                 <p><strong>Base legal:</strong> Ejecución de medidas precontractuales y consentimiento para datos sensibles de salud.</p>
                 <p><strong>Destinatarios:</strong> Personal asistencial directo y entidades aseguradoras cuando corresponda.</p>
-                <p><strong>Derechos:</strong> Puedes ejercer acceso, rectificación, eliminación y oposición escribiendo a protecciondedatos@clinicarboleda.com.</p>
+                <p><strong>Derechos:</strong> Puedes ejercer acceso, rectificación, eliminación y oposición escribiendo a protecciondedatos@clinicaarboleda.ec.</p>
                 <p>Consulta el detalle completo en nuestra Política de Privacidad Integral.</p>
               </div>
 

@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       pdfUrl: '/documentos/Formato_Fisico_ARCO_Logo_Grande_Clinica_Arboleda.pdf',
-      correoDpo: 'protecciondedatos@clinicarboleda.com',
+      correoDpo: 'protecciondedatos@clinicaarboleda.ec',
       derechosDisponibles: DERECHOS_DISPONIBLES,
       error: '',
       formulario: {

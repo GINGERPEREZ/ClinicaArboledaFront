@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      correoDpo: 'protecciondedatos@clinicarboleda.com',
+      correoDpo: 'protecciondedatos@clinicaarboleda.ec',
       accesosLegales: [
         {
           id: 'proteccion',

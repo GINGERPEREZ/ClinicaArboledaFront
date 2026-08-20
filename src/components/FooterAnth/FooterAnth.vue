@@ -79,7 +79,7 @@
           <li><a href="/politica-cookies">Política de Cookies</a></li>
           <li><a href="/terminos-condiciones">Términos y Condiciones de Uso</a></li>
           <li><a href="/derechos-arco">Derechos (ARCO)</a></li>
-          <li><a href="mailto:protecciondedatos@clinicarboleda.com?subject=Consulta%20DPO%20-%20Clinica%20Arboleda">Contacto del DPO</a></li>
+          <li><a href="mailto:protecciondedatos@clinicaarboleda.ec?subject=Consulta%20DPO%20-%20Clinica%20Arboleda">Contacto del DPO</a></li>
         </ul>
       </div>
     </div>
