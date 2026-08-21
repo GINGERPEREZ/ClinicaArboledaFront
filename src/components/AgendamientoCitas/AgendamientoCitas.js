@@ -62,7 +62,7 @@ export default {
         { id: 3, nombre: 'Neumonología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_neumonologia.png' },
         { id: 4, nombre: 'Gastroenterología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_gastroenterologia.png' },
         { id: 5, nombre: 'Cirugía General', categoria: 'cirugias', destacada: true, icon: '/IC-Especialidades/IC_cirugia-general.png' },
-        { id: 6, nombre: 'Pediatría', categoria: 'clinicas', destacada: true, icon: '/IC-Especialidades/IC_pediatria.png' },
+        { id: 6, nombre: 'Pediatría y Neonatología', categoria: 'clinicas', destacada: true, icon: '/IC-Especialidades/IC_pediatria.png' },
         { id: 7, nombre: 'Cirugía Pediátrica', categoria: 'cirugias', destacada: false, icon: '/IC-Especialidades/IC_cirugia-pediatrica.png' },
         { id: 8, nombre: 'Anestesiología y Reanimación', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_anestesiologia.png' },
         { id: 9, nombre: 'Ginecología y Obstetricia', categoria: 'clinicas', destacada: true, icon: '/IC-Especialidades/IC_ginecologia.png' },
@@ -74,39 +74,59 @@ export default {
         { id: 15, nombre: 'Cirugía Oncológica', categoria: 'cirugias', destacada: false, icon: '/IC-Especialidades/IC_cirugia-oncologica.png' },
         { id: 16, nombre: 'Neurología', categoria: 'clinicas', destacada: true, icon: '/IC-Especialidades/IC_neurologia.png' },
         { id: 17, nombre: 'Nefrología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_nefrologia.png' },
+        { id: 18, nombre: 'Endocrinología Pediátrica', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_pediatria.png' },
+        { id: 19, nombre: 'Otorrinolaringología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_neumonologia.png' },
+        { id: 20, nombre: 'Urología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_nefrologia.png' },
+        { id: 21, nombre: 'Dermatología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_medicina-interna.png' },
+        { id: 22, nombre: 'Dermatología Pediátrica', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_pediatria.png' },
+        { id: 23, nombre: 'Coloproctología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_gastroenterologia.png' },
+        { id: 24, nombre: 'Fisioterapia', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_ortopedia.png' },
+        { id: 25, nombre: 'Fisiatría', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_ortopedia.png' },
+        { id: 26, nombre: 'Odontología y Endodoncista', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_cirugia-general.png' },
+        { id: 27, nombre: 'Cardiología Pediátrica', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_cardiologia.png' },
+        { id: 28, nombre: 'Nutrición', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_gastroenterologia.png' },
+        { id: 29, nombre: 'Hematología', categoria: 'clinicas', destacada: false, icon: '/IC-Especialidades/IC_medicina-critica.png' },
       ],
       medicos: [
-        { id: 1, nombre: 'VICTOR MANUEL ARIAS LOOR', iniciales: 'VA', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
-        { id: 2, nombre: 'LUIS ALFREDO MOREIRA FRANCO', iniciales: 'LM', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
-        { id: 3, nombre: 'SILVIA MARIA ROSERO PACHAY', iniciales: 'SR', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
-        { id: 4, nombre: 'LAURA ALEXANDRA CEDEÑO SANCHEZ', iniciales: 'LC', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
-        { id: 5, nombre: 'CRISTINA ANNABEL MONTESDEOCA MONTESDEOCA', iniciales: 'CM', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 16:00' },
-        { id: 6, nombre: 'JOSELIO SANTOS ANDRADE', iniciales: 'JA', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes, miércoles y viernes, 09:00 - 13:00' },
-        { id: 7, nombre: 'JUAN FRANCISCO TAMAYO PROAÑO', iniciales: 'JT', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes, miércoles y viernes, 09:00 - 13:00' },
-        { id: 8, nombre: 'MARLON ANTONIO MUENTES AYALA', iniciales: 'MM', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes, miércoles y viernes, 09:00 - 13:00' },
-        { id: 9, nombre: 'KARLA MARIA JOZA AGUAYO', iniciales: 'KJ', especialidadId: 3, especialidad: 'Neumonología', horario: 'Martes y jueves, 10:00 - 14:00' },
-        { id: 10, nombre: 'CINDY MICHELLE CEDEÑO CALERO', iniciales: 'CC', especialidadId: 4, especialidad: 'Gastroenterología', horario: 'Lunes a jueves, 08:30 - 12:30' },
-        { id: 11, nombre: 'ALEXANDER RODRIGUEZ HERNANDEZ', iniciales: 'AR', especialidadId: 5, especialidad: 'Cirugía General', horario: 'Lunes a viernes, 15:00 - 18:00' },
-        { id: 12, nombre: 'MARIA FERNANDA SANTOS COBEÑA', iniciales: 'MS', especialidadId: 5, especialidad: 'Cirugía General', horario: 'Lunes a viernes, 15:00 - 18:00' },
-        { id: 13, nombre: 'MARIANGEL DOLORES CEDEÑO VIVAS', iniciales: 'MC', especialidadId: 6, especialidad: 'Pediatría', horario: 'Lunes a sábado, 08:00 - 13:00' },
-        { id: 14, nombre: 'TERESA MARIBEL RIZO DELGADO', iniciales: 'TR', especialidadId: 6, especialidad: 'Pediatría', horario: 'Lunes a sábado, 08:00 - 13:00' },
-        { id: 15, nombre: 'HUMBERTO EDISON CORRAL VERA', iniciales: 'HC', especialidadId: 6, especialidad: 'Pediatría', horario: 'Lunes a sábado, 08:00 - 13:00' },
-        { id: 16, nombre: 'LUIS GUILLERMO MENDOZA', iniciales: 'LM', especialidadId: 7, especialidad: 'Cirugía Pediátrica', horario: 'Martes y jueves, 14:00 - 17:00' },
-        { id: 17, nombre: 'GAUDENCIO RAMOS SALAS', iniciales: 'GR', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, previa cita' },
-        { id: 18, nombre: 'SUSANA ISABEL GARCIA SILVA', iniciales: 'SG', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, previa cita' },
-        { id: 19, nombre: 'MAYLIE DIAZ SANCHEZ', iniciales: 'MD', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, previa cita' },
-        { id: 20, nombre: 'EDISON ANDRES BORJA BASTIDAS', iniciales: 'EB', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, previa cita' },
-        { id: 21, nombre: 'MARIA FERNANDA ZAMBRANO LOOR', iniciales: 'MZ', especialidadId: 9, especialidad: 'Ginecología y Obstetricia', horario: 'Lunes a viernes, 09:00 - 17:00' },
-        { id: 22, nombre: 'GABRIEL FERNANDO LOPEZ ESPINOZA', iniciales: 'GL', especialidadId: 9, especialidad: 'Ginecología y Obstetricia', horario: 'Lunes a viernes, 09:00 - 17:00' },
-        { id: 23, nombre: 'RICHARD ZAMBRANO', iniciales: 'RZ', especialidadId: 10, especialidad: 'Medicina Interna', horario: 'Lunes a viernes, previa cita' },
-        { id: 24, nombre: 'DIANA VANESSA QUIJIJE VALENCIA', iniciales: 'DQ', especialidadId: 11, especialidad: 'Psiquiatría', horario: 'Lunes a viernes, previa cita' },
-        { id: 25, nombre: 'MARIUXI ARACELY ZAMBRANO NAVIA', iniciales: 'MZ', especialidadId: 12, especialidad: 'Imagenología', horario: 'Lunes a viernes, previa cita' },
-        { id: 26, nombre: 'JOSE ANDRES CEDEÑO VALDIVIEZO', iniciales: 'JC', especialidadId: 13, especialidad: 'Cardiología', horario: 'Lunes a viernes, previa cita' },
-        { id: 27, nombre: 'DARWIN KELVIN LEON FRANCO', iniciales: 'DL', especialidadId: 14, especialidad: 'Angiología y Cirugía Vascular', horario: 'Lunes a viernes, previa cita' },
-        { id: 28, nombre: 'SEGUNDO STALIN MORAN MERCHAN', iniciales: 'SM', especialidadId: 13, especialidad: 'Cardiología', horario: 'Lunes a viernes, previa cita' },
-        { id: 29, nombre: 'MARIA DE LOS ANGELES MONTOYA GALEA', iniciales: 'MM', especialidadId: 15, especialidad: 'Cirugía Oncológica', horario: 'Lunes a viernes, previa cita' },
-        { id: 30, nombre: 'CARLOS LEONIDAS MORALES NARANJO', iniciales: 'CM', especialidadId: 16, especialidad: 'Neurología', horario: 'Lunes a viernes, previa cita' },
-        { id: 31, nombre: 'JAMES JOHANN MUÑOZ ZAMBRANO', iniciales: 'JM', especialidadId: 17, especialidad: 'Nefrología', horario: 'Lunes a viernes, previa cita' },
+        { id: 1, nombre: 'VICTOR MANUEL ARIAS LOOR', iniciales: 'VA', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 2, nombre: 'LUIS ALFREDO MOREIRA FRANCO', iniciales: 'LM', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 3, nombre: 'SILVIA MARIA ROSERO PACHAY', iniciales: 'SR', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 4, nombre: 'LAURA ALEXANDRA CEDEÑO SANCHEZ', iniciales: 'LC', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 5, nombre: 'CRISTINA ANNABEL MONTESDEOCA MONTESDEOCA', iniciales: 'CM', especialidadId: 1, especialidad: 'Medicina Crítica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 6, nombre: 'JOSELIO SANTOS ANDRADE', iniciales: 'JA', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 7, nombre: 'JUAN FRANCISCO TAMAYO PROAÑO', iniciales: 'JT', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 8, nombre: 'MARLON ANTONIO MUENTES AYALA', iniciales: 'MM', especialidadId: 2, especialidad: 'Ortopedia y Traumatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 9, nombre: 'ALEXANDER RODRIGUEZ HERNANDEZ', iniciales: 'AR', especialidadId: 5, especialidad: 'Cirugía General', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 10, nombre: 'MARIA FERNANDA SANTOS COBEÑA', iniciales: 'MS', especialidadId: 5, especialidad: 'Cirugía General', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 11, nombre: 'MARIANGEL DOLORES CEDEÑO VIVAS', iniciales: 'MC', especialidadId: 6, especialidad: 'Pediatría y Neonatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 12, nombre: 'TERESA MARIBEL RIZO DELGADO', iniciales: 'TR', especialidadId: 6, especialidad: 'Pediatría y Neonatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 13, nombre: 'HUMBERTO EDISON CORRAL VERA', iniciales: 'HC', especialidadId: 6, especialidad: 'Pediatría y Neonatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 14, nombre: 'LUIS GUILLERMO MENDOZA', iniciales: 'LM', especialidadId: 7, especialidad: 'Cirugía Pediátrica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 15, nombre: 'GAUDENCIO RAMOS SALAS', iniciales: 'GR', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 16, nombre: 'SUSANA ISABEL GARCIA SILVA', iniciales: 'SG', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 17, nombre: 'EDISON ANDRES BORJA BASTIDAS', iniciales: 'EB', especialidadId: 8, especialidad: 'Anestesiología y Reanimación', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 18, nombre: 'MARIA FERNANDA ZAMBRANO LOOR', iniciales: 'MZ', especialidadId: 9, especialidad: 'Ginecología y Obstetricia', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 19, nombre: 'RICHARD ZAMBRANO', iniciales: 'RZ', especialidadId: 10, especialidad: 'Medicina Interna', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 20, nombre: 'SEGUNDO STALIN MORAN MERCHAN', iniciales: 'SM', especialidadId: 13, especialidad: 'Cardiología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 21, nombre: 'MARIA DE LOS ANGELES MONTOYA GALEA', iniciales: 'MM', especialidadId: 15, especialidad: 'Cirugía Oncológica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 22, nombre: 'DARWIN KELVIN LEON FRANCO', iniciales: 'DL', especialidadId: 14, especialidad: 'Angiología y Cirugía Vascular', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 23, nombre: 'EDWIN JOSE LOOR SANCHEZ', iniciales: 'EL', especialidadId: 9, especialidad: 'Ginecología y Obstetricia', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 24, nombre: 'JIMMY ALFREDO CANTOS ESTRADA', iniciales: 'JC', especialidadId: 9, especialidad: 'Ginecología y Obstetricia', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 25, nombre: 'JUAN CARLOS PARRAGA SAN CLEMENTE', iniciales: 'JP', especialidadId: 18, especialidad: 'Endocrinología Pediátrica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 26, nombre: 'VICTOR OLMEDO BARCIA TOMALA', iniciales: 'VB', especialidadId: 13, especialidad: 'Cardiología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 27, nombre: 'JULIO EDUARDO FLORES PALOMINO', iniciales: 'JF', especialidadId: 19, especialidad: 'Otorrinolaringología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 28, nombre: 'JOSE MIGUEL PARRAGA', iniciales: 'JP', especialidadId: 20, especialidad: 'Urología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 29, nombre: 'EVELYN CAROLINA MONTALVAN ALAVA', iniciales: 'EA', especialidadId: 20, especialidad: 'Urología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 30, nombre: 'JENNIFER ADRIANA GUERRERO CENTENO', iniciales: 'JG', especialidadId: 21, especialidad: 'Dermatología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 31, nombre: 'SHIRLEY JANINE ESPINAL RIVERA', iniciales: 'SE', especialidadId: 22, especialidad: 'Dermatología Pediátrica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 32, nombre: 'ALEJANDRO PATRICIO ROCANO GAMBOA', iniciales: 'AR', especialidadId: 23, especialidad: 'Coloproctología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 33, nombre: 'CHRYSTIAMS NICOLAS DELGADO UNDA', iniciales: 'CD', especialidadId: 24, especialidad: 'Fisioterapia', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 34, nombre: 'JUAN VACAS MOREIRA', iniciales: 'JV', especialidadId: 25, especialidad: 'Fisiatría', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 35, nombre: 'GEANELLA KATHERINE BARCIA', iniciales: 'GB', especialidadId: 26, especialidad: 'Odontología y Endodoncista', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 36, nombre: 'HILDA YAJAIRA GONZALEZ ARTEAGA', iniciales: 'HG', especialidadId: 27, especialidad: 'Cardiología Pediátrica', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 37, nombre: 'RUTH MARIA ECHEVERRIA MACIAS', iniciales: 'RE', especialidadId: 4, especialidad: 'Gastroenterología', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 38, nombre: 'DANIEL GREGORIO SOLORZANO ANDRADE', iniciales: 'DS', especialidadId: 28, especialidad: 'Nutrición', horario: 'Lunes a viernes, 08:00 - 17:00' },
+        { id: 39, nombre: 'SUSANA PATRICIA MACIAS INTRIAGO', iniciales: 'SM', especialidadId: 29, especialidad: 'Hematología', horario: 'Lunes a viernes, 08:00 - 17:00' },
       ],
       turnosDisponibles: [],
     };
@@ -131,7 +151,7 @@ export default {
         if (this.specialtyFilter === 'clinicas') coincideFiltro = especialidad.categoria === 'clinicas';
         if (this.specialtyFilter === 'cirugias') coincideFiltro = especialidad.categoria === 'cirugias';
 
-        return coincideBusqueda && coincideFiltro;
+        return coincideBusqueda && coincideFiltro && this.especialidadTieneMedicos(especialidad);
       });
     },
     medicosDisponibles() {
@@ -288,10 +308,13 @@ export default {
 
       if (especialidadParam) {
         this.selectedEspecialidad = this.buscarEspecialidadPorNombre(especialidadParam);
-        if (this.selectedEspecialidad) {
+        if (this.selectedEspecialidad && this.especialidadTieneMedicos(this.selectedEspecialidad)) {
           this.currentStep = PASO_MEDICO;
         }
       }
+    },
+    especialidadTieneMedicos(especialidad) {
+      return this.medicos.some((m) => m.especialidadId === especialidad.id);
     },
     selectEspecialidad(esp) {
       // Volver a pulsar la especialidad ya elegida no debe descartar el médico
@@ -356,19 +379,20 @@ export default {
       this.selectedCalendarDate = fecha;
     },
     generateTurnosDisponibles() {
-      const horasBase = ['09:00', '09:30', '10:00', '10:30', '11:00', '14:00', '14:30', '15:00', '15:30', '16:00'];
+      const horasBase = [
+        '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+        '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30',
+        '16:00', '16:30', '17:00',
+      ];
       const turnos = [];
       const cursor = new Date();
       cursor.setDate(cursor.getDate() + 1);
 
-      while (turnos.length < 30) {
+      while (turnos.length < 95) {
         const diaSemana = cursor.getDay();
-        if (diaSemana !== 0) {
+        if (diaSemana !== 0 && diaSemana !== 6) {
           const fecha = this.toDateInputValue(cursor);
-          const offset = (this.selectedMedico?.id || 0) % 2;
-          const horasDelDia = horasBase.filter((_, index) => index % 2 === offset || index < 5);
-
-          horasDelDia.forEach((hora) => {
+          horasBase.forEach((hora) => {
             turnos.push({
               id: `${fecha}-${hora}`,
               fecha,
@@ -379,7 +403,7 @@ export default {
         cursor.setDate(cursor.getDate() + 1);
       }
 
-      this.turnosDisponibles = turnos.slice(0, 30);
+      this.turnosDisponibles = turnos;
       this.selectedSlots = [];
       this.activeSlotTarget = 0;
       this.selectedCalendarDate = this.turnosDisponibles[0]?.fecha || '';
