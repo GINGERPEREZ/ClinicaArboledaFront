@@ -1,0 +1,14 @@
+.instalaciones-section .instalacion-brand-logo,
+.instalaciones-view .instalacion-brand-logo {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left: auto;
+  width: 112px;
+  height: 54px;
+  padding: 0;
+  border-radius: 28px 0 0 28px;
+  background: #fff url('../../../public/Logos/Logo1.png') center / 120px 150px no-repeat;
+  z-index: 2;
+  pointer-events: none;
+}

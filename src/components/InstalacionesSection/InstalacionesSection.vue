@@ -37,6 +37,11 @@
                   decoding="async"
                   @error="handleImageError"
                 />
+                <span
+                  role="img"
+                  aria-label="Clínica Arboleda"
+                  class="instalacion-brand-logo"
+                />
                 <div class="instalacion-overlay">
                   <h3 class="instalacion-nombre">{{ instalacion.nombre }}</h3>
                 </div>
@@ -71,3 +76,4 @@
 
 <script src="./InstalacionesSection.js"></script>
 <style src="./InstalacionesSection.css"></style>
+<style src="./InstalacionesBrand.css"></style>

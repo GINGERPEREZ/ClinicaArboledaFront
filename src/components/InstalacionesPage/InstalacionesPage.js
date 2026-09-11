@@ -31,14 +31,14 @@ export default {
           nombre: 'Habitaciones',
           descripcion: 'Habitaciones individuales diseñadas para brindar comodidad y privacidad durante la recuperación del paciente, con monitoreo permanente y atención personalizada las 24 horas del día.',
           capacidad: '32 habitaciones',
-          imagen: '/Instalaciones/Habitacion1.jpg',
+          imagen: '/Instalaciones/HabitacionesActualizadas.png',
         },
         {
           id: 4,
           nombre: 'Sala de Espera',
           descripcion: 'Área de recepción y espera cómoda y climatizada, pensada para que los pacientes y sus acompañantes se sientan tranquilos y bien atendidos desde el primer momento de su visita.',
           capacidad: '40 personas',
-          imagen: '/Instalaciones/SalaEspera.jpg',
+          imagen: '/Instalaciones/SalaEsperaActualizada.png',
         },
         {
           id: 5,
@@ -52,7 +52,7 @@ export default {
           nombre: 'Hospitalización',
           descripcion: 'Piso de hospitalización con camas regulables, sistema de llamado de enfermería y acceso a servicios de soporte nutricional, para asegurar una recuperación segura y confortable.',
           capacidad: '48 camas',
-          imagen: '/Instalaciones/Hospitalizacion.webp',
+          imagen: '/Instalaciones/HospitalizacionActualizada.png',
         },
       ],
     };

@@ -22,7 +22,8 @@
       <section class="areas-grid-section">
         <div class="areas-grid">
           <article v-for="area in areasHospital" :key="area.id" class="area-card">
-            <div class="area-media">
+            <div class="area-media" style="position: relative">
+              <span class="instalacion-brand-logo" role="img" aria-label="Clínica Arboleda" />
               <img
                 :src="area.imagen"
                 :alt="area.nombre"
@@ -48,6 +49,7 @@
 
 <script src="./InstalacionesPage.js"></script>
 <style src="./InstalacionesPage.css"></style>
+<style src="../InstalacionesSection/InstalacionesBrand.css"></style>
 
 
 

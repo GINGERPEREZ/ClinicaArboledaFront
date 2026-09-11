@@ -19,10 +19,10 @@ export default {
         { nombre: 'Equipo Quirúrgico', imagen: '/Instalaciones/opt/Quirurgico1.jpg' },
         { nombre: 'Equipos Médicos', imagen: '/Instalaciones/opt/Equipos1.jpg' },
         { nombre: 'Fluoroscopia', imagen: '/Instalaciones/opt/Fluoroscopia1.jpg' },
-        { nombre: 'Habitaciones', imagen: '/Instalaciones/opt/Habitacion1.jpg' },
-        { nombre: 'Hospitalización', imagen: '/Instalaciones/opt/Habitacion2.jpg' },
+        { nombre: 'Habitaciones', imagen: '/Instalaciones/HabitacionesActualizadas.png' },
+        { nombre: 'Hospitalización', imagen: '/Instalaciones/HospitalizacionActualizada.png' },
         { nombre: 'Quirófanos', imagen: '/Instalaciones/opt/Quirofano1.jpg' },
-        { nombre: 'Sala de Espera', imagen: '/Instalaciones/opt/SalaEspera.jpg' }
+        { nombre: 'Sala de Espera', imagen: '/Instalaciones/SalaEsperaActualizada.png' }
       ]
     };
   },
