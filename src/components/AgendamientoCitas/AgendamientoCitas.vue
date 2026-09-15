@@ -511,13 +511,14 @@
               </div>
 
               <div class="actions-container">
-                <button class="btn-summary-confirm" type="button" @click="confirmarCita">
-                  <span>Confirmar y Enviar Solicitud</span>
+                <p v-if="errorEnvio" role="alert">{{ errorEnvio }}</p>
+                <button class="btn-summary-confirm" type="button" :disabled="enviandoSolicitud" :aria-busy="enviandoSolicitud" @click="confirmarCita">
+                  <span>{{ enviandoSolicitud ? 'Enviando solicitud...' : 'Confirmar y Enviar Solicitud' }}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </button>
-                <button class="btn-summary-back" type="button" @click="prevStep">
+                <button class="btn-summary-back" type="button" :disabled="enviandoSolicitud" @click="prevStep">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="m15 18-6-6 6-6"></path>
                   </svg>
@@ -541,12 +542,12 @@
                 <img src="/Logos/Logo1.png" alt="Clínica Arboleda" class="receipt-logo" />
                 <div>
                   <p class="receipt-kicker">Comprobante de solicitud de cita médica</p>
-                  <h2 class="success-title">Solicitud de cita recibida</h2>
+                  <h2 class="success-title">Solicitud lista para admisión</h2>
                 </div>
               </div>
 
               <p class="success-desc">
-                Tu solicitud fue registrada correctamente. Conserva este comprobante mientras nuestro equipo valida la disponibilidad y te confirma la cita definitiva.
+                Se abrió un correo con el resumen de tu solicitud para enviarlo a admisión. Conserva este comprobante mientras nuestro equipo valida la disponibilidad y te confirma la cita definitiva.
               </p>
 
               <!-- Sin print-hidden: al imprimir el comprobante, la advertencia

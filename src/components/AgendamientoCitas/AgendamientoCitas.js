@@ -1,4 +1,5 @@
 import HeaderAnth from '../HeaderAnth/HeaderAnth.vue';
+import { enviarResumenCita } from '@/services/appointmentEmail';
 import FooterAnth from '../FooterAnth/FooterAnth.vue';
 import { validarFormulario, sanitizarFormulario } from '@/utils/formValidation';
 import {
@@ -41,6 +42,8 @@ export default {
     return {
       currentStep: PASO_ESPECIALIDAD,
       citaConfirmada: false,
+      enviandoSolicitud: false,
+      errorEnvio: '',
       steps: ['Especialidad', 'Médico', 'Fecha y Hora', 'Datos', 'Confirmar'],
       specialtySearch: '',
       specialtyFilter: 'todas',
@@ -501,6 +504,8 @@ export default {
       }
     },
     confirmarCita() {
+      if (this.enviandoSolicitud || this.citaConfirmada) return;
+      this.errorEnvio = '';
       // Normalización final (trim, espacios colapsados, prefijo +593 resuelto).
       this.patientData = sanitizarFormulario(this.patientData, NORMALIZADORES_PACIENTE);
 
@@ -512,14 +517,40 @@ export default {
         this.enfocarPrimerCampoInvalido();
         return;
       }
-      this.citaConfirmada = true;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (!this.consents.privacidad) {
+        this.currentStep = PASO_DATOS;
+        return;
+      }
+      if (!this.selectedEspecialidad || !this.selectedMedico || !this.slotPrincipal) {
+        this.errorEnvio = 'Selecciona especialidad, médico y horario principal antes de enviar.';
+        return;
+      }
+      this.enviandoSolicitud = true;
+      try {
+        enviarResumenCita({
+          paciente: this.patientData.nombre,
+          identificacion: this.patientData.cedula,
+          correo: this.patientData.email,
+          telefono: this.patientData.telefono,
+          especialidad: this.selectedEspecialidad.nombre,
+          medico: this.selectedMedico.nombre,
+          horario_principal: this.formatearTurno(this.slotPrincipal),
+          horario_alternativo: this.slotAlternativo ? this.formatearTurno(this.slotAlternativo) : 'No seleccionado',
+          motivo: this.patientData.motivo,
+        });
+        this.citaConfirmada = true;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (error) {
+        this.errorEnvio = error.message || 'No pudimos abrir el correo. Escríbenos a Admision@clinicaarboleda.ec.';
+      } finally {
+        this.enviandoSolicitud = false;
+      }
     },
     construirMensajeConfirmacion() {
       const linea = (label, value) => `• ${label}: ${value || '-'}`;
       return [
         `Hola ${this.patientData.nombre || 'paciente'},`,
-        'Tu cita ha sido confirmada en Clínica Arboleda. Aquí están los detalles:',
+        'Tu solicitud de cita está pendiente de confirmación por Clínica Arboleda. Aquí están los detalles:',
         '',
         linea('Especialidad', this.selectedEspecialidad?.nombre),
         linea('Médico', this.selectedMedico?.nombre),
