@@ -1,4 +1,4 @@
-const ADMISSION_EMAIL = 'Admision@clinicaarboleda.ec';
+const ADMISSION_EMAIL = 'cmanosalvas@outlook.com';
 
 const limpiar = (value) => String(value || '').trim() || 'No registrado';
 

@@ -1,6 +1,8 @@
 # Correo de solicitudes de cita
 
-La web prepara un correo dirigido a `Admision@clinicaarboleda.ec` usando `mailto:`. No requiere backend, base de datos, EmailJS ni cuentas externas.
+La web prepara un correo dirigido temporalmente a `cmanosalvas@outlook.com` usando `mailto:`. No requiere backend, base de datos, EmailJS ni cuentas externas.
+
+Cuando terminen las pruebas, cambiar el destinatario a `Admision@clinicaarboleda.ec`.
 
 ## Como funciona
 
