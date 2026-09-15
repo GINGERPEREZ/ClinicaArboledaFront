@@ -503,7 +503,7 @@ export default {
         this.currentStep = idx;
       }
     },
-    confirmarCita() {
+    async confirmarCita() {
       if (this.enviandoSolicitud || this.citaConfirmada) return;
       this.errorEnvio = '';
       // Normalización final (trim, espacios colapsados, prefijo +593 resuelto).
@@ -527,7 +527,7 @@ export default {
       }
       this.enviandoSolicitud = true;
       try {
-        enviarResumenCita({
+        await enviarResumenCita({
           paciente: this.patientData.nombre,
           identificacion: this.patientData.cedula,
           correo: this.patientData.email,

@@ -542,12 +542,12 @@
                 <img src="/Logos/Logo1.png" alt="Clínica Arboleda" class="receipt-logo" />
                 <div>
                   <p class="receipt-kicker">Comprobante de solicitud de cita médica</p>
-                  <h2 class="success-title">Solicitud lista para admisión</h2>
+                  <h2 class="success-title">Solicitud enviada a admisión</h2>
                 </div>
               </div>
 
               <p class="success-desc">
-                Se abrió un correo con el resumen de tu solicitud para enviarlo a admisión. Conserva este comprobante mientras nuestro equipo valida la disponibilidad y te confirma la cita definitiva.
+                Tu solicitud fue enviada correctamente al correo de admisión. Conserva este comprobante mientras nuestro equipo valida la disponibilidad y te confirma la cita definitiva.
               </p>
 
               <!-- Sin print-hidden: al imprimir el comprobante, la advertencia

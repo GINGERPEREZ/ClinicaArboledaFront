@@ -1,18 +1,18 @@
 # Correo de solicitudes de cita
 
-La web prepara un correo dirigido temporalmente a `cmanosalvas@outlook.com` usando `mailto:`. No requiere backend, base de datos, EmailJS ni cuentas externas.
+La web envia automaticamente el resumen de la solicitud usando FormSubmit AJAX. No abre Outlook ni otra aplicacion de correo del paciente.
 
-Cuando terminen las pruebas, cambiar el destinatario a `Admision@clinicaarboleda.ec`.
+## Correo temporal de pruebas
 
-## Como funciona
+Destino actual: `cmanosalvas@outlook.com`
 
-1. El paciente completa especialidad, medico, fechas y datos de contacto.
-2. Al confirmar, el navegador abre el correo predeterminado del dispositivo.
-3. El mensaje ya viene dirigido a admision, con asunto y resumen de la solicitud.
-4. El paciente debe enviar ese correo desde su app de correo.
-5. Admision recibe el resumen y contacta al paciente para confirmar o proponer otro horario.
+Cuando terminen las pruebas, cambiar el destinatario a `Admision@clinicaarboleda.ec` en `src/services/appointmentEmail.js`.
 
-## Datos incluidos
+## Activacion inicial
+
+FormSubmit puede pedir una confirmacion la primera vez que se usa un correo destinatario. Si llega un correo de activacion a `cmanosalvas@outlook.com`, hay que aceptarlo para que las solicitudes empiecen a entregarse.
+
+## Datos enviados
 
 ```text
 Paciente
@@ -28,4 +28,4 @@ Motivo de consulta
 
 ## Limitacion importante
 
-Esta solucion depende de que el dispositivo del paciente tenga una aplicacion de correo configurada y de que el paciente pulse enviar en esa aplicacion. Para envio automatico sin intervencion del paciente, si se necesitara un servicio externo de correo o un backend.
+Esta solucion no guarda citas en una base de datos ni confirma disponibilidad medica. Solo envia el resumen al correo configurado para que admision contacte al paciente.

@@ -1,8 +1,14 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { ADMISSION_EMAIL, construirResumenCita, crearEnlaceCorreoCita, enviarResumenCita } from './appointmentEmail';
+import {
+  ADMISSION_EMAIL,
+  FORMSUBMIT_ENDPOINT,
+  construirResumenCita,
+  crearPayloadCorreoCita,
+  enviarResumenCita,
+} from './appointmentEmail';
 
 beforeEach(() => {
-  vi.stubGlobal('window', { location: { href: '' } });
+  vi.stubGlobal('fetch', vi.fn());
 });
 
 afterEach(() => {
@@ -29,15 +35,33 @@ it('builds the admission email summary without external configuration', () => {
   expect(body).toContain('La cita aún no está confirmada');
 });
 
-it('creates a mailto link addressed to admission', () => {
-  const link = crearEnlaceCorreoCita({ paciente: 'Paciente Prueba' });
+it('creates the automatic email payload addressed by the provider endpoint', () => {
+  const payload = crearPayloadCorreoCita({
+    paciente: 'Paciente Prueba',
+    correo: 'paciente@example.com',
+  });
 
-  expect(link).toContain(`mailto:${ADMISSION_EMAIL}`);
-  expect(decodeURIComponent(link)).toContain('Solicitud de cita - Paciente Prueba');
+  expect(FORMSUBMIT_ENDPOINT).toContain(ADMISSION_EMAIL);
+  expect(payload._subject).toBe('Solicitud de cita - Paciente Prueba');
+  expect(payload.email).toBe('paciente@example.com');
 });
 
-it('opens the prepared email from the browser', () => {
-  enviarResumenCita({ paciente: 'Paciente Prueba' });
+it('sends the summary without opening the email client', async () => {
+  fetch.mockResolvedValue({ ok: true });
 
-  expect(window.location.href).toContain(`mailto:${ADMISSION_EMAIL}`);
+  await expect(enviarResumenCita({ paciente: 'Paciente Prueba' })).resolves.toBeUndefined();
+
+  expect(fetch).toHaveBeenCalledWith(
+    FORMSUBMIT_ENDPOINT,
+    expect.objectContaining({
+      method: 'POST',
+      body: expect.stringContaining('Paciente Prueba'),
+    })
+  );
+});
+
+it('does not report success when the provider rejects the request', async () => {
+  fetch.mockResolvedValue({ ok: false });
+
+  await expect(enviarResumenCita({ paciente: 'Paciente Prueba' })).rejects.toThrow('No pudimos enviar');
 });
